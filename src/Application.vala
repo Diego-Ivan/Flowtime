@@ -21,11 +21,18 @@
 namespace Flowtime {
     public class Application : Adw.Application {
         public Window main_window;
+
+        private const ActionEntry[] APP_ENTRIES = {
+            { "quit", action_close },
+            { "about", about_flowtime }
+        };
+
         public Application () {
             Object (
                 application_id: "io.github.diegoivanme.flowtime",
                 flags: GLib.ApplicationFlags.FLAGS_NONE
             );
+            add_action_entries (APP_ENTRIES, this);
         }
 
         protected override void activate () {
@@ -33,6 +40,34 @@ namespace Flowtime {
                 main_window = new Window (this);
             }
             main_window.present ();
+        }
+
+        private void action_close () {
+            main_window.close_request ();
+            quit ();
+        }
+
+        private void about_flowtime () {
+            const string COPYRIGHT = "Copyright \xc2\xa9 2021 Diego Iván";
+            const string? AUTHORS[] = {
+                "Diego Iván",
+                null
+            };
+            string program_name = "Flowtime";
+
+            Gtk.show_about_dialog (
+                main_window, // transient for
+                "program_name", program_name,
+                "logo-icon-name", Config.APP_ID,
+                "version", Config.VERSION,
+                "copyright", COPYRIGHT,
+                "authors", AUTHORS,
+                "artists", null,
+                "license-type", Gtk.License.GPL_3_0,
+                "wrap-license", true,
+                "translator-credits", _("translator-credits"),
+                null
+            );
         }
     }
 }
