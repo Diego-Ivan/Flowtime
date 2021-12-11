@@ -1,0 +1,7 @@
+data/io.github.diegoivanme.flowtime.desktop.in
+data/io.github.diegoivanme.flowtime.appdata.xml.in
+data/io.github.diegoivanme.flowtime.gschema.xml
+src/window.ui
+src/main.vala
+src/window.vala
+

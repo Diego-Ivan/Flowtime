@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <template class="FlowtimeWindow" parent="AdwApplicationWindow">
+    <property name="title">Flowtime</property>
+    <property name="default-height">375</property>
+    <property name="default-width">565</property>
+
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkHeaderBar">
+            <property name="show-title-buttons">true</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkLabel">
+            <property name="vexpand">true</property>
+            <property name="valign">fill</property>
+            <property name="label">Hello World!</property>
+            <style>
+              <class name="large-title"/>
+            </style>
+          </object>
+        </child>
+
+      </object>
+    </child>
+
+  </template>
+</interface>
