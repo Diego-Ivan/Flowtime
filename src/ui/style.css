@@ -2,7 +2,11 @@
 @define-color accent_bg_color @green_4;
 
 .large-button {
-  padding: 6px;
+  padding: 8px;
+}
+
+.not-so-large-button {
+  padding: 4px;
 }
 
 .time-label {

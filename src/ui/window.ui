@@ -27,6 +27,7 @@
                 <property name="name">work_stage</property>
                 <property name="child">
                   <object class="GtkBox">
+                    <!-- TODO: I should move these pages to a custom widget... -->
                     <property name="orientation">vertical</property>
                     <property name="halign">center</property>
                     <property name="valign">center</property>
@@ -43,14 +44,32 @@
                     </child>
 
                     <child>
-                      <object class="GtkButton" id="start_break_button">
-                        <property name="icon-name">media-playback-start-symbolic</property>
+                      <object class="GtkBox">
                         <property name="halign">center</property>
-                        <style>
-                          <class name="suggested-action"/>
-                          <class name="circular"/>
-                          <class name="large-button"/>
-                        </style>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkButton" id="start_break_button">
+                            <property name="icon-name">media-playback-start-symbolic</property>
+                            <property name="halign">center</property>
+                            <style>
+                              <class name="suggested-action"/>
+                              <class name="circular"/>
+                              <class name="large-button"/>
+                            </style>
+                          </object>
+                        </child>
+
+                        <child>
+                          <object class="GtkButton" id="start_break">
+                            <property name="icon-name">media-seek-forward-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="circular"/>
+                              <class name="not-so-large-button"/>
+                            </style>
+                          </object>
+                        </child>
+
                       </object>
                     </child>
 
@@ -78,14 +97,32 @@
                     </child>
 
                     <child>
-                      <object class="GtkButton" id="finish_break_button">
-                        <property name="icon-name">media-playback-start-symbolic</property>
+                      <object class="GtkBox">
                         <property name="halign">center</property>
-                        <style>
-                          <class name="suggested-action"/>
-                          <class name="circular"/>
-                          <class name="large-button"/>
-                        </style>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkButton" id="finish_break_button">
+                            <property name="icon-name">media-playback-start-symbolic</property>
+                            <property name="halign">center</property>
+                            <style>
+                              <class name="suggested-action"/>
+                              <class name="circular"/>
+                              <class name="large-button"/>
+                            </style>
+                          </object>
+                        </child>
+
+                        <child>
+                          <object class="GtkButton" id="continue_working_button">
+                            <property name="icon-name">media-seek-forward-symbolic</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="circular"/>
+                              <class name="not-so-large-button"/>
+                            </style>
+                          </object>
+                        </child>
+
                       </object>
                     </child>
 
