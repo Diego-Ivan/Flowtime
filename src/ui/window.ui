@@ -21,7 +21,7 @@
         </child>
 
         <child>
-          <object class="GtkStack" id="main_stack">
+          <object class="GtkStack" id="stages">
             <child>
               <object class="GtkStackPage">
                 <property name="name">work_stage</property>
@@ -48,7 +48,7 @@
                         <property name="halign">center</property>
                         <property name="spacing">8</property>
                         <child>
-                          <object class="GtkButton" id="start_break_button">
+                          <object class="GtkButton" id="pause_work_button">
                             <property name="icon-name">media-playback-start-symbolic</property>
                             <property name="halign">center</property>
                             <style>
@@ -60,7 +60,7 @@
                         </child>
 
                         <child>
-                          <object class="GtkButton" id="start_break">
+                          <object class="GtkButton" id="start_break_button">
                             <property name="icon-name">media-seek-forward-symbolic</property>
                             <property name="valign">center</property>
                             <style>
@@ -101,7 +101,7 @@
                         <property name="halign">center</property>
                         <property name="spacing">8</property>
                         <child>
-                          <object class="GtkButton" id="finish_break_button">
+                          <object class="GtkButton" id="pause_break_button">
                             <property name="icon-name">media-playback-start-symbolic</property>
                             <property name="halign">center</property>
                             <style>
@@ -113,7 +113,7 @@
                         </child>
 
                         <child>
-                          <object class="GtkButton" id="continue_working_button">
+                          <object class="GtkButton" id="finish_break_button">
                             <property name="icon-name">media-seek-forward-symbolic</property>
                             <property name="valign">center</property>
                             <style>
