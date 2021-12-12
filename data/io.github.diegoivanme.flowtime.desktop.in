@@ -4,5 +4,5 @@ Exec=flowtime
 Icon=io.github.diegoivanme.flowtime
 Terminal=false
 Type=Application
-Categories=GTK;
+Categories=GTK;Office;Utility;
 StartupNotify=true
