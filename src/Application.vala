@@ -33,6 +33,7 @@ namespace Flowtime {
                 flags: GLib.ApplicationFlags.FLAGS_NONE
             );
             add_action_entries (APP_ENTRIES, this);
+            set_accels_for_action ("app.quit", { "<Ctrl>Q" });
         }
 
         protected override void activate () {
