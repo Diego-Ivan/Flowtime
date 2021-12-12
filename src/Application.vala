@@ -65,6 +65,7 @@ namespace Flowtime {
                 "artists", null,
                 "license-type", Gtk.License.GPL_3_0,
                 "wrap-license", true,
+                // Translators: Write your Name<email> here :p
                 "translator-credits", _("translator-credits"),
                 null
             );
