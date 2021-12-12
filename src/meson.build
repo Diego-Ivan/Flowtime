@@ -1,9 +1,9 @@
 flowtime_sources = [
   'main.vala',
-  'Window.vala',
   'Application.vala',
-  'Timer.vala',
-  'QuoteLabel.vala',
+  'Widgets/Window.vala',
+  'Widgets/QuoteLabel.vala',
+  'Services/Timer.vala',
 ]
 
 flowtime_deps = [
