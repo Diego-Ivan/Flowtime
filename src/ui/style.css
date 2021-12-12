@@ -7,8 +7,6 @@
 
 .time-label {
   color: @accent_color;
-  margin-top: 8px;
-  margin-bottom: 8px;
   font-weight: 300;
 	font-size: 400%;
 }
