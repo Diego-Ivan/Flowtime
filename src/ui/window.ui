@@ -2,27 +2,61 @@
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <template class="FlowtimeWindow" parent="AdwApplicationWindow">
-    <property name="title">Flowtime</property>
     <property name="default-height">375</property>
-    <property name="default-width">565</property>
+    <property name="default-width">375</property>
+    <property name="width-request">300</property>
+    <property name="height-request">300</property>
+    <property name="title"></property>
 
     <child>
       <object class="GtkBox">
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkHeaderBar">
-            <property name="show-title-buttons">true</property>
+          <object class="AdwHeaderBar">
+            <property name="show-end-title-buttons">true</property>
+            <style>
+              <class name="flat"/>
+            </style>
           </object>
         </child>
 
         <child>
-          <object class="GtkLabel">
-            <property name="vexpand">true</property>
-            <property name="valign">fill</property>
-            <property name="label">Hello World!</property>
-            <style>
-              <class name="large-title"/>
-            </style>
+          <object class="GtkStack">
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">work_stage</property>
+                <property name="child">
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="halign">center</property>
+                    <property name="valign">center</property>
+                    <property name="vexpand">true</property>
+
+                    <child>
+                      <object class="GtkLabel" id="work_time_label">
+                        <property name="label">00:00</property>
+                        <style>
+                          <class name="time-label"/>
+                        </style>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkButton" id="work_button">
+                        <property name="icon-name">media-playback-start-symbolic</property>
+                        <property name="halign">center</property>
+                        <style>
+                          <class name="suggested-action"/>
+                          <class name="circular"/>
+                          <class name="large-button"/>
+                        </style>
+                      </object>
+                    </child>
+
+                  </object>
+                </property>
+              </object>
+            </child>
           </object>
         </child>
 
