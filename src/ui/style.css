@@ -1,0 +1,14 @@
+@define-color accent_color @green_4;
+@define-color accent_bg_color @green_4;
+
+.large-button {
+  padding: 6px;
+}
+
+.time-label {
+  color: @accent_color;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 300;
+	font-size: 400%;
+}
