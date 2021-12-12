@@ -1,4 +1,4 @@
-/* Timer.vala
+/* WorkTimer.vala
  *
  * Copyright 2021 Diego Iván <diegoivan.mae@gmail.com>
  *

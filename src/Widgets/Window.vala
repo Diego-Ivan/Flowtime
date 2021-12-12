@@ -57,6 +57,8 @@ namespace Flowtime {
 
         construct {
             work_timer = new WorkTimer ();
+            var test_timer = new BreakTimer (0, 70);
+            test_timer.start ();
         }
     }
 }
