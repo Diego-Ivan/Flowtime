@@ -23,12 +23,15 @@ namespace Flowtime {
         // Break Stage
         [GtkChild] unowned Gtk.Button pause_break_button;
         [GtkChild] unowned Gtk.Button finish_break_button;
+        [GtkChild] unowned Gtk.Label break_time_label;
 
         private WorkTimer work_timer { get; set; }
+        private BreakTimer break_timer { get; set; }
 
         public Window (Gtk.Application app) {
             Object (application: app);
 
+            // TODO: Move callbacks to [GtkCallback]
             start_break_button.clicked.connect (() => {
                 stages.set_visible_child_full ("break_stage", CROSSFADE);
                 headerbar.set_title_widget (new QuoteLabel ());
@@ -47,18 +50,31 @@ namespace Flowtime {
             });
 
             pause_break_button.clicked.connect (() => {
-                message ("Break timer paused!");
+                if (break_timer.running) {
+                    break_timer.stop ();
+                }
+                else {
+                    if (break_timer.already_started) {
+                        break_timer.start_back ();
+                    }
+                    else {
+                        break_timer.start (5, 0);
+                    }
+                }
             });
 
             work_timer.updated.connect ((time) => {
                 work_time_label.label = time;
             });
+
+            break_timer.updated.connect ((time) => {
+                break_time_label.label = time;
+            });
         }
 
         construct {
             work_timer = new WorkTimer ();
-            var test_timer = new BreakTimer (0, 70);
-            test_timer.start ();
+            break_timer = new BreakTimer ();
         }
     }
 }

@@ -88,8 +88,8 @@
                     <property name="valign">center</property>
                     <property name="spacing">5</property>
                     <child>
-                      <object class="GtkLabel">
-                        <property name="label" translatable="true">5:00</property>
+                      <object class="GtkLabel" id="break_time_label">
+                        <property name="label" translatable="true">05:00</property>
                         <style>
                           <class name="time-label"/>
                         </style>

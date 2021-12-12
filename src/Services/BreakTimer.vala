@@ -11,34 +11,44 @@ namespace Flowtime {
         public uint seconds { get; set; }
         public bool running { get; private set; }
         public bool keep_running { get; private set; }
+        public bool already_started { get; private set; }
 
         /* Signals */
         public signal void completed ();
         public signal void updated (string time);
 
-        public BreakTimer (uint minutes_, uint seconds_) {
-            Object (
-                minutes: minutes_,
-                seconds: seconds_
-            );
+        public void start (uint minutes_, uint seconds_) {
+            minutes = minutes_;
+            seconds = seconds_;
+
             if (seconds > 60) {
                 minutes += seconds / 60;
                 seconds = seconds % 60;
             }
-        }
 
-        public void start () {
             running = true;
             keep_running = true;
+            already_started = true;
             Timeout.add_seconds (1, update_time);
+        }
+
+        public void start_back () {
+            running = true;
+            keep_running = true;
+
+            Timeout.add_seconds (1, update_time);
+        }
+
+        public void stop () {
+            keep_running = false;
+            running = false;
         }
 
         private bool update_time () {
             string minute_format, second_format;
-            seconds--;
 
             if (seconds == 0 && minutes > 0) {
-                seconds = 59;
+                seconds = 60; // set to 60 so it decreases to 59 later
                 minutes--;
             }
 
@@ -47,6 +57,7 @@ namespace Flowtime {
                 completed ();
             }
 
+            seconds--;
 
             if (minutes < 10) {
                 minute_format = "0%u".printf (minutes);
