@@ -15,7 +15,12 @@ namespace Flowtime {
             _("You deserve a break"),
             _("Keep a healthy mind"),
             _("Just breathe"),
-            _("Relax, refresh and recharge")
+            _("Relax, refresh and recharge"),
+            _("Celebrate your small wins"),
+            _("Impossible is just an opinion"),
+            _("Way to go!"),
+            _("Begin anywhere"),
+            _("The possibilities are never ending")
         };
 
         construct {
