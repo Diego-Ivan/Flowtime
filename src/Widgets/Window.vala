@@ -18,11 +18,13 @@ namespace Flowtime {
         // TODO: better naming, this names are confusing af
         [GtkChild] unowned Gtk.Button start_break_button;
         [GtkChild] unowned Gtk.Button pause_work_button;
+        [GtkChild] unowned Gtk.Label work_time_label;
 
         // Break Stage
         [GtkChild] unowned Gtk.Button pause_break_button;
         [GtkChild] unowned Gtk.Button finish_break_button;
 
+        private WorkTimer work_timer { get; set; }
 
         public Window (Gtk.Application app) {
             Object (application: app);
@@ -38,12 +40,23 @@ namespace Flowtime {
             });
 
             pause_work_button.clicked.connect (() => {
-                message ("Work Timer paused!");
+                if (work_timer.running)
+                    work_timer.stop ();
+                else
+                    work_timer.start ();
             });
 
             pause_break_button.clicked.connect (() => {
                 message ("Break timer paused!");
             });
+
+            work_timer.updated.connect ((time) => {
+                work_time_label.label = time;
+            });
+        }
+
+        construct {
+            work_timer = new WorkTimer ();
         }
     }
 }
