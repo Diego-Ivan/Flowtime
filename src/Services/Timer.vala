@@ -16,6 +16,7 @@ namespace Flowtime {
         public signal void update_minutes ();
     }
 
+    // TODO: I should keep these two in different files :p
     public class WorkTimer : Timer, GLib.Object {
         public bool running { get; private set; default = false; }
         public uint seconds_remaining { get; private set; }

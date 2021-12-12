@@ -7,7 +7,7 @@
 
 namespace Flowtime {
     public class QuoteLabel : Adw.Bin {
-        public string[] BREAK_QUOTES = {
+        public string[] break_quotes = {
             _("Good Job!"),
             _("Time to take a rest"),
             _("In the meantime, drink some water"),
@@ -19,8 +19,8 @@ namespace Flowtime {
         };
 
         construct {
-            var random_number = Random.int_range (0, BREAK_QUOTES.length);
-            var quote = BREAK_QUOTES[random_number];
+            var random_number = Random.int_range (0, break_quotes.length);
+            var quote = break_quotes[random_number];
 
             var label = new Gtk.Label (quote);
             label.add_css_class ("dim-label");
