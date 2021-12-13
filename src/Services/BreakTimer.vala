@@ -43,15 +43,17 @@ namespace Flowtime {
                 return false;
             }
 
+            if (seconds == 0 && minutes == 0) {
+                keep_running = false;
+                completed ();
+                return false;
+            }
+
             if (seconds == 0 && minutes > 0) {
                 seconds = 60; // set to 60 so it decreases to 59 later
                 minutes--;
             }
 
-            if (seconds == 0 && minutes == 0) {
-                keep_running = false;
-                completed ();
-            }
             seconds--;
 
             message (format_time ());
