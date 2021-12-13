@@ -40,7 +40,7 @@ flowtime_sources += gnome.compile_resources('io.github.diegoivanme.flowtime',
 
 executable('flowtime', flowtime_sources,
   vala_args: [
-    meson.source_root() + '/src/vapi/config.vapi',
+    meson.project_source_root() + '/src/vapi/config.vapi',
     '--target-glib=2.50',
     '--gresources', flowtime_resources_file,
     '--vapidir', meson.project_source_root() / 'vapi',
