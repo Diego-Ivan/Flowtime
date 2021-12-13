@@ -6,16 +6,15 @@
  */
 
 namespace Flowtime {
-    public class BreakTimer : GLib.Object {
+    public class BreakTimer : Timer, GLib.Object {
         public uint minutes { get; set; }
         public uint seconds { get; set; }
-        public bool running { get; private set; }
-        public bool keep_running { get; private set; }
+        public bool running { get; set; }
+        public bool keep_running { get; set; }
         public bool already_started { get; private set; }
 
         /* Signals */
         public signal void completed ();
-        public signal void updated (string time);
 
         public void start (uint minutes_, uint seconds_) {
             minutes = minutes_;
@@ -32,20 +31,17 @@ namespace Flowtime {
             Timeout.add_seconds (1, update_time);
         }
 
-        public void start_back () {
-            running = true;
-            keep_running = true;
-
-            Timeout.add_seconds (1, update_time);
-        }
-
-        public void stop () {
-            keep_running = false;
-            running = false;
+        public void reset_time () {
+            stop ();
+            seconds = 0;
+            minutes = 0;
+            updated (format_time ());
         }
 
         private bool update_time () {
-            string minute_format, second_format;
+            if (!running) {
+                return false;
+            }
 
             if (seconds == 0 && minutes > 0) {
                 seconds = 60; // set to 60 so it decreases to 59 later
@@ -56,8 +52,15 @@ namespace Flowtime {
                 keep_running = false;
                 completed ();
             }
-
             seconds--;
+
+            message (format_time ());
+            updated (format_time ());
+            return keep_running;
+        }
+
+        public string format_time () {
+            string minute_format, second_format;
 
             if (minutes < 10) {
                 minute_format = "0%u".printf (minutes);
@@ -74,9 +77,7 @@ namespace Flowtime {
             }
 
             var format = "%s:%s".printf (minute_format, second_format);
-            message (format);
-            updated (format);
-            return keep_running;
+            return format;
         }
     }
 }
