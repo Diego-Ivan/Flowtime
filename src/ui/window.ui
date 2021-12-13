@@ -63,6 +63,7 @@
                         <child>
                           <object class="GtkButton" id="stop_working_button">
                             <property name="icon-name">media-seek-forward-symbolic</property>
+                            <property name="sensitive">false</property>
                             <property name="valign">center</property>
                             <signal name="clicked" handler="finish_work_cb" swapped="no"/>
                             <style>
@@ -116,8 +117,9 @@
                         </child>
 
                         <child>
-                          <object class="GtkButton" id="finish_break_button">
+                          <object class="GtkButton" id="stop_break_button">
                             <property name="icon-name">media-seek-forward-symbolic</property>
+                            <property name="sensitive">false</property>
                             <property name="valign">center</property>
                             <signal name="clicked" handler="finish_break_cb" swapped="no"/>
                             <style>

@@ -5,6 +5,7 @@ flowtime_sources = [
   'Widgets/QuoteLabel.vala',
   'Services/WorkTimer.vala',
   'Services/BreakTimer.vala',
+  'Interfaces/Timer.vala',
 ]
 
 flowtime_deps = [
