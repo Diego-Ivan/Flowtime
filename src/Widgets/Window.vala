@@ -41,9 +41,11 @@ namespace Flowtime {
         private void pause_work_cb () {
             if (work_timer.running) {
                 work_timer.stop ();
+                if (work_timer.breakable) {
+                    stop_working_button.sensitive = true;
+                }
 
                 pause_work_button.icon_name = "media-playback-start-symbolic";
-                stop_working_button.sensitive = true;
                 return;
             }
 

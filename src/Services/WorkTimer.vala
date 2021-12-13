@@ -10,7 +10,7 @@ namespace Flowtime {
         public bool running { get; set; }
         public bool keep_running { get; set; }
         public bool already_started { get; private set; }
-        public bool stoppable { get; private set; }
+        public bool breakable { get; private set; }
 
         public uint seconds { get; private set; }
         public uint minutes { get; private set; }
@@ -61,6 +61,10 @@ namespace Flowtime {
             }
             else {
                 minutes_format = "%u".printf (minutes);
+            }
+
+            if (minutes > 15) {
+                breakable = true;
             }
 
             var format = "%s:%s".printf (minutes_format, seconds_format);
