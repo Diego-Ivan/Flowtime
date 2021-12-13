@@ -34,6 +34,10 @@ namespace Flowtime {
             );
             add_action_entries (APP_ENTRIES, this);
             set_accels_for_action ("app.quit", { "<Ctrl>Q" });
+
+            Intl.setlocale (LocaleCategory.ALL, "");
+            Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.GNOMELOCALEDIR);
+            Intl.textdomain (Config.GETTEXT_PACKAGE);
         }
 
         protected override void activate () {
