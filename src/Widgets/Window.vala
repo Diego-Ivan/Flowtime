@@ -72,10 +72,7 @@ namespace Flowtime {
             }
 
             else {
-                var minutes = work_timer.minutes / 5;
-                var seconds = work_timer.seconds / 5;
-
-                break_timer.start (minutes, seconds);
+                break_timer.start ();
                 work_timer.reset_time ();
                 pause_break_button.icon_name = "media-playback-pause-symbolic";
             }
@@ -94,8 +91,9 @@ namespace Flowtime {
             stages.set_visible_child_full ("break_stage", CROSSFADE);
             headerbar.set_title_widget (new QuoteLabel ());
 
-            var minutes = work_timer.minutes / 5;
-            var seconds = work_timer.seconds / 5;
+            break_timer.minutes = work_timer.minutes / 5;
+            break_timer.seconds = work_timer.seconds / 5;
+            break_time_label.label = break_timer.format_time ();
         }
     }
 }

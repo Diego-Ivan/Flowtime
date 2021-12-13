@@ -16,10 +16,7 @@ namespace Flowtime {
         /* Signals */
         public signal void completed ();
 
-        public void start (uint minutes_, uint seconds_) {
-            minutes = minutes_;
-            seconds = seconds_;
-
+        public void start () {
             if (seconds > 60) {
                 minutes += seconds / 60;
                 seconds = seconds % 60;
