@@ -56,13 +56,15 @@
                               <class name="circular"/>
                               <class name="large-button"/>
                             </style>
+                            <signal name="clicked" handler="pause_work_cb" swapped="no"/>
                           </object>
                         </child>
 
                         <child>
-                          <object class="GtkButton" id="start_break_button">
+                          <object class="GtkButton" id="stop_working_button">
                             <property name="icon-name">media-seek-forward-symbolic</property>
                             <property name="valign">center</property>
+                            <signal name="clicked" handler="finish_work_cb" swapped="no"/>
                             <style>
                               <class name="circular"/>
                               <class name="not-so-large-button"/>
@@ -104,6 +106,7 @@
                           <object class="GtkButton" id="pause_break_button">
                             <property name="icon-name">media-playback-start-symbolic</property>
                             <property name="halign">center</property>
+                            <signal name="clicked" handler="pause_break_cb" swapped="no"/>
                             <style>
                               <class name="suggested-action"/>
                               <class name="circular"/>
@@ -116,6 +119,7 @@
                           <object class="GtkButton" id="finish_break_button">
                             <property name="icon-name">media-seek-forward-symbolic</property>
                             <property name="valign">center</property>
+                            <signal name="clicked" handler="finish_break_cb" swapped="no"/>
                             <style>
                               <class name="circular"/>
                               <class name="not-so-large-button"/>
