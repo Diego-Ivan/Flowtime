@@ -24,6 +24,10 @@ namespace Flowtime {
         }
 
         private bool update_time () {
+            if (minutes >= 15) {
+                breakable = true;
+            }
+
             if (!running) {
                 return false;
             }
@@ -61,10 +65,6 @@ namespace Flowtime {
             }
             else {
                 minutes_format = "%u".printf (minutes);
-            }
-
-            if (minutes > 15) {
-                breakable = true;
             }
 
             var format = "%s:%s".printf (minutes_format, seconds_format);

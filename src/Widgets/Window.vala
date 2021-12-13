@@ -39,12 +39,9 @@ namespace Flowtime {
 
         [GtkCallback]
         private void pause_work_cb () {
+            stop_working_button.sensitive = work_timer.breakable;
             if (work_timer.running) {
                 work_timer.stop ();
-                if (work_timer.breakable) {
-                    stop_working_button.sensitive = true;
-                }
-
                 pause_work_button.icon_name = "media-playback-start-symbolic";
                 return;
             }
@@ -57,8 +54,6 @@ namespace Flowtime {
                 work_timer.start ();
                 pause_work_button.icon_name = "media-playback-pause-symbolic";
             }
-
-            stop_working_button.sensitive = false;
         }
 
         [GtkCallback]
