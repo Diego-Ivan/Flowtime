@@ -50,11 +50,8 @@ namespace Flowtime {
                 seconds = 60; // set to 60 so it decreases to 59 later
                 minutes--;
             }
-
             seconds--;
 
-            message (format_time ());
-            updated (format_time ());
             return keep_running;
         }
 

@@ -33,7 +33,6 @@ namespace Flowtime {
             }
 
             seconds++;
-            message (format_time ());
             updated (format_time ());
 
             return keep_running;
