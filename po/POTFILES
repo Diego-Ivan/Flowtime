@@ -3,3 +3,4 @@ data/io.github.diegoivanme.flowtime.appdata.xml.in
 data/io.github.diegoivanme.flowtime.gschema.xml
 src/ui/window.ui
 src/Widgets/QuoteLabel.vala
+src/Application.vala

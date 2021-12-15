@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-12 20:50-0600\n"
+"POT-Creation-Date: 2021-12-14 21:46-0600\n"
 "PO-Revision-Date: 2021-12-12 20:56-0600\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish - Mexico <diegoivan.mae@gmail.com>\n"
@@ -42,6 +42,10 @@ msgstr ""
 "pero tomar un descanso cuando estás 100% concentrado en algo que te gusta "
 "puede ser molesto. Es por eso que el método Flowtime existe: tome descansos "
 "apropiadados, sin perder su concentración."
+
+#: src/ui/window.ui:8
+msgid "_About Flowtime"
+msgstr "_Acerca de Flowtime"
 
 #: src/Widgets/QuoteLabel.vala:11
 msgid "Good Job!"
@@ -94,3 +98,8 @@ msgstr "Empiece en cualquier momento"
 #: src/Widgets/QuoteLabel.vala:23
 msgid "The possibilities are never ending"
 msgstr "Las posibilidades son infinitas"
+
+#. Translators: Write your Name<email> here :p
+#: src/Application.vala:74
+msgid "translator-credits"
+msgstr "Diego Iván<diegoivan.mae@gmail.com>"

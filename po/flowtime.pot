@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-12 20:50-0600\n"
+"POT-Creation-Date: 2021-12-14 21:46-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,6 +35,10 @@ msgid ""
 "take a break when you are 100% concentrated in something you like might be "
 "annoying. That's why the Flowtime technique exists: take appropiate breaks "
 "without loosing you **flow**."
+msgstr ""
+
+#: src/ui/window.ui:8
+msgid "_About Flowtime"
 msgstr ""
 
 #: src/Widgets/QuoteLabel.vala:11
@@ -87,4 +91,9 @@ msgstr ""
 
 #: src/Widgets/QuoteLabel.vala:23
 msgid "The possibilities are never ending"
+msgstr ""
+
+#. Translators: Write your Name<email> here :p
+#: src/Application.vala:74
+msgid "translator-credits"
 msgstr ""
