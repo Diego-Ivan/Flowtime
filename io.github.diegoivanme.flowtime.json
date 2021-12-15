@@ -75,7 +75,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "."
+                    "url" : "https://github.com/Diego-Ivan/Flowtime.git"
                 }
             ]
         }
