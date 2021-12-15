@@ -1,3 +1,5 @@
+<img align="left" style="vertical-align: middle;" width="160" height="160" src="data/icons/hicolor/scalable/apps/io.github.diegoivanme.flowtime.svg">
+
 # Flowtime
 
 Get what motivates you done, without loosing concentration.
