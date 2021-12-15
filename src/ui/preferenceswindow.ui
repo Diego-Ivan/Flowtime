@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.2.5"/>
+  <requires lib="libadwaita-1" version="1"/>
+
+  <template class="FlowtimePreferencesWindow" parent="AdwPreferencesWindow">
+    <property name="default-height">400</property>
+    <property name="default-width">360</property>
+
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title">Preferences</property>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">Break Time</property>
+
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Time until break</property>
+                <property name="description">The time you have to work until a break is allowed. If you start working, it won't be updated until the next working session begins.</property>
+                <child>
+                  <object class="GtkSpinButton" id="time_spin_button">
+                    <property name="valign">center</property>
+                    <property name="adjustment">
+                      <object class="GtkAdjustment">
+                        <property name="lower">5</property>
+                        <property name="upper">40</property>
+                        <property name="step-increment">1</property>
+                        <property name="page-increment">5</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+          </object>
+        </child>
+
+      </object>
+    </child>
+
+  </template>
+
+</interface>

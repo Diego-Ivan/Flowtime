@@ -2,6 +2,8 @@
 <gresources>
   <gresource prefix="/io/github/diegoivanme/flowtime">
     <file>style.css</file>
+
     <file>window.ui</file>
+    <file>preferenceswindow.ui</file>
   </gresource>
 </gresources>
