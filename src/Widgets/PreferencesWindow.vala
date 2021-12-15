@@ -10,7 +10,8 @@ namespace Flowtime {
     public class PreferencesWindow : Adw.PreferencesWindow {
         [GtkChild] unowned Gtk.SpinButton time_spin_button;
 
-        public PreferencesWindow () {
+        public PreferencesWindow (Adw.ApplicationWindow parent) {
+            set_transient_for (parent);
             show ();
         }
 
