@@ -11,17 +11,19 @@ namespace Flowtime {
         public bool already_started { get; private set; }
         public bool breakable { get; private set; }
 
+        public int breakable_time { get; private set; }
         public uint seconds { get; private set; }
         public uint minutes { get; private set; }
 
         public void start () {
+            breakable_time = settings.get_int ("time-until-break");
             running = true;
             already_started = true;
             Timeout.add_seconds (1, update_time);
         }
 
         private bool update_time () {
-            if (minutes >= 15) {
+            if (minutes >= breakable_time) {
                 breakable = true;
             }
 
