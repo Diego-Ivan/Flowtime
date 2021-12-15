@@ -10,7 +10,6 @@ namespace Flowtime {
         public uint minutes { get; set; }
         public uint seconds { get; set; }
         public bool running { get; set; }
-        public bool keep_running { get; set; }
         public bool already_started { get; private set; }
 
         /* Signals */
@@ -23,7 +22,6 @@ namespace Flowtime {
             }
 
             running = true;
-            keep_running = true;
             already_started = true;
             Timeout.add_seconds (1, update_time);
         }
@@ -41,7 +39,6 @@ namespace Flowtime {
             }
 
             if (seconds == 0 && minutes == 0) {
-                keep_running = false;
                 completed ();
                 return false;
             }
@@ -52,7 +49,7 @@ namespace Flowtime {
             }
             seconds--;
 
-            return keep_running;
+            return true;
         }
 
         public string format_time () {
