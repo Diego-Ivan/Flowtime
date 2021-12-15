@@ -15,17 +15,17 @@
 
     <child>
       <object class="AdwPreferencesPage">
-        <property name="title">Preferences</property>
+        <property name="title" translatable="yes">_Preferences</property>
 
         <child>
           <object class="AdwPreferencesGroup">
             <property name="title" translatable="yes">Break Time</property>
-            <property name="description">Changes will be applied in the next work session</property>
+            <property name="description" translatable="yes">Changes will be applied in the next work session</property>
 
             <child>
               <object class="AdwActionRow">
                 <property name="title" translatable="yes">Time until break</property>
-                <property name="subtitle">The time you have to work until a break is allowed.</property>
+                <property name="subtitle" translatable="yes">The time you have to work until a break is allowed.</property>
                 <property name="icon-name">timer-sand-symbolic</property>
                 <child>
                   <object class="GtkSpinButton" id="time_spin_button">
