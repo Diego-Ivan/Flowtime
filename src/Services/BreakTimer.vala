@@ -48,6 +48,7 @@ namespace Flowtime {
                 minutes--;
             }
             seconds--;
+            updated ();
 
             return true;
         }
