@@ -3,6 +3,7 @@ flowtime_sources = [
   'Application.vala',
   'Widgets/Window.vala',
   'Widgets/QuoteLabel.vala',
+  'Widgets/PreferencesWindow.vala',
   'Services/WorkTimer.vala',
   'Services/BreakTimer.vala',
   'Interfaces/Timer.vala',
