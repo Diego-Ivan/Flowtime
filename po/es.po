@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-14 21:46-0600\n"
-"PO-Revision-Date: 2021-12-12 20:56-0600\n"
+"POT-Creation-Date: 2021-12-15 13:32-0600\n"
+"PO-Revision-Date: 2021-12-15 13:30-0600\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish - Mexico <diegoivan.mae@gmail.com>\n"
 "Language: es_MX\n"
@@ -46,6 +46,26 @@ msgstr ""
 #: src/ui/window.ui:8
 msgid "_About Flowtime"
 msgstr "_Acerca de Flowtime"
+
+#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:18
+msgid "_Preferences"
+msgstr "_Preferencias"
+
+#: src/ui/preferenceswindow.ui:22
+msgid "Break Time"
+msgstr "Hora del descanso"
+
+#: src/ui/preferenceswindow.ui:23
+msgid "Changes will be applied in the next work session"
+msgstr "Los cambios se aplicarán en la siguiente sesión de trabajo"
+
+#: src/ui/preferenceswindow.ui:27
+msgid "Time until break"
+msgstr "Tiempo para el descanso"
+
+#: src/ui/preferenceswindow.ui:28
+msgid "The time you have to work until a break is allowed."
+msgstr "El tiempo que tiene que trabajar para que un descanso esté permitido"
 
 #: src/Widgets/QuoteLabel.vala:11
 msgid "Good Job!"
@@ -100,6 +120,10 @@ msgid "The possibilities are never ending"
 msgstr "Las posibilidades son infinitas"
 
 #. Translators: Write your Name<email> here :p
-#: src/Application.vala:74
+#: src/Application.vala:84
 msgid "translator-credits"
 msgstr "Diego Iván<diegoivan.mae@gmail.com>"
+
+#, fuzzy
+#~ msgid "Preferences"
+#~ msgstr "_Preferencias"
