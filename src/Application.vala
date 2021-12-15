@@ -19,6 +19,7 @@
  */
 
 namespace Flowtime {
+    public GLib.Settings settings;
     public class Application : Adw.Application {
         public Window main_window;
 
@@ -32,6 +33,8 @@ namespace Flowtime {
                 application_id: "io.github.diegoivanme.flowtime",
                 flags: GLib.ApplicationFlags.FLAGS_NONE
             );
+            settings = new GLib.Settings (Config.APP_ID);
+
             add_action_entries (APP_ENTRIES, this);
             set_accels_for_action ("app.quit", { "<Ctrl>Q" });
 
@@ -45,6 +48,13 @@ namespace Flowtime {
                 main_window = new Window (this);
             }
             main_window.present ();
+            settings.delay ();
+        }
+
+        protected override void shutdown () {
+            base.shutdown ();
+            settings.apply ();
+            quit ();
         }
 
         private void action_close () {
