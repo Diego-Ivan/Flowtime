@@ -15,7 +15,7 @@ flowtime_deps = [
 ]
 
 conf = configuration_data()
-conf.set_quoted('APP_ID', 'io.github.diegoivanme.flowtime')
+conf.set_quoted('APP_ID', app_id)
 conf.set_quoted('G_LOG_DOMAIN', 'Flowtime')
 conf.set_quoted('VERSION', meson.project_version())
 conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
@@ -32,7 +32,7 @@ add_project_arguments(
 gnome = import('gnome')
 
 flowtime_resources_file = files('ui/flowtime.gresource.xml')
-flowtime_sources += gnome.compile_resources('io.github.diegoivanme.flowtime',
+flowtime_sources += gnome.compile_resources(app_id,
   flowtime_resources_file,
   c_name: 'flowtime',
   source_dir: 'ui',

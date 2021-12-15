@@ -5,6 +5,7 @@ project('flowtime', ['c', 'vala'],
                    ],
 )
 
+app_id = 'io.github.diegoivanme.flowtime'
 i18n = import('i18n')
 
 
