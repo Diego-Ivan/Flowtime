@@ -13,6 +13,18 @@
 	  </p>
 	</description>
 
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/Diego-Ivan/Flowtime/tree/main/data/screenshots/01.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/Diego-Ivan/Flowtime/tree/main/data/screenshots/02.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/Diego-Ivan/Flowtime/tree/main/data/screenshots/03.png</image>
+    </screenshot>
+  </screenshots>
+
   <requires>
     <display_length compare="ge">360</display_length>
   </requires>
@@ -47,5 +59,8 @@
     <content_attribute id="money-purchasing">none</content_attribute>
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
+
+  <url type="homepage">https://github.com/Diego-Ivan/Flowtime</url>
+  <url type="bugtracker">https://github.com/Diego-Ivan/Flowtime/issues</url>
 
 </component>
