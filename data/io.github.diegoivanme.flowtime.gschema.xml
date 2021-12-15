@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="flowtime">
+<schemalist>
 	<schema id="io.github.diegoivanme.flowtime" path="/io/github/diegoivanme/flowtime/">
 	  <key name="time-until-break" type="i">
       <default>15</default>
