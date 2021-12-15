@@ -12,7 +12,7 @@ namespace Flowtime {
         public abstract bool keep_running { get; set; }
 
         /* Signals */
-        public signal void updated (string time);
+        public signal void updated ();
 
         /* Abstract methods */
         public abstract bool update_time ();

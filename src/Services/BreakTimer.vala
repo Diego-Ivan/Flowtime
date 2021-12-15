@@ -32,7 +32,7 @@ namespace Flowtime {
             stop ();
             seconds = 0;
             minutes = 0;
-            updated (format_time ());
+            updated ();
         }
 
         private bool update_time () {

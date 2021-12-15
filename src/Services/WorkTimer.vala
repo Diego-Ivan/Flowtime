@@ -15,7 +15,6 @@ namespace Flowtime {
         public uint seconds { get; private set; }
         public uint minutes { get; private set; }
 
-        /* Signals */
         public void start () {
             running = true;
             keep_running = true;
@@ -33,7 +32,7 @@ namespace Flowtime {
             }
 
             seconds++;
-            updated (format_time ());
+            updated ();
 
             return keep_running;
         }
@@ -42,10 +41,10 @@ namespace Flowtime {
             stop ();
             seconds = 0;
             minutes = 0;
-            updated (format_time ());
+            updated ();
         }
 
-        private string format_time () {
+        public string format_time () {
             string seconds_format, minutes_format;
             if (seconds == 60) {
                 minutes++;

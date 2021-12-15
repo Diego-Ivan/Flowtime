@@ -23,12 +23,12 @@ namespace Flowtime {
         public Window (Gtk.Application app) {
             Object (application: app);
 
-            work_timer.updated.connect ((time) => {
-                work_time_label.label = time;
+            work_timer.updated.connect (() => {
+                work_time_label.label = work_timer.format_time ();
             });
 
             break_timer.updated.connect ((time) => {
-                break_time_label.label = time;
+                break_time_label.label = break_timer.format_time ();
             });
         }
 
