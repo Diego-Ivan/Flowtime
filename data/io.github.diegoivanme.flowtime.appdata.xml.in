@@ -25,6 +25,15 @@
     </screenshot>
   </screenshots>
 
+  <releases>
+    <release version="1.0.0" date="2021-12-15">
+      <description>
+        <p>Version 1.0.0</p>
+        <p>The first release of Flowtime! Work for all the time you feel concentrated, take breaks when it's necessary. Spanish Translation available!</p>
+      </description>
+    </release>
+  </releases>
+
   <requires>
     <display_length compare="ge">360</display_length>
   </requires>
@@ -60,6 +69,7 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
 
+  <developer_name>Diego Iván</developer_name>
   <url type="homepage">https://github.com/Diego-Ivan/Flowtime</url>
   <url type="bugtracker">https://github.com/Diego-Ivan/Flowtime/issues</url>
 
