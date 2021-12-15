@@ -20,6 +20,10 @@ namespace Flowtime {
         public WorkTimer work_timer { get; set; }
         public BreakTimer break_timer { get; set; }
 
+        public const GLib.ActionEntry[] WIN_ENTRIES = {
+            { "preferences", open_settings }
+        };
+
         public Window (Gtk.Application app) {
             Object (application: app);
 
@@ -33,8 +37,16 @@ namespace Flowtime {
         }
 
         construct {
+            var action_group = new GLib.SimpleActionGroup ();
+            action_group.add_action_entries (WIN_ENTRIES, this);
+            insert_action_group ("win", action_group);
+
             work_timer = new WorkTimer ();
             break_timer = new BreakTimer ();
+        }
+
+        private void open_settings () {
+            new PreferencesWindow (this);
         }
 
         [GtkCallback]
