@@ -19,7 +19,6 @@ namespace Flowtime {
 
         public WorkTimer work_timer { get; set; }
         public BreakTimer break_timer { get; set; }
-        public Gst.Player player { get; private set; }
 
         public const GLib.ActionEntry[] WIN_ENTRIES = {
             { "preferences", open_settings }
@@ -53,9 +52,6 @@ namespace Flowtime {
 
             work_timer = new WorkTimer ();
             break_timer = new BreakTimer ();
-
-            player = new Gst.Player (null, null);
-            player.uri = "resource:///io/github/diegoivanme/flowtime/sounds/tone.ogg";
         }
 
         private void open_settings () {

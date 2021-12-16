@@ -20,8 +20,10 @@
 
 namespace Flowtime {
     public GLib.Settings settings;
+    public Gst.Player player;
     public class Application : Adw.Application {
         public Window main_window;
+        public string sound_uri_prefix;
 
         private const ActionEntry[] APP_ENTRIES = {
             { "quit", action_close },
@@ -34,6 +36,8 @@ namespace Flowtime {
                 flags: GLib.ApplicationFlags.FLAGS_NONE
             );
             settings = new GLib.Settings (Config.APP_ID);
+            resource_base_path = "/io/github/diegoivanme/flowtime";
+            sound_uri_prefix = "resource://" + resource_base_path + "/";
 
             add_action_entries (APP_ENTRIES, this);
             set_accels_for_action ("app.quit", { "<Ctrl>Q" });
@@ -49,10 +53,18 @@ namespace Flowtime {
             }
             main_window.present ();
             settings.delay ();
+
+            player = new Gst.Player (null, null);
+            var sound = settings.get_string ("tone");
+            player.uri = sound_uri_prefix + sound;
         }
 
         protected override void shutdown () {
             base.shutdown ();
+
+            var tone = player.uri.replace (sound_uri_prefix, "");
+            settings.set_string ("tone", tone);
+
             settings.apply ();
             quit ();
         }

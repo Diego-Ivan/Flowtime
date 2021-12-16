@@ -9,6 +9,9 @@
     <file preprocess="xml-stripblanks">icons/timer-sand-symbolic.svg</file>
 
 
-    <file>sounds/tone.ogg</file>
+    <file alias="tone.ogg">sounds/tone.ogg</file>
+    <file alias="baum.ogg">sounds/baum.ogg</file>
+    <file alias="bleep.ogg">sounds/bleep.ogg</file>
+    <file alias="beep.ogg">sounds/beep.ogg</file>
   </gresource>
 </gresources>

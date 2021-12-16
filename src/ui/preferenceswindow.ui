@@ -39,6 +39,13 @@
           </object>
         </child>
 
+        <child>
+          <object class="AdwPreferencesGroup" id="sounds_group">
+            <property name="title" translatable="yes">Sounds</property>
+            <property name="description" translatable="yes">Alarm sounds that mark break time</property>
+          </object>
+        </child>
+
       </object>
     </child>
 

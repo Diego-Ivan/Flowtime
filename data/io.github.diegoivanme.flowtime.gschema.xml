@@ -6,5 +6,17 @@
 	    <summary>Time for break to be allowed</summary>
 	    <description>The 'next-stage-button' will be locked until this amount of time has been used</description>
 	  </key>
+
+	  <key name="tone" type="s">
+	    <choices>
+	      <choice value="baum.ogg"/>
+	      <choice value="beep.ogg"/>
+	      <choice value="bleep.ogg"/>
+	      <choice value="tone.ogg"/>
+	    </choices>
+	    <default>"tone.ogg"</default>
+	    <summary>Alarm Tone</summary>
+	    <description>Use a tone for the break time alarm</description>
+	  </key>
 	</schema>
 </schemalist>
