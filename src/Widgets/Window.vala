@@ -52,8 +52,6 @@ namespace Flowtime {
 
             work_timer = new WorkTimer ();
             break_timer = new BreakTimer ();
-
-            player.uri = "resource:///io/github/diegoivanme/flowtime/sounds/tone.ogg";
         }
 
         private void open_settings () {
