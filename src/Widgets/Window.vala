@@ -34,6 +34,15 @@ namespace Flowtime {
             break_timer.updated.connect ((time) => {
                 break_time_label.label = break_timer.format_time ();
             });
+
+            break_timer.completed.connect (() => {
+                var notification = new GLib.Notification (_("Break is over!"));
+                message ("Break is done");
+
+                notification.set_body (_("Let's get back to work"));
+                notification.set_priority (NORMAL);
+                app.send_notification ("Break-Timer-Done", notification);
+            });
         }
 
         construct {
