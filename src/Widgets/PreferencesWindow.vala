@@ -39,9 +39,18 @@ namespace Flowtime {
             var first_row = new SoundRow (sounds[0]);
             sounds_group.add (first_row);
 
+            if (player.uri == sounds[0].path) {
+                first_row.check_button.active = true;
+            }
+
             for (int i = 1; i < sounds.length; i++) {
                 var row = new SoundRow (sounds[i]);
                 row.check_button.group = first_row.check_button;
+
+                if (player.uri == sounds[i].path) {
+                    row.check_button.active = true;
+                }
+
                 sounds_group.add (row);
             }
         }
