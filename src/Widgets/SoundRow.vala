@@ -26,13 +26,9 @@ namespace Flowtime {
         construct {
             check_button = new Gtk.CheckButton ();
             add_prefix (check_button);
+            activatable_widget = check_button;
 
-            play_button = new Gtk.Button ();
-            play_button.icon_name = "media-playback-start-symbolic";
-
-            add_suffix (play_button);
-
-            play_button.clicked.connect (play_sound);
+            activated.connect (play_sound);
         }
 
         private void play_sound () {
