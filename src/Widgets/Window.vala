@@ -37,7 +37,6 @@ namespace Flowtime {
 
             break_timer.completed.connect (() => {
                 var notification = new GLib.Notification (_("Break is over!"));
-                message ("Break is done");
 
                 notification.set_body (_("Let's get back to work"));
                 notification.set_priority (NORMAL);
