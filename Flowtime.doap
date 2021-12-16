@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">Plano</name>
+  <shortdesc xml:lang="en">
+      Get things done, keep concentrated
+  </shortdesc>
+  <description xml:lang="en">
+      The Pomodoro technique is efficient for tasks you find boring, but having to take a break when you are 100% concentrated in something you like might be annoying. That's why the Flowtime technique exists: take appropiate breaks without loosing you **flow**.
+  </description>
+  <homepage rdf:resource="https://github.com/Diego-Ivan/Flowtime" />
+  <bug-database rdf:resource="https://github.com/Diego-Ivan/Flowtime/issues" />
+
+  <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
+  <programming-language>Vala</programming-language>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Diego Iván</foaf:name>
+      <foaf:mbox rdf:resource="mailto:diegoivan.mae@gmail.com" />
+    </foaf:Person>
+  </maintainer>
+</Project>
+
