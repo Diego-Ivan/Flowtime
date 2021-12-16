@@ -20,6 +20,7 @@
 
 namespace Flowtime {
     public GLib.Settings settings;
+    public Gst.Player player;
     public class Application : Adw.Application {
         public Window main_window;
 
@@ -44,6 +45,7 @@ namespace Flowtime {
         }
 
         protected override void activate () {
+            player = new Gst.Player (null, null);
             if (main_window == null) {
                 main_window = new Window (this);
             }

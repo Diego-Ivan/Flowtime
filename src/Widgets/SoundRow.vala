@@ -15,12 +15,10 @@ namespace Flowtime {
         public Sound sound { get; construct; }
         public Gtk.CheckButton check_button { get; private set; }
         public Gtk.Button play_button { get; private set; }
-        public Gst.Player player { get; set; }
 
-        public SoundRow (Sound sound_, Gst.Player player_) {
+        public SoundRow (Sound sound_) {
             Object (
-                sound: sound_,
-                player: player_
+                sound: sound_
             );
             title = sound.title;
         }
@@ -31,6 +29,7 @@ namespace Flowtime {
 
             play_button = new Gtk.Button ();
             play_button.icon_name = "media-playback-start-symbolic";
+
             add_suffix (play_button);
 
             play_button.clicked.connect (play_sound);
