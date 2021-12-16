@@ -10,5 +10,8 @@
 
 
     <file>sounds/tone.ogg</file>
+    <file>sounds/baum.ogg</file>
+    <file>sounds/bleep.ogg</file>
+    <file>sounds/beep.ogg</file>
   </gresource>
 </gresources>
