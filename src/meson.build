@@ -4,6 +4,7 @@ flowtime_sources = [
   'Widgets/Window.vala',
   'Widgets/QuoteLabel.vala',
   'Widgets/PreferencesWindow.vala',
+  'Widgets/SoundRow.vala',
   'Services/WorkTimer.vala',
   'Services/BreakTimer.vala',
   'Interfaces/Timer.vala',
