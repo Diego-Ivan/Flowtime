@@ -68,6 +68,11 @@ namespace Flowtime {
                 "Diego Iván<diegoivan.mae@gmail.com>",
                 null
             };
+
+            const string? ARTISTS[] = {
+                "SoundBible https://soundbible.com/1815-A-Tone.html",
+                null
+            };
             string program_name = "Flowtime";
 
             Gtk.show_about_dialog (
@@ -77,7 +82,7 @@ namespace Flowtime {
                 "version", Config.VERSION,
                 "copyright", COPYRIGHT,
                 "authors", AUTHORS,
-                "artists", null,
+                "artists", ARTISTS,
                 "license-type", Gtk.License.GPL_3_0,
                 "wrap-license", true,
                 // Translators: Write your Name<email> here :p
