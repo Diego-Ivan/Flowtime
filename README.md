@@ -1,8 +1,22 @@
-<img align="left" style="vertical-align: middle;" width="160" height="160" src="data/icons/hicolor/scalable/apps/io.github.diegoivanme.flowtime.svg">
+<div align="center">
+	<img src="data/icons/hicolor/scalable/apps/io.github.diegoivanme.flowtime.svg" width="160" height="160"></img>
 
 # Flowtime
 
-Get what motivates you done, without loosing concentration.
+**Get what motivates you done, without loosing concentration**
+
+<a href="https://flathub.org/apps/details/io.github.diegoivanme.flowtime">
+    <img width="200" src="https://flathub.org/assets/badges/flathub-badge-en.png" alt="Download on Flathub">
+</a>
+
+</div>
+
+## Features:
+
+* Assistant for the Flowtime working technique
+* Assisted time calculations for breaks
+* Customizable tones for the end of the break
+* Notification that alerts you when your break is done
 
 ## Why?
 
