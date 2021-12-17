@@ -23,6 +23,18 @@
   </screenshots>
 
   <releases>
+    <release version="1.1.0" date="2021-12-16">
+      <description>
+        <p>Version 1.1.0</p>
+        <ul>
+          <li>New feature! The end of the break is now marked with both a notification and tone</li>
+          <li>Customizable tones!</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+  <releases>
     <release version="1.0.0" date="2021-12-15">
       <description>
         <p>Version 1.0.0</p>

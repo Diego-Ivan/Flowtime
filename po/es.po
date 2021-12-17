@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-16 22:32-0600\n"
+"POT-Creation-Date: 2021-12-16 22:37-0600\n"
 "PO-Revision-Date: 2021-12-15 13:30-0600\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish - Mexico <diegoivan.mae@gmail.com>\n"
@@ -44,18 +44,35 @@ msgstr ""
 "apropiadados, sin perder su concentración."
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:28
+#, fuzzy
+msgid "Version 1.1.0"
+msgstr "Versión 1.1.0"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:30
+msgid ""
+"New feature! The end of the break is now marked with both a notification and "
+"tone"
+msgstr "Nueva caracterítica! El fin del descanso ahora se marca con una "
+"notificación y un tono"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:31
+msgid "Customizable tones!"
+msgstr "Tonos personalizables!"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
 msgid "Version 1.0.0"
 msgstr "Versión 1.0.0"
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:29
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
 msgid ""
 "The first release of Flowtime! Work for all the time you feel concentrated, "
 "take breaks when it's necessary. Spanish Translation available!"
-msgstr "El primer lanzamiento de Flowtime! Trabaje por todo el tiempo en que "
-"se sienta concentrado, tome descansos cuando sea necesario. Traducción al "
+msgstr ""
+"El primer lanzamiento de Flowtime! Trabaje por todo el tiempo en que se "
+"sienta concentrado, tome descansos cuando sea necesario. Traducción al "
 "Español disponible!"
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:69
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:81
 msgid "Diego Iván"
 msgstr ""
 
