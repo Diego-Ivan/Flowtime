@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-15 13:32-0600\n"
+"POT-Creation-Date: 2021-12-16 22:32-0600\n"
 "PO-Revision-Date: 2021-12-15 13:30-0600\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish - Mexico <diegoivan.mae@gmail.com>\n"
@@ -43,6 +43,22 @@ msgstr ""
 "puede ser molesto. Es por eso que el método Flowtime existe: tome descansos "
 "apropiadados, sin perder su concentración."
 
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:28
+msgid "Version 1.0.0"
+msgstr "Versión 1.0.0"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:29
+msgid ""
+"The first release of Flowtime! Work for all the time you feel concentrated, "
+"take breaks when it's necessary. Spanish Translation available!"
+msgstr "El primer lanzamiento de Flowtime! Trabaje por todo el tiempo en que "
+"se sienta concentrado, tome descansos cuando sea necesario. Traducción al "
+"Español disponible!"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:69
+msgid "Diego Iván"
+msgstr ""
+
 #: src/ui/window.ui:8
 msgid "_About Flowtime"
 msgstr "_Acerca de Flowtime"
@@ -66,6 +82,14 @@ msgstr "Tiempo para el descanso"
 #: src/ui/preferenceswindow.ui:28
 msgid "The time you have to work until a break is allowed."
 msgstr "El tiempo que tiene que trabajar para que un descanso esté permitido"
+
+#: src/ui/preferenceswindow.ui:44
+msgid "Sounds"
+msgstr "Sonidos"
+
+#: src/ui/preferenceswindow.ui:45
+msgid "Alarm sounds that mark break time"
+msgstr "Sonidos de alarma que marcan el fin del descanso"
 
 #: src/Widgets/QuoteLabel.vala:11
 msgid "Good Job!"
@@ -120,7 +144,7 @@ msgid "The possibilities are never ending"
 msgstr "Las posibilidades son infinitas"
 
 #. Translators: Write your Name<email> here :p
-#: src/Application.vala:84
+#: src/Application.vala:102
 msgid "translator-credits"
 msgstr "Diego Iván<diegoivan.mae@gmail.com>"
 
