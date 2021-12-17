@@ -3,7 +3,7 @@
 
 # Flowtime
 
-**Get what motivates you done, without loosing concentration**
+**Get what motivates you done, without losing concentration**
 
 <a href="https://flathub.org/apps/details/io.github.diegoivanme.flowtime">
     <img width="200" src="https://flathub.org/assets/badges/flathub-badge-en.png" alt="Download on Flathub">
