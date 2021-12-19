@@ -14,8 +14,6 @@ namespace Flowtime {
         [GtkChild] unowned Gtk.Label break_time_label;
         [GtkChild] unowned Gtk.Button pause_work_button;
         [GtkChild] unowned Gtk.Button pause_break_button;
-        [GtkChild] unowned Gtk.Button stop_working_button;
-        [GtkChild] unowned Gtk.Button stop_break_button;
 
         public WorkTimer work_timer { get; set; }
         public BreakTimer break_timer { get; set; }
@@ -60,7 +58,6 @@ namespace Flowtime {
 
         [GtkCallback]
         private void pause_work_cb () {
-            stop_working_button.sensitive = work_timer.breakable;
             if (work_timer.running) {
                 work_timer.stop ();
                 pause_work_button.icon_name = "media-playback-start-symbolic";
@@ -83,7 +80,6 @@ namespace Flowtime {
                 break_timer.stop ();
 
                 pause_break_button.icon_name = "media-playback-start-symbolic";
-                stop_break_button.sensitive = true;
                 return;
             }
 
@@ -97,7 +93,6 @@ namespace Flowtime {
                 work_timer.reset_time ();
                 pause_break_button.icon_name = "media-playback-pause-symbolic";
             }
-            stop_break_button.sensitive = false;
         }
 
         [GtkCallback]

@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
 	<schema id="io.github.diegoivanme.flowtime" path="/io/github/diegoivanme/flowtime/">
-	  <key name="time-until-break" type="i">
-      <default>15</default>
-	    <summary>Time for break to be allowed</summary>
-	    <description>The 'next-stage-button' will be locked until this amount of time has been used</description>
-	  </key>
-
 	  <key name="tone" type="s">
 	    <choices>
 	      <choice value="baum.ogg"/>
