@@ -23,28 +23,18 @@
   </screenshots>
 
   <releases>
-    <release version="1.1.0" date="2021-12-16">
+    <release version="1.2.0" date="2021-12-22">
       <description>
-        <p>Version 1.1.0</p>
+        <p>Version 1.2.0</p>
         <ul>
-          <li>New feature! The end of the break is now marked with both a notification and tone</li>
-          <li>Customizable tones!</li>
+          <li>The "Time until break" feature has been removed.</li>
         </ul>
       </description>
     </release>
   </releases>
 
-  <releases>
-    <release version="1.0.0" date="2021-12-15">
-      <description>
-        <p>Version 1.0.0</p>
-        <p>The first release of Flowtime! Work for all the time you feel concentrated, take breaks when it's necessary. Spanish Translation available!</p>
-      </description>
-    </release>
-  </releases>
-
   <requires>
-    <display_length compare="ge">360</display_length>
+    <display_length compare="ge">390</display_length>
   </requires>
 
   <recommends>
