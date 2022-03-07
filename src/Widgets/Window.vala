@@ -18,7 +18,7 @@ namespace Flowtime {
         public WorkTimer work_timer { get; set; }
         public BreakTimer break_timer { get; set; }
 
-        public const GLib.ActionEntry[] WIN_ENTRIES = {
+        private const GLib.ActionEntry[] WIN_ENTRIES = {
             { "preferences", open_settings }
         };
 
@@ -107,7 +107,6 @@ namespace Flowtime {
             stages.set_visible_child_full ("break_stage", CROSSFADE);
             headerbar.set_title_widget (new QuoteLabel ());
 
-            break_timer.minutes = work_timer.minutes / 5;
             break_timer.seconds = work_timer.seconds / 5;
             break_time_label.label = break_timer.format_time ();
         }
