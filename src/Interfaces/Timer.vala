@@ -8,8 +8,8 @@
 namespace Flowtime {
     public abstract class Timer : GLib.Object {
         /* Properties */
-        public bool running { get; protected set; }
-        public bool already_started { get; protected set; }
+        public bool running { get; internal set; }
+        public bool already_started { get; internal set; }
         private uint _seconds;
         public uint seconds {
             get {
@@ -45,13 +45,14 @@ namespace Flowtime {
         /* Methods */
         public virtual string format_time () {
             uint minutes = seconds / 60;
+            uint s = seconds % 60;
             string seconds_format, minutes_format;
 
-            if (seconds < 10) {
-                seconds_format = "0%u".printf (seconds);
+            if (s < 10) {
+                seconds_format = "0%u".printf (s);
             }
             else {
-                seconds_format = "%u".printf (seconds);
+                seconds_format = "%u".printf (s);
             }
 
             if (minutes < 10) {
@@ -68,6 +69,7 @@ namespace Flowtime {
         public void reset_time () {
             stop ();
             seconds = 0;
+            already_started = false;
             updated ();
         }
     }

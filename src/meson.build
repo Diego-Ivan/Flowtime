@@ -42,6 +42,8 @@ flowtime_sources += gnome.compile_resources(app_id,
   source_dir: 'ui',
 )
 
+install_data('ui/sounds/baum.ogg', install_dir: get_option('datadir'))
+
 executable('flowtime', flowtime_sources,
   vala_args: [
     meson.project_source_root() + '/src/vapi/config.vapi',

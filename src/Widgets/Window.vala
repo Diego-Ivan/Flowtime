@@ -40,6 +40,7 @@ namespace Flowtime {
                 notification.set_priority (NORMAL);
                 app.send_notification ("Break-Timer-Done", notification);
                 player.play ();
+                work_timer.reset_time ();
             });
         }
 
@@ -99,6 +100,8 @@ namespace Flowtime {
         private void finish_break_cb () {
             stages.set_visible_child_full ("work_stage", CROSSFADE);
             headerbar.set_title_widget (null);
+
+            pause_break_button.icon_name = "media-playback-start-symbolic";
             break_timer.reset_time ();
         }
 
@@ -108,7 +111,9 @@ namespace Flowtime {
             headerbar.set_title_widget (new QuoteLabel ());
 
             break_timer.seconds = work_timer.seconds / 5;
-            break_time_label.label = break_timer.format_time ();
+
+            pause_work_button.icon_name = "media-playback-start-symbolic";
+            work_timer.reset_time ();
         }
     }
 }
