@@ -1,5 +1,5 @@
 project('flowtime', ['c', 'vala'],
-          version: '1.2.0',
+          version: '1.2.1',
     meson_version: '>= 0.56.0',
   default_options: [ 'warning_level=2',
                    ],

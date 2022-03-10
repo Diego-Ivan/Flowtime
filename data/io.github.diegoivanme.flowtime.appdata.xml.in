@@ -23,11 +23,12 @@
   </screenshots>
 
   <releases>
-    <release version="1.2.0" date="2021-12-22">
+    <release version="1.2.1" date="2022-03-09">
       <description>
-        <p>Version 1.2.0</p>
+        <p>Version 1.2.1</p>
         <ul>
-          <li>The "Time until break" feature has been removed.</li>
+          <li>Bug fixing: Timer will not start sometimes</li>
+          <li>Translations: New Italian translation by Albano Battistella</li>
         </ul>
       </description>
     </release>
