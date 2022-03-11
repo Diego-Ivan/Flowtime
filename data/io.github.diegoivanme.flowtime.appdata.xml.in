@@ -28,7 +28,8 @@
         <p>Version 1.2.1</p>
         <ul>
           <li>Bug fixing: Timer will not start sometimes</li>
-          <li>Translations: New Italian translation by Albano Battistella</li>
+          <li>New Italian translation by Albano Battistella</li>
+          <li>New German translation by tronta</li>
         </ul>
       </description>
     </release>

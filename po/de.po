@@ -162,4 +162,4 @@ msgstr "Die Möglichkeiten sind endlos"
 #. Translators: Write your Name<email> here :p
 #: src/Application.vala:102
 msgid "translator-credits"
-msgstr "Übersetzer-Credits"
+msgstr "tronta"
