@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-16 22:37-0600\n"
-"PO-Revision-Date: 2022-03-08 21:35+0100\n"
+"PO-Revision-Date: 2022-03-11 18:35+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: italian <LL@li.org>\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.desktop.in:3
 msgid "flowtime"
-msgstr ""
+msgstr "flowtime"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
 msgid "Flowtime"
@@ -74,7 +74,7 @@ msgstr "Diego Iván"
 
 #: src/ui/window.ui:8
 msgid "_About Flowtime"
-msgstr "_Informazioni Flowtime"
+msgstr "_Informazioni su Flowtime"
 
 #: src/ui/window.ui:12 src/ui/preferenceswindow.ui:18
 msgid "_Preferences"
