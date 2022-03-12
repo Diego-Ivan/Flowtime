@@ -55,31 +55,40 @@
                     <property name="halign">center</property>
                     <property name="valign">center</property>
                     <property name="vexpand">true</property>
-                    <property name="spacing">5</property>
+                    <property name="spacing">30</property>
 
                     <child>
-                      <object class="GtkLabel" id="work_time_label">
-                        <property name="label">00:00</property>
-                        <style>
-                          <class name="time-label"/>
-                        </style>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Work Stage</property>
+                            <attributes>
+                              <attribute name="weight" value="semibold"/>
+                            </attributes>
+                            <style>
+                              <class name="accent"/>
+                            </style>
+                          </object>
+                        </child>
+
+                        <child>
+                          <object class="GtkLabel" id="work_time_label">
+                            <property name="label">00:00</property>
+                            <style>
+                              <class name="time-label"/>
+                            </style>
+                          </object>
+                        </child>
                       </object>
                     </child>
 
                     <child>
                       <object class="GtkBox">
                         <property name="halign">center</property>
-                        <property name="spacing">8</property>
+                        <property name="spacing">12</property>
                         <child>
-                          <object class="GtkButton" id="pause_work_button">
-                            <property name="icon-name">media-playback-start-symbolic</property>
-                            <property name="halign">center</property>
-                            <style>
-                              <class name="suggested-action"/>
-                              <class name="circular"/>
-                              <class name="large-button"/>
-                            </style>
-                            <signal name="clicked" handler="pause_work_cb" swapped="no"/>
+                          <object class="FlowtimePauseButton" id="pause_work_button">
                           </object>
                         </child>
 
@@ -111,30 +120,39 @@
                     <property name="orientation">vertical</property>
                     <property name="vexpand">true</property>
                     <property name="valign">center</property>
-                    <property name="spacing">5</property>
+                    <property name="spacing">30</property>
                     <child>
-                      <object class="GtkLabel" id="break_time_label">
-                        <property name="label" translatable="true">05:00</property>
-                        <style>
-                          <class name="time-label"/>
-                        </style>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Break Stage</property>
+                            <attributes>
+                              <attribute name="weight" value="semibold"/>
+                            </attributes>
+                            <style>
+                              <class name="accent"/>
+                            </style>
+                          </object>
+                        </child>
+
+                        <child>
+                          <object class="GtkLabel" id="break_time_label">
+                            <property name="label">00:00</property>
+                            <style>
+                              <class name="time-label"/>
+                            </style>
+                          </object>
+                        </child>
                       </object>
                     </child>
 
                     <child>
                       <object class="GtkBox">
                         <property name="halign">center</property>
-                        <property name="spacing">8</property>
+                        <property name="spacing">12</property>
                         <child>
-                          <object class="GtkButton" id="pause_break_button">
-                            <property name="icon-name">media-playback-start-symbolic</property>
-                            <property name="halign">center</property>
-                            <signal name="clicked" handler="pause_break_cb" swapped="no"/>
-                            <style>
-                              <class name="suggested-action"/>
-                              <class name="circular"/>
-                              <class name="large-button"/>
-                            </style>
+                          <object class="FlowtimePauseButton" id="pause_break_button">
                           </object>
                         </child>
 

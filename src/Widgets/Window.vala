@@ -12,8 +12,8 @@ namespace Flowtime {
         [GtkChild] unowned Adw.HeaderBar headerbar;
         [GtkChild] unowned Gtk.Label work_time_label;
         [GtkChild] unowned Gtk.Label break_time_label;
-        [GtkChild] unowned Gtk.Button pause_work_button;
-        [GtkChild] unowned Gtk.Button pause_break_button;
+        [GtkChild] unowned PauseButton pause_work_button;
+        [GtkChild] unowned PauseButton pause_break_button;
 
         public WorkTimer work_timer { get; set; }
         public BreakTimer break_timer { get; set; }
@@ -51,49 +51,13 @@ namespace Flowtime {
 
             work_timer = new WorkTimer ();
             break_timer = new BreakTimer ();
+
+            pause_work_button.timer = work_timer;
+            pause_break_button.timer = break_timer;
         }
 
         private void open_settings () {
             new PreferencesWindow (this);
-        }
-
-        [GtkCallback]
-        private void pause_work_cb () {
-            if (work_timer.running) {
-                work_timer.stop ();
-                pause_work_button.icon_name = "media-playback-start-symbolic";
-                return;
-            }
-
-            if (work_timer.already_started) {
-                work_timer.resume ();
-                pause_work_button.icon_name = "media-playback-pause-symbolic";
-            }
-            else {
-                work_timer.start ();
-                pause_work_button.icon_name = "media-playback-pause-symbolic";
-            }
-        }
-
-        [GtkCallback]
-        private void pause_break_cb () {
-            if (break_timer.running) {
-                break_timer.stop ();
-
-                pause_break_button.icon_name = "media-playback-start-symbolic";
-                return;
-            }
-
-            if (break_timer.already_started) {
-                break_timer.resume ();
-                pause_break_button.icon_name = "media-playback-pause-symbolic";
-            }
-
-            else {
-                break_timer.start ();
-                work_timer.reset_time ();
-                pause_break_button.icon_name = "media-playback-pause-symbolic";
-            }
         }
 
         [GtkCallback]
