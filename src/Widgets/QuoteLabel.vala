@@ -31,5 +31,14 @@ namespace Flowtime {
             label.add_css_class ("dim-label");
             set_child (label);
         }
+
+        public void randomize () {
+            var random_number = Random.int_range (0, break_quotes.length);
+            var quote = break_quotes[random_number];
+
+            var label = new Gtk.Label (quote);
+            label.add_css_class ("dim-label");
+            set_child (label);
+        }
     }
 }
