@@ -89,6 +89,7 @@
                         <property name="spacing">12</property>
                         <child>
                           <object class="FlowtimePauseButton" id="pause_work_button">
+                            <property name="tooltip-text">Pause Work</property>
                           </object>
                         </child>
 
@@ -153,6 +154,7 @@
                         <property name="spacing">12</property>
                         <child>
                           <object class="FlowtimePauseButton" id="pause_break_button">
+                            <property name="tooltip-text">Pause Break</property>
                           </object>
                         </child>
 
