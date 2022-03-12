@@ -7,7 +7,6 @@
 
 namespace Flowtime {
     public class BreakTimer : Timer {
-        /* Signals */
         public signal void completed ();
 
         public override void start () {

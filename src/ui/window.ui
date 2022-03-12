@@ -55,65 +55,11 @@
               <object class="GtkStackPage">
                 <property name="name">work_stage</property>
                 <property name="child">
-                  <object class="GtkBox">
-                    <!-- TODO: I should move these pages to a custom widget... -->
-                    <property name="orientation">vertical</property>
-                    <property name="halign">center</property>
-                    <property name="valign">center</property>
-                    <property name="vexpand">true</property>
-                    <property name="spacing">30</property>
-
-                    <child>
-                      <object class="GtkBox">
-                        <property name="orientation">vertical</property>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="label">Work Stage</property>
-                            <attributes>
-                              <attribute name="weight" value="semibold"/>
-                            </attributes>
-                            <style>
-                              <class name="accent"/>
-                            </style>
-                          </object>
-                        </child>
-
-                        <child>
-                          <object class="GtkLabel" id="work_time_label">
-                            <property name="label">00:00</property>
-                            <style>
-                              <class name="time-label"/>
-                            </style>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-
-                    <child>
-                      <object class="GtkBox">
-                        <property name="halign">center</property>
-                        <property name="spacing">12</property>
-                        <child>
-                          <object class="FlowtimePauseButton" id="pause_work_button">
-                            <property name="tooltip-text">Pause Work</property>
-                          </object>
-                        </child>
-
-                        <child>
-                          <object class="GtkButton" id="stop_working_button">
-                            <property name="icon-name">media-seek-forward-symbolic</property>
-                            <property name="valign">center</property>
-                            <signal name="clicked" handler="finish_work_cb" swapped="no"/>
-                            <style>
-                              <class name="circular"/>
-                              <class name="not-so-large-button"/>
-                            </style>
-                          </object>
-                        </child>
-
-                      </object>
-                    </child>
-
+                  <object class="FlowtimeTimerPage" id="work_page">
+                    <property name="stage_name">Work Stage</property>
+                    <property name="timer">
+                      <object class="FlowtimeWorkTimer"/>
+                    </property>
                   </object>
                 </property>
               </object>
@@ -123,70 +69,19 @@
               <object class="GtkStackPage">
                 <property name="name">break_stage</property>
                 <property name="child">
-                  <object class="GtkBox">
-                    <property name="orientation">vertical</property>
-                    <property name="vexpand">true</property>
-                    <property name="valign">center</property>
-                    <property name="spacing">30</property>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="orientation">vertical</property>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="label">Break Stage</property>
-                            <attributes>
-                              <attribute name="weight" value="semibold"/>
-                            </attributes>
-                            <style>
-                              <class name="accent"/>
-                            </style>
-                          </object>
-                        </child>
-
-                        <child>
-                          <object class="GtkLabel" id="break_time_label">
-                            <property name="label">00:00</property>
-                            <style>
-                              <class name="time-label"/>
-                            </style>
-                          </object>
-                        </child>
+                  <object class="FlowtimeTimerPage" id="break_page">
+                    <property name="stage_name">Break Stage</property>
+                    <property name="timer">
+                      <object class="FlowtimeBreakTimer">
+                        <signal name="completed" handler="on_break_completed" swapped="no"/>
                       </object>
-                    </child>
-
-                    <child>
-                      <object class="GtkBox">
-                        <property name="halign">center</property>
-                        <property name="spacing">12</property>
-                        <child>
-                          <object class="FlowtimePauseButton" id="pause_break_button">
-                            <property name="tooltip-text">Pause Break</property>
-                          </object>
-                        </child>
-
-                        <child>
-                          <object class="GtkButton" id="stop_break_button">
-                            <property name="icon-name">media-seek-forward-symbolic</property>
-                            <property name="valign">center</property>
-                            <signal name="clicked" handler="finish_break_cb" swapped="no"/>
-                            <style>
-                              <class name="circular"/>
-                              <class name="not-so-large-button"/>
-                            </style>
-                          </object>
-                        </child>
-
-                      </object>
-                    </child>
-
+                    </property>
                   </object>
                 </property>
               </object>
             </child>
-
           </object>
         </child>
-
       </object>
     </child>
 
