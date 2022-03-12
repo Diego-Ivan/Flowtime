@@ -9,11 +9,14 @@ namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/window.ui")]
     public class Window : Adw.ApplicationWindow {
         [GtkChild] unowned Gtk.Stack stages;
-        [GtkChild] unowned Adw.HeaderBar headerbar;
         [GtkChild] unowned Gtk.Label work_time_label;
         [GtkChild] unowned Gtk.Label break_time_label;
         [GtkChild] unowned PauseButton pause_work_button;
         [GtkChild] unowned PauseButton pause_break_button;
+        [GtkChild] unowned QuoteLabel quote_label;
+
+        private Gtk.CssProvider provider = new Gtk.CssProvider ();
+        private Adw.TimedAnimation animation;
 
         public WorkTimer work_timer { get; set; }
         public BreakTimer break_timer { get; set; }
@@ -42,6 +45,14 @@ namespace Flowtime {
                 player.play ();
                 work_timer.reset_time ();
             });
+
+            var callback = new Adw.CallbackAnimationTarget (quote_label_revealer);
+            animation = new Adw.TimedAnimation (quote_label,
+                0, 1,
+                stages.transition_duration,
+                callback
+            );
+            animation.easing = EASE_IN_OUT_CUBIC;
         }
 
         construct {
@@ -54,6 +65,12 @@ namespace Flowtime {
 
             pause_work_button.timer = work_timer;
             pause_break_button.timer = break_timer;
+
+            Gtk.StyleContext.add_provider_for_display (
+                Gdk.Display.get_default (),
+                provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+            );
         }
 
         private void open_settings () {
@@ -63,21 +80,38 @@ namespace Flowtime {
         [GtkCallback]
         private void finish_break_cb () {
             stages.set_visible_child_full ("work_stage", CROSSFADE);
-            headerbar.set_title_widget (null);
+
+            animation.reverse = true;
+            animation.play ();
 
             pause_break_button.icon_name = "media-playback-start-symbolic";
             break_timer.reset_time ();
+
+            provider.load_from_data (
+                (uint8[])"@define-color accent_color @blue_3; @define-color accent_bg_color @blue_3;"
+            );
         }
 
         [GtkCallback]
         private void finish_work_cb () {
             stages.set_visible_child_full ("break_stage", CROSSFADE);
-            headerbar.set_title_widget (new QuoteLabel ());
+            quote_label.opacity = 0;
+
+            animation.reverse = false;
+            animation.play ();
 
             break_timer.seconds = work_timer.seconds / 5;
 
             pause_work_button.icon_name = "media-playback-start-symbolic";
             work_timer.reset_time ();
+
+            provider.load_from_data (
+                (uint8[])"@define-color accent_color @green_4; @define-color accent_bg_color @green_4;"
+            );
+        }
+
+        private void quote_label_revealer (double v) {
+            quote_label.opacity = v;
         }
     }
 }

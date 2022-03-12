@@ -40,6 +40,12 @@
                 </style>
               </object>
             </child>
+
+            <property name="title-widget">
+              <object class="FlowtimeQuoteLabel" id="quote_label">
+                <property name="opacity">0</property>
+              </object>
+            </property>
           </object>
         </child>
 
