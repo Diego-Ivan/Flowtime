@@ -42,6 +42,11 @@ namespace Flowtime {
             });
         }
 
+        public void play_timer () {
+            timer.start ();
+            pause_button.icon_name = "media-playback-pause-symbolic";
+        }
+
         [GtkCallback]
         private void on_pause_button_clicked () {
             if (timer.running) {
@@ -49,8 +54,7 @@ namespace Flowtime {
                 pause_button.icon_name = "media-playback-start-symbolic";
             }
             else {
-                timer.start ();
-                pause_button.icon_name = "media-playback-pause-symbolic";
+                play_timer ();
             }
         }
 

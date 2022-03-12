@@ -67,6 +67,9 @@ namespace Flowtime {
             provider.load_from_data (
                 (uint8[])"@define-color accent_color @blue_3; @define-color accent_bg_color @blue_3;"
             );
+
+            if (settings.get_boolean ("autostart"))
+                work_page.play_timer ();
         }
 
         private void on_stop_work_request () {
@@ -85,6 +88,9 @@ namespace Flowtime {
             provider.load_from_data (
                 (uint8[])"@define-color accent_color @green_4; @define-color accent_bg_color @green_4;"
             );
+
+            if (settings.get_boolean ("autostart"))
+                break_page.play_timer ();
         }
 
         [GtkCallback]

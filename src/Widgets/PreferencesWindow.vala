@@ -10,6 +10,7 @@ namespace Flowtime {
     public class PreferencesWindow : Adw.PreferencesWindow {
         public Window parent_window { get; set; }
         [GtkChild] unowned Adw.PreferencesGroup sounds_group;
+        [GtkChild] unowned Gtk.Switch autostart_switch;
 
         public Sound[] sounds = {
             { "Baum", "resource:///io/github/diegoivanme/flowtime/baum.ogg" },
@@ -29,6 +30,11 @@ namespace Flowtime {
         construct {
             var first_row = new SoundRow (sounds[0]);
             sounds_group.add (first_row);
+
+            settings.bind ("autostart",
+                autostart_switch, "active",
+                DEFAULT
+            );
 
             if (player.uri == sounds[0].path) {
                 first_row.check_button.active = true;
