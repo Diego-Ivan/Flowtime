@@ -16,7 +16,7 @@
 
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Timer Autostart</property>
+                <property name="title" translatable="yes">Autostart</property>
                 <property name="subtitle" translatable="yes">Automatically start the timer when the stage is changed</property>
                 <child type="suffix">
                   <object class="GtkSwitch" id="autostart_switch">
