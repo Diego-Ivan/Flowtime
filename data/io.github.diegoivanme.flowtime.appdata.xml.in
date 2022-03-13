@@ -23,13 +23,14 @@
   </screenshots>
 
   <releases>
-    <release version="1.2.1" date="2022-03-09">
+    <release version="1.5.0" date="2022-03-12">
       <description>
-        <p>Version 1.2.1</p>
+        <p>Version 1.5.0</p>
+        <p>After a long time of this version finally has arrived with small, yet new features!</p>
         <ul>
-          <li>Bug fixing: Timer will not start sometimes</li>
-          <li>New Italian translation by Albano Battistella</li>
-          <li>New German translation by tronta</li>
+          <li>Accent color changes depending on your stage: blue for work stage, green for break stage</li>
+          <li>There is now a label above the timer that indicates your current stage</li>
+          <li>A new setting has arrived: Timer Autostart. Set if you want to start the timer inmediately after you press the "next" button</li>
         </ul>
       </description>
     </release>
