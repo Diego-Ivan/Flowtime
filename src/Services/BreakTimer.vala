@@ -7,10 +7,9 @@
 
 namespace Flowtime {
     public class BreakTimer : Timer {
-        /* Signals */
         public signal void completed ();
 
-        public void start () {
+        public override void start () {
             already_started = true;
             running = true;
             Timeout.add_seconds (1, update_time);

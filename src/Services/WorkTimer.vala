@@ -7,7 +7,7 @@
 
 namespace Flowtime {
     public class WorkTimer : Timer {
-        public void start () {
+        public override void start () {
             already_started = true;
             running = true;
             Timeout.add_seconds (1, update_time);

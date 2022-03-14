@@ -5,6 +5,7 @@
 
     <file>window.ui</file>
     <file>preferenceswindow.ui</file>
+    <file>timerpage.ui</file>
 
     <file preprocess="xml-stripblanks">icons/timer-sand-symbolic.svg</file>
 

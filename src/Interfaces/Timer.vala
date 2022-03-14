@@ -30,6 +30,7 @@ namespace Flowtime {
 
         /* Abstract methods */
         protected abstract bool update_time ();
+        public abstract void start ();
 
         /* Virtual methods */
         public virtual void resume () {

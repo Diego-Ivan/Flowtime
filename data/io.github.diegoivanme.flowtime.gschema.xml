@@ -12,5 +12,11 @@
 	    <summary>Alarm Tone</summary>
 	    <description>Use a tone for the break time alarm</description>
 	  </key>
+
+	  <key name="autostart" type="b">
+	    <default>false</default>
+	    <summary>Timer autostart</summary>
+	    <description>Automatically start timer when the stage is changed</description>
+	  </key>
 	</schema>
 </schemalist>
