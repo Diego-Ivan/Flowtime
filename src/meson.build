@@ -17,6 +17,7 @@ flowtime_deps = [
   dependency ('gstreamer-1.0'),
   dependency('gstreamer-player-1.0'),
   dependency('libadwaita-1'),
+  dependency('libxml-2.0'),
 ]
 
 conf = configuration_data()
