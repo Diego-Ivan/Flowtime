@@ -1,14 +1,19 @@
 flowtime_sources = [
   'main.vala',
   'Application.vala',
-  'Widgets/Window.vala',
+  'XmlUtils.vala',
+  'Interfaces/Timer.vala',
+
+  'Services/BreakTimer.vala',
+  'Services/Day.vala',
+  'Services/Statistics.vala',
+  'Services/WorkTimer.vala',
+
   'Widgets/PreferencesWindow.vala',
   'Widgets/QuoteLabel.vala',
   'Widgets/SoundRow.vala',
   'Widgets/TimerPage.vala',
-  'Services/WorkTimer.vala',
-  'Services/BreakTimer.vala',
-  'Interfaces/Timer.vala',
+  'Widgets/Window.vala',
 ]
 
 flowtime_deps = [
