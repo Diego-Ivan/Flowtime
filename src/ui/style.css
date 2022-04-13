@@ -11,3 +11,14 @@
   font-weight: 300;
 	font-size: 400%;
 }
+
+statcircle {
+  border: 6px outset @green_5;
+	border-style: inset dotted;
+  border-radius: 50%;
+  padding: 9px 0;
+}
+
+statcircle box {
+  padding: 35px;
+}

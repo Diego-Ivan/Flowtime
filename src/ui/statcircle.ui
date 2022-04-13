@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="FlowtimeStatCircle" parent="AdwBin">
+    <property name="css-name">statcircle</property>
+    <property name="valign">center</property>
+    <property name="halign">center</property>
+    <property name="child">
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+
+        <child>
+            <object class="GtkLabel" id="caption_label">
+              <property name="label">Today</property>
+              <property name="valign">end</property>
+              <style>
+                <class name="dim-label"/>
+              </style>
+            </object>
+          </child>
+
+        <child>
+          <object class="GtkLabel" id="time_label">
+            <property name="valign">center</property>
+            <property name="label">25:00</property>
+            <style>
+              <class name="title-1"/>
+            </style>
+          </object>
+        </child>
+
+      </object>
+
+    </property>
+  </template>
+</interface>

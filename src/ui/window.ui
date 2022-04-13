@@ -16,8 +16,8 @@
   </menu>
 
   <template class="FlowtimeWindow" parent="AdwApplicationWindow">
-    <property name="default-height">390</property>
-    <property name="default-width">390</property>
+    <property name="default-height">450</property>
+    <property name="default-width">450</property>
     <property name="width-request">390</property>
     <property name="height-request">390</property>
     <property name="title"></property>
@@ -42,44 +42,99 @@
             </child>
 
             <property name="title-widget">
-              <object class="FlowtimeQuoteLabel" id="quote_label">
-                <property name="opacity">0</property>
+              <object class="AdwViewSwitcherTitle" id="view_switcher">
+                <property name="stack">view_stack</property>
               </object>
             </property>
           </object>
         </child>
 
         <child>
-          <object class="GtkStack" id="stages">
+          <object class="AdwViewStack" id="view_stack">
             <child>
-              <object class="GtkStackPage">
-                <property name="name">work_stage</property>
+              <object class="AdwViewStackPage">
+                <property name="icon-name">timer-sand-symbolic</property>
+                <property name="title">Stages</property>
                 <property name="child">
-                  <object class="FlowtimeTimerPage" id="work_page">
-                    <property name="stage_name" translatable="yes">Work Stage</property>
-                    <property name="timer">
-                      <object class="FlowtimeWorkTimer"/>
-                    </property>
+                  <object class="GtkStack" id="stages">
+                    <child>
+                      <object class="GtkStackPage">
+                        <property name="name">work_stage</property>
+                        <property name="child">
+                          <object class="FlowtimeTimerPage" id="work_page">
+                            <property name="stage_name" translatable="yes">Work Stage</property>
+                            <property name="timer">
+                              <object class="FlowtimeWorkTimer"/>
+                            </property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkStackPage">
+                        <property name="name">break_stage</property>
+                        <property name="child">
+                          <object class="FlowtimeTimerPage" id="break_page">
+                            <property name="stage_name" translatable="yes">Break Stage</property>
+                            <property name="timer">
+                              <object class="FlowtimeBreakTimer">
+                                <signal name="completed" handler="on_break_completed" swapped="no"/>
+                              </object>
+                            </property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
                   </object>
                 </property>
               </object>
             </child>
 
             <child>
-              <object class="GtkStackPage">
-                <property name="name">break_stage</property>
+              <object class="AdwViewStackPage">
+                <property name="icon-name">profit-symbolic</property>
+                <property name="title">Statistics</property>
                 <property name="child">
-                  <object class="FlowtimeTimerPage" id="break_page">
-                    <property name="stage_name" translatable="yes">Break Stage</property>
-                    <property name="timer">
-                      <object class="FlowtimeBreakTimer">
-                        <signal name="completed" handler="on_break_completed" swapped="no"/>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+
+                    <child>
+                      <object class="GtkStack" id="stat_stack">
+                        <child>
+                          <object class="GtkStackPage">
+                            <property name="name">work</property>
+                            <property name="title">Work Time</property>
+                            <property name="child">
+                              <object class="FlowtimeStatPage">
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkStackPage">
+                            <property name="name">break</property>
+                            <property name="title">Break Time</property>
+                            <property name="child">
+                              <object class="FlowtimeStatPage">
+                              </object>
+                            </property>
+                          </object>
+                        </child>
                       </object>
-                    </property>
+                    </child>
+
+                    <child>
+                      <object class="GtkStackSwitcher">
+                        <property name="stack">stat_stack</property>
+                      </object>
+                    </child>
+
                   </object>
                 </property>
               </object>
             </child>
+
           </object>
         </child>
       </object>
