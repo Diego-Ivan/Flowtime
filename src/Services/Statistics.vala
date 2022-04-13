@@ -43,7 +43,6 @@ namespace Flowtime {
             }
             set {
                 worktime_week += value - today.worktime;
-                worktime_month += value - today.worktime;
                 today.worktime = value;
             }
         }
@@ -57,6 +56,10 @@ namespace Flowtime {
                 today.breaktime = value;
             }
         }
+
+        public string productive_day { get; private set; }
+
+        private uint[] average_worktime = new uint[7];
 
         construct {
             root_element = new Xml.Node (null, "statistics");
@@ -98,10 +101,19 @@ namespace Flowtime {
                     var d = new Day.from_xml (XmlUtils.get_content_node (i, "day"));
                     TimeSpan ts = current_date.difference (d.date);
 
+                    /*
+                     * Unlink and dispose if they shouldn't be used
+                     */
                     if (ts > MONTH) {
                         d.unlink ();
                         continue;
                     }
+
+                    /*
+                     * Register average worktime per day of the week
+                     */
+                    int d_week = d.date.get_day_of_week ();
+                    average_worktime[d_week - 1] += d.worktime;
 
                     worktime_month += d.worktime;
                     breaktime_month += d.breaktime;
@@ -120,6 +132,44 @@ namespace Flowtime {
 
             if (today == null) {
                 today = new Day ();
+            }
+
+            get_most_productive_day ();
+        }
+
+        private void get_most_productive_day () {
+            int day = 0;
+            for (int i = 1; i < average_worktime.length; i++) {
+                if (average_worktime[i] >= average_worktime[day]) {
+                    day = i;
+                }
+            }
+
+            switch (day) {
+                case 0:
+                    productive_day = _("Monday");
+                    break;
+                case 1:
+                    productive_day = _("Tuesday");
+                    break;
+                case 2:
+                    productive_day = _("Wednesday");
+                    break;
+                case 3:
+                    productive_day = _("Thursday");
+                    break;
+                case 4:
+                    productive_day = _("Friday");
+                    break;
+                case 5:
+                    productive_day = _("Saturday");
+                    break;
+                case 6:
+                    productive_day = _("Sunday");
+                    break;
+                default:
+                    warn_if_reached ();
+                    break;
             }
         }
 
