@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the flowtime package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: flowtime\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-16 22:37-0600\n"
+"PO-Revision-Date: 2022-03-29 18:14+0200\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: data/io.github.diegoivanme.flowtime.desktop.in:3
+msgid "flowtime"
+msgstr "flowtime"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
+msgid "Flowtime"
+msgstr "Flowtime"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
+msgid "Get things done, keep concentrated"
+msgstr "Rond je taken af door gefocust te blijven"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
+msgid ""
+"The Pomodoro technique is efficient for tasks you find boring, but having to "
+"take a break when you are 100% concentrated in something you like might be "
+"annoying. That's why the Flowtime technique exists: take appropiate breaks "
+"without loosing you **flow**."
+msgstr ""
+"De Pomodoro-techniek is efficiënt bij saaie taken, maar een pauze nemen "
+"terwijl je volledig gefocust bent op iets is ook niet prettig. Wij hebben "
+"daarom de Flowtime-techniek ontwikkeld: pauzes op momenten dat het jou "
+"uitkomt, zonder uit de **flow** te raken."
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:28
+msgid "Version 1.1.0"
+msgstr "Versie 1.1.0"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:30
+msgid ""
+"New feature! The end of the break is now marked with both a notification and "
+"tone"
+msgstr ""
+"Nieuw: het einde van een pauze wordt voortaan aangekondigd middels een "
+"melding en geluid"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:31
+msgid "Customizable tones!"
+msgstr "Aanpasbare geluidsmeldingen!"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
+msgid "Version 1.0.0"
+msgstr "Versie 1.0.0"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
+msgid ""
+"The first release of Flowtime! Work for all the time you feel concentrated, "
+"take breaks when it's necessary. Spanish Translation available!"
+msgstr ""
+"Dit is de eerste versie van Flowtime! Werk zolang je gefocust bent, maar "
+"neem pauzes indien nodig. Spaanse vertaling meegeleverd!"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:81
+msgid "Diego Iván"
+msgstr "Diego Iván"
+
+#: src/ui/window.ui:8
+msgid "_About Flowtime"
+msgstr "_Over Flowtime"
+
+#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:18
+msgid "_Preferences"
+msgstr "_Voorkeuren"
+
+#: src/ui/preferenceswindow.ui:22
+msgid "Break Time"
+msgstr "Pauzetijd"
+
+#: src/ui/preferenceswindow.ui:23
+msgid "Changes will be applied in the next work session"
+msgstr "De wijzigingen worden toegepast in de volgende werksessie"
+
+#: src/ui/preferenceswindow.ui:27
+msgid "Time until break"
+msgstr "Werktijd"
+
+#: src/ui/preferenceswindow.ui:28
+msgid "The time you have to work until a break is allowed."
+msgstr "De tijd die je moet werken voordat je een pauze mag nemen."
+
+#: src/ui/preferenceswindow.ui:44
+msgid "Sounds"
+msgstr "Geluiden"
+
+#: src/ui/preferenceswindow.ui:45
+msgid "Alarm sounds that mark break time"
+msgstr "Geluiden die de pauzes aankondigen"
+
+#: src/Widgets/QuoteLabel.vala:11
+msgid "Good Job!"
+msgstr "Lekker bezig!"
+
+#: src/Widgets/QuoteLabel.vala:12
+msgid "Time to take a rest"
+msgstr "Tijd voor een pauze"
+
+#: src/Widgets/QuoteLabel.vala:13
+msgid "In the meantime, drink some water"
+msgstr "Drink ondertussen wat water"
+
+#: src/Widgets/QuoteLabel.vala:14
+msgid "It's coffee time"
+msgstr "Tijd voor een bakkie leut"
+
+#: src/Widgets/QuoteLabel.vala:15
+msgid "You deserve a break"
+msgstr "Je hebt wel een pauze verdiend"
+
+#: src/Widgets/QuoteLabel.vala:16
+msgid "Keep a healthy mind"
+msgstr "Houd je geest scherp"
+
+#: src/Widgets/QuoteLabel.vala:17
+msgid "Just breathe"
+msgstr "Adem in, adem uit"
+
+#: src/Widgets/QuoteLabel.vala:18
+msgid "Relax, refresh and recharge"
+msgstr "Ontspan en doe nieuwe energie op"
+
+#: src/Widgets/QuoteLabel.vala:19
+msgid "Celebrate your small wins"
+msgstr "Vier successen, groot of klein"
+
+#: src/Widgets/QuoteLabel.vala:20
+msgid "Impossible is just an opinion"
+msgstr "Niets is onmogelijk"
+
+#: src/Widgets/QuoteLabel.vala:21
+msgid "Way to go!"
+msgstr "Ga zo door!"
+
+#: src/Widgets/QuoteLabel.vala:22
+msgid "Begin anywhere"
+msgstr "Je moet ergens beginnen"
+
+#: src/Widgets/QuoteLabel.vala:23
+msgid "The possibilities are never ending"
+msgstr "Je mogelijkheden zijn eindeloos"
+
+#. Translators: Write your Name<email> here :p
+#: src/Application.vala:102
+msgid "translator-credits"
+msgstr "Heimen Stoffels <vistausss@fastmail.com>"
