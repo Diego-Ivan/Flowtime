@@ -1,6 +1,6 @@
-/* window.vala
+/* Window.vala
  *
- * Copyright 2021 Diego Iván
+ * Copyright 2021-2022 Diego Iván
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -9,12 +9,12 @@ namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/window.ui")]
     public class Window : Adw.ApplicationWindow {
         [GtkChild] unowned Gtk.Stack stages;
-        [GtkChild] unowned QuoteLabel quote_label;
+        // [GtkChild] unowned QuoteLabel quote_label;
         [GtkChild] unowned TimerPage work_page;
         [GtkChild] unowned TimerPage break_page;
 
         private Gtk.CssProvider provider = new Gtk.CssProvider ();
-        private Adw.TimedAnimation animation;
+        // private Adw.TimedAnimation animation;
 
         private const GLib.ActionEntry[] WIN_ENTRIES = {
             { "preferences", open_settings }
@@ -23,18 +23,19 @@ namespace Flowtime {
         public Window (Gtk.Application app) {
             Object (application: app);
 
-            var callback = new Adw.CallbackAnimationTarget (quote_label_revealer);
-            animation = new Adw.TimedAnimation (quote_label,
-                0, 1,
-                stages.transition_duration,
-                callback
-            );
-            animation.easing = EASE_IN_OUT_CUBIC;
+            // var callback = new Adw.CallbackAnimationTarget (quote_label_revealer);
+            // animation = new Adw.TimedAnimation (quote_label,
+            //     0, 1,
+            //     stages.transition_duration,
+            //     callback
+            // );
+            // animation.easing = EASE_IN_OUT_CUBIC;
         }
 
         static construct {
             typeof(WorkTimer).ensure ();
             typeof(BreakTimer).ensure ();
+            typeof(StatPage).ensure ();
         }
 
         construct {
@@ -57,8 +58,8 @@ namespace Flowtime {
         }
 
         private void on_stop_break_request () {
-            animation.reverse = true;
-            animation.play ();
+            // animation.reverse = true;
+            // animation.play ();
 
             break_page.timer.reset_time ();
 
@@ -73,11 +74,11 @@ namespace Flowtime {
         }
 
         private void on_stop_work_request () {
-            quote_label.opacity = 0;
-            quote_label.randomize ();
+            // quote_label.opacity = 0;
+            // quote_label.randomize ();
 
-            animation.reverse = false;
-            animation.play ();
+            // animation.reverse = false;
+            // animation.play ();
 
             break_page.timer.seconds = work_page.timer.seconds / 5;
 
@@ -104,8 +105,8 @@ namespace Flowtime {
             work_page.timer.reset_time ();
         }
 
-        private void quote_label_revealer (double v) {
-            quote_label.opacity = v;
-        }
+        // private void quote_label_revealer (double v) {
+        //     quote_label.opacity = v;
+        // }
     }
 }
