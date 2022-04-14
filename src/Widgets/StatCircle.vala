@@ -86,20 +86,21 @@ namespace Flowtime {
             if (seconds < 86400) {
                 uint minutes = seconds / 60;
                 uint hours = minutes / 60;
+                uint m = seconds % 60;
                 string minutes_format;
 
-                if (hours == 1 && minutes == 0) {
+                if (hours == 1 && m == 0) {
                     unit = _("hour");
                 }
                 else {
                     unit = _("hours");
                 }
 
-                if (minutes < 10) {
-                    minutes_format = "0%u".printf (minutes);
+                if (m < 10) {
+                    minutes_format = "0%u".printf (m);
                 }
                 else {
-                    minutes_format = "%u".printf (minutes);
+                    minutes_format = "%u".printf (m);
                 }
 
                 return "%u:%s".printf (hours, minutes_format);

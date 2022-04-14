@@ -25,6 +25,12 @@ namespace Flowtime {
             }
         }
 
+        public uint seconds {
+            get {
+                return timer.seconds;
+            }
+        }
+
         public string stage_name {
             get {
                 return stage_label.label;

@@ -140,6 +140,7 @@ namespace Flowtime {
 
             if (today == null) {
                 today = new Day ();
+                root_element->add_child (today.node);
             }
 
             get_most_productive_day ();

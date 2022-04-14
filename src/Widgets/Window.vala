@@ -67,6 +67,8 @@ namespace Flowtime {
         }
 
         private void on_stop_break_request () {
+            stats.breaktime_today += break_page.seconds;
+            stats.save ();
             break_page.timer.reset_time ();
 
             stages.set_visible_child_full ("work_stage", CROSSFADE);
@@ -81,6 +83,7 @@ namespace Flowtime {
 
         private void on_stop_work_request () {
             break_page.timer.seconds = work_page.timer.seconds / 5;
+            stats.worktime_today += work_page.seconds;
 
             work_page.timer.reset_time ();
 
@@ -92,6 +95,8 @@ namespace Flowtime {
 
             if (settings.get_boolean ("autostart"))
                 break_page.play_timer ();
+
+            stats.save ();
         }
 
         [GtkCallback]
@@ -102,6 +107,9 @@ namespace Flowtime {
             notification.set_priority (NORMAL);
             app.send_notification ("Break-Timer-Done", notification);
             player.play ();
+            stats.breaktime_today += break_page.seconds;
+
+            stats.save ();
             work_page.timer.reset_time ();
         }
     }
