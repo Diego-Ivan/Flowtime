@@ -25,12 +25,9 @@ namespace Flowtime {
         public Window main_window;
         public string sound_uri_prefix;
 
-        public Statistics stats { get; set; default = new Statistics (); }
-
         private const ActionEntry[] APP_ENTRIES = {
             { "quit", action_close },
             { "about", about_flowtime },
-            { "save_stats", save_stats }
         };
 
         public Application () {
@@ -60,8 +57,6 @@ namespace Flowtime {
             player = new Gst.Player (null, null);
             var sound = settings.get_string ("tone");
             player.uri = sound_uri_prefix + sound;
-
-            stats.retrieve_statistics.begin ();
         }
 
         protected override void shutdown () {
@@ -77,10 +72,6 @@ namespace Flowtime {
         private void action_close () {
             main_window.close_request ();
             quit ();
-        }
-
-        private void save_stats () {
-            stats.save ();
         }
 
         private void about_flowtime () {

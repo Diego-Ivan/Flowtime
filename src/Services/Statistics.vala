@@ -42,6 +42,10 @@ namespace Flowtime {
                 return today.worktime;
             }
             set {
+                // if (value < today.worktime) {
+                //     critical ("Worktime cannot be decreased");
+                //     return;
+                // }
                 worktime_week += value - today.worktime;
                 today.worktime = value;
             }
@@ -52,6 +56,10 @@ namespace Flowtime {
                 return today.breaktime;
             }
             set {
+                // if (value < today.breaktime) {
+                //     critical ("Breaktime cannot be decreased");
+                //     return;
+                // }
                 breaktime_week += value - today.breaktime;
                 today.breaktime = value;
             }

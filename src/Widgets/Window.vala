@@ -13,8 +13,15 @@ namespace Flowtime {
         [GtkChild] unowned TimerPage work_page;
         [GtkChild] unowned TimerPage break_page;
 
+        [GtkChild] unowned Statistics statistics;
+
+        public Statistics stats {
+            get {
+                return statistics;
+            }
+        }
+
         private Gtk.CssProvider provider = new Gtk.CssProvider ();
-        // private Adw.TimedAnimation animation;
 
         private const GLib.ActionEntry[] WIN_ENTRIES = {
             { "preferences", open_settings }
@@ -23,13 +30,15 @@ namespace Flowtime {
         public Window (Gtk.Application app) {
             Object (application: app);
 
-            // var callback = new Adw.CallbackAnimationTarget (quote_label_revealer);
-            // animation = new Adw.TimedAnimation (quote_label,
-            //     0, 1,
-            //     stages.transition_duration,
-            //     callback
-            // );
-            // animation.easing = EASE_IN_OUT_CUBIC;
+            stats.retrieve_statistics.begin (() => {
+                /*
+                 * Internally, FlowtimeStatistics does not use the worktime setters,
+                 * Therefore, we have to give it a little "refresh" when the
+                 * async method is done :)
+                 */
+                stats.worktime_today = stats.worktime_today;
+                stats.breaktime_today = stats.breaktime_today;
+            });
         }
 
         static construct {
@@ -58,9 +67,6 @@ namespace Flowtime {
         }
 
         private void on_stop_break_request () {
-            // animation.reverse = true;
-            // animation.play ();
-
             break_page.timer.reset_time ();
 
             stages.set_visible_child_full ("work_stage", CROSSFADE);
@@ -74,12 +80,6 @@ namespace Flowtime {
         }
 
         private void on_stop_work_request () {
-            // quote_label.opacity = 0;
-            // quote_label.randomize ();
-
-            // animation.reverse = false;
-            // animation.play ();
-
             break_page.timer.seconds = work_page.timer.seconds / 5;
 
             work_page.timer.reset_time ();
@@ -104,9 +104,5 @@ namespace Flowtime {
             player.play ();
             work_page.timer.reset_time ();
         }
-
-        // private void quote_label_revealer (double v) {
-        //     quote_label.opacity = v;
-        // }
     }
 }

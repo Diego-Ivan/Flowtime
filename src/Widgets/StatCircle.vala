@@ -44,6 +44,11 @@ namespace Flowtime {
             }
         }
 
+        construct {
+            unit = _("seconds");
+            displayed_value = 0;
+        }
+
         private string format_time (uint seconds) {
             // If seconds is less than a minute, it will display seconds
             if (seconds < 60) {
@@ -54,30 +59,53 @@ namespace Flowtime {
             // If seconds is less than an hour, it will display minutes
             if (seconds < 3600) {
                 uint minutes = seconds / 60;
-                if (minutes == 1) {
-                    unit = _("minute");
+                uint s = seconds % 60;
+                string seconds_format, minutes_format;
+
+                unit = _("minutes");
+
+                if (s < 10) {
+                    seconds_format = "0%u".printf (s);
                 }
                 else {
-                    unit = _("minutes");
+                    seconds_format = "%u".printf (s);
                 }
 
-                return minutes.to_string ();
+                if (minutes < 10) {
+                    minutes_format = "0%u".printf (minutes);
+                }
+                else {
+                    minutes_format = "%u".printf (minutes);
+                }
+
+                var format = "%s:%s".printf (minutes_format, seconds_format);
+                return format;
             }
 
             // If seconds is less than a day, it will display hours
             if (seconds < 86400) {
-                uint hours = seconds / 3600;
+                uint minutes = seconds / 60;
+                uint hours = minutes / 60;
+                string minutes_format;
 
-                if (hours == 1) {
+                if (hours == 1 && minutes == 0) {
                     unit = _("hour");
                 }
                 else {
                     unit = _("hours");
                 }
 
-                return hours.to_string ();
+                if (minutes < 10) {
+                    minutes_format = "0%u".printf (minutes);
+                }
+                else {
+                    minutes_format = "%u".printf (minutes);
+                }
+
+                return "%u:%s".printf (hours, minutes_format);
             }
 
+            // If it's not any of the options before, it will display days :)
             uint days = seconds / 86400;
 
             if (days == 1) {

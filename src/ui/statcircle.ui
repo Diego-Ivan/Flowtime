@@ -24,7 +24,6 @@
         <child>
           <object class="GtkLabel" id="time_label">
             <property name="valign">center</property>
-            <property name="label">25:00</property>
             <style>
               <class name="title-1"/>
             </style>
