@@ -12,6 +12,8 @@ namespace Flowtime {
         private unowned Gtk.Label time_label;
         [GtkChild]
         private unowned Gtk.Label caption_label;
+        [GtkChild]
+        private unowned Gtk.Label unit_label;
 
         private uint _displayed_value;
         public uint displayed_value {
@@ -21,6 +23,15 @@ namespace Flowtime {
             set {
                 _displayed_value = value;
                 time_label.label = format_time (value);
+            }
+        }
+
+        public string unit {
+            get {
+                return unit_label.label;
+            }
+            private set {
+                 unit_label.label = value;
             }
         }
 
@@ -34,26 +45,49 @@ namespace Flowtime {
         }
 
         private string format_time (uint seconds) {
-            uint minutes = seconds / 60;
-            uint s = seconds % 60;
-            string seconds_format, minutes_format;
+            // If seconds is less than a minute, it will display seconds
+            if (seconds < 60) {
+                unit = _("seconds");
+                return seconds.to_string ();
+            }
 
-            if (s < 10) {
-                seconds_format = "0%u".printf (s);
+            // If seconds is less than an hour, it will display minutes
+            if (seconds < 3600) {
+                uint minutes = seconds / 60;
+                if (minutes == 1) {
+                    unit = _("minute");
+                }
+                else {
+                    unit = _("minutes");
+                }
+
+                return minutes.to_string ();
+            }
+
+            // If seconds is less than a day, it will display hours
+            if (seconds < 86400) {
+                uint hours = seconds / 3600;
+
+                if (hours == 1) {
+                    unit = _("hour");
+                }
+                else {
+                    unit = _("hours");
+                }
+
+                return hours.to_string ();
+            }
+
+            uint days = seconds / 86400;
+
+            if (days == 1) {
+                unit = _("day");
             }
             else {
-                seconds_format = "%u".printf (s);
+                unit = _("days");
             }
 
-            if (minutes < 10) {
-                minutes_format = "0%u".printf (minutes);
-            }
-            else {
-                minutes_format = "%u".printf (minutes);
-            }
-
-            var format = "%s:%s".printf (minutes_format, seconds_format);
-            return format;
+            return days.to_string ();
         }
     }
 }

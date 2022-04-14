@@ -7,7 +7,7 @@
 
 namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/statpage.ui")]
-    public class StatPage : Gtk.Grid {
+    public class StatPage : Gtk.Box {
         static construct {
             typeof(StatCircle).ensure ();
         }

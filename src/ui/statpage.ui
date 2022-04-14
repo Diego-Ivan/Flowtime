@@ -1,42 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <template class="FlowtimeStatPage" parent="GtkGrid">
-    <property name="row-homogeneous">true</property>
-    <property name="column-homogeneous">true</property>
-    <property name="vexpand">true</property>
+  <template class="FlowtimeStatPage" parent="GtkBox">
+    <property name="orientation">vertical</property>
+    <property name="spacing">12</property>
+
     <child>
-      <object class="FlowtimeStatCircle">
-        <property name="css-name">statcircle</property>
-        <property name="caption">Today</property>
-        <property name="displayed-value">900</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="row">0</property>
-        </layout>
+      <object class="GtkButton">
+        <property name="icon-name">month-symbolic</property>
+        <property name="halign">start</property>
+        <property name="margin-start">6</property>
+        <property name="tooltip-text">See details</property>
       </object>
     </child>
+
     <child>
-      <object class="FlowtimeStatCircle">
-        <property name="css-name">statcircle</property>
-        <property name="caption">This Week</property>
-        <property name="displayed-value">1800</property>
-        <layout>
-          <property name="column">1</property>
-          <property name="row">0</property>
-        </layout>
+      <object class="GtkGrid">
+        <property name="row-spacing">6</property>
+        <property name="column-spacing">12</property>
+        <property name="halign">center</property>
+        <property name="vexpand">true</property>
+
+        <child>
+          <object class="FlowtimeStatCircle">
+            <property name="css-name">statcircle</property>
+            <property name="caption">Today</property>
+            <property name="displayed-value">900</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="FlowtimeStatCircle">
+            <property name="css-name">statcircle</property>
+            <property name="caption">This Week</property>
+            <property name="displayed-value">1800</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="FlowtimeStatCircle">
+            <property name="css-name">statcircle</property>
+            <property name="caption">This Month</property>
+            <property name="displayed-value">2700</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">2</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
       </object>
     </child>
-    <child>
-      <object class="FlowtimeStatCircle">
-        <property name="css-name">statcircle</property>
-        <property name="caption">This Month</property>
-        <property name="displayed-value">2700</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="row">1</property>
-          <property name="column-span">2</property>
-        </layout>
-      </object>
-    </child>
+
   </template>
 </interface>
