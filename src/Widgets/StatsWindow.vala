@@ -9,9 +9,9 @@ namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/statwindow.ui")]
     public class StatsWindow : Gtk.Window {
         [GtkChild]
-        private unowned Gtk.ListBox work_list;
+        private unowned StatList work_list;
         [GtkChild]
-        private unowned Gtk.ListBox break_list;
+        private unowned StatList break_list;
         [GtkChild]
         private unowned Adw.PreferencesGroup work_group;
 
@@ -55,6 +55,16 @@ namespace Flowtime {
                 time = d.breaktime
             };
             break_list.append (break_row);
+        }
+
+        [GtkCallback]
+        private void on_work_save_button_clicked () {
+            work_list.ask_save_file ();
+        }
+
+        [GtkCallback]
+        private void on_break_save_button_clicked () {
+            break_list.ask_save_file ();
         }
     }
 }
