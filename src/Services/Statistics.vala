@@ -65,9 +65,10 @@ namespace Flowtime {
             }
         }
 
-        public string productive_day { get; private set; }
+        public List<Day> month_list = new List<Day> ();
+        public List<Day> week_list = new List<Day> ();
 
-        private uint[] average_worktime = new uint[7];
+        public string productive_day { get; private set; }
 
         construct {
             root_element = new Xml.Node (null, "statistics");
@@ -116,19 +117,19 @@ namespace Flowtime {
                         d.unlink ();
                         continue;
                     }
+                    month_list.append (d);
 
                     /*
                      * Register average worktime per day of the week
                      */
-                    int d_week = d.date.get_day_of_week ();
-                    average_worktime[d_week - 1] += d.worktime;
-
                     worktime_month += d.worktime;
                     breaktime_month += d.breaktime;
 
                     if (ts > WEEK) {
                         continue;
                     }
+
+                    week_list.append (d);
                     _worktime_week += d.worktime;
                     _breaktime_week += d.breaktime;
 
@@ -141,45 +142,24 @@ namespace Flowtime {
             if (today == null) {
                 today = new Day ();
                 root_element->add_child (today.node);
+                week_list.append (today);
             }
 
             get_most_productive_day ();
         }
 
         private void get_most_productive_day () {
-            int day = 0;
-            for (int i = 1; i < average_worktime.length; i++) {
-                if (average_worktime[i] >= average_worktime[day]) {
-                    day = i;
+            Day most_productive = month_list.nth_data (0);
+            for (int i = 1; i < month_list.length (); i++) {
+                Day current = month_list.nth_data (i);
+                Day last = month_list.nth_data (i-1);
+
+                if (current.worktime >= last.worktime) {
+                    most_productive = current;
                 }
             }
 
-            switch (day) {
-                case 0:
-                    productive_day = _("Monday");
-                    break;
-                case 1:
-                    productive_day = _("Tuesday");
-                    break;
-                case 2:
-                    productive_day = _("Wednesday");
-                    break;
-                case 3:
-                    productive_day = _("Thursday");
-                    break;
-                case 4:
-                    productive_day = _("Friday");
-                    break;
-                case 5:
-                    productive_day = _("Saturday");
-                    break;
-                case 6:
-                    productive_day = _("Sunday");
-                    break;
-                default:
-                    warn_if_reached ();
-                    break;
-            }
+            productive_day = most_productive.date.format ("%A");
         }
 
         public void save () {
