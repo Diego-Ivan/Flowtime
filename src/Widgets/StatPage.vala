@@ -7,7 +7,7 @@
 
 namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/statpage.ui")]
-    public class StatPage : Gtk.Box {
+    public class StatPage : Gtk.Grid {
         [GtkChild]
         private unowned StatCircle today_circle;
         [GtkChild]

@@ -100,6 +100,11 @@ namespace Flowtime {
         }
 
         [GtkCallback]
+        private void on_details_button_clicked () {
+            new StatsWindow (this, stats);
+        }
+
+        [GtkCallback]
         private void on_break_completed () {
             var notification = new GLib.Notification (_("Break is over!"));
 
