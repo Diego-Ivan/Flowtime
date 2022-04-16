@@ -8,9 +8,12 @@
 namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/timerpage.ui")]
     public class TimerPage : Gtk.Box {
-        [GtkChild] unowned Gtk.Button pause_button;
-        [GtkChild] unowned Gtk.Label time_label;
-        [GtkChild] unowned Gtk.Label stage_label;
+        [GtkChild]
+        private unowned Gtk.Button pause_button;
+        [GtkChild]
+        private unowned Gtk.Label time_label;
+        [GtkChild]
+        private unowned Gtk.Label stage_label;
 
         public Timer _timer;
         public Timer timer {
@@ -22,6 +25,12 @@ namespace Flowtime {
                 timer.updated.connect (() => {
                     time_label.label = timer.format_time ();
                 });
+            }
+        }
+
+        public uint seconds {
+            get {
+                return timer.seconds;
             }
         }
 

@@ -1,14 +1,25 @@
 flowtime_sources = [
   'main.vala',
   'Application.vala',
-  'Widgets/Window.vala',
+  'XmlUtils.vala',
+  'Interfaces/Timer.vala',
+
+  'Services/BreakTimer.vala',
+  'Services/Day.vala',
+  'Services/StatObject.vala',
+  'Services/Statistics.vala',
+  'Services/WorkTimer.vala',
+
   'Widgets/PreferencesWindow.vala',
   'Widgets/QuoteLabel.vala',
   'Widgets/SoundRow.vala',
+  'Widgets/StatCircle.vala',
+  'Widgets/StatList.vala',
+  'Widgets/StatPage.vala',
+  'Widgets/StatRow.vala',
+  'Widgets/StatsWindow.vala',
   'Widgets/TimerPage.vala',
-  'Services/WorkTimer.vala',
-  'Services/BreakTimer.vala',
-  'Interfaces/Timer.vala',
+  'Widgets/Window.vala',
 ]
 
 flowtime_deps = [
@@ -17,6 +28,7 @@ flowtime_deps = [
   dependency ('gstreamer-1.0'),
   dependency('gstreamer-player-1.0'),
   dependency('libadwaita-1'),
+  dependency('libxml-2.0'),
 ]
 
 conf = configuration_data()

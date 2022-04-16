@@ -13,6 +13,13 @@
 	    <description>Use a tone for the break time alarm</description>
 	  </key>
 
+	  <key name="months-saved" type="i">
+	    <range min="1" max="6"></range>
+	    <default>2</default>
+	    <summary>Months Saved for Statistics</summary>
+	    <description>The amount of months the statistical information will be retained. In case its overpassed, that data will be deleted</description>
+	  </key>
+
 	  <key name="autostart" type="b">
 	    <default>false</default>
 	    <summary>Timer autostart</summary>

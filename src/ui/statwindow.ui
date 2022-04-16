@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="FlowtimeStatsWindow" parent="GtkWindow">
+    <property name="default-height">444</property>
+    <property name="default-width">365</property>
+    <property name="width-request">361</property>
+    <property name="titlebar">
+      <object class="GtkHeaderBar">
+        <property name="title-widget">
+          <object class="AdwViewSwitcherTitle">
+            <property name="stack">view_stack</property>
+          </object>
+        </property>
+      </object>
+    </property>
+
+    <!-- Shortcuts -->
+    <child>
+      <object class="GtkShortcutController">
+        <child>
+          <object class="GtkShortcut">
+            <property name="trigger">&lt;Control&gt;w</property>
+            <property name="action">action(window.close)</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcut">
+            <property name="trigger">Escape</property>
+            <property name="action">action(window.close)</property>
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <child>
+      <object class="AdwViewStack" id="view_stack">
+        <child>
+          <object class="AdwViewStackPage">
+            <property name="title" translatable="yes">Work Time</property>
+            <property name="name">work</property>
+            <property name="icon-name">computer-symbolic</property>
+            <property name="child">
+
+              <object class="GtkScrolledWindow">
+                <property name="propagate-natural-height">true</property>
+                <property name="propagate-natural-width">true</property>
+                <child>
+                    <object class="AdwPreferencesGroup" id="work_group">
+                    <property name="title" translatable="yes">Work Time</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="header-suffix">
+                      <object class="GtkButton" id="work_save_button">
+                        <property name="icon-name">folder-download-symbolic</property>
+                        <property name="valign">center</property>
+                        <signal name="clicked" handler="on_work_save_button_clicked" swapped="no"/>
+                      </object>
+                    </property>
+
+                    <child>
+                      <object class="FlowtimeStatList" id="work_list">
+                      </object>
+                    </child>
+
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwViewStackPage">
+            <property name="title" translatable="yes">Break Time</property>
+            <property name="name">break</property>
+            <property name="icon-name">cafe-symbolic</property>
+            <property name="child">
+              <object class="GtkScrolledWindow">
+                <property name="propagate-natural-height">true</property>
+                <property name="propagate-natural-width">true</property>
+                <child>
+                    <object class="AdwPreferencesGroup" id="break_group">
+                    <property name="title" translatable="yes">Break Time</property>
+                    <property name="margin-top">6</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="header-suffix">
+                      <object class="GtkButton" id="break_save_button">
+                        <property name="icon-name">folder-download-symbolic</property>
+                        <signal name="clicked" handler="on_break_save_button_clicked" swapped="no"/>
+                      </object>
+                    </property>
+
+                    <child>
+                      <object class="FlowtimeStatList" id="break_list">
+                      </object>
+                    </child>
+
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </child>
+
+      </object>
+    </child>
+
+  </template>
+</interface>

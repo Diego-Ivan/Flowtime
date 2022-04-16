@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="FlowtimeStatPage" parent="GtkGrid">
+
+    <property name="row-spacing">6</property>
+    <property name="column-spacing">12</property>
+    <property name="halign">center</property>
+    <property name="vexpand">true</property>
+
+    <child>
+      <object class="FlowtimeStatCircle" id="today_circle">
+        <property name="css-name">statcircle</property>
+        <property name="caption" translatable="yes">Today</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="FlowtimeStatCircle" id="week_circle">
+        <property name="css-name">statcircle</property>
+        <property name="caption" translatable="yes">This Week</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="FlowtimeStatCircle" id="month_circle">
+        <property name="css-name">statcircle</property>
+        <property name="caption" translatable="yes">This Month</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">2</property>
+          <property name="column-span">2</property>
+        </layout>
+      </object>
+    </child>
+
+  </template>
+</interface>

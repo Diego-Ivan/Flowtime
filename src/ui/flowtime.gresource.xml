@@ -4,15 +4,23 @@
     <file>style.css</file>
 
     <file>window.ui</file>
+    <file>statcircle.ui</file>
+    <file>statpage.ui</file>
+    <file>statrow.ui</file>
+    <file>statwindow.ui</file>
     <file>preferenceswindow.ui</file>
     <file>timerpage.ui</file>
-
-    <file preprocess="xml-stripblanks">icons/timer-sand-symbolic.svg</file>
-
 
     <file alias="tone.ogg">sounds/tone.ogg</file>
     <file alias="baum.ogg">sounds/baum.ogg</file>
     <file alias="bleep.ogg">sounds/bleep.ogg</file>
     <file alias="beep.ogg">sounds/beep.ogg</file>
+  </gresource>
+  <gresource prefix="/io/github/diegoivanme/flowtime/icons/scalable/actions/">
+    <file preprocess="xml-stripblanks" alias="timer-sand-symbolic.svg">icons/timer-sand-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="profit-symbolic.svg">icons/profit-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="info-symbolic.svg">icons/info-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="month-symbolic.svg">icons/month-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="cafe-symbolic.svg">icons/cafe-symbolic.svg</file>
   </gresource>
 </gresources>

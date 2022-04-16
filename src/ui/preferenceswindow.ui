@@ -12,6 +12,32 @@
 
         <child>
           <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">Statistics</property>
+
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Months Saved</property>
+                <property name="subtitle" translatable="yes">The amount of months that the work data will be saved</property>
+                <child>
+                  <object class="GtkSpinButton" id="months_spinbutton">
+                    <property name="valign">center</property>
+                    <property name="adjustment">
+                      <object class="GtkAdjustment">
+                       <property name="lower">1</property>
+                        <property name="upper">6</property>
+                        <property name="step_increment">1</property>
+                        <property name="page_increment">3</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwPreferencesGroup">
             <property name="title" translatable="yes">Timer</property>
 
             <child>

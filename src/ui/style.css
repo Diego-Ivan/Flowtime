@@ -11,3 +11,14 @@
   font-weight: 300;
 	font-size: 400%;
 }
+
+statcircle {
+  min-width: 100px;
+  min-height: 100px;
+  border-width: 6px;
+  border-color: @accent_color;
+  border-style: inset dotted;
+  border-radius: 50%;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.07);
+  padding: 30px;
+}

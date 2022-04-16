@@ -1,6 +1,6 @@
 /* Application.vala
  *
- * Copyright 2021 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2021-2022 Diego Iván <diegoivan.mae@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ namespace Flowtime {
 
         private const ActionEntry[] APP_ENTRIES = {
             { "quit", action_close },
-            { "about", about_flowtime }
+            { "about", about_flowtime },
         };
 
         public Application () {
