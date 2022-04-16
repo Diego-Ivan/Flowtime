@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <template class="FlowtimeStatRow" parent="GtkListBoxRow">
-    <property name="activatable">false</property>
+  <template class="FlowtimeStatRow" parent="AdwBin">
+    <style>
+      <class name="card"/>
+    </style>
+
     <child>
       <object class="GtkBox">
         <property name="orientation">vertical</property>
-        <property name="margin-top">6</property>
-        <property name="margin-bottom">6</property>
+        <property name="margin-top">12</property>
+        <property name="margin-bottom">12</property>
         <property name="margin-start">12</property>
 
         <child>
@@ -28,8 +31,8 @@
             </style>
           </object>
         </child>
-
       </object>
     </child>
+
   </template>
 </interface>

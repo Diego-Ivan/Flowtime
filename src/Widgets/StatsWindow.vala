@@ -44,17 +44,11 @@ namespace Flowtime {
         }
 
         private void add_new_day_row (Day d) {
-            var work_row = new StatRow () {
-                date = d.date,
-                time = d.worktime
-            };
-            work_list.append (work_row);
+            var work_object = new StatObject (d.date, d.worktime);
+            work_list.append (work_object);
 
-            var break_row = new StatRow () {
-                date = d.date,
-                time = d.breaktime
-            };
-            break_list.append (break_row);
+            var break_object = new StatObject (d.date, d.breaktime);
+            break_list.append (break_object);
         }
 
         [GtkCallback]
