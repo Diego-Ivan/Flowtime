@@ -102,6 +102,10 @@ namespace Flowtime {
         private void retrieve_days () {
             assert (root_element->name == "statistics");
             DateTime current_date = new DateTime.now_utc ();
+
+            int months_saved = settings.get_int ("months-saved");
+            Day[] overpassed_days = {};
+
             const TimeSpan WEEK = TimeSpan.DAY * 7;
             const TimeSpan MONTH = TimeSpan.DAY * 30;
 
@@ -113,17 +117,19 @@ namespace Flowtime {
                     /*
                      * Unlink and dispose if they shouldn't be used
                      */
-                    if (ts > MONTH) {
-                        d.unlink ();
+                    if (ts > MONTH * months_saved) {
+                        message ("Day %s overpassed limit, unlinking", d.date.to_string ());
+                        overpassed_days += d;
                         continue;
                     }
-                    month_list.append (d);
 
-                    /*
-                     * Register average worktime per day of the week
-                     */
-                    worktime_month += d.worktime;
+                    if (ts > MONTH) {
+                        continue;
+                    }
+
+                    month_list.append (d);
                     breaktime_month += d.breaktime;
+                    worktime_month += d.worktime;
 
                     if (ts > WEEK) {
                         continue;
@@ -143,6 +149,10 @@ namespace Flowtime {
                 today = new Day ();
                 root_element->add_child (today.node);
                 week_list.append (today);
+            }
+
+            foreach (var day in overpassed_days) {
+                day.unlink ();
             }
 
             get_most_productive_day ();

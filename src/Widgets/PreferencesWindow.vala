@@ -1,6 +1,6 @@
 /* PreferencesWindow.vala
  *
- * Copyright 2021 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2021-2022 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -11,6 +11,7 @@ namespace Flowtime {
         public Window parent_window { get; set; }
         [GtkChild] unowned Adw.PreferencesGroup sounds_group;
         [GtkChild] unowned Gtk.Switch autostart_switch;
+        [GtkChild] unowned Gtk.SpinButton months_spinbutton;
 
         public Sound[] sounds = {
             { "Baum", "resource:///io/github/diegoivanme/flowtime/baum.ogg" },
@@ -30,9 +31,15 @@ namespace Flowtime {
         construct {
             var first_row = new SoundRow (sounds[0]);
             sounds_group.add (first_row);
+            months_spinbutton.value = 0;
 
             settings.bind ("autostart",
                 autostart_switch, "active",
+                DEFAULT
+            );
+
+            settings.bind ("months-saved",
+                months_spinbutton, "value",
                 DEFAULT
             );
 
