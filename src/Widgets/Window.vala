@@ -60,6 +60,17 @@ namespace Flowtime {
 
             break_page.change_request.connect (on_stop_break_request);
             work_page.change_request.connect (on_stop_work_request);
+
+            close_request.connect (() => {
+                if (work_page.timer.running)
+                    stats.worktime_today += work_page.seconds;
+
+                if (break_page.timer.running)
+                    stats.breaktime_today += break_page.seconds;
+
+                stats.save ();
+                return false;
+            });
         }
 
         private void open_settings () {

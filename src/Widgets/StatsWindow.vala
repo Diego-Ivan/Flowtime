@@ -24,7 +24,7 @@ namespace Flowtime {
             }
             construct {
                 _statistics = value;
-                foreach (Day d in statistics.month_list) {
+                foreach (Day d in statistics.all_days) {
                     add_new_day_row (d);
                 }
 

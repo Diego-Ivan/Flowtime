@@ -42,10 +42,10 @@ namespace Flowtime {
                 return today.worktime;
             }
             set {
-                // if (value < today.worktime) {
-                //     critical ("Worktime cannot be decreased");
-                //     return;
-                // }
+                if (value < today.worktime) {
+                    critical ("Worktime cannot be decreased");
+                    return;
+                }
                 worktime_week += value - today.worktime;
                 today.worktime = value;
             }
@@ -56,16 +56,17 @@ namespace Flowtime {
                 return today.breaktime;
             }
             set {
-                // if (value < today.breaktime) {
-                //     critical ("Breaktime cannot be decreased");
-                //     return;
-                // }
+                if (value < today.breaktime) {
+                    critical ("Breaktime cannot be decreased");
+                    return;
+                }
                 breaktime_week += value - today.breaktime;
                 today.breaktime = value;
             }
         }
 
         public List<Day> month_list = new List<Day> ();
+        public List<Day> all_days = new List<Day> ();
         public List<Day> week_list = new List<Day> ();
 
         public string productive_day { get; private set; }
@@ -101,7 +102,7 @@ namespace Flowtime {
 
         private void retrieve_days () {
             assert (root_element->name == "statistics");
-            DateTime current_date = new DateTime.now_utc ();
+            DateTime current_date = new DateTime.now_local ();
 
             int months_saved = settings.get_int ("months-saved");
             Day[] overpassed_days = {};
@@ -122,6 +123,7 @@ namespace Flowtime {
                         overpassed_days += d;
                         continue;
                     }
+                    all_days.append (d);
 
                     if (ts > MONTH) {
                         continue;
@@ -149,6 +151,8 @@ namespace Flowtime {
                 today = new Day ();
                 root_element->add_child (today.node);
                 week_list.append (today);
+                month_list.append (today);
+                all_days.append (today);
             }
 
             foreach (var day in overpassed_days) {
@@ -159,10 +163,10 @@ namespace Flowtime {
         }
 
         private void get_most_productive_day () {
-            Day most_productive = month_list.nth_data (0);
-            for (int i = 1; i < month_list.length (); i++) {
-                Day current = month_list.nth_data (i);
-                Day last = month_list.nth_data (i-1);
+            Day most_productive = all_days.nth_data (0);
+            for (int i = 1; i < all_days.length (); i++) {
+                Day current = all_days.nth_data (i);
+                Day last = all_days.nth_data (i-1);
 
                 if (current.worktime >= last.worktime) {
                     most_productive = current;
