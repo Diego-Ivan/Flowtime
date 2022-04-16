@@ -8,13 +8,15 @@
 namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/window.ui")]
     public class Window : Adw.ApplicationWindow {
-        [GtkChild] unowned Gtk.Stack stages;
-        // [GtkChild] unowned QuoteLabel quote_label;
-        [GtkChild] unowned TimerPage work_page;
-        [GtkChild] unowned TimerPage break_page;
+        [GtkChild]
+        private unowned Gtk.Stack stages;
+        [GtkChild]
+        private unowned TimerPage work_page;
+        [GtkChild]
+        private unowned TimerPage break_page;
 
-        [GtkChild] unowned Statistics statistics;
-
+        [GtkChild]
+        private unowned Statistics statistics;
         public Statistics stats {
             get {
                 return statistics;

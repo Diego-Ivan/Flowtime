@@ -9,9 +9,12 @@ namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/preferenceswindow.ui")]
     public class PreferencesWindow : Adw.PreferencesWindow {
         public Window parent_window { get; set; }
-        [GtkChild] unowned Adw.PreferencesGroup sounds_group;
-        [GtkChild] unowned Gtk.Switch autostart_switch;
-        [GtkChild] unowned Gtk.SpinButton months_spinbutton;
+        [GtkChild]
+        private unowned Adw.PreferencesGroup sounds_group;
+        [GtkChild]
+        private unowned Gtk.Switch autostart_switch;
+        [GtkChild]
+        private unowned Gtk.SpinButton months_spinbutton;
 
         public Sound[] sounds = {
             { "Baum", "resource:///io/github/diegoivanme/flowtime/baum.ogg" },
