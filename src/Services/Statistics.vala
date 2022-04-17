@@ -141,7 +141,7 @@ namespace Flowtime {
                     _worktime_week += d.worktime;
                     _breaktime_week += d.breaktime;
 
-                    if (ts < TimeSpan.DAY) {
+                    if (d.date.get_day_of_year () == current_date.get_day_of_year ()) {
                         today = d;
                     }
                 }
