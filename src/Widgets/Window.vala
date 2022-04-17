@@ -24,6 +24,7 @@ namespace Flowtime {
         }
 
         private Gtk.CssProvider provider = new Gtk.CssProvider ();
+        private uint initial_breaktime;
 
         private const GLib.ActionEntry[] WIN_ENTRIES = {
             { "preferences", open_settings }
@@ -80,7 +81,7 @@ namespace Flowtime {
         }
 
         private void on_stop_break_request () {
-            stats.breaktime_today += break_page.seconds;
+            stats.breaktime_today += initial_breaktime;
             stats.save ();
             break_page.timer.reset_time ();
 
@@ -95,7 +96,8 @@ namespace Flowtime {
         }
 
         private void on_stop_work_request () {
-            break_page.timer.seconds = work_page.timer.seconds / 5;
+            initial_breaktime = work_page.seconds / 5;
+            break_page.timer.seconds = initial_breaktime;
             stats.worktime_today += work_page.seconds;
 
             work_page.timer.reset_time ();
@@ -125,7 +127,7 @@ namespace Flowtime {
             notification.set_priority (NORMAL);
             app.send_notification ("Break-Timer-Done", notification);
             player.play ();
-            stats.breaktime_today += break_page.seconds;
+            stats.breaktime_today += initial_breaktime;
 
             stats.save ();
             work_page.timer.reset_time ();
