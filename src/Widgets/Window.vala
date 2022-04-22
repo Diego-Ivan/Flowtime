@@ -87,10 +87,19 @@ namespace Flowtime {
 
             stages.set_visible_child_full ("work_stage", CROSSFADE);
 
+            if (Adw.StyleManager.get_default ().dark) {
+                provider.load_from_data (
+                    (uint8[])"@define-color accent_color #78aeed;"
+                );
+            }
+            else {
+                provider.load_from_data (
+                    (uint8[])"@define-color accent_color @blue_4;"
+                );
+            }
             provider.load_from_data (
-                (uint8[])"@define-color accent_color @blue_3; @define-color accent_bg_color @blue_3;"
+              (uint8[])"@define-color accent_bg_color @blue_3;"
             );
-
             if (settings.get_boolean ("autostart"))
                 work_page.play_timer ();
         }
@@ -107,7 +116,6 @@ namespace Flowtime {
             provider.load_from_data (
                 (uint8[])"@define-color accent_color @green_4; @define-color accent_bg_color @green_4;"
             );
-
             if (settings.get_boolean ("autostart"))
                 break_page.play_timer ();
 
@@ -134,3 +142,4 @@ namespace Flowtime {
         }
     }
 }
+
