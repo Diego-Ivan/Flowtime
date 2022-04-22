@@ -15,14 +15,34 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/main/data/screenshots/01.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v2.0/data/screenshots/01.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/main/data/screenshots/02.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v2.0/data/screenshots/02.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v2.0/data/screenshots/03.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v2.0/data/screenshots/04.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v2.0/data/screenshots/05.png</image>
     </screenshot>
   </screenshots>
 
   <releases>
+    <release version="2.0" date="2022-04-22">
+      <description>
+        <p>Flowtime 2.0: Keep on track!</p>
+        <p>In this new version, a shiny new feature was added: Statistics!</p>
+        <ul>
+          <li>Have an overview of how much time you have worked in the last month, week and day</li>
+          <li>Take a look at your day-specific data</li>
+          <li>Export your statistics to CSV format</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.5.0" date="2022-03-12">
       <description>
         <p>Version 1.5.0</p>
@@ -37,7 +57,7 @@
   </releases>
 
   <requires>
-    <display_length compare="ge">390</display_length>
+    <display_length compare="ge">361</display_length>
   </requires>
 
   <recommends>

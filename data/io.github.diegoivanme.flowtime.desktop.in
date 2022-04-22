@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=flowtime
+Name=Flowtime
 Exec=flowtime
 Icon=io.github.diegoivanme.flowtime
 Terminal=false
