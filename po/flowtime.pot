@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-16 22:37-0600\n"
+"POT-Creation-Date: 2022-04-23 11:37-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/io.github.diegoivanme.flowtime.desktop.in:3
-msgid "flowtime"
-msgstr ""
-
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
 msgid "Flowtime"
 msgstr ""
@@ -37,31 +34,29 @@ msgid ""
 "without loosing you **flow**."
 msgstr ""
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:28
-msgid "Version 1.1.0"
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
+msgid "Flowtime 2.0: Keep on track!"
 msgstr ""
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:30
-msgid ""
-"New feature! The end of the break is now marked with both a notification and "
-"tone"
-msgstr ""
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:31
-msgid "Customizable tones!"
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
+msgid "In this new version, a shiny new feature was added: Statistics!"
 msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
-msgid "Version 1.0.0"
+msgid ""
+"Have an overview of how much time you have worked in the last month, week "
+"and day"
 msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
-msgid ""
-"The first release of Flowtime! Work for all the time you feel concentrated, "
-"take breaks when it's necessary. Spanish Translation available!"
+msgid "Take a look at your day-specific data"
 msgstr ""
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:81
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:42
+msgid "Export your statistics to CSV format"
+msgstr ""
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:83
 msgid "Diego Iván"
 msgstr ""
 
@@ -69,31 +64,51 @@ msgstr ""
 msgid "_About Flowtime"
 msgstr ""
 
-#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:18
+#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:11
 msgid "_Preferences"
 msgstr ""
 
-#: src/ui/preferenceswindow.ui:22
-msgid "Break Time"
+#: src/ui/window.ui:67
+msgid "Work Stage"
 msgstr ""
 
-#: src/ui/preferenceswindow.ui:23
-msgid "Changes will be applied in the next work session"
+#: src/ui/window.ui:81
+msgid "Break Stage"
 msgstr ""
 
-#: src/ui/preferenceswindow.ui:27
-msgid "Time until break"
+#: src/ui/window.ui:116
+msgid "See Details"
 msgstr ""
 
-#: src/ui/preferenceswindow.ui:28
-msgid "The time you have to work until a break is allowed."
+#: src/ui/preferenceswindow.ui:15
+msgid "Statistics"
 msgstr ""
 
-#: src/ui/preferenceswindow.ui:44
-msgid "Sounds"
+#: src/ui/preferenceswindow.ui:19
+msgid "Months Saved"
+msgstr ""
+
+#: src/ui/preferenceswindow.ui:20
+msgid "The amount of months that the work data will be saved"
+msgstr ""
+
+#: src/ui/preferenceswindow.ui:41
+msgid "Timer"
 msgstr ""
 
 #: src/ui/preferenceswindow.ui:45
+msgid "Autostart"
+msgstr ""
+
+#: src/ui/preferenceswindow.ui:46
+msgid "Automatically start the timer when the stage is changed"
+msgstr ""
+
+#: src/ui/preferenceswindow.ui:62
+msgid "Sounds"
+msgstr ""
+
+#: src/ui/preferenceswindow.ui:63
 msgid "Alarm sounds that mark break time"
 msgstr ""
 

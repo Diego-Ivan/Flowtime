@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-16 22:37-0600\n"
+"POT-Creation-Date: 2022-04-23 11:37-0500\n"
 "PO-Revision-Date: 2022-03-10 21:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,9 +19,6 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: data/io.github.diegoivanme.flowtime.desktop.in:3
-msgid "flowtime"
-msgstr ""
-
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
 msgid "Flowtime"
 msgstr ""
@@ -42,36 +39,29 @@ msgstr ""
 "das Ihnen Spaß macht, kann lästig sein. Deshalb gibt es die Flowtime-"
 "Technik: Angemessene Pausen machen, ohne den **Fluss** zu verlieren."
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:28
-msgid "Version 1.1.0"
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
+msgid "Flowtime 2.0: Keep on track!"
 msgstr ""
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:30
-msgid ""
-"New feature! The end of the break is now marked with both a notification and "
-"tone"
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
+msgid "In this new version, a shiny new feature was added: Statistics!"
 msgstr ""
-"Neue Funktion! Das Ende der Pause wird jetzt durch eine Benachrichtigung und "
-"einen Ton angezeigt"
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:31
-msgid "Customizable tones!"
-msgstr "Anpassbare Töne!"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
-msgid "Version 1.0.0"
+msgid ""
+"Have an overview of how much time you have worked in the last month, week "
+"and day"
 msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
-msgid ""
-"The first release of Flowtime! Work for all the time you feel concentrated, "
-"take breaks when it's necessary. Spanish Translation available!"
+msgid "Take a look at your day-specific data"
 msgstr ""
-"Die erste Version von Flowtime! Arbeiten Sie so lange, wie Sie sich "
-"konzentriert fühlen, und machen Sie Pausen, wenn es nötig ist. Spanische "
-"Übersetzung verfügbar!"
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:81
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:42
+msgid "Export your statistics to CSV format"
+msgstr ""
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:83
 msgid "Diego Iván"
 msgstr ""
 
@@ -79,31 +69,52 @@ msgstr ""
 msgid "_About Flowtime"
 msgstr "_Über Flowtime"
 
-#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:18
+#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:11
 msgid "_Preferences"
 msgstr "_Einstellungen"
 
-#: src/ui/preferenceswindow.ui:22
-msgid "Break Time"
+#: src/ui/window.ui:67
+msgid "Work Stage"
+msgstr ""
+
+#: src/ui/window.ui:81
+#, fuzzy
+msgid "Break Stage"
 msgstr "Pausenzeit"
 
-#: src/ui/preferenceswindow.ui:23
-msgid "Changes will be applied in the next work session"
-msgstr "Änderungen werden in der nächsten Arbeitssitzung umgesetzt"
+#: src/ui/window.ui:116
+msgid "See Details"
+msgstr ""
 
-#: src/ui/preferenceswindow.ui:27
-msgid "Time until break"
-msgstr "Zeit bis zur Pause"
+#: src/ui/preferenceswindow.ui:15
+msgid "Statistics"
+msgstr ""
 
-#: src/ui/preferenceswindow.ui:28
-msgid "The time you have to work until a break is allowed."
-msgstr "Die Zeit, die Sie arbeiten müssen, bis eine Pause erlaubt ist."
+#: src/ui/preferenceswindow.ui:19
+msgid "Months Saved"
+msgstr ""
 
-#: src/ui/preferenceswindow.ui:44
+#: src/ui/preferenceswindow.ui:20
+msgid "The amount of months that the work data will be saved"
+msgstr ""
+
+#: src/ui/preferenceswindow.ui:41
+msgid "Timer"
+msgstr ""
+
+#: src/ui/preferenceswindow.ui:45
+msgid "Autostart"
+msgstr ""
+
+#: src/ui/preferenceswindow.ui:46
+msgid "Automatically start the timer when the stage is changed"
+msgstr ""
+
+#: src/ui/preferenceswindow.ui:62
 msgid "Sounds"
 msgstr "Klänge"
 
-#: src/ui/preferenceswindow.ui:45
+#: src/ui/preferenceswindow.ui:63
 msgid "Alarm sounds that mark break time"
 msgstr "Alarmtöne, die die Pausenzeit markieren"
 
@@ -163,3 +174,31 @@ msgstr "Die Möglichkeiten sind endlos"
 #: src/Application.vala:102
 msgid "translator-credits"
 msgstr "tronta"
+
+#~ msgid ""
+#~ "New feature! The end of the break is now marked with both a notification "
+#~ "and tone"
+#~ msgstr ""
+#~ "Neue Funktion! Das Ende der Pause wird jetzt durch eine Benachrichtigung "
+#~ "und einen Ton angezeigt"
+
+#~ msgid "Customizable tones!"
+#~ msgstr "Anpassbare Töne!"
+
+#~ msgid ""
+#~ "The first release of Flowtime! Work for all the time you feel "
+#~ "concentrated, take breaks when it's necessary. Spanish Translation "
+#~ "available!"
+#~ msgstr ""
+#~ "Die erste Version von Flowtime! Arbeiten Sie so lange, wie Sie sich "
+#~ "konzentriert fühlen, und machen Sie Pausen, wenn es nötig ist. Spanische "
+#~ "Übersetzung verfügbar!"
+
+#~ msgid "Changes will be applied in the next work session"
+#~ msgstr "Änderungen werden in der nächsten Arbeitssitzung umgesetzt"
+
+#~ msgid "Time until break"
+#~ msgstr "Zeit bis zur Pause"
+
+#~ msgid "The time you have to work until a break is allowed."
+#~ msgstr "Die Zeit, die Sie arbeiten müssen, bis eine Pause erlaubt ist."
