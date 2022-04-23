@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-23 11:37-0500\n"
-"PO-Revision-Date: 2022-03-11 18:35+0100\n"
+"PO-Revision-Date: 2022-04-23 21:35+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: italian <LL@li.org>\n"
 "Language: it\n"
@@ -39,25 +39,27 @@ msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
 msgid "Flowtime 2.0: Keep on track!"
-msgstr ""
+msgstr "Flowtime 2.0: tieniti al passo!"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
 msgid "In this new version, a shiny new feature was added: Statistics!"
-msgstr ""
+msgstr "In questa nuova versione è stata aggiunta una nuova brillante funzionalità: le statistiche!"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
 msgid ""
 "Have an overview of how much time you have worked in the last month, week "
 "and day"
 msgstr ""
+"Avete una panoramica di quanto tempo hai lavorato nell'ultimo mese, settimana "
+"e giorno"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
 msgid "Take a look at your day-specific data"
-msgstr ""
+msgstr "Dai un'occhiata ai tuoi dati specifici del giorno"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:42
 msgid "Export your statistics to CSV format"
-msgstr ""
+msgstr "Esporta le tue statistiche in formato CSV"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:83
 msgid "Diego Iván"
@@ -73,7 +75,7 @@ msgstr "_Preferenze"
 
 #: src/ui/window.ui:67
 msgid "Work Stage"
-msgstr ""
+msgstr "Fase di lavoro"
 
 #: src/ui/window.ui:81
 #, fuzzy
@@ -82,19 +84,19 @@ msgstr "Tempo di pausa"
 
 #: src/ui/window.ui:116
 msgid "See Details"
-msgstr ""
+msgstr "Vedi dettagli"
 
 #: src/ui/preferenceswindow.ui:15
 msgid "Statistics"
-msgstr ""
+msgstr "Statistiche"
 
 #: src/ui/preferenceswindow.ui:19
 msgid "Months Saved"
-msgstr ""
+msgstr "Mesi salvati"
 
 #: src/ui/preferenceswindow.ui:20
 msgid "The amount of months that the work data will be saved"
-msgstr ""
+msgstr "La quantità di mesi in cui i dati di lavoro verranno salvati"
 
 #: src/ui/preferenceswindow.ui:41
 msgid "Timer"
@@ -102,11 +104,11 @@ msgstr ""
 
 #: src/ui/preferenceswindow.ui:45
 msgid "Autostart"
-msgstr ""
+msgstr "Avvio automatico"
 
 #: src/ui/preferenceswindow.ui:46
 msgid "Automatically start the timer when the stage is changed"
-msgstr ""
+msgstr "Avvia automaticamente il timer quando si cambia fase"
 
 #: src/ui/preferenceswindow.ui:62
 msgid "Sounds"
