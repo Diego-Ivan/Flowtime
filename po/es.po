@@ -2,22 +2,22 @@
 # Copyright (C) 2021 THE flowtime'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the flowtime package.
 # Automatically generated, 2021.
-# Diego Iván <diegoivan.mae@gmail.com>, 2021.
+# Diego Iván <diegoivan.mae@gmail.com>, 2021-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-23 14:23-0500\n"
-"PO-Revision-Date: 2021-12-15 13:30-0600\n"
+"PO-Revision-Date: 2022-04-23 14:29-0500\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
-"Language-Team: Spanish - Mexico <diegoivan.mae@gmail.com>\n"
-"Language: es_MX\n"
+"Language-Team: Spanish; Castilian <diegoivan.mae@gmail.com>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 41.0\n"
+"X-Generator: Gtranslator 42.0\n"
 
 #: data/io.github.diegoivanme.flowtime.desktop.in:3
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
@@ -42,29 +42,31 @@ msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
 msgid "Flowtime 2.0: Keep on track!"
-msgstr ""
+msgstr "Flowtime 2.0: ¡Manténgase al tanto!"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
 msgid "In this new version, a shiny new feature was added: Statistics!"
-msgstr ""
+msgstr "En esta nueva versión, una nueva función fue añadida: ¡Estadísticas!"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
 msgid ""
 "Have an overview of how much time you have worked in the last month, week "
 "and day"
 msgstr ""
+"Tenga una vista general de cuánto tiempo ha trabajado en el último mes, "
+"semana y día"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
 msgid "Take a look at your day-specific data"
-msgstr ""
+msgstr "Eche un vistazo a su información de cada día"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:42
 msgid "Export your statistics to CSV format"
-msgstr ""
+msgstr "Exporte sus estadísticas a el formato CSV"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:83
 msgid "Diego Iván"
-msgstr ""
+msgstr "Diego Iván"
 
 #: src/ui/window.ui:8
 msgid "_About Flowtime"
@@ -76,40 +78,39 @@ msgstr "_Preferencias"
 
 #: src/ui/window.ui:67
 msgid "Work Stage"
-msgstr ""
+msgstr "Estación de Trabajo"
 
 #: src/ui/window.ui:81
-#, fuzzy
 msgid "Break Stage"
-msgstr "Hora del descanso"
+msgstr "Estación de Descanso"
 
 #: src/ui/window.ui:116
 msgid "See Details"
-msgstr ""
+msgstr "Ver detalles"
 
 #: src/ui/preferenceswindow.ui:15
 msgid "Statistics"
-msgstr ""
+msgstr "Estadísticas"
 
 #: src/ui/preferenceswindow.ui:19
 msgid "Months Saved"
-msgstr ""
+msgstr "Meses Guardados"
 
 #: src/ui/preferenceswindow.ui:20
 msgid "The amount of months that the work data will be saved"
-msgstr ""
+msgstr "El tiempo en meses que la información de trabajo será guardada"
 
 #: src/ui/preferenceswindow.ui:41
 msgid "Timer"
-msgstr ""
+msgstr "Temporizador"
 
 #: src/ui/preferenceswindow.ui:45
 msgid "Autostart"
-msgstr ""
+msgstr "Iniciar Automáticamente"
 
 #: src/ui/preferenceswindow.ui:46
 msgid "Automatically start the timer when the stage is changed"
-msgstr ""
+msgstr "Iniciar automáticamente el temporizador cuando la estación cambie"
 
 #: src/ui/preferenceswindow.ui:62
 msgid "Sounds"
@@ -121,55 +122,54 @@ msgstr "Sonidos de alarma que marcan el fin del descanso"
 
 #: src/ui/statpage.ui:13
 msgid "Today"
-msgstr ""
+msgstr "Hoy"
 
 #: src/ui/statpage.ui:23
 msgid "This Week"
-msgstr ""
+msgstr "Esta semana"
 
 #: src/ui/statpage.ui:33
 msgid "This Month"
-msgstr ""
+msgstr "Este mes"
 
 #: src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
 msgid "Work Time"
-msgstr ""
+msgstr "Tiempo de Trabajo"
 
 #: src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
-#, fuzzy
 msgid "Break Time"
-msgstr "Hora del descanso"
+msgstr "Tiempo de Descanso"
 
 #. If seconds is less than a minute, it will display seconds
 #: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
 #: src/Widgets/StatCircle.vala:55
 msgid "seconds"
-msgstr ""
+msgstr "segundos"
 
 #: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
 msgid "minutes"
-msgstr ""
+msgstr "minutos"
 
 #: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
 msgid "hour"
-msgstr ""
+msgstr "hora"
 
 #: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
 msgid "hours"
-msgstr ""
+msgstr "horas"
 
 #: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
 msgid "day"
-msgstr ""
+msgstr "día"
 
 #: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
 msgid "days"
-msgstr ""
+msgstr "días"
 
 #: src/Widgets/StatsWindow.vala:31
 #, c-format
 msgid "%s is your most productive day of the week"
-msgstr ""
+msgstr "El %s es tu día más productivo de la semana"
 
 #. Translators: Write your Name<email> here :p
 #: src/Application.vala:102
