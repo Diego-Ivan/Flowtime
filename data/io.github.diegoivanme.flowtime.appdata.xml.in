@@ -32,17 +32,6 @@
   </screenshots>
 
   <releases>
-    <release version="2.0" date="2022-04-22">
-      <description>
-        <p>Flowtime 2.0: Keep on track!</p>
-        <p>In this new version, a shiny new feature was added: Statistics!</p>
-        <ul>
-          <li>Have an overview of how much time you have worked in the last month, week and day</li>
-          <li>Take a look at your day-specific data</li>
-          <li>Export your statistics to CSV format</li>
-        </ul>
-      </description>
-    </release>
     <release version="1.5.0" date="2022-03-12">
       <description>
         <p>Version 1.5.0</p>
@@ -51,6 +40,17 @@
           <li>Accent color changes depending on your stage: blue for work stage, green for break stage</li>
           <li>There is now a label above the timer that indicates your current stage</li>
           <li>A new setting has arrived: Timer Autostart. Set if you want to start the timer inmediately after you press the "next" button</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.0" date="2022-04-22">
+      <description>
+        <p>Flowtime 2.0: Keep on track!</p>
+        <p>In this new version, a shiny new feature was added: Statistics!</p>
+        <ul>
+          <li>Have an overview of how much time you have worked in the last month, week and day</li>
+          <li>Take a look at your day-specific data</li>
+          <li>Export your statistics to CSV format</li>
         </ul>
       </description>
     </release>
