@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-23 11:37-0500\n"
+"POT-Creation-Date: 2022-04-23 14:23-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,56 +112,55 @@ msgstr ""
 msgid "Alarm sounds that mark break time"
 msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:11
-msgid "Good Job!"
+#: src/ui/statpage.ui:13
+msgid "Today"
 msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:12
-msgid "Time to take a rest"
+#: src/ui/statpage.ui:23
+msgid "This Week"
 msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:13
-msgid "In the meantime, drink some water"
+#: src/ui/statpage.ui:33
+msgid "This Month"
 msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:14
-msgid "It's coffee time"
+#: src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
+msgid "Work Time"
 msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:15
-msgid "You deserve a break"
+#: src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
+msgid "Break Time"
 msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:16
-msgid "Keep a healthy mind"
+#. If seconds is less than a minute, it will display seconds
+#: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
+#: src/Widgets/StatCircle.vala:55
+msgid "seconds"
 msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:17
-msgid "Just breathe"
+#: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
+msgid "minutes"
 msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:18
-msgid "Relax, refresh and recharge"
+#: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
+msgid "hour"
 msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:19
-msgid "Celebrate your small wins"
+#: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
+msgid "hours"
 msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:20
-msgid "Impossible is just an opinion"
+#: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
+msgid "day"
 msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:21
-msgid "Way to go!"
+#: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
+msgid "days"
 msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:22
-msgid "Begin anywhere"
-msgstr ""
-
-#: src/Widgets/QuoteLabel.vala:23
-msgid "The possibilities are never ending"
+#: src/Widgets/StatsWindow.vala:31
+#, c-format
+msgid "%s is your most productive day of the week"
 msgstr ""
 
 #. Translators: Write your Name<email> here :p

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-23 11:37-0500\n"
+"POT-Creation-Date: 2022-04-23 14:23-0500\n"
 "PO-Revision-Date: 2021-12-15 13:30-0600\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish - Mexico <diegoivan.mae@gmail.com>\n"
@@ -119,62 +119,101 @@ msgstr "Sonidos"
 msgid "Alarm sounds that mark break time"
 msgstr "Sonidos de alarma que marcan el fin del descanso"
 
-#: src/Widgets/QuoteLabel.vala:11
-msgid "Good Job!"
-msgstr "¡Buen Trabajo!"
+#: src/ui/statpage.ui:13
+msgid "Today"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:12
-msgid "Time to take a rest"
-msgstr "Hora de tomar un descanso"
+#: src/ui/statpage.ui:23
+msgid "This Week"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:13
-msgid "In the meantime, drink some water"
-msgstr "Mientras tanto, tome un poco de agua"
+#: src/ui/statpage.ui:33
+msgid "This Month"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:14
-msgid "It's coffee time"
-msgstr "Es la hora del café"
+#: src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
+msgid "Work Time"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:15
-msgid "You deserve a break"
-msgstr "Usted merece un descanso"
+#: src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
+#, fuzzy
+msgid "Break Time"
+msgstr "Hora del descanso"
 
-#: src/Widgets/QuoteLabel.vala:16
-msgid "Keep a healthy mind"
-msgstr "Mantenga una mente saludable"
+#. If seconds is less than a minute, it will display seconds
+#: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
+#: src/Widgets/StatCircle.vala:55
+msgid "seconds"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:17
-msgid "Just breathe"
-msgstr "Sólo respire"
+#: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
+msgid "minutes"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:18
-msgid "Relax, refresh and recharge"
-msgstr "Relájese, refrésquese y recargue"
+#: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
+msgid "hour"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:19
-msgid "Celebrate your small wins"
-msgstr "Celebre sus pequeñas victorias"
+#: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
+msgid "hours"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:20
-msgid "Impossible is just an opinion"
-msgstr "El imposible es solo una opinión"
+#: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
+msgid "day"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:21
-msgid "Way to go!"
-msgstr "¡Bien hecho!"
+#: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
+msgid "days"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:22
-msgid "Begin anywhere"
-msgstr "Empiece en cualquier momento"
-
-#: src/Widgets/QuoteLabel.vala:23
-msgid "The possibilities are never ending"
-msgstr "Las posibilidades son infinitas"
+#: src/Widgets/StatsWindow.vala:31
+#, c-format
+msgid "%s is your most productive day of the week"
+msgstr ""
 
 #. Translators: Write your Name<email> here :p
 #: src/Application.vala:102
 msgid "translator-credits"
 msgstr "Diego Iván<diegoivan.mae@gmail.com>"
+
+#~ msgid "Good Job!"
+#~ msgstr "¡Buen Trabajo!"
+
+#~ msgid "Time to take a rest"
+#~ msgstr "Hora de tomar un descanso"
+
+#~ msgid "In the meantime, drink some water"
+#~ msgstr "Mientras tanto, tome un poco de agua"
+
+#~ msgid "It's coffee time"
+#~ msgstr "Es la hora del café"
+
+#~ msgid "You deserve a break"
+#~ msgstr "Usted merece un descanso"
+
+#~ msgid "Keep a healthy mind"
+#~ msgstr "Mantenga una mente saludable"
+
+#~ msgid "Just breathe"
+#~ msgstr "Sólo respire"
+
+#~ msgid "Relax, refresh and recharge"
+#~ msgstr "Relájese, refrésquese y recargue"
+
+#~ msgid "Celebrate your small wins"
+#~ msgstr "Celebre sus pequeñas victorias"
+
+#~ msgid "Impossible is just an opinion"
+#~ msgstr "El imposible es solo una opinión"
+
+#~ msgid "Way to go!"
+#~ msgstr "¡Bien hecho!"
+
+#~ msgid "Begin anywhere"
+#~ msgstr "Empiece en cualquier momento"
+
+#~ msgid "The possibilities are never ending"
+#~ msgstr "Las posibilidades son infinitas"
 
 #~ msgid "flowtime"
 #~ msgstr "flowtime"

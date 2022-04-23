@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-23 11:37-0500\n"
+"POT-Creation-Date: 2022-04-23 14:23-0500\n"
 "PO-Revision-Date: 2022-03-10 21:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -118,62 +118,101 @@ msgstr "Klänge"
 msgid "Alarm sounds that mark break time"
 msgstr "Alarmtöne, die die Pausenzeit markieren"
 
-#: src/Widgets/QuoteLabel.vala:11
-msgid "Good Job!"
-msgstr "Gut gemacht!"
+#: src/ui/statpage.ui:13
+msgid "Today"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:12
-msgid "Time to take a rest"
-msgstr "Zeit zum Ausruhen"
+#: src/ui/statpage.ui:23
+msgid "This Week"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:13
-msgid "In the meantime, drink some water"
-msgstr "In der Zwischenzeit etwas Wasser trinken"
+#: src/ui/statpage.ui:33
+msgid "This Month"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:14
-msgid "It's coffee time"
-msgstr "Es ist Zeit für einen Kaffee"
+#: src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
+msgid "Work Time"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:15
-msgid "You deserve a break"
-msgstr "Sie haben sich eine Pause verdient"
+#: src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
+#, fuzzy
+msgid "Break Time"
+msgstr "Pausenzeit"
 
-#: src/Widgets/QuoteLabel.vala:16
-msgid "Keep a healthy mind"
-msgstr "Behalten Sie einen gesunden Geist"
+#. If seconds is less than a minute, it will display seconds
+#: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
+#: src/Widgets/StatCircle.vala:55
+msgid "seconds"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:17
-msgid "Just breathe"
-msgstr "Einfach atmen"
+#: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
+msgid "minutes"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:18
-msgid "Relax, refresh and recharge"
-msgstr "Entspannen, erfrischen und auftanken"
+#: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
+msgid "hour"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:19
-msgid "Celebrate your small wins"
-msgstr "Feiern Sie Ihre kleinen Erfolge"
+#: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
+msgid "hours"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:20
-msgid "Impossible is just an opinion"
-msgstr "Unmöglich ist nur eine Sichtweise"
+#: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
+msgid "day"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:21
-msgid "Way to go!"
-msgstr "Gut gemacht!"
+#: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
+msgid "days"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:22
-msgid "Begin anywhere"
-msgstr "Irgendwo anfangen"
-
-#: src/Widgets/QuoteLabel.vala:23
-msgid "The possibilities are never ending"
-msgstr "Die Möglichkeiten sind endlos"
+#: src/Widgets/StatsWindow.vala:31
+#, c-format
+msgid "%s is your most productive day of the week"
+msgstr ""
 
 #. Translators: Write your Name<email> here :p
 #: src/Application.vala:102
 msgid "translator-credits"
 msgstr "tronta"
+
+#~ msgid "Good Job!"
+#~ msgstr "Gut gemacht!"
+
+#~ msgid "Time to take a rest"
+#~ msgstr "Zeit zum Ausruhen"
+
+#~ msgid "In the meantime, drink some water"
+#~ msgstr "In der Zwischenzeit etwas Wasser trinken"
+
+#~ msgid "It's coffee time"
+#~ msgstr "Es ist Zeit für einen Kaffee"
+
+#~ msgid "You deserve a break"
+#~ msgstr "Sie haben sich eine Pause verdient"
+
+#~ msgid "Keep a healthy mind"
+#~ msgstr "Behalten Sie einen gesunden Geist"
+
+#~ msgid "Just breathe"
+#~ msgstr "Einfach atmen"
+
+#~ msgid "Relax, refresh and recharge"
+#~ msgstr "Entspannen, erfrischen und auftanken"
+
+#~ msgid "Celebrate your small wins"
+#~ msgstr "Feiern Sie Ihre kleinen Erfolge"
+
+#~ msgid "Impossible is just an opinion"
+#~ msgstr "Unmöglich ist nur eine Sichtweise"
+
+#~ msgid "Way to go!"
+#~ msgstr "Gut gemacht!"
+
+#~ msgid "Begin anywhere"
+#~ msgstr "Irgendwo anfangen"
+
+#~ msgid "The possibilities are never ending"
+#~ msgstr "Die Möglichkeiten sind endlos"
 
 #~ msgid ""
 #~ "New feature! The end of the break is now marked with both a notification "

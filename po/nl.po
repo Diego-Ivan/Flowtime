@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-23 11:37-0500\n"
+"POT-Creation-Date: 2022-04-23 14:23-0500\n"
 "PO-Revision-Date: 2022-03-29 18:14+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
@@ -118,62 +118,101 @@ msgstr "Geluiden"
 msgid "Alarm sounds that mark break time"
 msgstr "Geluiden die de pauzes aankondigen"
 
-#: src/Widgets/QuoteLabel.vala:11
-msgid "Good Job!"
-msgstr "Lekker bezig!"
+#: src/ui/statpage.ui:13
+msgid "Today"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:12
-msgid "Time to take a rest"
-msgstr "Tijd voor een pauze"
+#: src/ui/statpage.ui:23
+msgid "This Week"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:13
-msgid "In the meantime, drink some water"
-msgstr "Drink ondertussen wat water"
+#: src/ui/statpage.ui:33
+msgid "This Month"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:14
-msgid "It's coffee time"
-msgstr "Tijd voor een bakkie leut"
+#: src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
+msgid "Work Time"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:15
-msgid "You deserve a break"
-msgstr "Je hebt wel een pauze verdiend"
+#: src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
+#, fuzzy
+msgid "Break Time"
+msgstr "Pauzetijd"
 
-#: src/Widgets/QuoteLabel.vala:16
-msgid "Keep a healthy mind"
-msgstr "Houd je geest scherp"
+#. If seconds is less than a minute, it will display seconds
+#: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
+#: src/Widgets/StatCircle.vala:55
+msgid "seconds"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:17
-msgid "Just breathe"
-msgstr "Adem in, adem uit"
+#: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
+msgid "minutes"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:18
-msgid "Relax, refresh and recharge"
-msgstr "Ontspan en doe nieuwe energie op"
+#: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
+msgid "hour"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:19
-msgid "Celebrate your small wins"
-msgstr "Vier successen, groot of klein"
+#: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
+msgid "hours"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:20
-msgid "Impossible is just an opinion"
-msgstr "Niets is onmogelijk"
+#: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
+msgid "day"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:21
-msgid "Way to go!"
-msgstr "Ga zo door!"
+#: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
+msgid "days"
+msgstr ""
 
-#: src/Widgets/QuoteLabel.vala:22
-msgid "Begin anywhere"
-msgstr "Je moet ergens beginnen"
-
-#: src/Widgets/QuoteLabel.vala:23
-msgid "The possibilities are never ending"
-msgstr "Je mogelijkheden zijn eindeloos"
+#: src/Widgets/StatsWindow.vala:31
+#, c-format
+msgid "%s is your most productive day of the week"
+msgstr ""
 
 #. Translators: Write your Name<email> here :p
 #: src/Application.vala:102
 msgid "translator-credits"
 msgstr "Heimen Stoffels <vistausss@fastmail.com>"
+
+#~ msgid "Good Job!"
+#~ msgstr "Lekker bezig!"
+
+#~ msgid "Time to take a rest"
+#~ msgstr "Tijd voor een pauze"
+
+#~ msgid "In the meantime, drink some water"
+#~ msgstr "Drink ondertussen wat water"
+
+#~ msgid "It's coffee time"
+#~ msgstr "Tijd voor een bakkie leut"
+
+#~ msgid "You deserve a break"
+#~ msgstr "Je hebt wel een pauze verdiend"
+
+#~ msgid "Keep a healthy mind"
+#~ msgstr "Houd je geest scherp"
+
+#~ msgid "Just breathe"
+#~ msgstr "Adem in, adem uit"
+
+#~ msgid "Relax, refresh and recharge"
+#~ msgstr "Ontspan en doe nieuwe energie op"
+
+#~ msgid "Celebrate your small wins"
+#~ msgstr "Vier successen, groot of klein"
+
+#~ msgid "Impossible is just an opinion"
+#~ msgstr "Niets is onmogelijk"
+
+#~ msgid "Way to go!"
+#~ msgstr "Ga zo door!"
+
+#~ msgid "Begin anywhere"
+#~ msgstr "Je moet ergens beginnen"
+
+#~ msgid "The possibilities are never ending"
+#~ msgstr "Je mogelijkheden zijn eindeloos"
 
 #~ msgid "flowtime"
 #~ msgstr "flowtime"
