@@ -14,8 +14,9 @@
 ## Gallery:
 
 <div align="center">
-	<img src="data/screenshots/01.png" width="256" height="256" style="padding-top=24;"></img>
-	<img src="data/screenshots/02.png" width="256" height="256"></img>
+	<img src="data/screenshots/01.png" width="256" height="311" style="padding-top=24;"></img>
+	<img src="data/screenshots/03.png" width="256" height="311"></img>
+	<img src="data/screenshots/05.png" width="243.5" height="283"></img>
 </div>
 
 ## Features:
@@ -24,6 +25,8 @@
 * Assisted time calculations for breaks
 * Customizable tones for the end of the break
 * Notification that alerts you when your break is done
+* Work and break time statistics
+* Export your statistics to CSV
 
 ## Why?
 
@@ -35,7 +38,13 @@ The time you worked is divided by 5, and that's the break time you'll take. E.g,
 
 ## Installing and Running
 
-The recommended way to install Flowtime is by using the official Flatpak release on Flathub. There's third-party, unofficial AUR packages:
+### Flathub
+
+The only official distribution format for Flowtime is the Flatpak package available on Flathub. Click on the banner on the top of this README.md to go to Flowtime's Flathub page. Any other unofficial distribution format that might be available is highly disencouraged.
+
+### AUR
+
+There's third-party, unofficial AUR packages:
 
 | Package        | Mantainer    |
 | -------------- | ------------ |
@@ -52,11 +61,12 @@ GNOME Builder provides a high quality Flatpak integration. All dependencies, run
 
 | Dependency | Version |
 | ---------- | ------- |
-| Meson | 0.5.6 |
-| GTK  | 4.2.5 |
+| Meson | 0.5.9 |
+| gtk-4  | 4.4.6 |
 | gstreamer-1.0 | 1.0 |
 | gstreamer-player-1.0 | 1.0 |
-| Libadwaita |  1.0 |
+| libadwaita-1 |  1.1 |
+| libxml-2.0 |  1.0 |
 
 To compile and install, run:
 
