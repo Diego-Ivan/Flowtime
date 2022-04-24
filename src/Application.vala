@@ -22,12 +22,12 @@ namespace Flowtime {
     public GLib.Settings settings;
     public Gst.Player player;
     public class Application : Adw.Application {
-        public Window main_window;
         public string sound_uri_prefix;
 
         private const ActionEntry[] APP_ENTRIES = {
             { "quit", action_close },
             { "about", about_flowtime },
+            { "preferences", flowtime_preferences }
         };
 
         public Application () {
@@ -41,6 +41,7 @@ namespace Flowtime {
 
             add_action_entries (APP_ENTRIES, this);
             set_accels_for_action ("app.quit", { "<Ctrl>Q" });
+            set_accels_for_action ("app.preferences", { "<Ctrl>comma" });
 
             Intl.setlocale (LocaleCategory.ALL, "");
             Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.GNOMELOCALEDIR);
@@ -48,10 +49,16 @@ namespace Flowtime {
         }
 
         protected override void activate () {
-            if (main_window == null) {
-                main_window = new Window (this);
+            var win = active_window;
+            if (win == null) {
+                if (settings.get_boolean ("distraction-free")) {
+                    win = new DistractionFreeWindow (this);
+                }
+                else {
+                    win = new Window (this);
+                }
             }
-            main_window.present ();
+            win.present ();
             settings.delay ();
 
             player = new Gst.Player (null, null);
@@ -69,8 +76,12 @@ namespace Flowtime {
             quit ();
         }
 
+        private void flowtime_preferences () {
+            new PreferencesWindow (active_window);
+        }
+
         private void action_close () {
-            main_window.close_request ();
+            active_window.close_request ();
             quit ();
         }
 
@@ -88,8 +99,7 @@ namespace Flowtime {
             };
             string program_name = "Flowtime";
 
-            Gtk.show_about_dialog (
-                main_window, // transient for
+            Gtk.show_about_dialog (active_window, // transient for
                 "program_name", program_name,
                 "logo-icon-name", Config.APP_ID,
                 "version", Config.VERSION,

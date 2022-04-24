@@ -10,6 +10,7 @@ flowtime_sources = [
   'Services/Statistics.vala',
   'Services/WorkTimer.vala',
 
+  'Widgets/DistractionFreeWindow.vala',
   'Widgets/PreferencesWindow.vala',
   'Widgets/QuoteLabel.vala',
   'Widgets/SoundRow.vala',
