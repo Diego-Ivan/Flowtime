@@ -26,10 +26,6 @@ namespace Flowtime {
         private Gtk.CssProvider provider = new Gtk.CssProvider ();
         private uint initial_breaktime;
 
-        private const GLib.ActionEntry[] WIN_ENTRIES = {
-            { "preferences", open_settings }
-        };
-
         public Window (Gtk.Application app) {
             Object (application: app);
 
@@ -51,10 +47,6 @@ namespace Flowtime {
         }
 
         construct {
-            var action_group = new GLib.SimpleActionGroup ();
-            action_group.add_action_entries (WIN_ENTRIES, this);
-            insert_action_group ("win", action_group);
-
             Gtk.StyleContext.add_provider_for_display (
                 Gdk.Display.get_default (),
                 provider,
@@ -74,10 +66,6 @@ namespace Flowtime {
                 stats.save ();
                 return false;
             });
-        }
-
-        private void open_settings () {
-            new PreferencesWindow (this);
         }
 
         private void on_stop_break_request () {

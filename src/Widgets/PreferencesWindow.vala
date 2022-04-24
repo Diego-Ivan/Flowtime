@@ -8,7 +8,7 @@
 namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/preferenceswindow.ui")]
     public class PreferencesWindow : Adw.PreferencesWindow {
-        public Window parent_window { get; set; }
+        public Gtk.Window parent_window { get; set; }
         [GtkChild]
         private unowned Adw.PreferencesGroup sounds_group;
         [GtkChild]
@@ -23,11 +23,11 @@ namespace Flowtime {
             { "Tone", "resource:///io/github/diegoivanme/flowtime/tone.ogg" }
         };
 
-        public PreferencesWindow (Window parent) {
+        public PreferencesWindow (Gtk.Window parent) {
             Object (
                 parent_window: parent
             );
-            set_transient_for (parent_window);
+            transient_for = parent_window;
             show ();
         }
 
