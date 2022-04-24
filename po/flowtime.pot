@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-24 15:44-0500\n"
+"POT-Creation-Date: 2022-04-24 15:47-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,7 +69,7 @@ msgid "_Preferences"
 msgstr ""
 
 #: src/ui/window.ui:59
-msgid "Stages"
+msgid "_Stages"
 msgstr ""
 
 #: src/ui/window.ui:67
