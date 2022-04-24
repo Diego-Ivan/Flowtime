@@ -79,7 +79,7 @@ msgstr "_Preferencias"
 #: src/ui/window.ui:59
 #, fuzzy
 msgid "Stages"
-msgstr "Estación de Trabajo"
+msgstr "Estaciones"
 
 #: src/ui/window.ui:67
 msgid "Work Stage"
