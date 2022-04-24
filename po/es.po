@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-24 15:40-0500\n"
+"POT-Creation-Date: 2022-04-24 15:44-0500\n"
 "PO-Revision-Date: 2022-04-23 14:29-0500\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish; Castilian <diegoivan.mae@gmail.com>\n"
@@ -76,6 +76,11 @@ msgstr "_Acerca de Flowtime"
 msgid "_Preferences"
 msgstr "_Preferencias"
 
+#: src/ui/window.ui:59
+#, fuzzy
+msgid "Stages"
+msgstr "Estación de Trabajo"
+
 #: src/ui/window.ui:67
 msgid "Work Stage"
 msgstr "Estación de Trabajo"
@@ -83,6 +88,10 @@ msgstr "Estación de Trabajo"
 #: src/ui/window.ui:81
 msgid "Break Stage"
 msgstr "Estación de Descanso"
+
+#: src/ui/window.ui:99 src/ui/preferenceswindow.ui:15
+msgid "Statistics"
+msgstr "Estadísticas"
 
 #: src/ui/window.ui:116
 msgid "See Details"
@@ -95,10 +104,6 @@ msgstr "Tiempo de Trabajo"
 #: src/ui/window.ui:144 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
 msgid "Break Time"
 msgstr "Tiempo de Descanso"
-
-#: src/ui/preferenceswindow.ui:15
-msgid "Statistics"
-msgstr "Estadísticas"
 
 #: src/ui/preferenceswindow.ui:19
 msgid "Months Saved"

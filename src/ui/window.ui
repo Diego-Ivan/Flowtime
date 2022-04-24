@@ -56,7 +56,7 @@
             <child>
               <object class="AdwViewStackPage">
                 <property name="icon-name">timer-sand-symbolic</property>
-                <property name="title">Stages</property>
+                <property name="title" translatable="yes">Stages</property>
                 <property name="child">
                   <object class="GtkStack" id="stages">
                     <child>
@@ -96,7 +96,7 @@
             <child>
               <object class="AdwViewStackPage">
                 <property name="icon-name">profit-symbolic</property>
-                <property name="title">Statistics</property>
+                <property name="title" translatable="yes">Statistics</property>
                 <property name="child">
 
                   <object class="AdwClamp">
