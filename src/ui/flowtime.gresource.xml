@@ -3,7 +3,6 @@
   <gresource prefix="/io/github/diegoivanme/flowtime">
     <file>style.css</file>
 
-    <file>distractionfreewindow.ui</file>
     <file>window.ui</file>
     <file>statcircle.ui</file>
     <file>statpage.ui</file>
