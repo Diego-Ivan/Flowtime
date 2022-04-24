@@ -126,7 +126,7 @@
                             <child>
                               <object class="GtkStackPage">
                                 <property name="name">work</property>
-                                <property name="title">Work Time</property>
+                                <property name="title" translatable="yes">Work Time</property>
                                 <property name="child">
 
                                   <object class="FlowtimeStatPage">
@@ -141,7 +141,7 @@
                             <child>
                               <object class="GtkStackPage">
                                 <property name="name">break</property>
-                                <property name="title">Break Time</property>
+                                <property name="title" translatable="yes">Break Time</property>
                                 <property name="child">
                                   <object class="FlowtimeStatPage">
                                     <property name="month-time" bind-source="statistics" bind-property="breaktime-month"/>

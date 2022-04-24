@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-23 14:23-0500\n"
+"POT-Creation-Date: 2022-04-24 15:40-0500\n"
 "PO-Revision-Date: 2022-04-23 21:35+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: italian <LL@li.org>\n"
@@ -88,6 +88,16 @@ msgstr "Tempo di pausa"
 msgid "See Details"
 msgstr "Vedi dettagli"
 
+#: src/ui/window.ui:129 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
+#, fuzzy
+msgid "Work Time"
+msgstr "Fase di lavoro"
+
+#: src/ui/window.ui:144 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
+#, fuzzy
+msgid "Break Time"
+msgstr "Tempo di pausa"
+
 #: src/ui/preferenceswindow.ui:15
 msgid "Statistics"
 msgstr "Statistiche"
@@ -131,16 +141,6 @@ msgstr ""
 #: src/ui/statpage.ui:33
 msgid "This Month"
 msgstr ""
-
-#: src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
-#, fuzzy
-msgid "Work Time"
-msgstr "Fase di lavoro"
-
-#: src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
-#, fuzzy
-msgid "Break Time"
-msgstr "Tempo di pausa"
 
 #. If seconds is less than a minute, it will display seconds
 #: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48

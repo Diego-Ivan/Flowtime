@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-23 14:23-0500\n"
+"POT-Creation-Date: 2022-04-24 15:40-0500\n"
 "PO-Revision-Date: 2022-04-23 14:29-0500\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish; Castilian <diegoivan.mae@gmail.com>\n"
@@ -88,6 +88,14 @@ msgstr "Estación de Descanso"
 msgid "See Details"
 msgstr "Ver detalles"
 
+#: src/ui/window.ui:129 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
+msgid "Work Time"
+msgstr "Tiempo de Trabajo"
+
+#: src/ui/window.ui:144 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
+msgid "Break Time"
+msgstr "Tiempo de Descanso"
+
 #: src/ui/preferenceswindow.ui:15
 msgid "Statistics"
 msgstr "Estadísticas"
@@ -131,14 +139,6 @@ msgstr "Esta semana"
 #: src/ui/statpage.ui:33
 msgid "This Month"
 msgstr "Este mes"
-
-#: src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
-msgid "Work Time"
-msgstr "Tiempo de Trabajo"
-
-#: src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
-msgid "Break Time"
-msgstr "Tiempo de Descanso"
 
 #. If seconds is less than a minute, it will display seconds
 #: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
