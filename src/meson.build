@@ -12,6 +12,7 @@ flowtime_sources = [
 
   'Widgets/PreferencesWindow.vala',
   'Widgets/QuoteLabel.vala',
+  'Widgets/SmallView.vala',
   'Widgets/SoundRow.vala',
   'Widgets/StatCircle.vala',
   'Widgets/StatList.vala',

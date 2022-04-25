@@ -28,6 +28,7 @@ namespace Flowtime {
         private const ActionEntry[] APP_ENTRIES = {
             { "quit", action_close },
             { "about", about_flowtime },
+            { "preferences", flowtime_preferences }
         };
 
         public Application () {
@@ -41,6 +42,7 @@ namespace Flowtime {
 
             add_action_entries (APP_ENTRIES, this);
             set_accels_for_action ("app.quit", { "<Ctrl>Q" });
+            set_accels_for_action ("app.preferences", { "<Ctrl>comma" });
 
             Intl.setlocale (LocaleCategory.ALL, "");
             Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.GNOMELOCALEDIR);
@@ -67,6 +69,10 @@ namespace Flowtime {
 
             settings.apply ();
             quit ();
+        }
+
+        private void flowtime_preferences () {
+            new PreferencesWindow (active_window);
         }
 
         private void action_close () {

@@ -12,6 +12,10 @@
 	font-size: 400%;
 }
 
+widget.compact {
+	font-size: 89%;
+}
+
 statcircle {
   min-width: 100px;
   min-height: 100px;
