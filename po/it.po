@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-24 15:47-0500\n"
-"PO-Revision-Date: 2022-04-23 21:35+0100\n"
+"PO-Revision-Date: 2022-04-25 10:35+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: italian <LL@li.org>\n"
 "Language: it\n"
@@ -76,18 +76,16 @@ msgid "_Preferences"
 msgstr "_Preferenze"
 
 #: src/ui/window.ui:59
-#, fuzzy
 msgid "_Stages"
-msgstr "Fase di lavoro"
+msgstr "_Fasi"
 
 #: src/ui/window.ui:67
 msgid "Work Stage"
 msgstr "Fase di lavoro"
 
 #: src/ui/window.ui:81
-#, fuzzy
 msgid "Break Stage"
-msgstr "Tempo di pausa"
+msgstr "Fase di pausa"
 
 #: src/ui/window.ui:99 src/ui/preferenceswindow.ui:15
 msgid "Statistics"
@@ -98,12 +96,10 @@ msgid "See Details"
 msgstr "Vedi dettagli"
 
 #: src/ui/window.ui:129 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
-#, fuzzy
 msgid "Work Time"
-msgstr "Fase di lavoro"
+msgstr "Tempo di lavoro"
 
 #: src/ui/window.ui:144 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
-#, fuzzy
 msgid "Break Time"
 msgstr "Tempo di pausa"
 
@@ -117,7 +113,7 @@ msgstr "La quantità di mesi in cui i dati di lavoro verranno salvati"
 
 #: src/ui/preferenceswindow.ui:41
 msgid "Timer"
-msgstr ""
+msgstr "Imer"
 
 #: src/ui/preferenceswindow.ui:45
 msgid "Autostart"
@@ -137,46 +133,46 @@ msgstr "Suoni di allarme che segnano il tempo di pausa"
 
 #: src/ui/statpage.ui:13
 msgid "Today"
-msgstr ""
+msgstr "Oggi"
 
 #: src/ui/statpage.ui:23
 msgid "This Week"
-msgstr ""
+msgstr "Questa settimana"
 
 #: src/ui/statpage.ui:33
 msgid "This Month"
-msgstr ""
+msgstr "Questo mese"
 
 #. If seconds is less than a minute, it will display seconds
 #: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
 #: src/Widgets/StatCircle.vala:55
 msgid "seconds"
-msgstr ""
+msgstr "secondi"
 
 #: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
 msgid "minutes"
-msgstr ""
+msgstr "minuti"
 
 #: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
 msgid "hour"
-msgstr ""
+msgstr "ora"
 
 #: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
 msgid "hours"
-msgstr ""
+msgstr "ore"
 
 #: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
 msgid "day"
-msgstr ""
+msgstr "giorno"
 
 #: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
 msgid "days"
-msgstr ""
+msgstr "giorni"
 
 #: src/Widgets/StatsWindow.vala:31
 #, c-format
 msgid "%s is your most productive day of the week"
-msgstr ""
+msgstr "%s è il giorno della settimana più produttivo"
 
 #. Translators: Write your Name<email> here :p
 #: src/Application.vala:102
