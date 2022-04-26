@@ -76,8 +76,8 @@ msgid "_Preferences"
 msgstr "_Preferenze"
 
 #: src/ui/window.ui:59
-msgid "_Stages"
-msgstr "_Fasi"
+msgid "Stages"
+msgstr "Fasi"
 
 #: src/ui/window.ui:67
 msgid "Work Stage"
