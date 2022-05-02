@@ -15,6 +15,8 @@ namespace Flowtime {
         public uint worktime_month { get; private set; }
         public uint breaktime_month { get; private set; }
 
+        public uint total_worktime { get; private set; }
+
         private uint _worktime_week;
         public uint worktime_week {
             get {
@@ -123,6 +125,8 @@ namespace Flowtime {
                         overpassed_days += d;
                         continue;
                     }
+
+                    total_worktime += d.worktime;
                     all_days.append (d);
 
                     if (ts > MONTH) {
