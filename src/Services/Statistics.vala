@@ -17,6 +17,7 @@ namespace Flowtime {
 
         public uint total_worktime { get; private set; }
 
+        // TODO: Fix this property mess. Already WIP
         private uint _worktime_week;
         public uint worktime_week {
             get {
@@ -50,6 +51,7 @@ namespace Flowtime {
                 }
                 worktime_week += value - today.worktime;
                 today.worktime = value;
+                total_worktime += value;
             }
         }
 
