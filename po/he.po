@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the flowtime package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: flowtime\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-24 15:47-0500\n"
+"PO-Revision-Date: 2022-05-18 17:10+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: \n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: data/io.github.diegoivanme.flowtime.desktop.in:3
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
+msgid "Flowtime"
+msgstr "Flowtime"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
+msgid "Get things done, keep concentrated"
+msgstr "לקדם משימות, לשמור על מיקוד"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
+msgid ""
+"The Pomodoro technique is efficient for tasks you find boring, but having to "
+"take a break when you are 100% concentrated in something you like might be "
+"annoying. That's why the Flowtime technique exists: take appropiate breaks "
+"without loosing you **flow**."
+msgstr ""
+"טכניקת פומודורו יעילה למשימות משעממות, אבל לצאת להפסקה במהלך 100% ריכוז יכול "
+"להיות די מעצבן. לכן קיימת טכניקת Flowtime: יציאה להפסקות מספיקות מבלי לצאת "
+"מ**הרצף**."
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
+msgid "Flowtime 2.0: Keep on track!"
+msgstr "Flowtime 2.0: מטפחים עשייה!"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
+msgid "In this new version, a shiny new feature was added: Statistics!"
+msgstr "בגרסה זו, נוספה יכולת חדשה ונוצצת: סטטיסטיקה!"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
+msgid ""
+"Have an overview of how much time you have worked in the last month, week "
+"and day"
+msgstr "קבלת סקירה על הזמן שהושקע בחודש החולף ברמת שבוע ויום"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
+msgid "Take a look at your day-specific data"
+msgstr "מבט מעמיק על הנתונים היומיים שלך"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:42
+msgid "Export your statistics to CSV format"
+msgstr "ייצוא הסטטיסטיקה שלך לתצורת CSV"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:83
+msgid "Diego Iván"
+msgstr "דייגו איוון"
+
+#: src/ui/window.ui:8
+msgid "_About Flowtime"
+msgstr "_על Flowtime"
+
+#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:11
+msgid "_Preferences"
+msgstr "הע_דפות"
+
+#: src/ui/window.ui:59
+msgid "_Stages"
+msgstr "_שלבים"
+
+#: src/ui/window.ui:67
+msgid "Work Stage"
+msgstr "שלב עבודה"
+
+#: src/ui/window.ui:81
+msgid "Break Stage"
+msgstr "שלב הפסקה"
+
+#: src/ui/window.ui:99 src/ui/preferenceswindow.ui:15
+msgid "Statistics"
+msgstr "סטטיסטיקה"
+
+#: src/ui/window.ui:116
+msgid "See Details"
+msgstr "הצגת פרטים"
+
+#: src/ui/window.ui:129 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
+msgid "Work Time"
+msgstr "זמן עבודה"
+
+#: src/ui/window.ui:144 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
+msgid "Break Time"
+msgstr "זמן הפסקה"
+
+#: src/ui/preferenceswindow.ui:19
+msgid "Months Saved"
+msgstr "חודשים לשמירה"
+
+#: src/ui/preferenceswindow.ui:20
+msgid "The amount of months that the work data will be saved"
+msgstr "כמות החודשים עבורם יישמרו נתוני העבודה"
+
+#: src/ui/preferenceswindow.ui:41
+msgid "Timer"
+msgstr "מתזמן"
+
+#: src/ui/preferenceswindow.ui:45
+msgid "Autostart"
+msgstr "התחלה אוטומטית"
+
+#: src/ui/preferenceswindow.ui:46
+msgid "Automatically start the timer when the stage is changed"
+msgstr "להתחיל את המתזמן אוטומטית כאשר השלב משתנה"
+
+#: src/ui/preferenceswindow.ui:62
+msgid "Sounds"
+msgstr "צלילים"
+
+#: src/ui/preferenceswindow.ui:63
+msgid "Alarm sounds that mark break time"
+msgstr "צלילי התראה שמסמנים את זמן ההפסקה"
+
+#: src/ui/statpage.ui:13
+msgid "Today"
+msgstr "היום"
+
+#: src/ui/statpage.ui:23
+msgid "This Week"
+msgstr "השבוע"
+
+#: src/ui/statpage.ui:33
+msgid "This Month"
+msgstr "החודש"
+
+#. If seconds is less than a minute, it will display seconds
+#: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
+#: src/Widgets/StatCircle.vala:55
+msgid "seconds"
+msgstr "שניות"
+
+#: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
+msgid "minutes"
+msgstr "דקות"
+
+#: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
+msgid "hour"
+msgstr "שעה"
+
+#: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
+msgid "hours"
+msgstr "שעות"
+
+#: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
+msgid "day"
+msgstr "יום"
+
+#: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
+msgid "days"
+msgstr "יומיים"
+
+#: src/Widgets/StatsWindow.vala:31
+#, c-format
+msgid "%s is your most productive day of the week"
+msgstr "%s הוא היום הכי מועיל שלך בשבוע"
+
+#. Translators: Write your Name<email> here :p
+#: src/Application.vala:102
+msgid "translator-credits"
+msgstr "ירון שהרבני <sh.yaron@gmail.com>"
