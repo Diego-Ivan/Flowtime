@@ -93,6 +93,14 @@ namespace Flowtime {
             }
 
             doc = Xml.Parser.parse_file (path);
+            if (doc == null) {
+                message ("Doc is null");
+                setup_new_statistics_file ();
+
+                doc = new Xml.Doc (null);
+                doc->set_root_element (root_element);
+            }
+
             root_element = doc->get_root_element ();
             retrieve_days ();
             save ();
