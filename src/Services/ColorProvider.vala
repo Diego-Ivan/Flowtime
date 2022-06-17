@@ -24,10 +24,7 @@ namespace Flowtime {
             var st_manager = Adw.StyleManager.get_default ();
             st_manager.notify["dark"].connect (on_style_changed);
 
-            if (Adw.StyleManager.get_default ().dark)
-                load_break_dark ();
-            else
-                load_break_light ();
+            on_style_changed ();
         }
 
         public void enable_break_colors () {
