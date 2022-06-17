@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-24 15:47-0500\n"
-"PO-Revision-Date: 2022-04-23 14:29-0500\n"
+"POT-Creation-Date: 2022-06-17 14:17-0500\n"
+"PO-Revision-Date: 2022-06-17 14:18-0500\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish; Castilian <diegoivan.mae@gmail.com>\n"
 "Language: es\n"
@@ -76,31 +76,35 @@ msgstr "_Acerca de Flowtime"
 msgid "_Preferences"
 msgstr "_Preferencias"
 
-#: src/ui/window.ui:59
+#: src/ui/window.ui:16
+msgid "_Enable Small View"
+msgstr "_Habilitar Vista En Miniatura"
+
+#: src/ui/window.ui:71
 msgid "Stages"
 msgstr "Estaciones"
 
-#: src/ui/window.ui:67
+#: src/ui/window.ui:79 src/ui/smallview.ui:34
 msgid "Work Stage"
 msgstr "Estación de Trabajo"
 
-#: src/ui/window.ui:81
+#: src/ui/window.ui:93 src/ui/smallview.ui:45
 msgid "Break Stage"
 msgstr "Estación de Descanso"
 
-#: src/ui/window.ui:99 src/ui/preferenceswindow.ui:15
+#: src/ui/window.ui:111 src/ui/preferenceswindow.ui:15
 msgid "Statistics"
 msgstr "Estadísticas"
 
-#: src/ui/window.ui:116
+#: src/ui/window.ui:128
 msgid "See Details"
 msgstr "Ver detalles"
 
-#: src/ui/window.ui:129 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
+#: src/ui/window.ui:141 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
 msgid "Work Time"
 msgstr "Tiempo de Trabajo"
 
-#: src/ui/window.ui:144 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
+#: src/ui/window.ui:162 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
 msgid "Break Time"
 msgstr "Tiempo de Descanso"
 
@@ -176,7 +180,7 @@ msgid "%s is your most productive day of the week"
 msgstr "El %s es tu día más productivo de la semana"
 
 #. Translators: Write your Name<email> here :p
-#: src/Application.vala:102
+#: src/Application.vala:108
 msgid "translator-credits"
 msgstr "Diego Iván<diegoivan.mae@gmail.com>"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-24 15:47-0500\n"
+"POT-Creation-Date: 2022-06-17 14:17-0500\n"
 "PO-Revision-Date: 2022-03-10 21:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -73,32 +73,36 @@ msgstr "_Über Flowtime"
 msgid "_Preferences"
 msgstr "_Einstellungen"
 
-#: src/ui/window.ui:59
-msgid "_Stages"
+#: src/ui/window.ui:16
+msgid "_Enable Small View"
 msgstr ""
 
-#: src/ui/window.ui:67
+#: src/ui/window.ui:71
+msgid "Stages"
+msgstr ""
+
+#: src/ui/window.ui:79 src/ui/smallview.ui:34
 msgid "Work Stage"
 msgstr ""
 
-#: src/ui/window.ui:81
+#: src/ui/window.ui:93 src/ui/smallview.ui:45
 #, fuzzy
 msgid "Break Stage"
 msgstr "Pausenzeit"
 
-#: src/ui/window.ui:99 src/ui/preferenceswindow.ui:15
+#: src/ui/window.ui:111 src/ui/preferenceswindow.ui:15
 msgid "Statistics"
 msgstr ""
 
-#: src/ui/window.ui:116
+#: src/ui/window.ui:128
 msgid "See Details"
 msgstr ""
 
-#: src/ui/window.ui:129 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
+#: src/ui/window.ui:141 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
 msgid "Work Time"
 msgstr ""
 
-#: src/ui/window.ui:144 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
+#: src/ui/window.ui:162 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
 #, fuzzy
 msgid "Break Time"
 msgstr "Pausenzeit"
@@ -175,7 +179,7 @@ msgid "%s is your most productive day of the week"
 msgstr ""
 
 #. Translators: Write your Name<email> here :p
-#: src/Application.vala:102
+#: src/Application.vala:108
 msgid "translator-credits"
 msgstr "tronta"
 
