@@ -62,140 +62,145 @@
             </child>
 
             <child>
-              <object class="AdwViewStack" id="view_stack">
+              <object class="GtkWindowHandle">
                 <child>
-                  <object class="AdwViewStackPage">
-                    <property name="icon-name">timer-sand-symbolic</property>
-                    <property name="title" translatable="yes">Stages</property>
-                    <property name="child">
-                      <object class="GtkStack" id="stages">
-                        <child>
-                          <object class="GtkStackPage">
-                            <property name="name">work</property>
-                            <property name="child">
-                              <object class="FlowtimeTimerPage" id="work_page">
-                                <property name="stage_name" translatable="yes">Work Stage</property>
-                                <property name="timer">
-                                  <object class="FlowtimeWorkTimer" id="work_timer"/>
-                                </property>
-                              </object>
-                            </property>
-                          </object>
-                        </child>
-
-                        <child>
-                          <object class="GtkStackPage">
-                            <property name="name">break</property>
-                            <property name="child">
-                              <object class="FlowtimeTimerPage" id="break_page">
-                                <property name="stage_name" translatable="yes">Break Stage</property>
-                                <property name="timer">
-                                  <object class="FlowtimeBreakTimer" id="break_timer">
-                                    <signal name="completed" handler="on_break_completed" swapped="no"/>
-                                  </object>
-                                </property>
-                              </object>
-                            </property>
-                          </object>
-                        </child>
-                      </object>
-                    </property>
-                  </object>
-                </child>
-
-                <child>
-                  <object class="AdwViewStackPage">
-                    <property name="icon-name">profit-symbolic</property>
-                    <property name="title" translatable="yes">Statistics</property>
-                    <property name="child">
-
-                      <object class="AdwClamp">
+                  <object class="AdwViewStack" id="view_stack">
+                    <child>
+                      <object class="AdwViewStackPage">
+                        <property name="icon-name">timer-sand-symbolic</property>
+                        <property name="title" translatable="yes">Stages</property>
                         <property name="child">
-                          <object class="AdwPreferencesGroup">
-                            <property name="title">Overview</property>
-                            <property name="halign">center</property>
-
-                            <property name="header-suffix">
-                              <object class="GtkButton" id="details_button">
-                                <property name="halign">center</property>
-                                <property name="margin-top">6</property>
-                                <property name="margin-bottom">12</property>
+                          <object class="GtkStack" id="stages">
+                            <child>
+                              <object class="GtkStackPage">
+                                <property name="name">work</property>
                                 <property name="child">
-                                  <object class="AdwButtonContent">
-                                    <property name="icon-name">info-symbolic</property>
-                                    <property name="label" translatable="yes">See Details</property>
-                                    <property name="use-underline">true</property>
+                                  <object class="FlowtimeTimerPage" id="work_page">
+                                    <property name="stage_name" translatable="yes">Work Stage</property>
+                                    <property name="timer">
+                                      <object class="FlowtimeWorkTimer" id="work_timer"/>
+                                    </property>
                                   </object>
                                 </property>
-                                <signal name="clicked" handler="on_details_button_clicked" swapped="no"/>
-                              </object>
-                            </property>
-
-                            <child>
-                              <object class="GtkStack" id="stat_stack">
-                                <child>
-                                  <object class="GtkStackPage">
-                                    <property name="name">work</property>
-                                    <property name="title" translatable="yes">Work Time</property>
-                                    <property name="child">
-
-                                      <object class="GtkScrolledWindow">
-                                        <property name="propagate-natural-width">true</property>
-                                        <property name="propagate-natural-height">true</property>
-                                        <child>
-                                          <object class="FlowtimeStatPage">
-                                            <property name="month-time" bind-source="statistics" bind-property="worktime-month"/>
-                                            <property name="week-time" bind-source="statistics" bind-property="worktime-week"/>
-                                            <property name="today-time" bind-source="statistics" bind-property="worktime-today"/>
-                                          </object>
-                                        </child>
-                                      </object>
-
-                                    </property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkStackPage">
-                                    <property name="name">break</property>
-                                    <property name="title" translatable="yes">Break Time</property>
-                                    <property name="child">
-
-                                      <object class="GtkScrolledWindow">
-                                        <property name="propagate-natural-width">true</property>
-                                        <property name="propagate-natural-height">true</property>
-                                        <child>
-                                          <object class="FlowtimeStatPage">
-                                            <property name="month-time" bind-source="statistics" bind-property="breaktime-month"/>
-                                            <property name="week-time" bind-source="statistics" bind-property="breaktime-week"/>
-                                            <property name="today-time" bind-source="statistics" bind-property="breaktime-today"/>
-                                          </object>
-                                        </child>
-                                      </object>
-
-                                    </property>
-                                  </object>
-                                </child>
                               </object>
                             </child>
 
                             <child>
-                              <object class="GtkStackSwitcher">
-                                <property name="stack">stat_stack</property>
-                                <property name="margin-top">6</property>
-                                <property name="margin-bottom">6</property>
+                              <object class="GtkStackPage">
+                                <property name="name">break</property>
+                                <property name="child">
+                                  <object class="FlowtimeTimerPage" id="break_page">
+                                    <property name="stage_name" translatable="yes">Break Stage</property>
+                                    <property name="timer">
+                                      <object class="FlowtimeBreakTimer" id="break_timer">
+                                        <signal name="completed" handler="on_break_completed" swapped="no"/>
+                                      </object>
+                                    </property>
+                                  </object>
+                                </property>
                               </object>
                             </child>
-
                           </object>
                         </property>
                       </object>
+                    </child>
 
-                    </property>
+                    <child>
+                      <object class="AdwViewStackPage">
+                        <property name="icon-name">profit-symbolic</property>
+                        <property name="title" translatable="yes">Statistics</property>
+                        <property name="child">
+
+                          <object class="AdwClamp">
+                            <property name="child">
+                              <object class="AdwPreferencesGroup">
+                                <property name="title">Overview</property>
+                                <property name="halign">center</property>
+
+                                <property name="header-suffix">
+                                  <object class="GtkButton" id="details_button">
+                                    <property name="halign">center</property>
+                                    <property name="margin-top">6</property>
+                                    <property name="margin-bottom">12</property>
+                                    <property name="child">
+                                      <object class="AdwButtonContent">
+                                        <property name="icon-name">info-symbolic</property>
+                                        <property name="label" translatable="yes">See Details</property>
+                                        <property name="use-underline">true</property>
+                                      </object>
+                                    </property>
+                                    <signal name="clicked" handler="on_details_button_clicked" swapped="no"/>
+                                  </object>
+                                </property>
+
+                                <child>
+                                  <object class="GtkStack" id="stat_stack">
+                                    <child>
+                                      <object class="GtkStackPage">
+                                        <property name="name">work</property>
+                                        <property name="title" translatable="yes">Work Time</property>
+                                        <property name="child">
+
+                                          <object class="GtkScrolledWindow">
+                                            <property name="propagate-natural-width">true</property>
+                                            <property name="propagate-natural-height">true</property>
+                                            <child>
+                                              <object class="FlowtimeStatPage">
+                                                <property name="month-time" bind-source="statistics" bind-property="worktime-month"/>
+                                                <property name="week-time" bind-source="statistics" bind-property="worktime-week"/>
+                                                <property name="today-time" bind-source="statistics" bind-property="worktime-today"/>
+                                              </object>
+                                            </child>
+                                          </object>
+
+                                        </property>
+                                      </object>
+                                    </child>
+                                    <child>
+                                      <object class="GtkStackPage">
+                                        <property name="name">break</property>
+                                        <property name="title" translatable="yes">Break Time</property>
+                                        <property name="child">
+
+                                          <object class="GtkScrolledWindow">
+                                            <property name="propagate-natural-width">true</property>
+                                            <property name="propagate-natural-height">true</property>
+                                            <child>
+                                              <object class="FlowtimeStatPage">
+                                                <property name="month-time" bind-source="statistics" bind-property="breaktime-month"/>
+                                                <property name="week-time" bind-source="statistics" bind-property="breaktime-week"/>
+                                                <property name="today-time" bind-source="statistics" bind-property="breaktime-today"/>
+                                              </object>
+                                            </child>
+                                          </object>
+
+                                        </property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+
+                                <child>
+                                  <object class="GtkStackSwitcher">
+                                    <property name="stack">stat_stack</property>
+                                    <property name="margin-top">6</property>
+                                    <property name="margin-bottom">6</property>
+                                  </object>
+                                </child>
+
+                              </object>
+                            </property>
+                          </object>
+
+                        </property>
+                      </object>
+                    </child>
+
                   </object>
                 </child>
-
               </object>
             </child>
+
           </object>
         </child>
 
