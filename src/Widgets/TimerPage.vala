@@ -27,7 +27,6 @@ namespace Flowtime {
                 });
 
                 timer.notify["running"].connect (() => {
-                    message ("Timer is running? == %s", timer.running.to_string ());
                     if (timer.running == true)
                         pause_button.icon_name = "media-playback-pause-symbolic";
                     else
