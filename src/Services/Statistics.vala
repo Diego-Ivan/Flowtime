@@ -15,6 +15,9 @@ namespace Flowtime {
         public uint worktime_month { get; private set; }
         public uint breaktime_month { get; private set; }
 
+        public uint total_worktime { get; private set; }
+
+        // TODO: Fix this property mess. Already WIP
         private uint _worktime_week;
         public uint worktime_week {
             get {
@@ -48,6 +51,7 @@ namespace Flowtime {
                 }
                 worktime_week += value - today.worktime;
                 today.worktime = value;
+                total_worktime += value;
             }
         }
 
@@ -89,6 +93,14 @@ namespace Flowtime {
             }
 
             doc = Xml.Parser.parse_file (path);
+            if (doc == null) {
+                message ("Doc is null");
+                setup_new_statistics_file ();
+
+                doc = new Xml.Doc (null);
+                doc->set_root_element (root_element);
+            }
+
             root_element = doc->get_root_element ();
             retrieve_days ();
             save ();
@@ -123,6 +135,8 @@ namespace Flowtime {
                         overpassed_days += d;
                         continue;
                     }
+
+                    total_worktime += d.worktime;
                     all_days.append (d);
 
                     if (ts > MONTH) {

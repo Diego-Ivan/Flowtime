@@ -14,6 +14,8 @@ namespace Flowtime {
         private unowned StatList break_list;
         [GtkChild]
         private unowned Adw.PreferencesGroup work_group;
+        [GtkChild]
+        private unowned Gtk.HeaderBar header_bar;
 
         public Window parent_window { get; set; }
 
@@ -24,11 +26,29 @@ namespace Flowtime {
             }
             construct {
                 _statistics = value;
+
+                if (statistics.total_worktime == 0) {
+                    header_bar.title_widget = null;
+                    header_bar.add_css_class ("flat");
+                    title = "";
+
+                    var status = new Adw.StatusPage () {
+                        title = _("Start working to see you progress"),
+                        icon_name = "timer-sand-symbolic"
+                    };
+                    status.add_css_class ("compact");
+                    child = status;
+
+                    return;
+                }
+
                 foreach (Day d in statistics.all_days) {
                     add_new_day_row (d);
                 }
 
-                work_group.description = _("%s is your most productive day of the week").printf (statistics.productive_day);
+                if (statistics.all_days.length () > 1) {
+                    work_group.description = _("%s is your most productive day of the week").printf (statistics.productive_day);
+                }
             }
         }
 
