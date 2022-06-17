@@ -33,7 +33,7 @@ namespace Flowtime {
             }
         }
 
-        private Gtk.CssProvider provider = new Gtk.CssProvider ();
+        private ColorProvider provider = ColorProvider.get_default ();
         private Adw.TimedAnimation height_animation;
         private Adw.TimedAnimation width_animation;
 
@@ -86,12 +86,6 @@ namespace Flowtime {
         }
 
         construct {
-            Gtk.StyleContext.add_provider_for_display (
-                Gdk.Display.get_default (),
-                provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-            );
-
             var action_group = new SimpleActionGroup ();
             action_group.add_action_entries (WIN_ENTRIES, this);
             insert_action_group ("win", action_group);
@@ -139,19 +133,7 @@ namespace Flowtime {
 
             stages.set_visible_child_full ("work", CROSSFADE);
 
-            if (Adw.StyleManager.get_default ().dark) {
-                provider.load_from_data (
-                    (uint8[])"@define-color accent_color #78aeed;"
-                );
-            }
-            else {
-                provider.load_from_data (
-                    (uint8[])"@define-color accent_color @blue_4;"
-                );
-            }
-            provider.load_from_data (
-              (uint8[])"@define-color accent_bg_color @blue_3;"
-            );
+            provider.disable_break_colors ();
             if (settings.get_boolean ("autostart"))
                 work_page.play_timer ();
         }
@@ -165,9 +147,7 @@ namespace Flowtime {
 
             stages.set_visible_child_full ("break", CROSSFADE);
 
-            provider.load_from_data (
-                (uint8[])"@define-color accent_color @green_4; @define-color accent_bg_color @green_4;"
-            );
+            provider.enable_break_colors ();
             if (settings.get_boolean ("autostart"))
                 break_page.play_timer ();
 

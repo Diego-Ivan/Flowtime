@@ -5,6 +5,7 @@ flowtime_sources = [
   'Interfaces/Timer.vala',
 
   'Services/BreakTimer.vala',
+  'Services/ColorProvider.vala',
   'Services/Day.vala',
   'Services/StatObject.vala',
   'Services/Statistics.vala',
