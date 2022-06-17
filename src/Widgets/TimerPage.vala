@@ -25,6 +25,14 @@ namespace Flowtime {
                 timer.updated.connect (() => {
                     time_label.label = timer.format_time ();
                 });
+
+                timer.notify["running"].connect (() => {
+                    message ("Timer is running? == %s", timer.running.to_string ());
+                    if (timer.running == true)
+                        pause_button.icon_name = "media-playback-pause-symbolic";
+                    else
+                        pause_button.icon_name = "media-playback-start-symbolic";
+                });
             }
         }
 
@@ -53,14 +61,12 @@ namespace Flowtime {
 
         public void play_timer () {
             timer.start ();
-            pause_button.icon_name = "media-playback-pause-symbolic";
         }
 
         [GtkCallback]
         private void on_pause_button_clicked () {
             if (timer.running) {
                 timer.stop ();
-                pause_button.icon_name = "media-playback-start-symbolic";
             }
             else {
                 play_timer ();
