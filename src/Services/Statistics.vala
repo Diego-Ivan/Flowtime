@@ -131,7 +131,7 @@ namespace Flowtime {
                      * Unlink and dispose if they shouldn't be used
                      */
                     if (ts > MONTH * months_saved) {
-                        message ("Day %s overpassed limit, unlinking", d.date.to_string ());
+                        debug ("Day %s overpassed limit, unlinking", d.date.to_string ());
                         overpassed_days += d;
                         continue;
                     }

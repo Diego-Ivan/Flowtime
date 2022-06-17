@@ -25,5 +25,11 @@
 	    <summary>Timer autostart</summary>
 	    <description>Automatically start timer when the stage is changed</description>
 	  </key>
+
+	  <key name="distraction-free" type="b">
+	    <default>true</default>
+	    <summary>Enable/Disable Distraction Free Mode</summary>
+	    <description>The distraction free mode uses a special window without too much clutter. Ideal when you just want what matters</description>
+	  </key>
 	</schema>
 </schemalist>

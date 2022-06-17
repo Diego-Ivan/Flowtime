@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="FlowtimeSmallView" parent="AdwBin">
+    <property name="height-request">210</property>
+    <child>
+      <object class="GtkWindowHandle">
+
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <property name="margin-bottom">12</property>
+            <child>
+              <object class="AdwHeaderBar">
+                <property name="show-end-title-buttons">false</property>
+                <style>
+                  <class name="flat"/>
+                </style>
+                <child type="start">
+                  <object class="GtkButton">
+                    <property name="icon-name">pip-out-symbolic</property>
+                    <property name="action-name">win.disable-small-view</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkStack" id="stages">
+
+                <child>
+                  <object class="GtkStackPage">
+                    <property name="name">work</property>
+                    <property name="child">
+                      <object class="FlowtimeTimerPage" id="work_page">
+                        <property name="stage-name" translatable="yes">Work Stage</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+
+                <child>
+                  <object class="GtkStackPage">
+                    <property name="name">break</property>
+                    <property name="child">
+                      <object class="FlowtimeTimerPage" id="break_page">
+                        <property name="stage-name" translatable="yes">Break Stage</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+
+              </object>
+            </child>
+          </object>
+        </child>
+
+
+      </object>
+    </child>
+  </template>
+</interface>

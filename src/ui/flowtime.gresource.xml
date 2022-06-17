@@ -4,6 +4,7 @@
     <file>style.css</file>
 
     <file>window.ui</file>
+    <file>smallview.ui</file>
     <file>statcircle.ui</file>
     <file>statpage.ui</file>
     <file>statrow.ui</file>
@@ -22,5 +23,6 @@
     <file preprocess="xml-stripblanks" alias="info-symbolic.svg">icons/info-symbolic.svg</file>
     <file preprocess="xml-stripblanks" alias="month-symbolic.svg">icons/month-symbolic.svg</file>
     <file preprocess="xml-stripblanks" alias="cafe-symbolic.svg">icons/cafe-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="pip-out-symbolic.svg">icons/pip-out-symbolic.svg</file>
   </gresource>
 </gresources>

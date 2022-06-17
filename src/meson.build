@@ -5,6 +5,7 @@ flowtime_sources = [
   'Interfaces/Timer.vala',
 
   'Services/BreakTimer.vala',
+  'Services/ColorProvider.vala',
   'Services/Day.vala',
   'Services/StatObject.vala',
   'Services/Statistics.vala',
@@ -12,6 +13,7 @@ flowtime_sources = [
 
   'Widgets/PreferencesWindow.vala',
   'Widgets/QuoteLabel.vala',
+  'Widgets/SmallView.vala',
   'Widgets/SoundRow.vala',
   'Widgets/StatCircle.vala',
   'Widgets/StatList.vala',
