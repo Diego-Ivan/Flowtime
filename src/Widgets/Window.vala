@@ -16,12 +16,9 @@ namespace Flowtime {
         private unowned TimerPage break_page;
 
         [GtkChild]
-        private unowned Statistics statistics;
-        public Statistics stats {
-            get {
-                return statistics;
-            }
-        }
+        private unowned StatPage work_circle;
+        [GtkChild]
+        private unowned StatPage break_circle;
 
         [GtkChild]
         private unowned SmallView small_view;
@@ -33,6 +30,7 @@ namespace Flowtime {
             }
         }
 
+        private Statistics stats = Statistics.get_default ();
         private ColorProvider provider = ColorProvider.get_default ();
         private Adw.TimedAnimation height_animation;
         private Adw.TimedAnimation width_animation;
@@ -57,6 +55,12 @@ namespace Flowtime {
             }
         }
 
+        public Statistics st {
+            owned get {
+                return Statistics.get_default ();
+            }
+        }
+
         private const ActionEntry[] WIN_ENTRIES = {
             { "stop-break", stop_break },
             { "stop-work", stop_work },
@@ -66,16 +70,6 @@ namespace Flowtime {
 
         public Window (Gtk.Application app) {
             Object (application: app);
-
-            stats.retrieve_statistics.begin (() => {
-                /*
-                 * Internally, FlowtimeStatistics does not use the worktime setters,
-                 * Therefore, we have to give it a little "refresh" when the
-                 * async method is done :)
-                 */
-                stats.worktime_today = stats.worktime_today;
-                stats.breaktime_today = stats.breaktime_today;
-            });
         }
 
         static construct {
@@ -93,17 +87,26 @@ namespace Flowtime {
             break_page.change_request.connect (stop_break);
             work_page.change_request.connect (stop_work);
 
-            close_request.connect (() => {
-                if (work_page.timer.running)
-                    stats.worktime_today += work_page.seconds;
 
-                if (break_page.timer.running)
-                    stats.breaktime_today += break_page.seconds;
+            /*
+             * Save statistics in case the timers are still running
+             */
+            close_request.connect (() => {
+                if (work_page.timer.running) {
+                    stats.add_worktime (work_page.seconds);
+                }
+
+                if (break_page.timer.running) {
+                    stats.add_breaktime (break_page.seconds);
+                }
 
                 stats.save ();
                 return false;
             });
 
+            /*
+             * Setup animations for resizing in PiP mode
+             */
             var width_target = new Adw.CallbackAnimationTarget (width_callback);
             var height_target = new Adw.CallbackAnimationTarget (height_callback);
 
@@ -124,10 +127,23 @@ namespace Flowtime {
             bind_property ("small-view-enabled",
                 height_animation, "reverse"
             );
+
+            /*
+             * Bind Statistics Properties to the Pages
+             */
+            stats.bind_property ("monthly-worktime", work_circle, "month-time", SYNC_CREATE);
+            stats.bind_property ("weekly-worktime", work_circle, "week-time", SYNC_CREATE);
+            stats.bind_property ("today-worktime", work_circle, "today-time", SYNC_CREATE);
+
+            stats.bind_property ("monthly-breaktime", break_circle, "month-time", SYNC_CREATE);
+            stats.bind_property ("weekly-breaktime", break_circle, "week-time", SYNC_CREATE);
+            stats.bind_property ("today-breaktime", break_circle, "today-time", SYNC_CREATE);
+
+            stats.bind_property ("monthly-worktime", this, "my_property", SYNC_CREATE);
         }
 
         private void stop_break () {
-            stats.breaktime_today += initial_breaktime;
+            stats.add_breaktime (initial_breaktime);
             stats.save ();
             break_page.timer.reset_time ();
 
@@ -141,7 +157,7 @@ namespace Flowtime {
         private void stop_work () {
             initial_breaktime = work_page.seconds / 5;
             break_page.timer.seconds = initial_breaktime;
-            stats.worktime_today += work_page.seconds;
+            stats.add_worktime (work_page.seconds);
 
             work_page.timer.reset_time ();
 
@@ -190,7 +206,7 @@ namespace Flowtime {
             notification.set_priority (NORMAL);
             app.send_notification ("Break-Timer-Done", notification);
             player.play ();
-            stats.breaktime_today += initial_breaktime;
+            stats.add_breaktime (initial_breaktime);
 
             stats.save ();
             work_page.timer.reset_time ();

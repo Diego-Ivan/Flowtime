@@ -84,9 +84,9 @@ namespace Flowtime {
 
             // If seconds is less than a day, it will display hours
             if (seconds < 86400) {
-                uint minutes = seconds / 60;
-                uint hours = minutes / 60;
-                uint m = seconds % 60;
+                uint hours = seconds / 3600;
+                uint m = (seconds % 3600) / 60;
+
                 string minutes_format;
 
                 if (hours == 1 && m == 0) {

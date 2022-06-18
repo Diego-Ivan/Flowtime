@@ -19,8 +19,6 @@
     </section>
   </menu>
 
-  <object class="FlowtimeStatistics" id="statistics"/>
-
   <template class="FlowtimeWindow" parent="AdwApplicationWindow">
     <property name="default-height">500</property>
     <property name="default-width">390</property>
@@ -145,10 +143,7 @@
                                             <property name="propagate-natural-width">true</property>
                                             <property name="propagate-natural-height">true</property>
                                             <child>
-                                              <object class="FlowtimeStatPage">
-                                                <property name="month-time" bind-source="statistics" bind-property="worktime-month"/>
-                                                <property name="week-time" bind-source="statistics" bind-property="worktime-week"/>
-                                                <property name="today-time" bind-source="statistics" bind-property="worktime-today"/>
+                                              <object class="FlowtimeStatPage" id="work_circle">
                                               </object>
                                             </child>
                                           </object>
@@ -166,10 +161,7 @@
                                             <property name="propagate-natural-width">true</property>
                                             <property name="propagate-natural-height">true</property>
                                             <child>
-                                              <object class="FlowtimeStatPage">
-                                                <property name="month-time" bind-source="statistics" bind-property="breaktime-month"/>
-                                                <property name="week-time" bind-source="statistics" bind-property="breaktime-week"/>
-                                                <property name="today-time" bind-source="statistics" bind-property="breaktime-today"/>
+                                              <object class="FlowtimeStatPage" id="break_circle">
                                               </object>
                                             </child>
                                           </object>
@@ -217,3 +209,4 @@
 
   </template>
 </interface>
+
