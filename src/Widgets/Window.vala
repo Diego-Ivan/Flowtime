@@ -30,8 +30,7 @@ namespace Flowtime {
             }
         }
 
-        private Statistics stats = Statistics.get_default ();
-        private ColorProvider provider = ColorProvider.get_default ();
+        private ColorProvider color_provider = ColorProvider.get_default ();
         private Adw.TimedAnimation height_animation;
         private Adw.TimedAnimation width_animation;
 
@@ -55,7 +54,7 @@ namespace Flowtime {
             }
         }
 
-        public Statistics st {
+        public Statistics stats {
             owned get {
                 return Statistics.get_default ();
             }
@@ -138,8 +137,6 @@ namespace Flowtime {
             stats.bind_property ("monthly-breaktime", break_circle, "month-time", SYNC_CREATE);
             stats.bind_property ("weekly-breaktime", break_circle, "week-time", SYNC_CREATE);
             stats.bind_property ("today-breaktime", break_circle, "today-time", SYNC_CREATE);
-
-            stats.bind_property ("monthly-worktime", this, "my_property", SYNC_CREATE);
         }
 
         private void stop_break () {
@@ -149,7 +146,7 @@ namespace Flowtime {
 
             stages.set_visible_child_full ("work", CROSSFADE);
 
-            provider.disable_break_colors ();
+            color_provider.disable_break_colors ();
             if (settings.get_boolean ("autostart"))
                 work_page.play_timer ();
         }
@@ -163,7 +160,7 @@ namespace Flowtime {
 
             stages.set_visible_child_full ("break", CROSSFADE);
 
-            provider.enable_break_colors ();
+            color_provider.enable_break_colors ();
             if (settings.get_boolean ("autostart"))
                 break_page.play_timer ();
 
