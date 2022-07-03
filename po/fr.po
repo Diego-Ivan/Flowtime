@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the flowtime package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: flowtime\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-17 14:17-0500\n"
+"PO-Revision-Date: 2022-07-03 00:43+0200\n"
+"Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.1\n"
+
+#: data/io.github.diegoivanme.flowtime.desktop.in:3
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
+msgid "Flowtime"
+msgstr "Flowtime"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
+msgid "Get things done, keep concentrated"
+msgstr "Faites ce que vous avez à faire, restez concentré"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
+msgid ""
+"The Pomodoro technique is efficient for tasks you find boring, but having to "
+"take a break when you are 100% concentrated in something you like might be "
+"annoying. That's why the Flowtime technique exists: take appropiate breaks "
+"without loosing you **flow**."
+msgstr ""
+"La technique Pomodoro est efficace pour les tâches que vous trouvez "
+"ennuyeuses, mais devoir faire une pause lorsque vous êtes concentré à 100% "
+"sur quelque chose que vous aimez peut être ennuyeux. C'est pourquoi la "
+"technique Flowtime existe : faire des pauses appropriées sans perdre son "
+"**flow**."
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
+msgid "Flowtime 2.0: Keep on track!"
+msgstr "Flowtime 2.0 : Gardez le cap !"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
+msgid "In this new version, a shiny new feature was added: Statistics!"
+msgstr ""
+"Dans cette nouvelle version, une nouvelle fonctionnalité a été ajoutée : les "
+"statistiques !"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
+msgid ""
+"Have an overview of how much time you have worked in the last month, week "
+"and day"
+msgstr ""
+"Ayez un aperçu de votre temps de travail au cours du dernier mois, de la "
+"dernière semaine et du dernier jour."
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
+msgid "Take a look at your day-specific data"
+msgstr "Jetez un coup d'œil à vos données journalières"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:42
+msgid "Export your statistics to CSV format"
+msgstr "Exportez vos statistiques au format CSV"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:83
+msgid "Diego Iván"
+msgstr "Diego Iván"
+
+#: src/ui/window.ui:8
+msgid "_About Flowtime"
+msgstr "À _propos de Flowtime"
+
+#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:11
+msgid "_Preferences"
+msgstr "_Préférences"
+
+#: src/ui/window.ui:16
+msgid "_Enable Small View"
+msgstr "_Activer la petite vue"
+
+#: src/ui/window.ui:71
+msgid "Stages"
+msgstr "Phases"
+
+#: src/ui/window.ui:79 src/ui/smallview.ui:34
+msgid "Work Stage"
+msgstr "Phase de travail"
+
+#: src/ui/window.ui:93 src/ui/smallview.ui:45
+msgid "Break Stage"
+msgstr "Phase de pause"
+
+#: src/ui/window.ui:111 src/ui/preferenceswindow.ui:15
+msgid "Statistics"
+msgstr "Statistiques"
+
+#: src/ui/window.ui:128
+msgid "See Details"
+msgstr "Voir les détails"
+
+#: src/ui/window.ui:141 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
+msgid "Work Time"
+msgstr "Temps de travail"
+
+#: src/ui/window.ui:162 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
+msgid "Break Time"
+msgstr "Temps de pause"
+
+#: src/ui/preferenceswindow.ui:19
+msgid "Months Saved"
+msgstr "Mois enregistrés"
+
+#: src/ui/preferenceswindow.ui:20
+msgid "The amount of months that the work data will be saved"
+msgstr ""
+"Le nombre de mois pendant lesquels les données de travail seront sauvegardées"
+
+#: src/ui/preferenceswindow.ui:41
+msgid "Timer"
+msgstr "Minuteur"
+
+#: src/ui/preferenceswindow.ui:45
+msgid "Autostart"
+msgstr "Démarrage automatique"
+
+#: src/ui/preferenceswindow.ui:46
+msgid "Automatically start the timer when the stage is changed"
+msgstr "Démarre automatiquement le minuteur quand la phase est changée"
+
+#: src/ui/preferenceswindow.ui:62
+msgid "Sounds"
+msgstr "Sons"
+
+#: src/ui/preferenceswindow.ui:63
+msgid "Alarm sounds that mark break time"
+msgstr "Sons d’alarme marquant l’heure de pause"
+
+#: src/ui/statpage.ui:13
+msgid "Today"
+msgstr "Aujourd’hui"
+
+#: src/ui/statpage.ui:23
+msgid "This Week"
+msgstr "Cette semaine"
+
+#: src/ui/statpage.ui:33
+msgid "This Month"
+msgstr "Ce mois"
+
+#. If seconds is less than a minute, it will display seconds
+#: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
+#: src/Widgets/StatCircle.vala:55
+msgid "seconds"
+msgstr "secondes"
+
+#: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
+msgid "minutes"
+msgstr "minutes"
+
+#: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
+msgid "hour"
+msgstr "heure"
+
+#: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
+msgid "hours"
+msgstr "heures"
+
+#: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
+msgid "day"
+msgstr "jour"
+
+#: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
+msgid "days"
+msgstr "jours"
+
+#: src/Widgets/StatsWindow.vala:31
+#, c-format
+msgid "%s is your most productive day of the week"
+msgstr "%s est votre jour le plus productif de la semaine"
+
+#. Translators: Write your Name<email> here :p
+#: src/Application.vala:108
+msgid "translator-credits"
+msgstr "Irénée Thirion <irenee.thirion@e.email>"
