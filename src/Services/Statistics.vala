@@ -66,10 +66,10 @@ namespace Flowtime {
 
             doc = Xml.Parser.parse_file (path);
             if (doc == null) {
-                message ("Doc is null");
+                warning ("Statistics file was found but cannot be parsed");
                 setup_new_statistics_file ();
 
-                doc = new Xml.Doc (null);
+                doc = new Xml.Doc ();
                 doc->set_root_element (root_element);
             }
 
