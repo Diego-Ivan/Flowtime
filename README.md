@@ -30,7 +30,7 @@
 
 ## Why?
 
-The Pomodoro technique is efficient for tasks you find boring, but having to take a break when you are 100% concentrated in something you like might be annoying. That's why the Flowtime technique exists: take appropriate breaks without loosing you **flow**.
+The Pomodoro technique is efficient for tasks you find boring, but having to take a break when you are 100% concentrated in something you like might be annoying. That's why the Flowtime technique exists: take appropriate breaks without loosing your **flow**.
 
 ## How does it work?
 
