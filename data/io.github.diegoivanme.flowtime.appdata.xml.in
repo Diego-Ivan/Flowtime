@@ -32,14 +32,13 @@
   </screenshots>
 
   <releases>
-    <release version="2.0" date="2022-04-22">
+    <release version="2.5" date="2022-07-07">
       <description>
-        <p>Flowtime 2.0: Keep on track!</p>
-        <p>In this new version, a shiny new feature was added: Statistics!</p>
+        <p>Flowtime 2.5: Picture In Picture</p>
+        <p>Fancy new feature: Small View Mode!</p>
         <ul>
-          <li>Have an overview of how much time you have worked in the last month, week and day</li>
-          <li>Take a look at your day-specific data</li>
-          <li>Export your statistics to CSV format</li>
+          <li>Reduce clutter in your Flowtime window.</li>
+          <li>Maximize your concentration.</li>
         </ul>
       </description>
     </release>
