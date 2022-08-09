@@ -112,7 +112,7 @@
                           <object class="AdwClamp">
                             <property name="child">
                               <object class="AdwPreferencesGroup">
-                                <property name="title">Overview</property>
+                                <property name="title" translatable="yes">Overview</property>
                                 <property name="halign">center</property>
 
                                 <property name="header-suffix">
