@@ -90,6 +90,7 @@ namespace Flowtime {
             const string? ARTISTS[] = {
                 "Mike Koenig https://soundbible.com/1251-Beep.html",
                 "SoundBible https://soundbible.com/1815-A-Tone.html",
+                "David Lapshin",
                 null
             };
             string program_name = "Flowtime";
