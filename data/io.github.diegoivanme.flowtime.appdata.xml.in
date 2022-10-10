@@ -34,11 +34,11 @@
   <releases>
     <release version="2.5" date="2022-07-07">
       <description>
-        <p>Flowtime 2.5: Picture In Picture</p>
-        <p>Fancy new feature: Small View Mode!</p>
+        <p>Flowtime 2.6: Small Changes</p>
+        <p>New Features:</p>
         <ul>
-          <li>Reduce clutter in your Flowtime window.</li>
-          <li>Maximize your concentration.</li>
+          <li>Icons have been redesigned by daudix-UFO</li>
+          <li>New Translations: Turkish and Russian Translations</li>
         </ul>
       </description>
     </release>
