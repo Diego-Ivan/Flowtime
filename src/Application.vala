@@ -81,7 +81,7 @@ namespace Flowtime {
         }
 
         private void about_flowtime () {
-            const string COPYRIGHT = "Copyright \xc2\xa9 2021 Diego Iván";
+            const string COPYRIGHT = "Copyright \xc2\xa9 2021-2022 Diego Iván";
             const string? AUTHORS[] = {
                 "Diego Iván<diegoivan.mae@gmail.com>",
                 null
