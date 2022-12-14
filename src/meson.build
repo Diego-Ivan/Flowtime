@@ -4,6 +4,8 @@ flowtime_sources = [
   'XmlUtils.vala',
   'Interfaces/Timer.vala',
 
+  # Services
+  'Services/Timer.vala',
   'Services/BreakTimer.vala',
   'Services/ColorProvider.vala',
   'Services/Day.vala',
