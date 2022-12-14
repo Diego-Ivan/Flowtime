@@ -82,33 +82,32 @@ namespace Flowtime {
 
         private void about_flowtime () {
             const string COPYRIGHT = "Copyright \xc2\xa9 2021-2022 Diego Iván";
-            const string? AUTHORS[] = {
+            const string? DEVELOPERS[] = {
                 "Diego Iván<diegoivan.mae@gmail.com>",
                 null
             };
-
             const string? ARTISTS[] = {
+                "David Lapshin",
                 "Mike Koenig https://soundbible.com/1251-Beep.html",
                 "SoundBible https://soundbible.com/1815-A-Tone.html",
-                "David Lapshin",
                 null
             };
-            string program_name = "Flowtime";
 
-            Gtk.show_about_dialog (
-                main_window, // transient for
-                "program_name", program_name,
-                "logo-icon-name", Config.APP_ID,
-                "version", Config.VERSION,
-                "copyright", COPYRIGHT,
-                "authors", AUTHORS,
-                "artists", ARTISTS,
-                "license-type", Gtk.License.GPL_3_0,
-                "wrap-license", true,
-                // Translators: Write your Name<email> here :p
-                "translator-credits", _("translator-credits"),
-                null
-            );
+            var about = new Adw.AboutWindow () {
+                application_icon = Config.APP_ID,
+                application_name = "Flowtime",
+                artists = ARTISTS,
+                copyright = COPYRIGHT,
+                developers = DEVELOPERS,
+                issue_url = "https://github.com/Diego-Ivan/Flowtime/issues",
+                license_type = GPL_3_0,
+                transient_for = active_window,
+                translator_credits = _("translator_credits"),
+                version = Config.VERSION,
+                website = "https://github.com/Diego-Ivan/Flowtime",
+            };
+
+            about.present ();
         }
     }
 }
