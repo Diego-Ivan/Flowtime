@@ -23,6 +23,7 @@ flowtime_sources = [
   'Widgets/StatsWindow.vala',
   'Widgets/TimerPage.vala',
   'Widgets/Window.vala',
+  'Widgets/TestWindow.vala',
 ]
 
 flowtime_deps = [

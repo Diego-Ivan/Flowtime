@@ -6,7 +6,7 @@
  */
 
 public class Flowtime.Services.Timer : Object {
-    public bool running { get; protected set; }
+    public bool running { get; protected set; default = false; }
     public bool already_started { get; protected set; }
 
     private int _seconds;
@@ -19,9 +19,10 @@ public class Flowtime.Services.Timer : Object {
             updated ();
         }
     }
-    public Mode mode { get; private set; }
+    public Mode mode { get; private set; default = WORK; }
 
     public signal void updated ();
+    public signal void done ();
 
     private const int INTERVAL_MILLISECONDS = 1000;
     private DateTime? last_datetime = null;
@@ -32,6 +33,7 @@ public class Flowtime.Services.Timer : Object {
 
     public void start () {
         last_datetime = new DateTime.now_utc ();
+        running = true;
         Timeout.add (INTERVAL_MILLISECONDS, timeout);
     }
 
@@ -39,12 +41,28 @@ public class Flowtime.Services.Timer : Object {
         running = false;
     }
 
+    public void resume () {
+        running = true;
+        last_datetime = null;
+        Timeout.add (INTERVAL_MILLISECONDS, timeout);
+    }
+
     public void next_mode () {
-        reset ();
+        stop ();
+        last_datetime = null;
+
+        /*
+         * This would mean that we want to change the mode to break. We will obtain the seconds for this
+         * mode and change it accordingly
+         */
         if (mode == WORK) {
             mode = BREAK;
+            seconds /= 5;
             return;
         }
+
+        // Reset timer in case the next mode is work mode
+        seconds = 0;
         mode = WORK;
     }
 
@@ -61,7 +79,8 @@ public class Flowtime.Services.Timer : Object {
 
         var current_time = new DateTime.now_utc ();
         // Obtaining the difference between the last and current times, casting it to seconds
-        int time_seconds = (int) (last_datetime.difference (current_time) * TimeSpan.SECOND);
+        int time_seconds = (int) (current_time.difference (last_datetime) / TimeSpan.SECOND);
+        message (time_seconds.to_string ());
 
         switch (mode) {
             case WORK:
@@ -71,6 +90,8 @@ public class Flowtime.Services.Timer : Object {
             case BREAK:
                 if (time_seconds >= seconds) {
                     seconds = 0;
+                    done ();
+                    return false;
                 }
                 seconds -= time_seconds;
                 break;

@@ -22,7 +22,6 @@ namespace Flowtime {
     public GLib.Settings settings;
     public Gst.Player player;
     public class Application : Adw.Application {
-        public Window main_window;
         public string sound_uri_prefix;
 
         private const ActionEntry[] APP_ENTRIES = {
@@ -50,15 +49,19 @@ namespace Flowtime {
         }
 
         protected override void activate () {
-            if (main_window == null) {
-                main_window = new Window (this);
+            var win = new Window (this);
+            if (active_window == null) {
+                win = new Window (this);
             }
-            main_window.present ();
+            win.present ();
             settings.delay ();
 
             player = new Gst.Player (null, null);
             var sound = settings.get_string ("tone");
             player.uri = sound_uri_prefix + sound;
+
+            var test_win = new TestWindow ();
+            test_win.present ();
         }
 
         protected override void shutdown () {
@@ -76,7 +79,7 @@ namespace Flowtime {
         }
 
         private void action_close () {
-            main_window.close_request ();
+            active_window.close_request ();
             quit ();
         }
 
