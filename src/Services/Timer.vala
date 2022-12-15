@@ -19,7 +19,7 @@ public class Flowtime.Services.Timer : Object {
             updated ();
         }
     }
-    public Mode mode { get; private set; default = WORK; }
+    public TimerMode mode { get; private set; default = WORK; }
 
     public signal void updated ();
     public signal void done ();
@@ -29,6 +29,12 @@ public class Flowtime.Services.Timer : Object {
 
     construct {
         seconds = 0;
+
+        var color_provider = new ColorProvider ();
+        bind_property ("mode", color_provider, "mode", SYNC_CREATE);
+
+        // Init Alarm Service2
+        new Alarm (this);
     }
 
     public void start () {
@@ -72,6 +78,29 @@ public class Flowtime.Services.Timer : Object {
         seconds = 0;
     }
 
+    public string format_time () {
+        uint minutes = seconds / 60;
+        uint s = seconds % 60;
+
+        var builder = new StringBuilder ();
+
+        if (minutes < 10) {
+            builder.append_printf ("0%u:", minutes);
+        }
+        else {
+            builder.append_printf ("%u:", minutes);
+        }
+
+        if (s < 10) {
+            builder.append_printf ("0%u", s);
+        }
+        else {
+            builder.append_printf ("%u", s);
+        }
+
+        return builder.str;
+    }
+
     protected bool timeout () {
         if (!running) {
             return false;
@@ -106,7 +135,7 @@ public class Flowtime.Services.Timer : Object {
     }
 }
 
-public enum Flowtime.Mode {
+public enum Flowtime.Services.TimerMode {
     WORK,
     BREAK
 }
