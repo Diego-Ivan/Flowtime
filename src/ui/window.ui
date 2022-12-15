@@ -91,7 +91,6 @@
                                     <property name="stage_name" translatable="yes">Break Stage</property>
                                     <property name="timer">
                                       <object class="FlowtimeBreakTimer" id="break_timer">
-                                        <signal name="completed" handler="on_break_completed" swapped="no"/>
                                       </object>
                                     </property>
                                   </object>

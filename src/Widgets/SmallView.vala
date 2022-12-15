@@ -15,24 +15,6 @@ namespace Flowtime {
         [GtkChild]
         private unowned TimerPage break_page;
 
-        public WorkTimer? work_timer {
-            get {
-                return (WorkTimer)work_page.timer;
-            }
-            set {
-                // work_page.timer = value;
-            }
-        }
-
-        public BreakTimer? break_timer {
-            get {
-                return (BreakTimer)break_page.timer;
-            }
-            set {
-                // break_page.timer = value;
-            }
-        }
-
         public string visible_child_name {
             get {
                 return stages.visible_child_name;

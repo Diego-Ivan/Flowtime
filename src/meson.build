@@ -2,16 +2,15 @@ flowtime_sources = [
   'main.vala',
   'Application.vala',
   'XmlUtils.vala',
-  'Interfaces/Timer.vala',
+
+  # Models
+  'Models/Day.vala',
+  'Models/StatObject.vala',
 
   # Services
   'Services/Timer.vala',
-  'Services/BreakTimer.vala',
   'Services/ColorProvider.vala',
-  'Services/Day.vala',
-  'Services/StatObject.vala',
   'Services/Statistics.vala',
-  'Services/WorkTimer.vala',
   'Services/Alarm.vala',
 
   'Widgets/PreferencesWindow.vala',
