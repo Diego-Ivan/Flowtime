@@ -60,6 +60,8 @@ namespace Flowtime {
             var sound = settings.get_string ("tone");
             player.uri = sound_uri_prefix + sound;
 
+            message (player.uri);
+
             var test_win = new TestWindow ();
             test_win.present ();
         }

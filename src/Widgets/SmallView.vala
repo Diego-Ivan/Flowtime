@@ -20,7 +20,7 @@ namespace Flowtime {
                 return (WorkTimer)work_page.timer;
             }
             set {
-                work_page.timer = value;
+                // work_page.timer = value;
             }
         }
 
@@ -29,7 +29,7 @@ namespace Flowtime {
                 return (BreakTimer)break_page.timer;
             }
             set {
-                break_page.timer = value;
+                // break_page.timer = value;
             }
         }
 
@@ -43,12 +43,12 @@ namespace Flowtime {
         }
 
         construct {
-            work_page.change_request.connect (() => {
-                activate_action_variant ("win.stop-work", null);
-            });
-            break_page.change_request.connect (() => {
-                activate_action_variant ("win.stop-break", null);
-            });
+            // work_page.change_request.connect (() => {
+            //     activate_action_variant ("win.stop-work", null);
+            // });
+            // break_page.change_request.connect (() => {
+            //     activate_action_variant ("win.stop-break", null);
+            // });
         }
     }
 }

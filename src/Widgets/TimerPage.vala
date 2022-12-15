@@ -15,8 +15,8 @@ namespace Flowtime {
         [GtkChild]
         private unowned Gtk.Label stage_label;
 
-        public Timer _timer;
-        public Timer timer {
+        public Services.Timer _timer;
+        public Services.Timer timer {
             get {
                 return _timer;
             }
@@ -32,6 +32,12 @@ namespace Flowtime {
                     else
                         pause_button.icon_name = "media-playback-start-symbolic";
                 });
+
+                timer.notify["mode"].connect (() => {
+                    update_labels ();
+                });
+
+                update_labels ();
             }
         }
 
@@ -50,16 +56,19 @@ namespace Flowtime {
             }
         }
 
-        public signal void change_request ();
-
         construct {
-            change_request.connect (() => {
-                pause_button.icon_name = "media-playback-start-symbolic";
-            });
         }
 
         public void play_timer () {
             timer.start ();
+        }
+
+        private void update_labels () {
+            if (timer.mode == WORK) {
+                stage_label.label = _("Work Stage");
+                return;
+            }
+            stage_label.label = _("Break Stage");
         }
 
         [GtkCallback]
@@ -74,7 +83,8 @@ namespace Flowtime {
 
         [GtkCallback]
         private void on_next_button_clicked () {
-            change_request ();
+            timer.next_mode ();
         }
     }
 }
+

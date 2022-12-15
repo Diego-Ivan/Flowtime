@@ -30,7 +30,6 @@ namespace Flowtime {
             }
         }
 
-        private ColorProvider color_provider = ColorProvider.get_default ();
         private Adw.TimedAnimation height_animation;
         private Adw.TimedAnimation width_animation;
 
@@ -83,8 +82,8 @@ namespace Flowtime {
             action_group.add_action_entries (WIN_ENTRIES, this);
             insert_action_group ("win", action_group);
 
-            break_page.change_request.connect (stop_break);
-            work_page.change_request.connect (stop_work);
+            // break_page.change_request.connect (stop_break);
+            // work_page.change_request.connect (stop_work);
 
 
             /*
@@ -142,25 +141,23 @@ namespace Flowtime {
         private void stop_break () {
             stats.add_breaktime (initial_breaktime);
             stats.save ();
-            break_page.timer.reset_time ();
+            // break_page.timer.reset_time ();
 
             stages.set_visible_child_full ("work", CROSSFADE);
 
-            color_provider.disable_break_colors ();
             if (settings.get_boolean ("autostart"))
                 work_page.play_timer ();
         }
 
         private void stop_work () {
             initial_breaktime = work_page.seconds / 5;
-            break_page.timer.seconds = initial_breaktime;
+            // break_page.timer.seconds = initial_breaktime;
             stats.add_worktime (work_page.seconds);
 
-            work_page.timer.reset_time ();
+            // work_page.timer.reset_time ();
 
             stages.set_visible_child_full ("break", CROSSFADE);
 
-            color_provider.enable_break_colors ();
             if (settings.get_boolean ("autostart"))
                 break_page.play_timer ();
 
@@ -206,7 +203,7 @@ namespace Flowtime {
             stats.add_breaktime (initial_breaktime);
 
             stats.save ();
-            work_page.timer.reset_time ();
+            // work_page.timer.reset_time ();
         }
     }
 }
