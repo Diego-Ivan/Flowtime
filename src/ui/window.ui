@@ -68,35 +68,10 @@
                         <property name="icon-name">timer-sand-symbolic</property>
                         <property name="title" translatable="yes">Stages</property>
                         <property name="child">
-                          <object class="GtkStack" id="stages">
-                            <child>
-                              <object class="GtkStackPage">
-                                <property name="name">work</property>
-                                <property name="child">
-                                  <object class="FlowtimeTimerPage" id="work_page">
-                                    <property name="stage_name" translatable="yes">Work Stage</property>
-                                    <property name="timer">
-                                      <object class="FlowtimeWorkTimer" id="work_timer"/>
-                                    </property>
-                                  </object>
-                                </property>
-                              </object>
-                            </child>
-
-                            <child>
-                              <object class="GtkStackPage">
-                                <property name="name">break</property>
-                                <property name="child">
-                                  <object class="FlowtimeTimerPage" id="break_page">
-                                    <property name="stage_name" translatable="yes">Break Stage</property>
-                                    <property name="timer">
-                                      <object class="FlowtimeBreakTimer" id="break_timer">
-                                      </object>
-                                    </property>
-                                  </object>
-                                </property>
-                              </object>
-                            </child>
+                          <object class="FlowtimeTimerPage" id="timer_page">
+                            <property name="timer">
+                              <object class="FlowtimeServicesTimer" id="timer"></object>
+                            </property>
                           </object>
                         </property>
                       </object>
@@ -195,13 +170,12 @@
           </object>
         </child>
 
-        <child>
-          <object class="FlowtimeSmallView" id="small_view">
-            <property name="work-timer">work_timer</property>
-            <property name="break_timer">break_timer</property>
-            <property name="visible-child-name" bind-source="stages" bind-property="visible-child-name" bind-flags="bidirectional"></property>
-          </object>
-        </child>
+        <!-- <child> -->
+        <!--   <object class="FlowtimeSmallView" id="small_view"> -->
+        <!--     <property name="work-timer">work_timer</property> -->
+        <!--     <property name="break_timer">break_timer</property> -->
+        <!--   </object> -->
+        <!-- </child> -->
       </object>
     </child>
 

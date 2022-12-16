@@ -47,18 +47,6 @@ namespace Flowtime {
             }
         }
 
-        public string stage_name {
-            get {
-                return stage_label.label;
-            }
-            set {
-                stage_label.label = value;
-            }
-        }
-
-        construct {
-        }
-
         public void play_timer () {
             timer.start ();
         }

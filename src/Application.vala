@@ -62,8 +62,8 @@ namespace Flowtime {
 
             message (player.uri);
 
-            var test_win = new TestWindow ();
-            test_win.present ();
+            // var test_win = new TestWindow ();
+            // test_win.present ();
         }
 
         protected override void shutdown () {
