@@ -26,6 +26,12 @@ public class Flowtime.Services.Timer : Object {
 
     private const int INTERVAL_MILLISECONDS = 1000;
     private DateTime? last_datetime = null;
+    private int initial_breaktime = 0;
+
+    ~Timer () {
+        stop ();
+        save_to_statistics ();
+    }
 
     construct {
         seconds = 0;
@@ -33,7 +39,7 @@ public class Flowtime.Services.Timer : Object {
         var color_provider = new ColorProvider ();
         bind_property ("mode", color_provider, "mode", SYNC_CREATE);
 
-        // Init Alarm Service2
+        // Init Alarm Service
         new Alarm (this);
     }
 
@@ -56,20 +62,23 @@ public class Flowtime.Services.Timer : Object {
     public void next_mode () {
         stop ();
         last_datetime = null;
+        save_to_statistics ();
 
         /*
          * This would mean that we want to change the mode to break. We will obtain the seconds for this
          * mode and change it accordingly
          */
         if (mode == WORK) {
+            initial_breaktime = seconds / 5;
+            seconds = initial_breaktime;
             mode = BREAK;
-            seconds /= 5;
-            return;
         }
-
-        // Reset timer in case the next mode is work mode
-        seconds = 0;
-        mode = WORK;
+        else {
+            // Reset timer in case the next mode is work mode
+            seconds = 0;
+            initial_breaktime = 0;
+            mode = WORK;
+        }
     }
 
     public void reset () {
@@ -99,6 +108,16 @@ public class Flowtime.Services.Timer : Object {
         }
 
         return builder.str;
+    }
+
+    public void save_to_statistics () {
+        var statistics = new Statistics ();
+        if (mode == WORK) {
+            statistics.add_time_to_mode (mode, seconds);
+        }
+        else {
+            statistics.add_time_to_mode (mode, initial_breaktime - seconds);
+        }
     }
 
     protected bool timeout () {
