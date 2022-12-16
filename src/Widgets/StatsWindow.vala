@@ -19,15 +19,15 @@ namespace Flowtime {
 
         public Window parent_window { get; set; }
 
-        private Statistics _statistics;
-        public Statistics statistics {
+        private Services.Statistics _statistics;
+        public Services.Statistics statistics {
             get {
                 return _statistics;
             }
             construct {
                 _statistics = value;
 
-                if (statistics.total_worktime == 0) {
+                if (statistics.total.worktime == 0) {
                     header_bar.title_widget = null;
                     header_bar.add_css_class ("flat");
                     title = "";
@@ -42,7 +42,7 @@ namespace Flowtime {
                     return;
                 }
 
-                foreach (Day d in statistics.all_days) {
+                foreach (Models.Day d in statistics.all_days) {
                     add_new_day_row (d);
                 }
 
@@ -52,7 +52,7 @@ namespace Flowtime {
             }
         }
 
-        public StatsWindow (Window? p, Statistics stats) {
+        public StatsWindow (Window? p, Services.Statistics stats) {
             Object (
                 parent_window: p,
                 statistics: stats,
@@ -63,11 +63,11 @@ namespace Flowtime {
             show ();
         }
 
-        private void add_new_day_row (Day d) {
-            var work_object = new StatObject (d.date, d.worktime);
+        private void add_new_day_row (Models.Day d) {
+            var work_object = new Models.StatObject (d.date, d.worktime);
             work_list.append (work_object);
 
-            var break_object = new StatObject (d.date, d.breaktime);
+            var break_object = new Models.StatObject (d.date, d.breaktime);
             break_list.append (break_object);
         }
 

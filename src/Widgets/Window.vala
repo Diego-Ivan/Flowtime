@@ -53,9 +53,9 @@ namespace Flowtime {
             }
         }
 
-        public Statistics stats {
+        public Services.Statistics stats {
             owned get {
-                return Statistics.get_default ();
+                return new Services.Statistics ();
             }
         }
 
@@ -89,11 +89,11 @@ namespace Flowtime {
              */
             close_request.connect (() => {
                 if (work_page.timer.running) {
-                    stats.add_worktime (work_page.seconds);
+                    // stats.add_worktime (work_page.seconds);
                 }
 
                 if (break_page.timer.running) {
-                    stats.add_breaktime (break_page.seconds);
+                    // stats.add_breaktime (break_page.seconds);
                 }
 
                 stats.save ();
@@ -137,7 +137,7 @@ namespace Flowtime {
         }
 
         private void stop_break () {
-            stats.add_breaktime (initial_breaktime);
+            // stats.add_breaktime (initial_breaktime);
             stats.save ();
             // break_page.timer.reset_time ();
 
@@ -150,7 +150,7 @@ namespace Flowtime {
         private void stop_work () {
             initial_breaktime = work_page.seconds / 5;
             // break_page.timer.seconds = initial_breaktime;
-            stats.add_worktime (work_page.seconds);
+            // stats.add_worktime (work_page.seconds);
 
             // work_page.timer.reset_time ();
 
@@ -197,7 +197,7 @@ namespace Flowtime {
             notification.set_priority (NORMAL);
             app.send_notification ("Break-Timer-Done", notification);
             player.play ();
-            stats.add_breaktime (initial_breaktime);
+            // stats.add_breaktime (initial_breaktime);
 
             stats.save ();
             // work_page.timer.reset_time ();

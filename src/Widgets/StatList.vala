@@ -11,7 +11,7 @@ namespace Flowtime {
         private Gtk.ListView listview;
         private ListStore liststore;
 
-        public void append (StatObject object) {
+        public void append (Models.StatObject object) {
             liststore.append (object);
         }
 
@@ -22,12 +22,12 @@ namespace Flowtime {
             );
             filechooser.response.connect (on_filechooser_response);
 
-            liststore = new ListStore (typeof(StatObject));
+            liststore = new ListStore (typeof(Models.StatObject));
             var selection_model = new Gtk.NoSelection (liststore);
 
             var factory = new Gtk.SignalListItemFactory ();
             factory.bind.connect ((item) => {
-                item.child = new StatRow (item.item as StatObject);
+                item.child = new StatRow ((Models.StatObject) item.item);
             });
             listview = new Gtk.ListView (selection_model, factory);
             listview.remove_css_class ("view");
@@ -50,7 +50,7 @@ namespace Flowtime {
             string format = "date,time";
 
             for (uint i = 0; i < liststore.get_n_items (); i++) {
-                StatObject o = (StatObject) liststore.get_item (i);
+                var o = (Models.StatObject) liststore.get_item (i);
                 format += "\n\"%s\",\"%s\"".printf (o.formatted_date, o.formatted_time);
             }
 
