@@ -5,7 +5,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-public class Flowtime.Session : Object {
-    public int worktime { get; set; default = 0; }
-    public int breaktime { get; set; default = 0; }
+public struct Flowtime.Models.State {
+    public int worktime;
+    public int breaktime;
+
+    public State (int @default = 0) {
+        worktime = @default;
+        breaktime = @default;
+    }
 }
