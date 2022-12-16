@@ -20,10 +20,7 @@ public class Flowtime.Services.Statistics : GLib.Object {
 
     public Day? today { get; private set; default = null; }
 
-    public List<Day> month_list = new List<Day> ();
     public List<Day> all_days = new List<Day> ();
-    public List<Day> week_list = new List<Day> ();
-
     public string productive_day { get; private set; }
 
     public State total { get; set; default = State (); }
@@ -112,15 +109,12 @@ public class Flowtime.Services.Statistics : GLib.Object {
 
                 month.worktime += d.worktime;
                 month.breaktime += d.breaktime;
-                month_list.append (d);
-
                 if (ts > WEEK) {
                     continue;
                 }
 
                 week.worktime += d.worktime;
                 week.breaktime += d.breaktime;
-                week_list.append (d);
 
                 if (d.date.get_day_of_year () == current_date.get_day_of_year ()) {
                     today = d;
@@ -133,8 +127,6 @@ public class Flowtime.Services.Statistics : GLib.Object {
         if (today == null) {
             today = new Day ();
             root_element->add_child (today.node);
-            week_list.append (today);
-            month_list.append (today);
             all_days.append (today);
         }
 
@@ -164,6 +156,8 @@ public class Flowtime.Services.Statistics : GLib.Object {
             default:
                 assert_not_reached ();
         }
+
+        updated ();
     }
 
     public void foreach_in_period (TimePeriod period, ForeachStat foreach_func) {
