@@ -15,8 +15,11 @@ namespace Flowtime {
         [GtkChild]
         private unowned Gtk.Label unit_label;
 
-        private uint _displayed_value;
-        public uint displayed_value {
+        public Services.TimePeriod time_period { get; set; default = TODAY; }
+        public Services.TimerMode timer_mode { get; set; }
+
+        private int _displayed_value;
+        public int displayed_value {
             get {
                 return _displayed_value;
             }
