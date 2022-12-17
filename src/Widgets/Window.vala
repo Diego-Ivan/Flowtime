@@ -10,10 +10,6 @@ namespace Flowtime {
     public class Window : Adw.ApplicationWindow {
         [GtkChild]
         private unowned Services.Timer timer;
-        [GtkChild]
-        private unowned StatPage work_circle;
-        [GtkChild]
-        private unowned StatPage break_circle;
 
         // [GtkChild]
         // private unowned SmallView small_view;
@@ -108,17 +104,6 @@ namespace Flowtime {
             bind_property ("small-view-enabled",
                 height_animation, "reverse"
             );
-
-            /*
-             * Bind Statistics Properties to the Pages
-             */
-            stats.bind_property ("monthly-worktime", work_circle, "month-time", SYNC_CREATE);
-            stats.bind_property ("weekly-worktime", work_circle, "week-time", SYNC_CREATE);
-            stats.bind_property ("today-worktime", work_circle, "today-time", SYNC_CREATE);
-
-            stats.bind_property ("monthly-breaktime", break_circle, "month-time", SYNC_CREATE);
-            stats.bind_property ("weekly-breaktime", break_circle, "week-time", SYNC_CREATE);
-            stats.bind_property ("today-breaktime", break_circle, "today-time", SYNC_CREATE);
         }
 
         private void enable_small_view () {
