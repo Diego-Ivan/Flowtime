@@ -13,7 +13,9 @@ flowtime_sources = [
   'Services/ColorProvider.vala',
   'Services/Statistics.vala',
   'Services/Alarm.vala',
+  'Services/Settings.vala',
 
+  # Widgets
   'Widgets/PreferencesWindow.vala',
   'Widgets/SmallView.vala',
   'Widgets/SoundRow.vala',
