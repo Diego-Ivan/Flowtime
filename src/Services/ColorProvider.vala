@@ -50,6 +50,10 @@ namespace Flowtime {
         }
 
         private void disable_break_colors () {
+            if (current_provider == null) {
+                return;
+            }
+
             Gtk.StyleContext.remove_provider_for_display (Gdk.Display.get_default (), current_provider);
             current_provider = null;
         }

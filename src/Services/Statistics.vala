@@ -157,7 +157,15 @@ public class Flowtime.Services.Statistics : GLib.Object {
                 assert_not_reached ();
         }
 
+        save ();
         updated ();
+    }
+
+    public int get_time_from_mode_and_period (TimerMode mode, TimePeriod period) {
+        if (mode == WORK) {
+            return get_worktime_from_period (period);
+        }
+        return get_breaktime_from_period (period);
     }
 
     public void foreach_in_period (TimePeriod period, ForeachStat foreach_func) {
@@ -169,6 +177,36 @@ public class Flowtime.Services.Statistics : GLib.Object {
             if (ts < max_timespan) {
                 foreach_func (day);
             }
+        }
+    }
+
+    private int get_worktime_from_period (TimePeriod period) {
+        switch (period) {
+            case TODAY:
+                return today.worktime;
+            case WEEK:
+                return week.worktime;
+            case MONTH:
+                return month.worktime;
+            case ALL:
+                return total.worktime;
+            default:
+                assert_not_reached ();
+        }
+    }
+
+    private int get_breaktime_from_period (TimePeriod period) {
+        switch (period) {
+            case TODAY:
+                return today.breaktime;
+            case WEEK:
+                return week.breaktime;
+            case MONTH:
+                return month.breaktime;
+            case ALL:
+                return total.breaktime;
+            default:
+                assert_not_reached ();
         }
     }
 

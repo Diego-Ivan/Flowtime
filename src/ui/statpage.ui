@@ -2,6 +2,7 @@
 <interface>
   <template class="FlowtimeStatPage" parent="GtkBox">
     <property name="orientation">vertical</property>
+    <property name="spacing">6</property>
 
     <child>
       <object class="GtkGrid">

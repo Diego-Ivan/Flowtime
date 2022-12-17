@@ -40,7 +40,9 @@ public class Flowtime.Services.Timer : Object {
         bind_property ("mode", color_provider, "mode", SYNC_CREATE);
 
         // Init Alarm Service
-        new Alarm (this);
+        new Alarm () {
+            timer = this
+        };
     }
 
     public void start () {

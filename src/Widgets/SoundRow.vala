@@ -32,6 +32,7 @@ namespace Flowtime {
         }
 
         private void play_sound () {
+            var alarm = new Services.Alarm ();
             player.set_uri (sound.path);
             player.play ();
         }

@@ -7,7 +7,6 @@
 
 [SingleInstance]
 public class Flowtime.Services.Alarm : Object {
-    private Alarm? instance = null;
     private Gst.Player player { get; set; default = new Gst.Player (null, null); }
     private unowned GLib.Application application = GLib.Application.get_default ();
 
@@ -29,8 +28,8 @@ public class Flowtime.Services.Alarm : Object {
     }
     public string sound_name { get; set; }
 
-    public Alarm (Timer timer) {
-        Object (timer: timer);
+    private Alarm? instance = null;
+    public Alarm () {
         if (instance == null) {
             instance = this;
         }
