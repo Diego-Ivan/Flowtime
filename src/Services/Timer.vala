@@ -156,5 +156,16 @@ public class Flowtime.Services.Timer : Object {
 
 public enum Flowtime.Services.TimerMode {
     WORK,
-    BREAK
+    BREAK;
+
+    public string to_string () {
+        switch (this) {
+            case WORK:
+                return _("Work");
+            case BREAK:
+                return _("Break");
+            default:
+                assert_not_reached ();
+        }
+    }
 }
