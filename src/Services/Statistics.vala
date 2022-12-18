@@ -217,19 +217,21 @@ public class Flowtime.Services.Statistics : GLib.Object {
             Day day = all_days.nth_data (i);
 
             if (!map.has_key (day.day_of_week)) {
-                map.set (day.day_of_week, 1);
+                map.set (day.day_of_week, day.worktime);
                 continue;
             }
 
             int count = map.get (day.day_of_week);
             map.unset (day.day_of_week);
-            map.set (day.day_of_week, count + 1);
+            map.set (day.day_of_week, count + day.worktime);
         }
 
         int highest = 0;
         map.foreach ((entry) => {
+            message ("%s : %i", entry.key, entry.value);
             if (entry.value >= highest) {
                 productive_day = entry.key;
+                highest = entry.value;
             }
 
             return true;
