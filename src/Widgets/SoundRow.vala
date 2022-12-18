@@ -15,6 +15,8 @@ namespace Flowtime {
         public Sound sound { get; construct; }
         public Gtk.CheckButton check_button { get; private set; }
         public Gtk.Button play_button { get; private set; }
+        public Services.Settings settings = new Services.Settings ();
+        private Gst.Player player = new Gst.Player (null, null);
 
         public SoundRow (Sound sound_) {
             Object (
@@ -32,8 +34,9 @@ namespace Flowtime {
         }
 
         private void play_sound () {
-            var alarm = new Services.Alarm ();
-            player.set_uri (sound.path);
+            player.uri = sound.path;
+            settings.tone = (sound.title.down () + ".ogg");
+            message (settings.tone);
             player.play ();
         }
     }

@@ -26,10 +26,6 @@ public class Flowtime.Services.Settings : Object {
     public bool autostart { get; set; }
     public bool distraction_free { get; set; }
 
-    ~Settings () {
-        save ();
-    }
-
     private Settings? instance = null;
     public Settings () {
         if (instance == null) {

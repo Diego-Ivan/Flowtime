@@ -19,8 +19,8 @@
  */
 
 namespace Flowtime {
-    public GLib.Settings settings;
-    public Gst.Player player;
+    internal GLib.Settings settings;
+    internal Gst.Player player;
     public class Application : Adw.Application {
         public string sound_uri_prefix;
 
@@ -54,14 +54,6 @@ namespace Flowtime {
                 win = new Window (this);
             }
             win.present ();
-            settings.delay ();
-
-            player = new Gst.Player (null, null);
-            var sound = settings.get_string ("tone");
-            player.uri = sound_uri_prefix + sound;
-
-            message (player.uri);
-
             // var test_win = new TestWindow ();
             // test_win.present ();
         }
@@ -69,10 +61,8 @@ namespace Flowtime {
         protected override void shutdown () {
             base.shutdown ();
 
-            var tone = player.uri.replace (sound_uri_prefix, "");
-            settings.set_string ("tone", tone);
-
-            settings.apply ();
+            var @set = new Services.Settings ();
+            @set.save ();
             quit ();
         }
 

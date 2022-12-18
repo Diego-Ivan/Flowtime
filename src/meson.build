@@ -5,7 +5,7 @@ flowtime_sources = [
 
   # Models
   'Models/Day.vala',
-  'Models/Session.vala',
+  'Models/State.vala',
   'Models/StatObject.vala',
 
   # Services
