@@ -23,10 +23,10 @@ public class Flowtime.Services.Statistics : GLib.Object {
     public List<Day> all_days = new List<Day> ();
     public string productive_day { get; private set; }
 
-    public State total { get; set; default = State (); }
-    public State month { get; set; default = State (); }
-    public State week { get; set; default = State (); }
-    public State today_time { get; set; default = State (); }
+    public State total = new State ();
+    public State month = new State ();
+    public State week = new State ();
+    public State today_time = new State ();
 
     public signal void updated ();
 
