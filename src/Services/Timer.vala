@@ -20,6 +20,7 @@ public class Flowtime.Services.Timer : Object {
         }
     }
     public TimerMode mode { get; private set; default = WORK; }
+    private Alarm alarm { get; set; }
 
     public signal void updated ();
     public signal void done ();
@@ -40,9 +41,7 @@ public class Flowtime.Services.Timer : Object {
         bind_property ("mode", color_provider, "mode", SYNC_CREATE);
 
         // Init Alarm Service
-        new Alarm () {
-            timer = this
-        };
+        alarm = new Alarm (this);
     }
 
     public void start () {
