@@ -9,8 +9,6 @@ namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/statlist.ui")]
     public class StatList : Adw.PreferencesGroup {
         [GtkChild]
-        private unowned Gtk.ListView list_view;
-        [GtkChild]
         private unowned ListStore list_store;
 
         static construct {
@@ -30,7 +28,6 @@ namespace Flowtime {
             }
 
             try {
-                string path = file.get_path ();
                 FileUtils.set_contents (file.get_path (), format);
             }
             catch (Error e) {

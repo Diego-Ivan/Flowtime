@@ -228,7 +228,6 @@ public class Flowtime.Services.Statistics : GLib.Object {
 
         int highest = 0;
         map.foreach ((entry) => {
-            message ("%s : %i", entry.key, entry.value);
             if (entry.value >= highest) {
                 productive_day = entry.key;
                 highest = entry.value;

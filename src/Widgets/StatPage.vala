@@ -10,13 +10,6 @@ namespace Flowtime {
     public class StatPage : Gtk.Box {
         public Services.TimerMode displayed_mode { get; set; default = WORK; }
 
-        [GtkChild]
-        private unowned StatCircle today_circle;
-        [GtkChild]
-        private unowned StatCircle week_circle;
-        [GtkChild]
-        private unowned StatCircle month_circle;
-
         static construct {
             typeof (EnumListModel).ensure ();
         }
