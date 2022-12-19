@@ -51,7 +51,7 @@ public class Flowtime.Models.Day : GLib.Object {
 
     public Day () {
         node = new Xml.Node (null, "day");
-        date = new DateTime.now_utc ();
+        date = new DateTime.now_local ();
 
         worktime_node = node->new_text_child (null, "worktime", "");
         breaktime_node = node->new_text_child (null, "breaktime", "");
