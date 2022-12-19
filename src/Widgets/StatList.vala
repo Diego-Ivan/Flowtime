@@ -6,60 +6,58 @@
  */
 
 namespace Flowtime {
-    public class StatList : Adw.Bin {
-        private Gtk.FileChooserNative filechooser;
-        private Gtk.ListView listview;
-        private ListStore liststore;
+    [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/statlist.ui")]
+    public class StatList : Adw.PreferencesGroup {
+        [GtkChild]
+        private unowned Gtk.ListView list_view;
+        [GtkChild]
+        private unowned ListStore list_store;
+
+        static construct {
+            typeof(Models.StatObject).ensure ();
+        }
 
         public void append (Models.StatObject object) {
-            liststore.append (object);
+            list_store.append (object);
         }
 
-        construct {
-            filechooser = new Gtk.FileChooserNative (null,
-                get_native () as Gtk.Window, SAVE,
-                null, null
-            );
-            filechooser.response.connect (on_filechooser_response);
-
-            liststore = new ListStore (typeof(Models.StatObject));
-            var selection_model = new Gtk.NoSelection (liststore);
-
-            var factory = new Gtk.SignalListItemFactory ();
-            factory.bind.connect ((item) => {
-                item.child = new StatRow ((Models.StatObject) item.item);
-            });
-            listview = new Gtk.ListView (selection_model, factory);
-            listview.remove_css_class ("view");
-            listview.add_css_class ("background");
-
-            child = listview;
-        }
-
-        public void ask_save_file () {
-            filechooser.show ();
-        }
-
-        private void on_filechooser_response (int res) {
-            if (res == Gtk.ResponseType.ACCEPT) {
-                save_as_csv.begin ();
-            }
-        }
-
-        public async void save_as_csv () {
+        public async void save_as_csv (File file) {
             string format = "date,time";
 
-            for (uint i = 0; i < liststore.get_n_items (); i++) {
-                var o = (Models.StatObject) liststore.get_item (i);
-                format += "\n\"%s\",\"%s\"".printf (o.formatted_date, o.formatted_time);
+            for (uint i = 0; i < list_store.get_n_items (); i++) {
+                var object = (Models.StatObject) list_store.get_item (i);
+                format += "\n\"%s\",\"%s\"".printf (object.date, object.time);
             }
 
             try {
-                string path = filechooser.get_file ().get_path ();
-                FileUtils.set_contents (path, format);
+                string path = file.get_path ();
+                FileUtils.set_contents (file.get_path (), format);
             }
             catch (Error e) {
                 critical (e.message);
+            }
+        }
+
+        [GtkCallback]
+        private void on_item_bound (Gtk.ListItem item) {
+            item.child = new StatRow ((Models.StatObject) item.item);
+        }
+
+        [GtkCallback]
+        private void on_save_button_clicked () {
+            var filechooser = new Gtk.FileChooserNative (null,
+                (Gtk.Window) get_native (), SAVE,
+                null, null
+            );
+            filechooser.response.connect (on_filechooser_response);
+            filechooser.show ();
+        }
+
+        private void on_filechooser_response (Gtk.NativeDialog dialog, int res) {
+            var file_chooser = (Gtk.FileChooserNative) dialog;
+
+            if (res == Gtk.ResponseType.ACCEPT) {
+                save_as_csv.begin (file_chooser.get_file ());
             }
         }
     }

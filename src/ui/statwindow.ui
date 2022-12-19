@@ -45,24 +45,11 @@
                 <property name="propagate-natural-height">true</property>
                 <property name="propagate-natural-width">true</property>
                 <child>
-                    <object class="AdwPreferencesGroup" id="work_group">
+                    <object class="FlowtimeStatList" id="work_list">
                     <property name="title" translatable="yes">Work Time</property>
                     <property name="margin-top">12</property>
                     <property name="margin-start">12</property>
                     <property name="margin-end">12</property>
-                    <property name="header-suffix">
-                      <object class="GtkButton" id="work_save_button">
-                        <property name="icon-name">folder-download-symbolic</property>
-                        <property name="valign">center</property>
-                        <signal name="clicked" handler="on_work_save_button_clicked" swapped="no"/>
-                      </object>
-                    </property>
-
-                    <child>
-                      <object class="FlowtimeStatList" id="work_list">
-                      </object>
-                    </child>
-
                   </object>
                 </child>
               </object>
@@ -80,23 +67,11 @@
                 <property name="propagate-natural-height">true</property>
                 <property name="propagate-natural-width">true</property>
                 <child>
-                    <object class="AdwPreferencesGroup" id="break_group">
+                    <object class="FlowtimeStatList" id="break_list">
                     <property name="title" translatable="yes">Break Time</property>
                     <property name="margin-top">6</property>
                     <property name="margin-start">12</property>
                     <property name="margin-end">12</property>
-                    <property name="header-suffix">
-                      <object class="GtkButton" id="break_save_button">
-                        <property name="icon-name">folder-download-symbolic</property>
-                        <signal name="clicked" handler="on_break_save_button_clicked" swapped="no"/>
-                      </object>
-                    </property>
-
-                    <child>
-                      <object class="FlowtimeStatList" id="break_list">
-                      </object>
-                    </child>
-
                   </object>
                 </child>
               </object>

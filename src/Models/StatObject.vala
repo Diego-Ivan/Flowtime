@@ -6,29 +6,15 @@
  */
 
 public class Flowtime.Models.StatObject : Object {
-    public DateTime date {
-        set {
-            formatted_date = value.format ("%x");
-        }
+    public string date { get; private set; }
+    public string time { get; private set; }
+
+    public StatObject (DateTime date_time, int time_seconds) {
+        date = date_time.format ("%x");
+        time = format_time (time_seconds);
     }
 
-    public string formatted_date { get; private set; }
-    public string formatted_time { get; private set; }
-
-    public uint time {
-        set {
-            formatted_time = format_time (value);
-        }
-    }
-
-    public StatObject (DateTime d, uint t) {
-        Object (
-            date: d,
-            time: t
-        );
-    }
-
-    private string format_time (uint seconds) {
+    private string format_time (int seconds) {
         string unit;
         // If seconds is less than a minute, it will display seconds
         if (seconds < 60) {

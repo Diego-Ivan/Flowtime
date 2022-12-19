@@ -131,7 +131,7 @@ namespace Flowtime {
 
         [GtkCallback]
         private void on_details_button_clicked () {
-            new StatsWindow (this, stats);
+            new StatsWindow (this);
         }
     }
 }
