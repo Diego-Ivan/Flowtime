@@ -11,14 +11,14 @@ namespace Flowtime {
         [GtkChild]
         private unowned Services.Timer timer;
 
-        // [GtkChild]
-        // private unowned SmallView small_view;
+        [GtkChild]
+        private unowned SmallView small_view;
         [GtkChild]
         private unowned Adw.Squeezer squeezer;
+
         public bool small_view_enabled {
             get {
-                return false;
-                // return squeezer.visible_child == small_view;
+                return squeezer.visible_child == small_view;
             }
         }
 
@@ -68,10 +68,6 @@ namespace Flowtime {
             var action_group = new SimpleActionGroup ();
             action_group.add_action_entries (WIN_ENTRIES, this);
             insert_action_group ("win", action_group);
-
-            // break_page.change_request.connect (stop_break);
-            // work_page.change_request.connect (stop_work);
-
 
             /*
              * Save statistics in case the timers are still running

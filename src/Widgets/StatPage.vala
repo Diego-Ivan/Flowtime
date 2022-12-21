@@ -12,6 +12,7 @@ namespace Flowtime {
 
         static construct {
             typeof (EnumListModel).ensure ();
+            typeof(StatCircle).ensure ();
         }
 
         [GtkCallback]

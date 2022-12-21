@@ -126,15 +126,13 @@
           </object>
         </child>
 
-        <!-- <child> -->
-        <!--   <object class="FlowtimeSmallView" id="small_view"> -->
-        <!--     <property name="work-timer">work_timer</property> -->
-        <!--     <property name="break_timer">break_timer</property> -->
-        <!--   </object> -->
-        <!-- </child> -->
+        <child>
+          <object class="FlowtimeSmallView" id="small_view">
+            <property name="timer">timer</property>
+          </object>
+        </child>
       </object>
     </child>
-
 
   </template>
 </interface>
