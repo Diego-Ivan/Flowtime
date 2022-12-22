@@ -37,7 +37,6 @@ namespace Flowtime {
         private void play_sound () {
             player.uri = sound.path;
             settings.tone = (sound.title.down () + ".ogg");
-            message (settings.tone);
             player.play ();
         }
     }

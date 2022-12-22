@@ -50,7 +50,6 @@ public class Flowtime.Services.Alarm : Object {
     }
 
     private void on_timer_done () {
-        message ("Timer Done");
         var notification = new GLib.Notification (_("Break is over!"));
         notification.set_body (_("Let's get back to work"));
         notification.set_priority (NORMAL);
@@ -60,7 +59,6 @@ public class Flowtime.Services.Alarm : Object {
     }
 
     private void on_tone_changed () {
-        message ("Settings changed");
         var settings = new Settings ();
         sound_uri = sound_prefix + settings.tone;
     }

@@ -142,8 +142,6 @@ public class Flowtime.Services.Timer : Object {
 
         // Obtaining the difference between the last and current times, casting it to seconds
         int time_seconds = (int) (current_time.difference (last_datetime) / TimeSpan.SECOND);
-        message (current_time.difference (last_datetime).to_string ());
-        message (time_seconds.to_string ());
 
         switch (mode) {
             case WORK:
