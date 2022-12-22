@@ -20,7 +20,7 @@ public class Flowtime.Services.Statistics : GLib.Object {
 
     public Day? today { get; private set; default = null; }
 
-    public List<Day> all_days = new List<Day> ();
+    public Gee.LinkedList<Day> all_days = new Gee.LinkedList<Day> ();
     public string productive_day { get; private set; }
 
     public State total = new State ();
@@ -101,7 +101,7 @@ public class Flowtime.Services.Statistics : GLib.Object {
 
                 total.worktime += d.worktime;
                 total.breaktime += d.breaktime;
-                all_days.append (d);
+                all_days.add (d);
 
                 if (ts > MONTH) {
                     continue;
@@ -127,7 +127,7 @@ public class Flowtime.Services.Statistics : GLib.Object {
         if (today == null) {
             today = new Day ();
             root_element->add_child (today.node);
-            all_days.append (today);
+            all_days.add (today);
         }
 
         foreach (var day in overpassed_days) {
@@ -168,18 +168,6 @@ public class Flowtime.Services.Statistics : GLib.Object {
         return get_breaktime_from_period (period);
     }
 
-    public void foreach_in_period (TimePeriod period, ForeachStat foreach_func) {
-        TimeSpan max_timespan = period.get_timespan ();
-        var datetime_now = new DateTime.now_utc ();
-
-        foreach (Day day in all_days) {
-            TimeSpan ts = day.date.difference (datetime_now);
-            if (ts < max_timespan) {
-                foreach_func (day);
-            }
-        }
-    }
-
     private int get_worktime_from_period (TimePeriod period) {
         switch (period) {
             case TODAY:
@@ -213,8 +201,8 @@ public class Flowtime.Services.Statistics : GLib.Object {
     private async void get_most_productive_day () {
         var map = new Gee.HashMap<string, int?> ();
         // Now, we will iterate over the all_days list to set the data to the respective day
-        for (int i = 0; i < all_days.length (); i++) {
-            Day day = all_days.nth_data (i);
+        for (int i = 0; i < all_days.size; i++) {
+            Day day = all_days.get (i);
 
             if (!map.has_key (day.day_of_week)) {
                 map.set (day.day_of_week, day.worktime);
@@ -247,21 +235,6 @@ public enum Flowtime.Services.TimePeriod {
     WEEK,
     MONTH,
     ALL;
-
-    internal TimeSpan get_timespan () {
-        switch (this) {
-            case TODAY:
-                return TimeSpan.DAY;
-            case WEEK:
-                return TimeSpan.DAY * 7;
-            case MONTH:
-                return TimeSpan.DAY * 30;
-            case ALL:
-                return TimeSpan.DAY * 30 * 12;
-            default:
-                assert_not_reached ();
-        }
-    }
 }
 
 public delegate void Flowtime.Services.ForeachStat (Flowtime.Models.Day day);

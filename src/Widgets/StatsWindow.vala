@@ -38,7 +38,7 @@ namespace Flowtime {
                 break_list.append (break_object);
             }
 
-            if (statistics.all_days.length () > 1) {
+            if (statistics.all_days.size > 1) {
                 work_list.description = _("%s is your most productive day of the week").printf (statistics.productive_day);
             }
         }
