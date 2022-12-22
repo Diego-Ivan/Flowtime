@@ -37,6 +37,7 @@ public class Flowtime.Services.Settings : Object {
         settings.bind ("tone", this, "tone", DEFAULT);
         settings.bind ("autostart", this, "autostart", DEFAULT);
         settings.bind ("distraction-free", this, "distraction-free", DEFAULT);
+        settings.bind ("months-saved", this, "months-saved", DEFAULT);
 
         settings.delay ();
     }

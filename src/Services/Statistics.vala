@@ -26,7 +26,6 @@ public class Flowtime.Services.Statistics : GLib.Object {
     public State total = new State ();
     public State month = new State ();
     public State week = new State ();
-    public State today_time = new State ();
 
     public signal void updated ();
 
@@ -59,6 +58,8 @@ public class Flowtime.Services.Statistics : GLib.Object {
             return;
         }
 
+        delete doc;
+
         doc = Xml.Parser.parse_file (path);
         if (doc == null) {
             warning ("Statistics file was found, but cannot be parsed. Creating a new one");
@@ -70,7 +71,6 @@ public class Flowtime.Services.Statistics : GLib.Object {
 
         root_element = doc->get_root_element ();
         retrieve_days ();
-        save ();
     }
 
     private void setup_new_statistics_file () {
@@ -81,7 +81,7 @@ public class Flowtime.Services.Statistics : GLib.Object {
 
     private void retrieve_days () {
         assert (root_element->name == "statistics");
-        DateTime current_date = new DateTime.now_local ();
+        var current_date = new DateTime.now_local ();
         var settings = new Settings ();
 
         int months_saved = settings.months_saved;
@@ -119,8 +119,6 @@ public class Flowtime.Services.Statistics : GLib.Object {
 
                 if (d.date.get_day_of_year () == current_date.get_day_of_year ()) {
                     today = d;
-                    today_time.worktime = today.worktime;
-                    today_time.breaktime = today.breaktime;
                 }
             }
         }
@@ -227,6 +225,7 @@ public class Flowtime.Services.Statistics : GLib.Object {
     }
 
     public void save () {
+        message ("Saving document...");
         doc->save_file (path);
     }
 }

@@ -152,6 +152,7 @@ public class Flowtime.Services.Timer : Object {
                 if (time_seconds >= seconds) {
                     seconds = 0;
                     done ();
+
                     return false;
                 }
                 seconds -= time_seconds;

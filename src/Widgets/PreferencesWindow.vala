@@ -35,12 +35,12 @@ namespace Flowtime {
 
             settings.bind_property ("autostart",
                 autostart_switch, "active",
-                DEFAULT
+                SYNC_CREATE | BIDIRECTIONAL
             );
 
             settings.bind_property ("months-saved",
                 months_spinbutton, "value",
-                DEFAULT
+                SYNC_CREATE | BIDIRECTIONAL
             );
 
             for (int i = 0; i < sounds.length; i++) {
