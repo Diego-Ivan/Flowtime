@@ -44,6 +44,7 @@ public class Flowtime.Services.Alarm : Object {
     construct {
         var settings = new Settings ();
         settings.notify["tone"].connect (on_tone_changed);
+        on_tone_changed ();
 
         bind_property ("sound_uri", player, "uri", SYNC_CREATE);
     }
@@ -58,9 +59,9 @@ public class Flowtime.Services.Alarm : Object {
         player.play ();
     }
 
-    private void on_tone_changed (Object object, ParamSpec pspec) {
+    private void on_tone_changed () {
         message ("Settings changed");
-        var settings = (Settings) object;
+        var settings = new Settings ();
         sound_uri = sound_prefix + settings.tone;
     }
 }
