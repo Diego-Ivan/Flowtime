@@ -23,7 +23,15 @@ public class Flowtime.Services.Timer : Object {
     private Alarm alarm { get; set; }
 
     public signal void updated ();
-    public signal void done ();
+
+    public virtual signal void done () {
+        var settings = new Settings ();
+
+        if (settings.autostart) {
+            next_mode ();
+            start ();
+        }
+    }
 
     private const int INTERVAL_MILLISECONDS = 1000;
     private DateTime? last_datetime = null;
@@ -127,8 +135,14 @@ public class Flowtime.Services.Timer : Object {
         }
 
         var current_time = new DateTime.now_utc ();
+
+        if (last_datetime == null) {
+            last_datetime = current_time;
+        }
+
         // Obtaining the difference between the last and current times, casting it to seconds
         int time_seconds = (int) (current_time.difference (last_datetime) / TimeSpan.SECOND);
+        message (current_time.difference (last_datetime).to_string ());
         message (time_seconds.to_string ());
 
         switch (mode) {
