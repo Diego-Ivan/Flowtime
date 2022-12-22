@@ -19,8 +19,6 @@
  */
 
 namespace Flowtime {
-    internal GLib.Settings settings;
-    internal Gst.Player player;
     public class Application : Adw.Application {
         public string sound_uri_prefix;
 
@@ -35,7 +33,6 @@ namespace Flowtime {
                 application_id: "io.github.diegoivanme.flowtime",
                 flags: GLib.ApplicationFlags.FLAGS_NONE
             );
-            settings = new GLib.Settings (Config.APP_ID);
             resource_base_path = "/io/github/diegoivanme/flowtime";
             sound_uri_prefix = "resource://" + resource_base_path + "/";
 
@@ -61,8 +58,8 @@ namespace Flowtime {
         protected override void shutdown () {
             base.shutdown ();
 
-            var @set = new Services.Settings ();
-            @set.save ();
+            var settings = new Services.Settings ();
+            settings.save ();
             quit ();
         }
 

@@ -15,12 +15,13 @@ namespace Flowtime {
         public Sound sound { get; construct; }
         public Gtk.CheckButton check_button { get; private set; }
         public Gtk.Button play_button { get; private set; }
-        public Services.Settings settings = new Services.Settings ();
+
+        private Services.Settings settings = new Services.Settings ();
         private Gst.Player player = new Gst.Player (null, null);
 
-        public SoundRow (Sound sound_) {
+        public SoundRow (Sound sound) {
             Object (
-                sound: sound_
+                sound: sound
             );
             title = sound.title;
         }

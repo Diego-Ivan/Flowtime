@@ -8,13 +8,14 @@
 namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/preferenceswindow.ui")]
     public class PreferencesWindow : Adw.PreferencesWindow {
-        public Gtk.Window parent_window { get; set; }
         [GtkChild]
         private unowned Adw.PreferencesGroup sounds_group;
         [GtkChild]
         private unowned Gtk.Switch autostart_switch;
         [GtkChild]
         private unowned Gtk.SpinButton months_spinbutton;
+
+        private Services.Settings settings = new Services.Settings ();
 
         public Sound[] sounds = {
             { "Baum", "resource:///io/github/diegoivanme/flowtime/baum.ogg" },
@@ -24,37 +25,33 @@ namespace Flowtime {
         };
 
         public PreferencesWindow (Gtk.Window parent) {
-            Object (
-                parent_window: parent
-            );
-            transient_for = parent_window;
+            transient_for = parent;
             show ();
         }
 
         construct {
-            var first_row = new SoundRow (sounds[0]);
-            sounds_group.add (first_row);
+            Gtk.CheckButton? button_group = null;
             months_spinbutton.value = 0;
 
-            settings.bind ("autostart",
+            settings.bind_property ("autostart",
                 autostart_switch, "active",
                 DEFAULT
             );
 
-            settings.bind ("months-saved",
+            settings.bind_property ("months-saved",
                 months_spinbutton, "value",
                 DEFAULT
             );
 
-            if (player.uri == sounds[0].path) {
-                first_row.check_button.active = true;
-            }
-
-            for (int i = 1; i < sounds.length; i++) {
+            for (int i = 0; i < sounds.length; i++) {
                 var row = new SoundRow (sounds[i]);
-                row.check_button.group = first_row.check_button;
+                if (button_group == null) {
+                    button_group = row.check_button;
+                }
 
-                if (player.uri == sounds[i].path) {
+                row.check_button.group = button_group;
+
+                if (settings.tone == sounds[i].title.down () + ".ogg") {
                     row.check_button.active = true;
                 }
 

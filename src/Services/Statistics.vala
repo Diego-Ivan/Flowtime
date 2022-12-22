@@ -82,8 +82,9 @@ public class Flowtime.Services.Statistics : GLib.Object {
     private void retrieve_days () {
         assert (root_element->name == "statistics");
         DateTime current_date = new DateTime.now_local ();
+        var settings = new Settings ();
 
-        int months_saved = settings.get_int ("months-saved");
+        int months_saved = settings.months_saved;
         Day[] overpassed_days = {};
 
         const TimeSpan WEEK = TimeSpan.DAY * 7;
