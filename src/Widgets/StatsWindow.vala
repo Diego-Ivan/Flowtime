@@ -43,6 +43,45 @@ namespace Flowtime {
             }
         }
 
+        public async void save_as_csv (File file)
+            requires (file.query_exists ())
+        {
+            var statistics = new Services.Statistics ();
+            string format = "date,worktime,breatkime";
+
+            foreach (Models.Day day in statistics.all_days) {
+                var work_object = new Models.StatObject (day.date, day.worktime);
+                var break_object = new Models.StatObject (day.date, day.worktime);
+
+                format += "\"%s\",\"%s\",\"%s\"\n".printf(work_object.date, work_object.time, break_object.time);
+            }
+
+            try {
+                FileUtils.set_contents (file.get_path (), format);
+            }
+            catch (Error e) {
+                critical (e.message);
+            }
+        }
+
+        [GtkCallback]
+        private void on_save_button_clicked () {
+            var filechooser = new Gtk.FileChooserNative (null,
+                this, SAVE,
+                null, null
+            );
+            filechooser.response.connect (on_filechooser_response);
+            filechooser.show ();
+        }
+
+        private void on_filechooser_response (Gtk.NativeDialog dialog, int response)
+        {
+            var filechooser = (Gtk.FileChooserNative) dialog;
+            if (response == Gtk.ResponseType.ACCEPT) {
+                save_as_csv.begin (filechooser.get_file ());
+            }
+        }
+
         private void empty () {
             // Empty Header
             header_bar.title_widget = null;
