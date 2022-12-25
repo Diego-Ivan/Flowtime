@@ -9,32 +9,21 @@ namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/window.ui")]
     public class Window : Adw.ApplicationWindow {
         [GtkChild]
-        private unowned Gtk.Stack stages;
-        [GtkChild]
-        private unowned TimerPage work_page;
-        [GtkChild]
-        private unowned TimerPage break_page;
-
-        [GtkChild]
-        private unowned StatPage work_circle;
-        [GtkChild]
-        private unowned StatPage break_circle;
+        private unowned Services.Timer timer;
 
         [GtkChild]
         private unowned SmallView small_view;
         [GtkChild]
         private unowned Adw.Squeezer squeezer;
+
         public bool small_view_enabled {
             get {
                 return squeezer.visible_child == small_view;
             }
         }
 
-        private ColorProvider color_provider = ColorProvider.get_default ();
         private Adw.TimedAnimation height_animation;
         private Adw.TimedAnimation width_animation;
-
-        private uint initial_breaktime;
 
         public int previous_width {
             get {
@@ -54,15 +43,13 @@ namespace Flowtime {
             }
         }
 
-        public Statistics stats {
+        public Services.Statistics stats {
             owned get {
-                return Statistics.get_default ();
+                return new Services.Statistics ();
             }
         }
 
         private const ActionEntry[] WIN_ENTRIES = {
-            { "stop-break", stop_break },
-            { "stop-work", stop_work },
             { "enable-small-view", enable_small_view },
             { "disable-small-view", disable_small_view }
         };
@@ -72,10 +59,9 @@ namespace Flowtime {
         }
 
         static construct {
-            typeof(WorkTimer).ensure ();
-            typeof(BreakTimer).ensure ();
             typeof(StatPage).ensure ();
             typeof(SmallView).ensure ();
+            typeof(TimerPage).ensure ();
         }
 
         construct {
@@ -83,23 +69,11 @@ namespace Flowtime {
             action_group.add_action_entries (WIN_ENTRIES, this);
             insert_action_group ("win", action_group);
 
-            break_page.change_request.connect (stop_break);
-            work_page.change_request.connect (stop_work);
-
-
             /*
              * Save statistics in case the timers are still running
              */
             close_request.connect (() => {
-                if (work_page.timer.running) {
-                    stats.add_worktime (work_page.seconds);
-                }
-
-                if (break_page.timer.running) {
-                    stats.add_breaktime (break_page.seconds);
-                }
-
-                stats.save ();
+                timer.save_to_statistics ();
                 return false;
             });
 
@@ -126,45 +100,6 @@ namespace Flowtime {
             bind_property ("small-view-enabled",
                 height_animation, "reverse"
             );
-
-            /*
-             * Bind Statistics Properties to the Pages
-             */
-            stats.bind_property ("monthly-worktime", work_circle, "month-time", SYNC_CREATE);
-            stats.bind_property ("weekly-worktime", work_circle, "week-time", SYNC_CREATE);
-            stats.bind_property ("today-worktime", work_circle, "today-time", SYNC_CREATE);
-
-            stats.bind_property ("monthly-breaktime", break_circle, "month-time", SYNC_CREATE);
-            stats.bind_property ("weekly-breaktime", break_circle, "week-time", SYNC_CREATE);
-            stats.bind_property ("today-breaktime", break_circle, "today-time", SYNC_CREATE);
-        }
-
-        private void stop_break () {
-            stats.add_breaktime (initial_breaktime);
-            stats.save ();
-            break_page.timer.reset_time ();
-
-            stages.set_visible_child_full ("work", CROSSFADE);
-
-            color_provider.disable_break_colors ();
-            if (settings.get_boolean ("autostart"))
-                work_page.play_timer ();
-        }
-
-        private void stop_work () {
-            initial_breaktime = work_page.seconds / 5;
-            break_page.timer.seconds = initial_breaktime;
-            stats.add_worktime (work_page.seconds);
-
-            work_page.timer.reset_time ();
-
-            stages.set_visible_child_full ("break", CROSSFADE);
-
-            color_provider.enable_break_colors ();
-            if (settings.get_boolean ("autostart"))
-                break_page.play_timer ();
-
-            stats.save ();
         }
 
         private void enable_small_view () {
@@ -192,22 +127,9 @@ namespace Flowtime {
 
         [GtkCallback]
         private void on_details_button_clicked () {
-            new StatsWindow (this, stats);
-        }
-
-        [GtkCallback]
-        private void on_break_completed () {
-            var notification = new GLib.Notification (_("Break is over!"));
-
-            notification.set_body (_("Let's get back to work"));
-            notification.set_priority (NORMAL);
-            app.send_notification ("Break-Timer-Done", notification);
-            player.play ();
-            stats.add_breaktime (initial_breaktime);
-
-            stats.save ();
-            work_page.timer.reset_time ();
+            new StatsWindow (this);
         }
     }
 }
+
 

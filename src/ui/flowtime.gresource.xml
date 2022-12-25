@@ -11,6 +11,7 @@
     <file>statwindow.ui</file>
     <file>preferenceswindow.ui</file>
     <file>timerpage.ui</file>
+    <file>statlist.ui</file>
 
     <file alias="tone.ogg">sounds/tone.ogg</file>
     <file alias="baum.ogg">sounds/baum.ogg</file>

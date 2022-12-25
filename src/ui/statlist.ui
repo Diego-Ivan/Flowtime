@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="FlowtimeStatList" parent="AdwPreferencesGroup">
+    <child>
+      <object class="GtkListView" id="list_view">
+        <style>
+          <class name="navigation-sidebar"/>
+        </style>
+
+        <property name="factory">
+          <object class="GtkSignalListItemFactory" id="factory">
+            <signal name="bind" handler="on_item_bound"/>
+          </object>
+        </property>
+
+        <property name="model">
+          <object class="GtkNoSelection">
+            <property name="model">
+              <object class="GListStore" id="list_store">
+                <property name="item-type">FlowtimeModelsStatObject</property>
+              </object>
+            </property>
+          </object>
+        </property>
+      </object>
+    </child>
+  </template>
+</interface>

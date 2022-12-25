@@ -3,8 +3,8 @@
   <requires lib="gtk" version="4.2.5"/>
   <template class="FlowtimePreferencesWindow" parent="AdwPreferencesWindow">
     <property name="modal">true</property>
-    <property name="default-height">320</property>
-    <property name="default-width">330</property>
+    <property name="default-height">440</property>
+    <property name="default-width">460</property>
 
     <child>
       <object class="AdwPreferencesPage">

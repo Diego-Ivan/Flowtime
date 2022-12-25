@@ -24,30 +24,7 @@
               </object>
             </child>
             <child>
-              <object class="GtkStack" id="stages">
-
-                <child>
-                  <object class="GtkStackPage">
-                    <property name="name">work</property>
-                    <property name="child">
-                      <object class="FlowtimeTimerPage" id="work_page">
-                        <property name="stage-name" translatable="yes">Work Stage</property>
-                      </object>
-                    </property>
-                  </object>
-                </child>
-
-                <child>
-                  <object class="GtkStackPage">
-                    <property name="name">break</property>
-                    <property name="child">
-                      <object class="FlowtimeTimerPage" id="break_page">
-                        <property name="stage-name" translatable="yes">Break Stage</property>
-                      </object>
-                    </property>
-                  </object>
-                </child>
-
+              <object class="FlowtimeTimerPage" id="timer_page">
               </object>
             </child>
           </object>

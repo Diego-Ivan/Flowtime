@@ -15,8 +15,20 @@ namespace Flowtime {
         [GtkChild]
         private unowned Gtk.Label unit_label;
 
-        private uint _displayed_value;
-        public uint displayed_value {
+        public Services.TimePeriod time_period { get; set; default = TODAY; }
+        private Services.TimerMode _timer_mode;
+        public Services.TimerMode timer_mode {
+            get {
+                return _timer_mode;
+            }
+            set {
+                _timer_mode = value;
+                update_values ();
+            }
+        }
+
+        private int _displayed_value;
+        public int displayed_value {
             get {
                 return _displayed_value;
             }
@@ -47,9 +59,21 @@ namespace Flowtime {
         construct {
             unit = _("seconds");
             displayed_value = 0;
+
+            var statistics = new Services.Statistics ();
+            statistics.updated.connect (update_values);
         }
 
-        private string format_time (uint seconds) {
+        private void update_values () {
+            async_update_values.begin ();
+        }
+
+        private async void async_update_values () {
+            var statistics = new Services.Statistics ();
+            displayed_value = statistics.get_time_from_mode_and_period (timer_mode, time_period);
+        }
+
+        private string format_time (int seconds) {
             // If seconds is less than a minute, it will display seconds
             if (seconds < 60) {
                 unit = _("seconds");

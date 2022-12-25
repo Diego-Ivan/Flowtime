@@ -6,18 +6,33 @@
  */
 
 namespace Flowtime {
-    public class ColorProvider : Object {
+    [SingleInstance]
+    public class Services.ColorProvider : Object {
         private Gtk.CssProvider break_provider = new Gtk.CssProvider ();
         public Gtk.CssProvider? current_provider { get; private set; }
 
-        protected ColorProvider () {
+        private Services.TimerMode _mode;
+        public Services.TimerMode mode {
+            get {
+                return _mode;
+            }
+            set {
+                _mode = value;
+
+                if (mode == WORK) {
+                    disable_break_colors ();
+                }
+                else {
+                    enable_break_colors ();
+                }
+            }
         }
 
         private static ColorProvider? instance = null;
-        public static ColorProvider get_default () {
-            if (instance == null)
-                instance = new ColorProvider ();
-            return instance;
+        public ColorProvider () {
+            if (instance == null) {
+                instance = this;
+            }
         }
 
         construct {
@@ -27,14 +42,18 @@ namespace Flowtime {
             on_style_changed ();
         }
 
-        public void enable_break_colors () {
+        private void enable_break_colors () {
             current_provider = break_provider;
             Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (),
                 current_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
         }
 
-        public void disable_break_colors () {
+        private void disable_break_colors () {
+            if (current_provider == null) {
+                return;
+            }
+
             Gtk.StyleContext.remove_provider_for_display (Gdk.Display.get_default (), current_provider);
             current_provider = null;
         }

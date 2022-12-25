@@ -13,9 +13,9 @@ namespace Flowtime {
         [GtkChild]
         private unowned Gtk.Label time_label;
 
-        public StatRow (StatObject o) {
-            date_label.label = o.formatted_date;
-            time_label.label = o.formatted_time;
+        public StatRow (Models.StatObject object) {
+            date_label.label = object.date;
+            time_label.label = object.time;
         }
     }
 }
