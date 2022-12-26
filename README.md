@@ -65,7 +65,7 @@ GNOME Builder provides a high quality Flatpak integration. All dependencies, run
 | gtk-4  | 4.4.6 |
 | gstreamer-1.0 | 1.0 |
 | gstreamer-player-1.0 | 1.0 |
-| libadwaita-1 |  1.1 |
+| libadwaita-1 |  1.2 |
 | libxml-2.0 |  1.0 |
 
 To compile and install, run:
