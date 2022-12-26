@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-17 14:17-0500\n"
-"PO-Revision-Date: 2022-04-23 21:35+0100\n"
+"PO-Revision-Date: 2022-12-26 11:35+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: italian <LL@li.org>\n"
 "Language: it\n"
@@ -86,7 +86,6 @@ msgstr "Fasi"
 msgid "Work Stage"
 msgstr "Fase di lavoro"
 
-
 #: src/ui/window.ui:93 src/ui/smallview.ui:45
 msgid "Break Stage"
 msgstr "Fase di pausa"
@@ -99,11 +98,9 @@ msgstr "Statistiche"
 msgid "See Details"
 msgstr "Vedi dettagli"
 
-
 #: src/ui/window.ui:129 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
 msgid "Work Time"
 msgstr "Tempo di lavoro"
-
 
 #: src/ui/window.ui:144 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
 msgid "Break Time"
@@ -119,7 +116,7 @@ msgstr "La quantità di mesi in cui i dati di lavoro verranno salvati"
 
 #: src/ui/preferenceswindow.ui:41
 msgid "Timer"
-msgstr "Imer"
+msgstr "Timer"
 
 #: src/ui/preferenceswindow.ui:45
 msgid "Autostart"
