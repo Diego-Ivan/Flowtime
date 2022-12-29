@@ -23,17 +23,11 @@ public class Flowtime.Services.Timer : Object {
     private Alarm alarm { get; set; }
 
     public signal void updated ();
-
-    public virtual signal void done () {
-        var settings = new Settings ();
-
-        if (settings.autostart) {
-            next_mode ();
-            start ();
-        }
-    }
+    public signal void done ();
 
     private const int INTERVAL_MILLISECONDS = 1000;
+    private uint? timeout_id = null;
+
     private DateTime? last_datetime = null;
     private int initial_breaktime = 0;
 
@@ -55,17 +49,18 @@ public class Flowtime.Services.Timer : Object {
     public void start () {
         last_datetime = new DateTime.now_utc ();
         running = true;
-        Timeout.add (INTERVAL_MILLISECONDS, timeout);
+        timeout_id = Timeout.add (INTERVAL_MILLISECONDS, timeout);
     }
 
     public void stop () {
         running = false;
+        Source.remove (timeout_id);
     }
 
     public void resume () {
         running = true;
         last_datetime = null;
-        Timeout.add (INTERVAL_MILLISECONDS, timeout);
+        timeout_id = Timeout.add (INTERVAL_MILLISECONDS, timeout);
     }
 
     public void next_mode () {
@@ -87,6 +82,11 @@ public class Flowtime.Services.Timer : Object {
             seconds = 0;
             initial_breaktime = 0;
             mode = WORK;
+        }
+
+        var settings = new Settings ();
+        if (settings.autostart) {
+            start ();
         }
     }
 
@@ -149,6 +149,7 @@ public class Flowtime.Services.Timer : Object {
                 break;
 
             case BREAK:
+                message ("Ticking during break...");
                 if (time_seconds >= seconds) {
                     seconds = 0;
                     done ();
