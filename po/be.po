@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the flowtime package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: flowtime\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-17 14:17-0500\n"
+"PO-Revision-Date: 2022-12-30 16:08+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: data/io.github.diegoivanme.flowtime.desktop.in:3
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
+msgid "Flowtime"
+msgstr "Flowtime"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
+msgid "Get things done, keep concentrated"
+msgstr "Вырашайце задачы, не губляйце канцэнтрацыю"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
+msgid ""
+"The Pomodoro technique is efficient for tasks you find boring, but having to "
+"take a break when you are 100% concentrated in something you like might be "
+"annoying. That's why the Flowtime technique exists: take appropiate breaks "
+"without loosing you **flow**."
+msgstr ""
+"Тэхніка Pomodoro эфектыўная для задач, якія здаюцца вам сумнымі, але "
+"неабходнасць рабіць перапынак, калі вы на 100% сканцэнтраваны на тым, што "
+"вам падабаецца, можа раздражняць. Вось чаму існуе тэхніка Flowtime: рабіце "
+"адпаведныя перапынкі, не губляючы **патоку**."
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
+msgid "Flowtime 2.0: Keep on track!"
+msgstr "Flowtime 2.0: Адсочвайце час!"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
+msgid "In this new version, a shiny new feature was added: Statistics!"
+msgstr "У гэтай новай версіі была дададзена цудоўная функцыя: Статыстыка!"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
+msgid ""
+"Have an overview of how much time you have worked in the last month, week "
+"and day"
+msgstr ""
+"Майце агляд таго, колькі часу вы працавалі за апошні месяц, тыдзень і дзень"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
+msgid "Take a look at your day-specific data"
+msgstr "Паглядзіце дадзеныя за дзень"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:42
+msgid "Export your statistics to CSV format"
+msgstr "Экспарт статыстыкі ў фармат CSV"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:83
+msgid "Diego Iván"
+msgstr "Diego Iván"
+
+#: src/ui/window.ui:8
+msgid "_About Flowtime"
+msgstr "_Аб праграме"
+
+#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:11
+msgid "_Preferences"
+msgstr "_Налады"
+
+#: src/ui/window.ui:16
+msgid "_Enable Small View"
+msgstr "_Уключыць кампактны рэжым"
+
+#: src/ui/window.ui:71
+msgid "Stages"
+msgstr "Этапы"
+
+#: src/ui/window.ui:79 src/ui/smallview.ui:34
+msgid "Work Stage"
+msgstr "Праца"
+
+#: src/ui/window.ui:93 src/ui/smallview.ui:45
+msgid "Break Stage"
+msgstr "Перапынак"
+
+#: src/ui/window.ui:111 src/ui/preferenceswindow.ui:15
+msgid "Statistics"
+msgstr "Статыстыка"
+
+#: src/ui/window.ui:128
+msgid "See Details"
+msgstr "Праглядзець падрабязнасці"
+
+#: src/ui/window.ui:141 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
+msgid "Work Time"
+msgstr "Усяго працы"
+
+#: src/ui/window.ui:162 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
+msgid "Break Time"
+msgstr "Усяго перапынкаў"
+
+#: src/ui/preferenceswindow.ui:19
+msgid "Months Saved"
+msgstr "Захавана месяцаў"
+
+#: src/ui/preferenceswindow.ui:20
+msgid "The amount of months that the work data will be saved"
+msgstr "Дадзеныя за колькі месяцаў будуць захаваны"
+
+#: src/ui/preferenceswindow.ui:41
+msgid "Timer"
+msgstr "Таймер"
+
+#: src/ui/preferenceswindow.ui:45
+msgid "Autostart"
+msgstr "Аўтазапуск"
+
+#: src/ui/preferenceswindow.ui:46
+msgid "Automatically start the timer when the stage is changed"
+msgstr "Аўтаматычна запускаць таймер пры змене этапу"
+
+#: src/ui/preferenceswindow.ui:62
+msgid "Sounds"
+msgstr "Гукі"
+
+#: src/ui/preferenceswindow.ui:63
+msgid "Alarm sounds that mark break time"
+msgstr "Гук папярэджання, што перапынак скончыўся"
+
+#: src/ui/statpage.ui:13
+msgid "Today"
+msgstr "Сёння"
+
+#: src/ui/statpage.ui:23
+msgid "This Week"
+msgstr "На гэтым тыдні"
+
+#: src/ui/statpage.ui:33
+msgid "This Month"
+msgstr "У гэтым месяцы"
+
+#. If seconds is less than a minute, it will display seconds
+#: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
+#: src/Widgets/StatCircle.vala:55
+msgid "seconds"
+msgstr "секунд"
+
+#: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
+msgid "minutes"
+msgstr "хвілін"
+
+#: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
+msgid "hour"
+msgstr "гадзіну"
+
+#: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
+msgid "hours"
+msgstr "гадзіны"
+
+#: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
+msgid "day"
+msgstr "дзень"
+
+#: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
+msgid "days"
+msgstr "дзён"
+
+#: src/Widgets/StatsWindow.vala:31
+#, c-format
+msgid "%s is your most productive day of the week"
+msgstr "%s — ваш самы прадуктыўны дзень тыдня"
+
+#. Translators: Write your Name<email> here :p
+#: src/Application.vala:108
+msgid "translator-credits"
+msgstr "vokaEntropy <7w8kluayj@mozmail.com>"
