@@ -79,6 +79,7 @@ namespace Flowtime {
                 null
             };
             const string? ARTISTS[] = {
+                "Brage Fuglseth",
                 "David Lapshin",
                 "Mike Koenig https://soundbible.com/1251-Beep.html",
                 "SoundBible https://soundbible.com/1815-A-Tone.html",
