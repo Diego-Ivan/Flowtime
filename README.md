@@ -42,14 +42,16 @@ The time you worked is divided by 5, and that's the break time you'll take. E.g,
 
 The only official distribution format for Flowtime is the Flatpak package available on Flathub. Click on the banner on the top of this README.md to go to Flowtime's Flathub page. Any other unofficial distribution format that might be available is highly disencouraged.
 
-### AUR
+### Native Packages / Ports
 
-There's third-party, unofficial AUR packages:
+There exist some third party, distribution specific, packages:
 
-| Package        | Mantainer    |
-| -------------- | ------------ |
-| `flowtime`     | igor-dyatlov |
-| `flowtime-git` | igor-dyatlov |
+| Distribution        | Package name    | Mantainer       |
+| ------------------- | --------------- | --------------- |
+| Alpine Linux        | `flowtime`      | [chereskata](https://gitlab.alpinelinux.org/chereskata) |
+| Arch Linux (AUR)    | `flowtime`      | igor-dyatlov    |
+| Arch Linux (AUR)    | `flowtime-git`  | igor-dyatlov    |
+
 
 ### Building from source
 
