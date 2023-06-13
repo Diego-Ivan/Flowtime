@@ -1,6 +1,6 @@
 /* StatsWindow.vala
  *
- * Copyright 2022 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2022-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -66,19 +66,20 @@ namespace Flowtime {
 
         [GtkCallback]
         private void on_save_button_clicked () {
-            var filechooser = new Gtk.FileChooserNative (null,
-                this, SAVE,
-                null, null
-            );
-            filechooser.response.connect (on_filechooser_response);
-            filechooser.show ();
+            save_action.begin ();
         }
 
-        private void on_filechooser_response (Gtk.NativeDialog dialog, int response)
-        {
-            var filechooser = (Gtk.FileChooserNative) dialog;
-            if (response == Gtk.ResponseType.ACCEPT) {
-                save_as_csv.begin (filechooser.get_file ());
+        private async void save_action () {
+            var file_dialog = new Gtk.FileDialog () {
+                modal = true
+            };
+
+            try {
+                File file = yield file_dialog.save (this, null);
+                yield save_as_csv (file);
+            }
+            catch (Error e) {
+                critical (e.message);
             }
         }
 

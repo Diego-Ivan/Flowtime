@@ -1,6 +1,6 @@
 /* Timer.vala
  *
- * Copyright 2022 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2022-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -54,6 +54,9 @@ public class Flowtime.Services.Timer : Object {
 
     public void stop () {
         running = false;
+        if (timeout_id == null) {
+            return;
+        }
         Source.remove (timeout_id);
     }
 
