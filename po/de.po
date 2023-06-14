@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-17 14:17-0500\n"
+"POT-Creation-Date: 2023-06-13 22:03-0600\n"
 "PO-Revision-Date: 2022-03-10 21:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -40,28 +40,22 @@ msgstr ""
 "Technik: Angemessene Pausen machen, ohne den **Fluss** zu verlieren."
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
-msgid "Flowtime 2.0: Keep on track!"
+msgid "Flowtime 2.6: Small Changes"
 msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
-msgid "In this new version, a shiny new feature was added: Statistics!"
+msgid "New Features:"
 msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
-msgid ""
-"Have an overview of how much time you have worked in the last month, week "
-"and day"
+msgid "Icons have been redesigned by daudix-UFO"
 msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
-msgid "Take a look at your day-specific data"
+msgid "New Translations: Turkish and Russian Translations"
 msgstr ""
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:42
-msgid "Export your statistics to CSV format"
-msgstr ""
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:83
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
 msgid "Diego Iván"
 msgstr ""
 
@@ -81,31 +75,17 @@ msgstr ""
 msgid "Stages"
 msgstr ""
 
-#: src/ui/window.ui:79 src/ui/smallview.ui:34
-msgid "Work Stage"
-msgstr ""
-
-#: src/ui/window.ui:93 src/ui/smallview.ui:45
-#, fuzzy
-msgid "Break Stage"
-msgstr "Pausenzeit"
-
-#: src/ui/window.ui:111 src/ui/preferenceswindow.ui:15
+#: src/ui/window.ui:85 src/ui/preferenceswindow.ui:15
 msgid "Statistics"
 msgstr ""
 
-#: src/ui/window.ui:128
+#: src/ui/window.ui:91
+msgid "Overview"
+msgstr ""
+
+#: src/ui/window.ui:102
 msgid "See Details"
 msgstr ""
-
-#: src/ui/window.ui:141 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
-msgid "Work Time"
-msgstr ""
-
-#: src/ui/window.ui:162 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
-#, fuzzy
-msgid "Break Time"
-msgstr "Pausenzeit"
 
 #: src/ui/preferenceswindow.ui:19
 msgid "Months Saved"
@@ -135,52 +115,100 @@ msgstr "Klänge"
 msgid "Alarm sounds that mark break time"
 msgstr "Alarmtöne, die die Pausenzeit markieren"
 
-#: src/ui/statpage.ui:13
+#: src/ui/statpage.ui:17
 msgid "Today"
 msgstr ""
 
-#: src/ui/statpage.ui:23
+#: src/ui/statpage.ui:29
 msgid "This Week"
 msgstr ""
 
-#: src/ui/statpage.ui:33
+#: src/ui/statpage.ui:41
 msgid "This Month"
 msgstr ""
 
+#: src/ui/statwindow.ui:51 src/ui/statwindow.ui:61
+msgid "Work Time"
+msgstr ""
+
+#: src/ui/statwindow.ui:74 src/ui/statwindow.ui:83
+#, fuzzy
+msgid "Break Time"
+msgstr "Pausenzeit"
+
+#: src/Services/Timer.vala:185
+#, fuzzy
+msgid "Break is over!"
+msgstr "Pausenzeit"
+
+#: src/Services/Timer.vala:188
+#, fuzzy, c-format
+msgid "Break Stage: %s"
+msgstr "Pausenzeit"
+
+#: src/Services/Timer.vala:192
+#, fuzzy, c-format
+msgid "Work Stage: %s"
+msgstr "Pausenzeit"
+
+#: src/Services/Timer.vala:215
+msgid "Work"
+msgstr ""
+
+#: src/Services/Timer.vala:217
+#, fuzzy
+msgid "Break"
+msgstr "Pausenzeit"
+
 #. If seconds is less than a minute, it will display seconds
-#: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
-#: src/Widgets/StatCircle.vala:55
+#: src/Models/StatObject.vala:21 src/Widgets/StatCircle.vala:60
+#: src/Widgets/StatCircle.vala:79
 msgid "seconds"
 msgstr ""
 
-#: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
+#: src/Models/StatObject.vala:31 src/Widgets/StatCircle.vala:89
 msgid "minutes"
 msgstr ""
 
-#: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
+#: src/Models/StatObject.vala:59 src/Widgets/StatCircle.vala:117
 msgid "hour"
 msgstr ""
 
-#: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
+#: src/Models/StatObject.vala:62 src/Widgets/StatCircle.vala:120
 msgid "hours"
 msgstr ""
 
-#: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
+#: src/Models/StatObject.vala:79 src/Widgets/StatCircle.vala:137
 msgid "day"
 msgstr ""
 
-#: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
+#: src/Models/StatObject.vala:82 src/Widgets/StatCircle.vala:140
 msgid "days"
 msgstr ""
 
-#: src/Widgets/StatsWindow.vala:31
+#: src/Widgets/StatsWindow.vala:42
 #, c-format
 msgid "%s is your most productive day of the week"
 msgstr ""
 
-#. Translators: Write your Name<email> here :p
-#: src/Application.vala:108
-msgid "translator-credits"
+#. Status Page
+#: src/Widgets/StatsWindow.vala:94
+msgid "Start working to see you progress"
+msgstr ""
+
+#: src/Widgets/TimerPage.vala:54
+#, fuzzy
+msgid "Work Stage"
+msgstr "Pausenzeit"
+
+#: src/Widgets/TimerPage.vala:57
+#, fuzzy
+msgid "Break Stage"
+msgstr "Pausenzeit"
+
+#: src/Application.vala:101
+#, fuzzy
+msgid "translator_credits"
 msgstr "tronta"
 
 #~ msgid "Good Job!"

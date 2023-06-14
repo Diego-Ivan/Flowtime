@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-10 00:03+0300\n"
+"POT-Creation-Date: 2023-06-13 22:03-0600\n"
 "PO-Revision-Date: 2022-08-10 00:05+0300\n"
 "Last-Translator: Alexandre Prokoudine <alexandre.prokoudine@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@lists.gnome.org>\n"
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "X-Generator: Gtranslator 41.0\n"
 
 #: data/io.github.diegoivanme.flowtime.desktop.in:3
@@ -42,20 +42,20 @@ msgstr ""
 "теряя ощущение потока."
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
-msgid "Flowtime 2.5: Picture In Picture"
-msgstr "Flowtime 2.5: картинка в картинке"
+msgid "Flowtime 2.6: Small Changes"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
-msgid "Fancy new feature: Small View Mode!"
-msgstr "Классная новая возможность: компактный режим!"
+msgid "New Features:"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
-msgid "Reduce clutter in your Flowtime window."
-msgstr "Уберите всё лишнее из окна Flowtime"
+msgid "Icons have been redesigned by daudix-UFO"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
-msgid "Maximize your concentration."
-msgstr "Увеличьте свою концентрацию"
+msgid "New Translations: Turkish and Russian Translations"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
 msgid "Diego Iván"
@@ -73,37 +73,21 @@ msgstr "_Параметры"
 msgid "_Enable Small View"
 msgstr "_Включить компактный режим"
 
-#: src/ui/window.ui:69
+#: src/ui/window.ui:71
 msgid "Stages"
 msgstr "Этапы"
 
-#: src/ui/window.ui:77 src/ui/smallview.ui:34
-msgid "Work Stage"
-msgstr "Работа"
-
-#: src/ui/window.ui:91 src/ui/smallview.ui:45
-msgid "Break Stage"
-msgstr "Перерыв"
-
-#: src/ui/window.ui:109 src/ui/preferenceswindow.ui:15
+#: src/ui/window.ui:85 src/ui/preferenceswindow.ui:15
 msgid "Statistics"
 msgstr "Статистика"
 
-#: src/ui/window.ui:115
+#: src/ui/window.ui:91
 msgid "Overview"
 msgstr "Обзор"
 
-#: src/ui/window.ui:126
+#: src/ui/window.ui:102
 msgid "See Details"
 msgstr "Подробнее"
-
-#: src/ui/window.ui:139 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
-msgid "Work Time"
-msgstr "Всего работы"
-
-#: src/ui/window.ui:157 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
-msgid "Break Time"
-msgstr "Всего перерывов"
 
 #: src/ui/preferenceswindow.ui:19
 msgid "Months Saved"
@@ -133,57 +117,111 @@ msgstr "Звуки"
 msgid "Alarm sounds that mark break time"
 msgstr "Звук предупреждения, что перерыв закончился"
 
-#: src/ui/statpage.ui:13
+#: src/ui/statpage.ui:17
 msgid "Today"
 msgstr "Сегодня"
 
-#: src/ui/statpage.ui:23
+#: src/ui/statpage.ui:29
 msgid "This Week"
 msgstr "На этой неделе"
 
-#: src/ui/statpage.ui:33
+#: src/ui/statpage.ui:41
 msgid "This Month"
 msgstr "В этом месяце"
 
+#: src/ui/statwindow.ui:51 src/ui/statwindow.ui:61
+msgid "Work Time"
+msgstr "Всего работы"
+
+#: src/ui/statwindow.ui:74 src/ui/statwindow.ui:83
+msgid "Break Time"
+msgstr "Всего перерывов"
+
+#: src/Services/Timer.vala:185
+#, fuzzy
+msgid "Break is over!"
+msgstr "Всего перерывов"
+
+#: src/Services/Timer.vala:188
+#, fuzzy, c-format
+msgid "Break Stage: %s"
+msgstr "Перерыв"
+
+#: src/Services/Timer.vala:192
+#, fuzzy, c-format
+msgid "Work Stage: %s"
+msgstr "Работа"
+
+#: src/Services/Timer.vala:215
+#, fuzzy
+msgid "Work"
+msgstr "Всего работы"
+
+#: src/Services/Timer.vala:217
+#, fuzzy
+msgid "Break"
+msgstr "Всего перерывов"
+
 #. If seconds is less than a minute, it will display seconds
-#: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
-#: src/Widgets/StatCircle.vala:55
+#: src/Models/StatObject.vala:21 src/Widgets/StatCircle.vala:60
+#: src/Widgets/StatCircle.vala:79
 msgid "seconds"
 msgstr "секунд"
 
-#: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
+#: src/Models/StatObject.vala:31 src/Widgets/StatCircle.vala:89
 msgid "minutes"
 msgstr "минут"
 
-#: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
+#: src/Models/StatObject.vala:59 src/Widgets/StatCircle.vala:117
 msgid "hour"
 msgstr "час"
 
-#: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
+#: src/Models/StatObject.vala:62 src/Widgets/StatCircle.vala:120
 msgid "hours"
 msgstr "часов"
 
-#: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
+#: src/Models/StatObject.vala:79 src/Widgets/StatCircle.vala:137
 msgid "day"
 msgstr "день"
 
-#: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
+#: src/Models/StatObject.vala:82 src/Widgets/StatCircle.vala:140
 msgid "days"
 msgstr "дней"
 
-#: src/Widgets/StatsWindow.vala:36
-msgid "Start working to see you progress"
-msgstr "Начните работу, чтобы увидеть прогресс"
-
-#: src/Widgets/StatsWindow.vala:50
+#: src/Widgets/StatsWindow.vala:42
 #, c-format
 msgid "%s is your most productive day of the week"
 msgstr "%s — ваш самый продуктивный день недели"
 
-#. Translators: Write your Name<email> here :p
-#: src/Application.vala:108
-msgid "translator-credits"
+#. Status Page
+#: src/Widgets/StatsWindow.vala:94
+msgid "Start working to see you progress"
+msgstr "Начните работу, чтобы увидеть прогресс"
+
+#: src/Widgets/TimerPage.vala:54
+msgid "Work Stage"
+msgstr "Работа"
+
+#: src/Widgets/TimerPage.vala:57
+msgid "Break Stage"
+msgstr "Перерыв"
+
+#: src/Application.vala:101
+#, fuzzy
+msgid "translator_credits"
 msgstr "Александр Прокудин, alexandre.prokoudine@gmail.com"
+
+#~ msgid "Flowtime 2.5: Picture In Picture"
+#~ msgstr "Flowtime 2.5: картинка в картинке"
+
+#~ msgid "Fancy new feature: Small View Mode!"
+#~ msgstr "Классная новая возможность: компактный режим!"
+
+#~ msgid "Reduce clutter in your Flowtime window."
+#~ msgstr "Уберите всё лишнее из окна Flowtime"
+
+#~ msgid "Maximize your concentration."
+#~ msgstr "Увеличьте свою концентрацию"
 
 #~ msgid "In this new version, a shiny new feature was added: Statistics!"
 #~ msgstr "В этой версии появилась новая классная функция: статистика!"

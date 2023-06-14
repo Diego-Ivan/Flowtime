@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-17 14:17-0500\n"
+"POT-Creation-Date: 2023-06-13 22:03-0600\n"
 "PO-Revision-Date: 2022-07-09 13:15+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
@@ -33,34 +33,28 @@ msgid ""
 "annoying. That's why the Flowtime technique exists: take appropiate breaks "
 "without loosing you **flow**."
 msgstr ""
-"De Pomodoro-techniek is het efficiëntst bij saaie taken, maar een pauze nemen "
-"terwijl je volledig gefocust bent op iets is ook niet prettig. Wij hebben "
-"daarom de Flowtime-techniek ontwikkeld: pauzes op momenten dat het jou "
-"uitkomt, zonder uit de **flow** te raken."
+"De Pomodoro-techniek is het efficiëntst bij saaie taken, maar een pauze "
+"nemen terwijl je volledig gefocust bent op iets is ook niet prettig. Wij "
+"hebben daarom de Flowtime-techniek ontwikkeld: pauzes op momenten dat het "
+"jou uitkomt, zonder uit de **flow** te raken."
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
-msgid "Flowtime 2.0: Keep on track!"
-msgstr "Flowtime 2.0: blijf bij de tijd!"
+msgid "Flowtime 2.6: Small Changes"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
-msgid "In this new version, a shiny new feature was added: Statistics!"
-msgstr "Deze nieuwe versie bevat een gloednieuwe functie: statistieken!"
+msgid "New Features:"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
-msgid ""
-"Have an overview of how much time you have worked in the last month, week "
-"and day"
-msgstr "Bekijk hoelang je de afgelopen maand, week of dag hebt gewerkt"
+msgid "Icons have been redesigned by daudix-UFO"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
-msgid "Take a look at your day-specific data"
-msgstr "Bekijk dagelijkse informatie"
+msgid "New Translations: Turkish and Russian Translations"
+msgstr ""
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:42
-msgid "Export your statistics to CSV format"
-msgstr "Exporteer statistieken naar csv-formaat"
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:83
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
@@ -80,29 +74,17 @@ msgstr "Compact_e weergave"
 msgid "Stages"
 msgstr "Fases"
 
-#: src/ui/window.ui:79 src/ui/smallview.ui:34
-msgid "Work Stage"
-msgstr "Werk"
-
-#: src/ui/window.ui:93 src/ui/smallview.ui:45
-msgid "Break Stage"
-msgstr "Pauze"
-
-#: src/ui/window.ui:111 src/ui/preferenceswindow.ui:15
+#: src/ui/window.ui:85 src/ui/preferenceswindow.ui:15
 msgid "Statistics"
 msgstr "Statistieken"
 
-#: src/ui/window.ui:128
+#: src/ui/window.ui:91
+msgid "Overview"
+msgstr ""
+
+#: src/ui/window.ui:102
 msgid "See Details"
 msgstr "Details bekijken"
-
-#: src/ui/window.ui:141 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
-msgid "Work Time"
-msgstr "Werktijd"
-
-#: src/ui/window.ui:162 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
-msgid "Break Time"
-msgstr "Pauzetijd"
 
 #: src/ui/preferenceswindow.ui:19
 msgid "Months Saved"
@@ -132,53 +114,116 @@ msgstr "Geluiden"
 msgid "Alarm sounds that mark break time"
 msgstr "Geluiden waarmee pauzes worden aangekondigd"
 
-#: src/ui/statpage.ui:13
+#: src/ui/statpage.ui:17
 msgid "Today"
 msgstr "Vandaag"
 
-#: src/ui/statpage.ui:23
+#: src/ui/statpage.ui:29
 msgid "This Week"
 msgstr "Deze week"
 
-#: src/ui/statpage.ui:33
+#: src/ui/statpage.ui:41
 msgid "This Month"
 msgstr "Deze maand"
 
+#: src/ui/statwindow.ui:51 src/ui/statwindow.ui:61
+msgid "Work Time"
+msgstr "Werktijd"
+
+#: src/ui/statwindow.ui:74 src/ui/statwindow.ui:83
+msgid "Break Time"
+msgstr "Pauzetijd"
+
+#: src/Services/Timer.vala:185
+#, fuzzy
+msgid "Break is over!"
+msgstr "Pauzetijd"
+
+#: src/Services/Timer.vala:188
+#, fuzzy, c-format
+msgid "Break Stage: %s"
+msgstr "Pauze"
+
+#: src/Services/Timer.vala:192
+#, fuzzy, c-format
+msgid "Work Stage: %s"
+msgstr "Werk"
+
+#: src/Services/Timer.vala:215
+#, fuzzy
+msgid "Work"
+msgstr "Werktijd"
+
+#: src/Services/Timer.vala:217
+#, fuzzy
+msgid "Break"
+msgstr "Pauzetijd"
+
 #. If seconds is less than a minute, it will display seconds
-#: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
-#: src/Widgets/StatCircle.vala:55
+#: src/Models/StatObject.vala:21 src/Widgets/StatCircle.vala:60
+#: src/Widgets/StatCircle.vala:79
 msgid "seconds"
 msgstr "seconden"
 
-#: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
+#: src/Models/StatObject.vala:31 src/Widgets/StatCircle.vala:89
 msgid "minutes"
 msgstr "minuten"
 
-#: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
+#: src/Models/StatObject.vala:59 src/Widgets/StatCircle.vala:117
 msgid "hour"
 msgstr "uur"
 
-#: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
+#: src/Models/StatObject.vala:62 src/Widgets/StatCircle.vala:120
 msgid "hours"
 msgstr "uur"
 
-#: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
+#: src/Models/StatObject.vala:79 src/Widgets/StatCircle.vala:137
 msgid "day"
 msgstr "dag"
 
-#: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
+#: src/Models/StatObject.vala:82 src/Widgets/StatCircle.vala:140
 msgid "days"
 msgstr "dagen"
 
-#: src/Widgets/StatsWindow.vala:31
+#: src/Widgets/StatsWindow.vala:42
 #, c-format
 msgid "%s is your most productive day of the week"
 msgstr "%s was de productiefste dag van de week"
 
-#. Translators: Write your Name<email> here :p
-#: src/Application.vala:108
-msgid "translator-credits"
+#. Status Page
+#: src/Widgets/StatsWindow.vala:94
+msgid "Start working to see you progress"
+msgstr ""
+
+#: src/Widgets/TimerPage.vala:54
+msgid "Work Stage"
+msgstr "Werk"
+
+#: src/Widgets/TimerPage.vala:57
+msgid "Break Stage"
+msgstr "Pauze"
+
+#: src/Application.vala:101
+#, fuzzy
+msgid "translator_credits"
 msgstr "Heimen Stoffels <vistausss@fastmail.com>"
+
+#~ msgid "Flowtime 2.0: Keep on track!"
+#~ msgstr "Flowtime 2.0: blijf bij de tijd!"
+
+#~ msgid "In this new version, a shiny new feature was added: Statistics!"
+#~ msgstr "Deze nieuwe versie bevat een gloednieuwe functie: statistieken!"
+
+#~ msgid ""
+#~ "Have an overview of how much time you have worked in the last month, week "
+#~ "and day"
+#~ msgstr "Bekijk hoelang je de afgelopen maand, week of dag hebt gewerkt"
+
+#~ msgid "Take a look at your day-specific data"
+#~ msgstr "Bekijk dagelijkse informatie"
+
+#~ msgid "Export your statistics to CSV format"
+#~ msgstr "Exporteer statistieken naar csv-formaat"
 
 #~ msgid "Good Job!"
 #~ msgstr "Lekker bezig!"
