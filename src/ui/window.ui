@@ -22,7 +22,9 @@
   <template class="FlowtimeWindow" parent="AdwApplicationWindow">
     <property name="default-height">500</property>
     <property name="default-width">390</property>
+    <property name="hide-on-close">true</property>
     <property name="title"></property>
+    <signal name="close-request" handler="on_close_request" swapped="no"/>
 
     <child>
       <object class="AdwSqueezer" id="squeezer">

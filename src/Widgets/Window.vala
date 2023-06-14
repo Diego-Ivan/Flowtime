@@ -1,6 +1,6 @@
 /* Window.vala
  *
- * Copyright 2021-2022 Diego Iván
+ * Copyright 2021-2023 Diego Iván
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -70,14 +70,6 @@ namespace Flowtime {
             insert_action_group ("win", action_group);
 
             /*
-             * Save statistics in case the timers are still running
-             */
-            close_request.connect (() => {
-                timer.save_to_statistics ();
-                return false;
-            });
-
-            /*
              * Setup animations for resizing in PiP mode
              */
             var width_target = new Adw.CallbackAnimationTarget (width_callback);
@@ -100,6 +92,16 @@ namespace Flowtime {
             bind_property ("small-view-enabled",
                 height_animation, "reverse"
             );
+        }
+
+        [GtkCallback]
+        private bool on_close_request () {
+            message (timer.is_used.to_string ());
+            if (!timer.is_used) {
+                timer.save_to_statistics ();
+                hide_on_close = false;
+            }
+            return false;
         }
 
         private void enable_small_view () {

@@ -7,7 +7,7 @@
 
 public class Flowtime.Services.Timer : Object {
     public bool running { get; protected set; default = false; }
-    public bool already_started { get; protected set; }
+    private Xdp.Portal portal = new Xdp.Portal ();
 
     private int _seconds;
     public int seconds {
@@ -19,6 +19,13 @@ public class Flowtime.Services.Timer : Object {
             updated ();
         }
     }
+
+    public bool is_used {
+        get {
+            return running || seconds > 0;
+        }
+    }
+
     public TimerMode mode { get; private set; default = WORK; }
     private Alarm alarm { get; set; }
 
@@ -152,7 +159,6 @@ public class Flowtime.Services.Timer : Object {
                 break;
 
             case BREAK:
-                message ("Ticking during break...");
                 if (time_seconds >= seconds) {
                     seconds = 0;
                     done ();
@@ -168,7 +174,21 @@ public class Flowtime.Services.Timer : Object {
 
         last_datetime = current_time;
 
+        update_status_to_background.begin ();
+
         return true;
+    }
+
+    private async void update_status_to_background () {
+        try {
+            bool success = yield portal.set_background_status ("Time: %i".printf (seconds), null);
+            if (!success) {
+                critical ("Updating background status failed");
+            }
+        }
+        catch (Error e) {
+            critical (e.message);
+        }
     }
 }
 
