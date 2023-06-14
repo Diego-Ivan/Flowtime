@@ -5,9 +5,12 @@ src/ui/preferenceswindow.ui
 src/ui/smallview.ui
 src/ui/statcircle.ui
 src/ui/statpage.ui
+src/ui/timerpage.ui
 src/ui/statwindow.ui
 src/Services/Statistics.vala
-src/Services/StatObject.vala
+src/Services/Timer.vala
+src/Models/StatObject.vala
 src/Widgets/StatCircle.vala
 src/Widgets/StatsWindow.vala
+src/Widgets/TimerPage.vala
 src/Application.vala

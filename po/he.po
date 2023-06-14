@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-24 15:47-0500\n"
+"POT-Creation-Date: 2023-06-13 22:03-0600\n"
 "PO-Revision-Date: 2022-05-18 17:10+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: \n"
@@ -40,28 +40,22 @@ msgstr ""
 "מ**הרצף**."
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
-msgid "Flowtime 2.0: Keep on track!"
-msgstr "Flowtime 2.0: מטפחים עשייה!"
+msgid "Flowtime 2.6: Small Changes"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
-msgid "In this new version, a shiny new feature was added: Statistics!"
-msgstr "בגרסה זו, נוספה יכולת חדשה ונוצצת: סטטיסטיקה!"
+msgid "New Features:"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
-msgid ""
-"Have an overview of how much time you have worked in the last month, week "
-"and day"
-msgstr "קבלת סקירה על הזמן שהושקע בחודש החולף ברמת שבוע ויום"
+msgid "Icons have been redesigned by daudix-UFO"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
-msgid "Take a look at your day-specific data"
-msgstr "מבט מעמיק על הנתונים היומיים שלך"
+msgid "New Translations: Turkish and Russian Translations"
+msgstr ""
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:42
-msgid "Export your statistics to CSV format"
-msgstr "ייצוא הסטטיסטיקה שלך לתצורת CSV"
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:83
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
 msgid "Diego Iván"
 msgstr "דייגו איוון"
 
@@ -73,33 +67,26 @@ msgstr "_על Flowtime"
 msgid "_Preferences"
 msgstr "הע_דפות"
 
-#: src/ui/window.ui:59
-msgid "_Stages"
+#: src/ui/window.ui:16
+msgid "_Enable Small View"
+msgstr ""
+
+#: src/ui/window.ui:71
+#, fuzzy
+msgid "Stages"
 msgstr "_שלבים"
 
-#: src/ui/window.ui:67
-msgid "Work Stage"
-msgstr "שלב עבודה"
-
-#: src/ui/window.ui:81
-msgid "Break Stage"
-msgstr "שלב הפסקה"
-
-#: src/ui/window.ui:99 src/ui/preferenceswindow.ui:15
+#: src/ui/window.ui:85 src/ui/preferenceswindow.ui:15
 msgid "Statistics"
 msgstr "סטטיסטיקה"
 
-#: src/ui/window.ui:116
+#: src/ui/window.ui:91
+msgid "Overview"
+msgstr ""
+
+#: src/ui/window.ui:102
 msgid "See Details"
 msgstr "הצגת פרטים"
-
-#: src/ui/window.ui:129 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
-msgid "Work Time"
-msgstr "זמן עבודה"
-
-#: src/ui/window.ui:144 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
-msgid "Break Time"
-msgstr "זמן הפסקה"
 
 #: src/ui/preferenceswindow.ui:19
 msgid "Months Saved"
@@ -129,50 +116,113 @@ msgstr "צלילים"
 msgid "Alarm sounds that mark break time"
 msgstr "צלילי התראה שמסמנים את זמן ההפסקה"
 
-#: src/ui/statpage.ui:13
+#: src/ui/statpage.ui:17
 msgid "Today"
 msgstr "היום"
 
-#: src/ui/statpage.ui:23
+#: src/ui/statpage.ui:29
 msgid "This Week"
 msgstr "השבוע"
 
-#: src/ui/statpage.ui:33
+#: src/ui/statpage.ui:41
 msgid "This Month"
 msgstr "החודש"
 
+#: src/ui/statwindow.ui:51 src/ui/statwindow.ui:61
+msgid "Work Time"
+msgstr "זמן עבודה"
+
+#: src/ui/statwindow.ui:74 src/ui/statwindow.ui:83
+msgid "Break Time"
+msgstr "זמן הפסקה"
+
+#: src/Services/Timer.vala:185
+#, fuzzy
+msgid "Break is over!"
+msgstr "זמן הפסקה"
+
+#: src/Services/Timer.vala:188
+#, fuzzy, c-format
+msgid "Break Stage: %s"
+msgstr "שלב הפסקה"
+
+#: src/Services/Timer.vala:192
+#, fuzzy, c-format
+msgid "Work Stage: %s"
+msgstr "שלב עבודה"
+
+#: src/Services/Timer.vala:215
+#, fuzzy
+msgid "Work"
+msgstr "זמן עבודה"
+
+#: src/Services/Timer.vala:217
+#, fuzzy
+msgid "Break"
+msgstr "זמן הפסקה"
+
 #. If seconds is less than a minute, it will display seconds
-#: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
-#: src/Widgets/StatCircle.vala:55
+#: src/Models/StatObject.vala:21 src/Widgets/StatCircle.vala:60
+#: src/Widgets/StatCircle.vala:79
 msgid "seconds"
 msgstr "שניות"
 
-#: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
+#: src/Models/StatObject.vala:31 src/Widgets/StatCircle.vala:89
 msgid "minutes"
 msgstr "דקות"
 
-#: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
+#: src/Models/StatObject.vala:59 src/Widgets/StatCircle.vala:117
 msgid "hour"
 msgstr "שעה"
 
-#: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
+#: src/Models/StatObject.vala:62 src/Widgets/StatCircle.vala:120
 msgid "hours"
 msgstr "שעות"
 
-#: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
+#: src/Models/StatObject.vala:79 src/Widgets/StatCircle.vala:137
 msgid "day"
 msgstr "יום"
 
-#: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
+#: src/Models/StatObject.vala:82 src/Widgets/StatCircle.vala:140
 msgid "days"
 msgstr "יומיים"
 
-#: src/Widgets/StatsWindow.vala:31
+#: src/Widgets/StatsWindow.vala:42
 #, c-format
 msgid "%s is your most productive day of the week"
 msgstr "%s הוא היום הכי מועיל שלך בשבוע"
 
-#. Translators: Write your Name<email> here :p
-#: src/Application.vala:102
-msgid "translator-credits"
+#. Status Page
+#: src/Widgets/StatsWindow.vala:94
+msgid "Start working to see you progress"
+msgstr ""
+
+#: src/Widgets/TimerPage.vala:54
+msgid "Work Stage"
+msgstr "שלב עבודה"
+
+#: src/Widgets/TimerPage.vala:57
+msgid "Break Stage"
+msgstr "שלב הפסקה"
+
+#: src/Application.vala:101
+#, fuzzy
+msgid "translator_credits"
 msgstr "ירון שהרבני <sh.yaron@gmail.com>"
+
+#~ msgid "Flowtime 2.0: Keep on track!"
+#~ msgstr "Flowtime 2.0: מטפחים עשייה!"
+
+#~ msgid "In this new version, a shiny new feature was added: Statistics!"
+#~ msgstr "בגרסה זו, נוספה יכולת חדשה ונוצצת: סטטיסטיקה!"
+
+#~ msgid ""
+#~ "Have an overview of how much time you have worked in the last month, week "
+#~ "and day"
+#~ msgstr "קבלת סקירה על הזמן שהושקע בחודש החולף ברמת שבוע ויום"
+
+#~ msgid "Take a look at your day-specific data"
+#~ msgstr "מבט מעמיק על הנתונים היומיים שלך"
+
+#~ msgid "Export your statistics to CSV format"
+#~ msgstr "ייצוא הסטטיסטיקה שלך לתצורת CSV"

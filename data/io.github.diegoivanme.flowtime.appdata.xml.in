@@ -5,7 +5,7 @@
 	<project_license>GPL-3.0-or-later</project_license>
 
   <name>Flowtime</name>
-  <summary>Get things done, keep concentrated</summary>
+  <summary>Spend your time wisely</summary>
 
 	<description>
 	  <p>
@@ -32,13 +32,20 @@
   </screenshots>
 
   <releases>
-    <release version="2.5" date="2022-07-07">
+    <release version="4.0" date="2022-06-13">
       <description>
-        <p>Flowtime 2.6: Small Changes</p>
-        <p>New Features:</p>
+        <p>Flowtime 4.0</p>
+        <p>After half a year without major changes, Flowtime is back with a new update with small but shiny new features!</p>
+        <p>What's New:</p>
         <ul>
-          <li>Icons have been redesigned by daudix-UFO</li>
-          <li>New Translations: Turkish and Russian Translations</li>
+          <li>New Icons by Brage Fuglseth!</li>
+          <li>Flowtime can now run in the background! Check your progress in GNOME Shell's background apps panel</li>
+          <li>Belarusian translation by vokaEntropy</li>
+        </ul>
+
+        <p>Bugfixes</p>
+        <ul>
+          <li>Fixed crash when the next button is clicked at 00:00 in the work stage</li>
         </ul>
       </description>
     </release>

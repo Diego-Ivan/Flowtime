@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-17 14:17-0500\n"
+"POT-Creation-Date: 2023-06-13 22:03-0600\n"
 "PO-Revision-Date: 2022-12-30 16:08+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -41,29 +41,22 @@ msgstr ""
 "адпаведныя перапынкі, не губляючы **патоку**."
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
-msgid "Flowtime 2.0: Keep on track!"
-msgstr "Flowtime 2.0: Адсочвайце час!"
+msgid "Flowtime 2.6: Small Changes"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
-msgid "In this new version, a shiny new feature was added: Statistics!"
-msgstr "У гэтай новай версіі была дададзена цудоўная функцыя: Статыстыка!"
+msgid "New Features:"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
-msgid ""
-"Have an overview of how much time you have worked in the last month, week "
-"and day"
+msgid "Icons have been redesigned by daudix-UFO"
 msgstr ""
-"Майце агляд таго, колькі часу вы працавалі за апошні месяц, тыдзень і дзень"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
-msgid "Take a look at your day-specific data"
-msgstr "Паглядзіце дадзеныя за дзень"
+msgid "New Translations: Turkish and Russian Translations"
+msgstr ""
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:42
-msgid "Export your statistics to CSV format"
-msgstr "Экспарт статыстыкі ў фармат CSV"
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:83
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
@@ -83,29 +76,17 @@ msgstr "_Уключыць кампактны рэжым"
 msgid "Stages"
 msgstr "Этапы"
 
-#: src/ui/window.ui:79 src/ui/smallview.ui:34
-msgid "Work Stage"
-msgstr "Праца"
-
-#: src/ui/window.ui:93 src/ui/smallview.ui:45
-msgid "Break Stage"
-msgstr "Перапынак"
-
-#: src/ui/window.ui:111 src/ui/preferenceswindow.ui:15
+#: src/ui/window.ui:85 src/ui/preferenceswindow.ui:15
 msgid "Statistics"
 msgstr "Статыстыка"
 
-#: src/ui/window.ui:128
+#: src/ui/window.ui:91
+msgid "Overview"
+msgstr ""
+
+#: src/ui/window.ui:102
 msgid "See Details"
 msgstr "Праглядзець падрабязнасці"
-
-#: src/ui/window.ui:141 src/ui/statwindow.ui:39 src/ui/statwindow.ui:49
-msgid "Work Time"
-msgstr "Усяго працы"
-
-#: src/ui/window.ui:162 src/ui/statwindow.ui:75 src/ui/statwindow.ui:84
-msgid "Break Time"
-msgstr "Усяго перапынкаў"
 
 #: src/ui/preferenceswindow.ui:19
 msgid "Months Saved"
@@ -135,50 +116,115 @@ msgstr "Гукі"
 msgid "Alarm sounds that mark break time"
 msgstr "Гук папярэджання, што перапынак скончыўся"
 
-#: src/ui/statpage.ui:13
+#: src/ui/statpage.ui:17
 msgid "Today"
 msgstr "Сёння"
 
-#: src/ui/statpage.ui:23
+#: src/ui/statpage.ui:29
 msgid "This Week"
 msgstr "На гэтым тыдні"
 
-#: src/ui/statpage.ui:33
+#: src/ui/statpage.ui:41
 msgid "This Month"
 msgstr "У гэтым месяцы"
 
+#: src/ui/statwindow.ui:51 src/ui/statwindow.ui:61
+msgid "Work Time"
+msgstr "Усяго працы"
+
+#: src/ui/statwindow.ui:74 src/ui/statwindow.ui:83
+msgid "Break Time"
+msgstr "Усяго перапынкаў"
+
+#: src/Services/Timer.vala:185
+#, fuzzy
+msgid "Break is over!"
+msgstr "Усяго перапынкаў"
+
+#: src/Services/Timer.vala:188
+#, fuzzy, c-format
+msgid "Break Stage: %s"
+msgstr "Перапынак"
+
+#: src/Services/Timer.vala:192
+#, fuzzy, c-format
+msgid "Work Stage: %s"
+msgstr "Праца"
+
+#: src/Services/Timer.vala:215
+#, fuzzy
+msgid "Work"
+msgstr "Усяго працы"
+
+#: src/Services/Timer.vala:217
+#, fuzzy
+msgid "Break"
+msgstr "Усяго перапынкаў"
+
 #. If seconds is less than a minute, it will display seconds
-#: src/Services/StatObject.vala:36 src/Widgets/StatCircle.vala:48
-#: src/Widgets/StatCircle.vala:55
+#: src/Models/StatObject.vala:21 src/Widgets/StatCircle.vala:60
+#: src/Widgets/StatCircle.vala:79
 msgid "seconds"
 msgstr "секунд"
 
-#: src/Services/StatObject.vala:46 src/Widgets/StatCircle.vala:65
+#: src/Models/StatObject.vala:31 src/Widgets/StatCircle.vala:89
 msgid "minutes"
 msgstr "хвілін"
 
-#: src/Services/StatObject.vala:74 src/Widgets/StatCircle.vala:93
+#: src/Models/StatObject.vala:59 src/Widgets/StatCircle.vala:117
 msgid "hour"
 msgstr "гадзіну"
 
-#: src/Services/StatObject.vala:77 src/Widgets/StatCircle.vala:96
+#: src/Models/StatObject.vala:62 src/Widgets/StatCircle.vala:120
 msgid "hours"
 msgstr "гадзіны"
 
-#: src/Services/StatObject.vala:94 src/Widgets/StatCircle.vala:113
+#: src/Models/StatObject.vala:79 src/Widgets/StatCircle.vala:137
 msgid "day"
 msgstr "дзень"
 
-#: src/Services/StatObject.vala:97 src/Widgets/StatCircle.vala:116
+#: src/Models/StatObject.vala:82 src/Widgets/StatCircle.vala:140
 msgid "days"
 msgstr "дзён"
 
-#: src/Widgets/StatsWindow.vala:31
+#: src/Widgets/StatsWindow.vala:42
 #, c-format
 msgid "%s is your most productive day of the week"
 msgstr "%s — ваш самы прадуктыўны дзень тыдня"
 
-#. Translators: Write your Name<email> here :p
-#: src/Application.vala:108
-msgid "translator-credits"
+#. Status Page
+#: src/Widgets/StatsWindow.vala:94
+msgid "Start working to see you progress"
+msgstr ""
+
+#: src/Widgets/TimerPage.vala:54
+msgid "Work Stage"
+msgstr "Праца"
+
+#: src/Widgets/TimerPage.vala:57
+msgid "Break Stage"
+msgstr "Перапынак"
+
+#: src/Application.vala:101
+#, fuzzy
+msgid "translator_credits"
 msgstr "vokaEntropy <7w8kluayj@mozmail.com>"
+
+#~ msgid "Flowtime 2.0: Keep on track!"
+#~ msgstr "Flowtime 2.0: Адсочвайце час!"
+
+#~ msgid "In this new version, a shiny new feature was added: Statistics!"
+#~ msgstr "У гэтай новай версіі была дададзена цудоўная функцыя: Статыстыка!"
+
+#~ msgid ""
+#~ "Have an overview of how much time you have worked in the last month, week "
+#~ "and day"
+#~ msgstr ""
+#~ "Майце агляд таго, колькі часу вы працавалі за апошні месяц, тыдзень і "
+#~ "дзень"
+
+#~ msgid "Take a look at your day-specific data"
+#~ msgstr "Паглядзіце дадзеныя за дзень"
+
+#~ msgid "Export your statistics to CSV format"
+#~ msgstr "Экспарт статыстыкі ў фармат CSV"

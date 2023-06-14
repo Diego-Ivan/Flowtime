@@ -7,7 +7,7 @@
 
 public class Flowtime.Services.Timer : Object {
     public bool running { get; protected set; default = false; }
-    public bool already_started { get; protected set; }
+    private Xdp.Portal portal = new Xdp.Portal ();
 
     private int _seconds;
     public int seconds {
@@ -16,11 +16,20 @@ public class Flowtime.Services.Timer : Object {
         }
         set {
             _seconds = value;
+            formatted_time = format_time ();
             updated ();
         }
     }
+
+    public bool is_used {
+        get {
+            return running || seconds > 0;
+        }
+    }
+
     public TimerMode mode { get; private set; default = WORK; }
     private Alarm alarm { get; set; }
+    public string formatted_time { get; private set; }
 
     public signal void updated ();
     public signal void done ();
@@ -93,12 +102,6 @@ public class Flowtime.Services.Timer : Object {
         }
     }
 
-    public void reset () {
-        stop ();
-        last_datetime = null;
-        seconds = 0;
-    }
-
     public string format_time () {
         uint minutes = seconds / 60;
         uint s = seconds % 60;
@@ -152,14 +155,15 @@ public class Flowtime.Services.Timer : Object {
                 break;
 
             case BREAK:
-                message ("Ticking during break...");
                 if (time_seconds >= seconds) {
                     seconds = 0;
                     done ();
-
+                    update_status_to_background.begin ();
                     return false;
                 }
-                seconds -= time_seconds;
+                else {
+                    seconds -= time_seconds;
+                }
                 break;
 
             default:
@@ -168,7 +172,36 @@ public class Flowtime.Services.Timer : Object {
 
         last_datetime = current_time;
 
+        update_status_to_background.begin ();
+
         return true;
+    }
+
+    private async void update_status_to_background () {
+        string status = "";
+        switch (mode) {
+            case BREAK:
+                if (seconds == 0) {
+                    status = _("Break is over!");
+                }
+                else {
+                    status = _("Break Stage: %s".printf (formatted_time));
+                }
+                break;
+            case WORK:
+                status = _("Work Stage: %s".printf (formatted_time));
+                break;
+        }
+
+        try {
+            bool success = yield portal.set_background_status (status, null);
+            if (!success) {
+                critical ("Updating background status failed");
+            }
+        }
+        catch (Error e) {
+            critical (e.message);
+        }
     }
 }
 

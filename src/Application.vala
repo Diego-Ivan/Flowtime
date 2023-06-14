@@ -1,6 +1,6 @@
 /* Application.vala
  *
- * Copyright 2021-2022 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2021-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@
 namespace Flowtime {
     public class Application : Adw.Application {
         public string sound_uri_prefix;
+        private Window main_window;
 
         private const ActionEntry[] APP_ENTRIES = {
             { "quit", action_close },
@@ -46,13 +47,10 @@ namespace Flowtime {
         }
 
         protected override void activate () {
-            var win = new Window (this);
-            if (active_window == null) {
-                win = new Window (this);
+            if (main_window == null) {
+                main_window = new Window (this);
             }
-            win.present ();
-            // var test_win = new TestWindow ();
-            // test_win.present ();
+            main_window.present ();
         }
 
         protected override void shutdown () {
@@ -64,16 +62,21 @@ namespace Flowtime {
         }
 
         private void flowtime_preferences () {
-            new PreferencesWindow (active_window);
+            new PreferencesWindow (main_window);
         }
 
         private void action_close () {
-            active_window.close_request ();
-            quit ();
+            query_close.begin ();
+        }
+
+        private async void query_close () {
+            if (yield main_window.query_quit ()) {
+                quit ();
+            }
         }
 
         private void about_flowtime () {
-            const string COPYRIGHT = "Copyright \xc2\xa9 2021-2022 Diego Iván";
+            const string COPYRIGHT = "Copyright \xc2\xa9 2021-2023 Diego Iván";
             const string? DEVELOPERS[] = {
                 "Diego Iván<diegoivan.mae@gmail.com>",
                 null
