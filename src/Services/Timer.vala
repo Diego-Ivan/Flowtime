@@ -16,6 +16,7 @@ public class Flowtime.Services.Timer : Object {
         }
         set {
             _seconds = value;
+            formatted_time = format_time ();
             updated ();
         }
     }
@@ -28,6 +29,7 @@ public class Flowtime.Services.Timer : Object {
 
     public TimerMode mode { get; private set; default = WORK; }
     private Alarm alarm { get; set; }
+    public string formatted_time { get; private set; }
 
     public signal void updated ();
     public signal void done ();
@@ -156,10 +158,12 @@ public class Flowtime.Services.Timer : Object {
                 if (time_seconds >= seconds) {
                     seconds = 0;
                     done ();
-
+                    update_status_to_background.begin ();
                     return false;
                 }
-                seconds -= time_seconds;
+                else {
+                    seconds -= time_seconds;
+                }
                 break;
 
             default:
@@ -174,8 +178,23 @@ public class Flowtime.Services.Timer : Object {
     }
 
     private async void update_status_to_background () {
+        string status = "";
+        switch (mode) {
+            case BREAK:
+                if (seconds == 0) {
+                    status = _("Break is over!");
+                }
+                else {
+                    status = _("Break Stage: %s".printf (formatted_time));
+                }
+                break;
+            case WORK:
+                status = _("Work Stage: %s".printf (formatted_time));
+                break;
+        }
+
         try {
-            bool success = yield portal.set_background_status ("Time: %i".printf (seconds), null);
+            bool success = yield portal.set_background_status (status, null);
             if (!success) {
                 critical ("Updating background status failed");
             }
