@@ -96,11 +96,40 @@ namespace Flowtime {
 
         [GtkCallback]
         private bool on_close_request () {
-            message (timer.is_used.to_string ());
             if (!timer.is_used) {
                 timer.save_to_statistics ();
                 hide_on_close = false;
             }
+            return false;
+        }
+
+        public async bool query_quit () {
+            if (!timer.running) {
+                timer.save_to_statistics ();
+                return true;
+            }
+
+            var warning = new Adw.MessageDialog (this, _("There is a Session Active"), _("Do you want to quit?")) {
+                close_response = "cancel",
+            };
+
+            warning.add_response ("cancel", _("Cancel"));
+            warning.add_response ("hide", _("Hide Window"));
+            warning.add_response ("quit", _("Quit Session"));
+
+            warning.set_response_appearance ("quit", DESTRUCTIVE);
+
+            string response = yield warning.choose (null);
+
+            if (response == "quit") {
+                timer.save_to_statistics ();
+                return true;
+            }
+
+            if (response == "hide") {
+                close_request ();
+            }
+
             return false;
         }
 

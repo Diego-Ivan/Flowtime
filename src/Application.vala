@@ -47,13 +47,10 @@ namespace Flowtime {
         }
 
         protected override void activate () {
-            var win = active_window ?? main_window;
-            if (win == null) {
-                win = new Window (this);
+            if (main_window == null) {
+                main_window = new Window (this);
             }
-            win.present ();
-            // var test_win = new TestWindow ();
-            // test_win.present ();
+            main_window.present ();
         }
 
         protected override void shutdown () {
@@ -65,12 +62,17 @@ namespace Flowtime {
         }
 
         private void flowtime_preferences () {
-            new PreferencesWindow (active_window);
+            new PreferencesWindow (main_window);
         }
 
         private void action_close () {
-            active_window.close_request ();
-            quit ();
+            query_close.begin ();
+        }
+
+        private async void query_close () {
+            if (yield main_window.query_quit ()) {
+                quit ();
+            }
         }
 
         private void about_flowtime () {
