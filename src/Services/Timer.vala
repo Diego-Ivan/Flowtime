@@ -100,12 +100,6 @@ public class Flowtime.Services.Timer : Object {
         }
     }
 
-    public void reset () {
-        stop ();
-        last_datetime = null;
-        seconds = 0;
-    }
-
     public string format_time () {
         uint minutes = seconds / 60;
         uint s = seconds % 60;
