@@ -133,6 +133,10 @@ namespace Flowtime {
             return false;
         }
 
+        public void query_save_for_shutdown () {
+            timer.save_to_statistics ();
+        }
+
         private void enable_small_view () {
             previous_width = default_width;
             previous_height = default_height;
