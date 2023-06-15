@@ -1,6 +1,6 @@
 /* Settings.vala
  *
- * Copyright 2022 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2022-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -22,6 +22,21 @@ public class Flowtime.Services.Settings : Object {
             _months_saved = value;
         }
     }
+
+    private int _break_divisor;
+    public int break_divisor {
+        get {
+            return _break_divisor;
+        }
+        set {
+            if (value < 2 || value > 10) {
+                critical ("Break divisor is out of bounds");
+                return;
+            }
+            _break_divisor = value;
+        }
+    }
+
     public string tone { get; set; }
     public bool autostart { get; set; }
     public bool distraction_free { get; set; }
@@ -38,6 +53,7 @@ public class Flowtime.Services.Settings : Object {
         settings.bind ("autostart", this, "autostart", DEFAULT);
         settings.bind ("distraction-free", this, "distraction-free", DEFAULT);
         settings.bind ("months-saved", this, "months-saved", DEFAULT);
+        settings.bind ("break-divisor", this "break-divisor", DEFAULT);
 
         settings.delay ();
     }
