@@ -22,6 +22,7 @@ namespace Flowtime {
     public class Application : Adw.Application {
         public string sound_uri_prefix;
         private Window main_window;
+        private Xdp.Portal session_monitor = new Xdp.Portal ();
 
         private const ActionEntry[] APP_ENTRIES = {
             { "quit", action_close },
@@ -46,9 +47,52 @@ namespace Flowtime {
             Intl.textdomain (Config.GETTEXT_PACKAGE);
         }
 
+        private async void query_monitor_session () {
+            try {
+                bool success = yield session_monitor.session_monitor_start (null, NONE, null);
+
+                if (!success) {
+                    critical ("Shutdown monitor failed");
+                    return;
+                }
+
+                session_monitor.session_state_changed.connect (on_session_state_changed);
+            }
+            catch (Error e) {
+                critical ("Shutdown monitor failed: %s", e.message);
+            }
+        }
+
+        private void on_session_state_changed (bool screensaver_active, Xdp.LoginSessionState session_state) {
+            if (session_state == ENDING) {
+                inhibit_to_save.begin ();
+            }
+        }
+
+        private async void inhibit_to_save () {
+            try {
+                var parent = Xdp.parent_new_gtk (main_window);
+                int id = yield session_monitor.session_inhibit (parent,
+                                                       _("Flowtime is saving your statistics"),
+                                                         LOGOUT | USER_SWITCH,
+                                                         null);
+                if (id == -1) {
+                    critical ("Session could not be inhibited, failed to save statistics");
+                    return;
+                }
+
+                main_window.query_save_for_shutdown ();
+                session_monitor.session_uninhibit (id);
+            }
+            catch (Error e) {
+                critical (e.message);
+            }
+        }
+
         protected override void activate () {
             if (main_window == null) {
                 main_window = new Window (this);
+                query_monitor_session.begin ();
             }
             main_window.present ();
         }
