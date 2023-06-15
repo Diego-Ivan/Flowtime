@@ -53,7 +53,7 @@ public class Flowtime.Services.Settings : Object {
         settings.bind ("autostart", this, "autostart", DEFAULT);
         settings.bind ("distraction-free", this, "distraction-free", DEFAULT);
         settings.bind ("months-saved", this, "months-saved", DEFAULT);
-        settings.bind ("break-divisor", this "break-divisor", DEFAULT);
+        settings.bind ("break-divisor", this, "break-divisor", DEFAULT);
 
         settings.delay ();
     }
