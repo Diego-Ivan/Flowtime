@@ -80,12 +80,14 @@ public class Flowtime.Services.Timer : Object {
         last_datetime = null;
         save_to_statistics ();
 
+        var settings = new Settings ();
+
         /*
          * This would mean that we want to change the mode to break. We will obtain the seconds for this
          * mode and change it accordingly
          */
         if (mode == WORK) {
-            initial_breaktime = seconds / 5;
+            initial_breaktime = seconds / settings.break_divisor;
             seconds = initial_breaktime;
             mode = BREAK;
         }
@@ -96,7 +98,6 @@ public class Flowtime.Services.Timer : Object {
             mode = WORK;
         }
 
-        var settings = new Settings ();
         if (settings.autostart) {
             start ();
         }

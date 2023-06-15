@@ -1,6 +1,6 @@
 /* PreferencesWindow.vala
  *
- * Copyright 2021-2022 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2021-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -14,6 +14,8 @@ namespace Flowtime {
         private unowned Gtk.Switch autostart_switch;
         [GtkChild]
         private unowned Gtk.SpinButton months_spinbutton;
+        [GtkChild]
+        private unowned Gtk.SpinButton divisor_spinbutton;
 
         private Services.Settings settings = new Services.Settings ();
 
@@ -42,6 +44,10 @@ namespace Flowtime {
                 months_spinbutton, "value",
                 SYNC_CREATE | BIDIRECTIONAL
             );
+
+            settings.bind_property ("break-divisor",
+                                    divisor_spinbutton, "value",
+                                    SYNC_CREATE | BIDIRECTIONAL);
 
             for (int i = 0; i < sounds.length; i++) {
                 var row = new SoundRow (sounds[i]);
