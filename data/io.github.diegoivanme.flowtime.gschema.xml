@@ -13,6 +13,13 @@
 	    <description>Use a tone for the break time alarm</description>
 	  </key>
 
+	  <key name="break-divisor" type="i">
+	    <range min="2" max="10"/>
+	    <default>5</default>
+	    <summary>Divisor for break time</summary>
+	    <description>The value by which the work time will be divided to calculate the break time</description>
+	  </key>
+
 	  <key name="months-saved" type="i">
 	    <range min="1" max="6"></range>
 	    <default>2</default>
