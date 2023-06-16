@@ -1,14 +1,14 @@
 # ITALIAN TRANSLATION FOR FLOWTIME.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the flowtime package.
-# ALBANO BATTISTELLA <ALBANO_BATTISTELLA@HOTMAIL.COM>, 2022.
+# ALBANO BATTISTELLA <ALBANO_BATTISTELLA@HOTMAIL.COM>, 2022,2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-13 22:03-0600\n"
-"PO-Revision-Date: 2022-12-26 11:35+0100\n"
+"PO-Revision-Date: 2023-06-16 14:35+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: italian <LL@li.org>\n"
 "Language: it\n"
@@ -39,19 +39,19 @@ msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
 msgid "Flowtime 2.6: Small Changes"
-msgstr ""
+msgstr "Flowtime 2.6: piccoli cambiamenti"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
 msgid "New Features:"
-msgstr ""
+msgstr "Nuove funzionalità:"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
 msgid "Icons have been redesigned by daudix-UFO"
-msgstr ""
+msgstr "Le icone sono state ridisegnate da daudix-UFO"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
 msgid "New Translations: Turkish and Russian Translations"
-msgstr ""
+msgstr "Nuove Traduzioni: Traduzioni Turche e Russe"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
 msgid "Diego Iván"
@@ -67,7 +67,7 @@ msgstr "_Preferenze"
 
 #: src/ui/window.ui:16
 msgid "_Enable Small View"
-msgstr ""
+msgstr "_Abilita visualizzazione ridotta"
 
 #: src/ui/window.ui:71
 msgid "Stages"
@@ -79,7 +79,7 @@ msgstr "Statistiche"
 
 #: src/ui/window.ui:91
 msgid "Overview"
-msgstr ""
+msgstr "Panoramica"
 
 #: src/ui/window.ui:102
 msgid "See Details"
@@ -136,27 +136,23 @@ msgstr "Tempo di pausa"
 #: src/Services/Timer.vala:185
 #, fuzzy
 msgid "Break is over!"
-msgstr "Tempo di pausa"
+msgstr "La pausa è finita!"
 
 #: src/Services/Timer.vala:188
-#, fuzzy, c-format
 msgid "Break Stage: %s"
-msgstr "Fase di pausa"
+msgstr "Fase di pausa: %s"
 
 #: src/Services/Timer.vala:192
-#, fuzzy, c-format
 msgid "Work Stage: %s"
-msgstr "Fase di lavoro"
+msgstr "Fase di lavoro: %s"
 
 #: src/Services/Timer.vala:215
-#, fuzzy
 msgid "Work"
-msgstr "Tempo di lavoro"
+msgstr "Lavoro"
 
 #: src/Services/Timer.vala:217
-#, fuzzy
 msgid "Break"
-msgstr "Tempo di pausa"
+msgstr "Pausa"
 
 #. If seconds is less than a minute, it will display seconds
 #: src/Models/StatObject.vala:21 src/Widgets/StatCircle.vala:60
@@ -192,7 +188,7 @@ msgstr "%s è il giorno della settimana più produttivo"
 #. Status Page
 #: src/Widgets/StatsWindow.vala:94
 msgid "Start working to see you progress"
-msgstr ""
+msgstr "Inizia a lavorare per vedere i tuoi progressi"
 
 #: src/Widgets/TimerPage.vala:54
 msgid "Work Stage"
@@ -203,7 +199,6 @@ msgid "Break Stage"
 msgstr "Fase di pausa"
 
 #: src/Application.vala:101
-#, fuzzy
 msgid "translator_credits"
 msgstr "Albano Battistella"
 
