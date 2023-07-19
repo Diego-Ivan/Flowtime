@@ -52,6 +52,7 @@
         <child>
           <object class="GtkButton" id="next_button">
             <property name="icon-name">media-seek-forward-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Next Stage</property>
             <property name="valign">center</property>
             <signal name="clicked" handler="on_next_button_clicked" swapped="no"/>
             <style>

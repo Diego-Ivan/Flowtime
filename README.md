@@ -63,11 +63,12 @@ GNOME Builder provides a high quality Flatpak integration. All dependencies, run
 
 | Dependency | Version |
 | ---------- | ------- |
-| Meson | 0.5.9 |
-| gtk-4  | 4.4.6 |
+| Meson | 0.59.0 |
+| gtk-4  | 4.10 |
 | gstreamer-1.0 | 1.0 |
 | gstreamer-player-1.0 | 1.0 |
-| libadwaita-1 |  1.2 |
+| libportal | Unstable, check Flatpak manifest |
+| libadwaita-1 |  1.3 |
 | libxml-2.0 |  1.0 |
 
 To compile and install, run:

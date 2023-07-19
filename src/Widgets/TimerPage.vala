@@ -24,17 +24,10 @@ namespace Flowtime {
                 _timer = value;
                 timer.bind_property ("formatted-time", time_label, "label", SYNC_CREATE);
 
-                timer.notify["running"].connect (() => {
-                    if (timer.running == true)
-                        pause_button.icon_name = "media-playback-pause-symbolic";
-                    else
-                        pause_button.icon_name = "media-playback-start-symbolic";
-                });
+                timer.notify["running"].connect (on_running_changed);
+                timer.notify["mode"].connect (update_labels);
 
-                timer.notify["mode"].connect (() => {
-                    update_labels ();
-                });
-
+                on_running_changed ();
                 update_labels ();
             }
         }
@@ -45,10 +38,6 @@ namespace Flowtime {
             }
         }
 
-        public void play_timer () {
-            timer.start ();
-        }
-
         private void update_labels () {
             if (timer.mode == WORK) {
                 stage_label.label = _("Work Stage");
@@ -57,14 +46,23 @@ namespace Flowtime {
             stage_label.label = _("Break Stage");
         }
 
+        private void on_running_changed () {
+            if (timer.running) {
+                pause_button.icon_name = "media-playback-pause-symbolic";
+                pause_button.tooltip_text = _("Pause Timer");
+                return;
+            }
+            pause_button.icon_name = "media-playback-start-symbolic";
+            pause_button.tooltip_text = _("Start Timer");
+        }
+
         [GtkCallback]
         private void on_pause_button_clicked () {
             if (timer.running) {
                 timer.stop ();
+                return;
             }
-            else {
-                play_timer ();
-            }
+            timer.start ();
         }
 
         [GtkCallback]
