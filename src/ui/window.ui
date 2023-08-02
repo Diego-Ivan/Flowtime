@@ -68,7 +68,8 @@
                     <child>
                       <object class="AdwViewStackPage">
                         <property name="icon-name">timer-sand-symbolic</property>
-                        <property name="title" translatable="yes">Stages</property>
+                        <property name="title" translatable="yes">_Stages</property>
+                        <property name="use_underline">True</property>
                         <property name="child">
                           <object class="FlowtimeTimerPage" id="timer_page">
                             <property name="timer">
@@ -82,7 +83,8 @@
                     <child>
                       <object class="AdwViewStackPage">
                         <property name="icon-name">profit-symbolic</property>
-                        <property name="title" translatable="yes">Statistics</property>
+                        <property name="title" translatable="yes">S_tatistics</property>
+                        <property name="use_underline">True</property>
                         <property name="child">
 
                           <object class="AdwClamp">
