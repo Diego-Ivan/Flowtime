@@ -26,6 +26,7 @@
             <property name="label">00:00</property>
             <style>
               <class name="time-label"/>
+              <class name="numeric"/>
             </style>
           </object>
         </child>
