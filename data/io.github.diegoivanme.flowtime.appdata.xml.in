@@ -32,6 +32,18 @@
   </screenshots>
 
   <releases>
+    <release version="4.2" date="2023-08-02">
+      <description>
+        <p>Flowtime 4.2: Make It Accessible!</p>
+        <p>In this version, some small changes were made to improve accessibility and user experience</p>
+        <ul>
+          <li>Added tooltips for pause and next stage buttons</li>
+          <li>Add mnemonics for pause and next stage buttons (Thanks to @cnygaard)</li>
+          <li>Fix timer label jumping in width (Thanks to @SuborbitalPigeon)</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="4.1" date="2023-06-15">
       <description>
         <p>In this release, some small but neat features have been added</p>
