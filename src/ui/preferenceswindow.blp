@@ -1,0 +1,74 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $FlowtimePreferencesWindow : Adw.PreferencesWindow {
+  modal: true;
+  default-height: 440;
+  default-width: 460;
+
+  Adw.PreferencesPage {
+    title: _("_Preferences");
+
+    Adw.PreferencesGroup {
+      title: _("Statistics");
+
+      Adw.ActionRow {
+        title: _("Months Saved");
+        subtitle: _("The amount of months that the work data will be saved");
+
+        SpinButton months_spinbutton {
+          valign: center;
+          adjustment: 
+          Adjustment {
+            lower: 1;
+            upper: 6;
+            step-increment: 1;
+            page-increment: 3;
+          }
+
+          ;
+        }
+      }
+    }
+
+    Adw.PreferencesGroup {
+      title: _("Timer");
+
+      Adw.ActionRow {
+        title: _("Break time divisor");
+        subtitle: _("The factor used to calculate break time");
+
+        [suffix]
+        SpinButton divisor_spinbutton {
+          valign: center;
+          adjustment: 
+          Adjustment {
+            lower: 2;
+            upper: 10;
+            step-increment: 1;
+            page-increment: 3;
+          }
+
+          ;
+        }
+      }
+
+      Adw.ActionRow {
+        title: _("Autostart");
+        subtitle: _("Automatically start the timer when the stage is changed");
+
+        [suffix]
+        Switch autostart_switch {
+          valign: center;
+        }
+
+        activatable-widget: autostart_switch;
+      }
+    }
+
+    Adw.PreferencesGroup sounds_group {
+      title: _("Sounds");
+      description: _("Alarm sounds that mark break time");
+    }
+  }
+}

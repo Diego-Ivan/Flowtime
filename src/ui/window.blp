@@ -1,0 +1,133 @@
+using Gtk 4.0;
+using Adw 1;
+
+menu action-menu {
+  section {
+    item {
+      label: _("_About Flowtime");
+      action: "app.about";
+    }
+
+    item {
+      label: _("_Preferences");
+      action: "app.preferences";
+    }
+
+    item {
+      label: _("_Enable Small View");
+      action: "win.enable-small-view";
+    }
+  }
+}
+
+template $FlowtimeWindow : Adw.ApplicationWindow {
+  default-height: 500;
+  default-width: 390;
+  hide-on-close: true;
+  title: "";
+  close-request => $on_close_request();
+
+  Adw.Squeezer squeezer {
+    interpolate-size: true;
+    orientation: vertical;
+    transition-type: crossfade;
+    switch-threshold-policy: minimum;
+
+    Box {
+      orientation: vertical;
+      width-request: 361;
+      height-request: 400;
+
+      Adw.HeaderBar headerbar {
+        show-end-title-buttons: true;
+
+        styles [
+          "flat",
+        ]
+
+        [start]
+        MenuButton {
+          menu-model: action-menu;
+          icon-name: "open-menu-symbolic";
+
+          styles [
+            "circular",
+          ]
+        }
+        title-widget: 
+        Adw.ViewSwitcherTitle view_switcher {
+          stack: view_stack;
+        }
+
+        ;
+      }
+
+      WindowHandle {
+        Adw.ViewStack view_stack {
+          Adw.ViewStackPage {
+            icon-name: "timer-sand-symbolic";
+            title: _("_Stages");
+            use-underline: true;
+            child: 
+            $FlowtimeTimerPage timer_page {
+              timer:               $FlowtimeServicesTimer timer {
+              }
+
+              ;
+            }
+
+            ;
+          }
+
+          Adw.ViewStackPage {
+            icon-name: "profit-symbolic";
+            title: _("S_tatistics");
+            use-underline: true;
+            child: 
+            Adw.Clamp {
+              child:               Adw.PreferencesGroup {
+                title: _("Overview");
+                halign: center;
+                header-suffix: 
+                Button details_button {
+                  halign: center;
+                  margin-top: 6;
+                  margin-bottom: 12;
+                  child: 
+                  Adw.ButtonContent {
+                    icon-name: "info-symbolic";
+                    label: _("See Details");
+                    use-underline: true;
+                  }
+
+                  ;
+                  clicked => $on_details_button_clicked();
+                }
+
+                ;
+
+                $FlowtimeStatPage stat_page {
+                }
+              }
+
+              ;
+            }
+
+            ;
+          }
+        }
+      }
+    }
+
+    $FlowtimeSmallView small_view {
+      timer: "timer";
+    }
+  }
+
+  ShortcutController {
+    Shortcut {
+      trigger: "<Control>w";
+      action: "action(window.close)";
+    }
+  }
+}

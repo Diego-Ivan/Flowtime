@@ -1,0 +1,30 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $FlowtimeSmallView : Adw.Bin {
+  height-request: 210;
+
+  WindowHandle {
+    Box {
+      orientation: vertical;
+      margin-bottom: 12;
+
+      Adw.HeaderBar {
+        show-end-title-buttons: false;
+
+        styles [
+          "flat",
+        ]
+
+        [start]
+        Button {
+          icon-name: "pip-out-symbolic";
+          action-name: "win.disable-small-view";
+        }
+      }
+
+      $FlowtimeTimerPage timer_page {
+      }
+    }
+  }
+}
