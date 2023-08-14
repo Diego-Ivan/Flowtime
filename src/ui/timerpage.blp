@@ -1,46 +1,52 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $FlowtimeTimerPage : Box {
-  orientation: vertical;
+template $FlowtimeTimerPage : Adw.Bin {
   halign: center;
-  valign: center;
+  valign: baseline_center;
   vexpand: true;
-  spacing: 30;
+
 
   Box {
+    spacing: 30;
     orientation: vertical;
-    valign: center;
-    vexpand: true;
 
-    Label stage_label {
-      styles ["accent", "heading"]
+    Box {
+      orientation: vertical;
+      valign: start;
+      vexpand: true;
+
+      Label stage_label {
+        styles ["accent", "heading"]
+      }
+
+      Label time_label {
+        label: "00:00";
+        styles ["time-label", "numeric"]
+      }
     }
 
-    Label time_label {
-      label: "00:00";
-      styles ["time-label", "numeric"]
-    }
-  }
-
-  Box {
-    orientation: horizontal;
-    halign: center;
-
-    Button pause_button {
-      icon-name: "media-playback-start-symbolic";
+    Box {
+      orientation: horizontal;
       halign: center;
-      clicked => $on_pause_button_clicked ();
+      valign: start;
+      spacing: 6;
 
-      styles ["suggested-action", "circular", "large-button"]
-    }
+      Button pause_button {
+        icon-name: "media-playback-start-symbolic";
+        halign: center;
+        clicked => $on_pause_button_clicked ();
 
-    Button next_button {
-      icon-name: "media-seek-forward-symbolic";
-      valign: center;
-      clicked => $on_next_button_clicked ();
+        styles ["suggested-action", "circular", "large-button"]
+      }
 
-      styles ["circular", "not-so-large-button"]
+      Button next_button {
+        icon-name: "media-seek-forward-symbolic";
+        valign: center;
+        clicked => $on_next_button_clicked ();
+
+        styles ["circular", "not-so-large-button"]
+      }
     }
   }
 }
