@@ -7,13 +7,13 @@
 
 namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/statwindow.ui")]
-    public class StatsWindow : Gtk.Window {
+    public class StatsWindow : Adw.Window {
         [GtkChild]
         private unowned StatList work_list;
         [GtkChild]
         private unowned StatList break_list;
         [GtkChild]
-        private unowned Gtk.HeaderBar header_bar;
+        private unowned Adw.HeaderBar header_bar;
 
         public StatsWindow (Gtk.Window? parent_window) {
             Object (
