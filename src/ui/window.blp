@@ -37,13 +37,6 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
     // apply => $gtk_stack_set_visible_child_full (content_stack, "small-view", CROSSFADE);
   }
 
-  Adw.Breakpoint {
-    condition ("max-width: 360sp")
-    setters {
-      view_switcher.policy: narrow;
-    }
-  }
-
   Stack content_stack {
     transition-type: crossfade;
     StackPage {

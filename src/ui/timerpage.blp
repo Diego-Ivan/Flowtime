@@ -1,0 +1,46 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $FlowtimeTimerPage : Box {
+  orientation: vertical;
+  halign: center;
+  valign: center;
+  vexpand: true;
+  spacing: 30;
+
+  Box {
+    orientation: vertical;
+    valign: center;
+    vexpand: true;
+
+    Label stage_label {
+      styles ["accent", "heading"]
+    }
+
+    Label time_label {
+      label: "00:00";
+      styles ["time-label", "numeric"]
+    }
+  }
+
+  Box {
+    orientation: horizontal;
+    halign: center;
+
+    Button pause_button {
+      icon-name: "media-playback-start-symbolic";
+      halign: center;
+      clicked => $on_pause_button_clicked ();
+
+      styles ["suggested-action", "circular", "large-button"]
+    }
+
+    Button next_button {
+      icon-name: "media-seek-forward-symbolic";
+      valign: center;
+      clicked => $on_next_button_clicked ();
+
+      styles ["circular", "not-so-large-button"]
+    }
+  }
+}

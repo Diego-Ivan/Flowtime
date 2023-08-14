@@ -66,6 +66,7 @@ blueprints = files (
   'ui/window.blp',
   'ui/statlist.blp',
   'ui/statpage.blp',
+  'ui/timerpage.blp',
 )
 
 flowtime_resources_file = files('flowtime.gresource.xml')
