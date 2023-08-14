@@ -23,7 +23,7 @@ menu action-menu {
 template $FlowtimeWindow : Adw.ApplicationWindow {
   default-height: 500;
   default-width: 390;
-  height-request: 200;
+  height-request: 240;
   width-request: 350;
   hide-on-close: true;
   title: "";
@@ -37,16 +37,24 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
     // apply => $gtk_stack_set_visible_child_full (content_stack, "small-view", CROSSFADE);
   }
 
+  Adw.Breakpoint {
+    condition ("max-width: 400sp")
+    setters {
+      switcher_bar.reveal: true;
+      headerbar.title-widget: null;
+    }
+  }
+
   Stack content_stack {
     transition-type: crossfade;
     StackPage {
       name: "normal-view";
       child:
-      Box {
-        orientation: vertical;
-        width-request: 361;
-        height-request: 400;
+      Adw.ToolbarView {
+        // width-request: 361;
+        // height-request: 400;
 
+        [top]
         Adw.HeaderBar headerbar {
           show-end-title-buttons: true;
           styles ["flat"]
@@ -106,6 +114,11 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
               };
             }
           }
+        }
+
+        [bottom]
+        Adw.ViewSwitcherBar switcher_bar {
+          stack: view_stack;
         }
       };
     }
