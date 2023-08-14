@@ -13,14 +13,6 @@ namespace Flowtime {
 
         [GtkChild]
         private unowned SmallView small_view;
-        [GtkChild]
-        private unowned Adw.Squeezer squeezer;
-
-        public bool small_view_enabled {
-            get {
-                return squeezer.visible_child == small_view;
-            }
-        }
 
         private Adw.TimedAnimation height_animation;
         private Adw.TimedAnimation width_animation;
