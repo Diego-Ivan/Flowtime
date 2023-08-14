@@ -1,0 +1,23 @@
+using Gtk 4.0;
+using Gio 2.0;
+using Adw 1;
+
+template $FlowtimeStatList : Adw.PreferencesGroup {
+  ListView list_view {
+    styles ["navigation-sidebar"]
+
+    factory: BuilderListItemFactory {
+      template ListItem {
+        focusable: false;
+        child: $FlowtimeStatRow {
+          date: bind template.item as <$FlowtimeModelsStatObject>.date;
+          time: bind template.item as <$FlowtimeModelsStatObject>.time;
+        };
+      }
+    };
+
+    model: NoSelection {
+      model: bind template.list-model;
+    };
+  }
+}

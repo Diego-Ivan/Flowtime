@@ -5,22 +5,18 @@ template $FlowtimeStatsWindow : Window {
   default-height: 440;
   default-width: 490;
   width-request: 355;
-  titlebar: 
-  HeaderBar header_bar {
-    title-widget:     Adw.ViewSwitcherTitle switcher_title {
+  title: _("Statistics");
+  titlebar: HeaderBar header_bar {
+    title-widget: Adw.ViewSwitcherTitle switcher_title {
       stack: view_stack;
-    }
-
-    ;
+    };
 
     [start]
     Button save_button {
       icon-name: "folder-download-symbolic";
       clicked => $on_save_button_clicked();
     }
-  }
-
-  ;
+  };
 
   ShortcutController {
     Shortcut {
@@ -43,8 +39,7 @@ template $FlowtimeStatsWindow : Window {
           title: _("Work Time");
           name: "work";
           icon-name: "computer-symbolic";
-          child: 
-          ScrolledWindow {
+          child: ScrolledWindow {
             propagate-natural-height: true;
             propagate-natural-width: true;
 
@@ -54,17 +49,14 @@ template $FlowtimeStatsWindow : Window {
               margin-start: "12";
               margin-end: "12";
             }
-          }
-
-          ;
+          };
         }
 
         Adw.ViewStackPage {
           title: _("Break Time");
           name: "break";
           icon-name: "cafe-symbolic";
-          child: 
-          ScrolledWindow {
+          child:  ScrolledWindow {
             propagate-natural-height: true;
             propagate-natural-width: true;
 
@@ -74,9 +66,7 @@ template $FlowtimeStatsWindow : Window {
               margin-start: "12";
               margin-end: "12";
             }
-          }
-
-          ;
+          };
         }
       }
     }
