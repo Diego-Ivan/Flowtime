@@ -1,0 +1,62 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $FlowtimeStatPage : Box {
+  orientation: vertical;
+  spacing: 6;
+
+  Grid {
+    row-spacing: 6;
+    column-spacing: 12;
+    halign: center;
+    vexpand: true;
+
+    $FlowtimeStatCircle today_circle {
+      css-name: "statcircle";
+      caption: _("Today");
+      timer-mode: bind template.displayed-mode;
+
+      layout {
+        column: 0;
+        row: 1;
+      }
+    }
+
+    $FlowtimeStatCircle week_circle {
+      css-name: "statcircle";
+      caption: _("Week");
+      timer-mode: bind template.displayed-mode;
+
+      layout {
+        column: 1;
+        row: 1;
+      }
+    }
+
+    $FlowtimeStatCircle month_circle {
+      css-name: "statcircle";
+      caption: _("Month");
+      timer-mode: bind template.displayed-mode;
+
+      layout {
+        column: 0;
+        row: 2;
+        column-span: 2;
+      }
+    }
+  }
+
+  DropDown {
+    model: $FlowtimeEnumListModel {};
+    notify::selected => $on_value_changed ();
+
+    factory: BuilderListItemFactory {
+      template ListItem {
+        child: Gtk.Label label {
+          xalign: 0;
+          label: bind template.item as <$FlowtimeEnumListItem>.name;
+        };
+      }
+    };
+  }
+}
