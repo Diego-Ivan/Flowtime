@@ -31,18 +31,18 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
 
   Adw.Breakpoint {
     condition ("max-height: 350sp")
-    setters {
-      content_stack.visible-child-name: "small-view";
-    }
-    // apply => $gtk_stack_set_visible_child_full (content_stack, "small-view", CROSSFADE);
+    apply => $breakpoints_changed ();
+    unapply => $breakpoints_changed ();
   }
 
   Adw.Breakpoint {
     condition ("max-width: 400sp")
     setters {
-      switcher_bar.reveal: true;
+      // switcher_bar.reveal: true;
       headerbar.title-widget: null;
     }
+    apply => $breakpoints_changed ();
+    unapply => $breakpoints_changed ();
   }
 
   Stack content_stack {
