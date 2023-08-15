@@ -63,7 +63,7 @@ public class Flowtime.Services.Timer : Object {
 
     public void stop () {
         running = false;
-        if (timeout_id == null) {
+        if (timeout_id == null || !running) {
             return;
         }
         Source.remove (timeout_id);
