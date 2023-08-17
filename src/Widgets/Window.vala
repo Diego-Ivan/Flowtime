@@ -10,38 +10,29 @@ namespace Flowtime {
     public class Window : Adw.ApplicationWindow {
         [GtkChild]
         private unowned Services.Timer timer;
+        [GtkChild]
+        private unowned Adw.ToolbarView main_view;
+        [GtkChild]
+        private unowned Adw.ViewSwitcher view_switcher;
+        [GtkChild]
+        private unowned Adw.ViewSwitcherBar switcher_bar;
 
-        private Adw.TimedAnimation height_animation;
-        private Adw.TimedAnimation width_animation;
-
-        public int previous_width {
+        private bool _distraction_free = false;
+        public bool distraction_free {
             get {
-                return (int) width_animation.value_from;
+                return _distraction_free;
             }
             set {
-                width_animation.value_from = (double) value;
+                if (value == distraction_free) {
+                    return;
+                }
+
+                _distraction_free = value;
+
+                view_switcher.visible = !value;
+                switcher_bar.visible = !value;
             }
         }
-
-        public int previous_height {
-            get {
-                return (int) height_animation.value_from;
-            }
-            set {
-                height_animation.value_from = (double) value;
-            }
-        }
-
-        public Services.Statistics stats {
-            owned get {
-                return new Services.Statistics ();
-            }
-        }
-
-        private const ActionEntry[] WIN_ENTRIES = {
-            { "enable-small-view", enable_small_view },
-            { "disable-small-view", disable_small_view }
-        };
 
         public Window (Gtk.Application app) {
             Object (application: app);
@@ -54,33 +45,8 @@ namespace Flowtime {
         }
 
         construct {
-            var action_group = new SimpleActionGroup ();
-            action_group.add_action_entries (WIN_ENTRIES, this);
-            insert_action_group ("win", action_group);
-
-            /*
-             * Setup animations for resizing in PiP mode
-             */
-            var width_target = new Adw.CallbackAnimationTarget (width_callback);
-            var height_target = new Adw.CallbackAnimationTarget (height_callback);
-
-            width_animation = new Adw.TimedAnimation (this,
-                default_width, 361,
-                400, width_target
-            );
-            width_animation.easing = EASE_IN_OUT_CUBIC;
-            bind_property ("small-view-enabled",
-                width_animation, "reverse"
-            );
-
-            height_animation = new Adw.TimedAnimation (this,
-                default_height, 210,
-                400, height_target
-            );
-            height_animation.easing = EASE_IN_OUT_CUBIC;
-            bind_property ("small-view-enabled",
-                height_animation, "reverse"
-            );
+            install_property_action ("win.distraction-free", "distraction-free");
+            distraction_free = false;
         }
 
         [GtkCallback]
@@ -124,29 +90,6 @@ namespace Flowtime {
 
         public void query_save_for_shutdown () {
             timer.save_to_statistics ();
-        }
-
-        private void enable_small_view () {
-            previous_width = default_width;
-            previous_height = default_height;
-
-            width_animation.play ();
-            height_animation.play ();
-            notify_property ("small-view-enabled");
-        }
-
-        private void disable_small_view () {
-            width_animation.play ();
-            height_animation.play ();
-            notify_property ("small-view-enabled");
-        }
-
-        private void width_callback (double v) {
-            default_width = (int) v;
-        }
-
-        private void height_callback (double v) {
-            default_height = (int) v;
         }
 
         [GtkCallback]

@@ -14,8 +14,8 @@ menu action-menu {
     }
 
     item {
-      label: _("_Enable Small View");
-      action: "win.enable-small-view";
+      label: _("_Distraction Free Mode");
+      action: "win.distraction-free";
     }
   }
 }
@@ -37,7 +37,7 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
     }
   }
 
-  Adw.ToolbarView {
+  Adw.ToolbarView main_view {
     [top]
     Adw.HeaderBar headerbar {
       show-end-title-buttons: true;
