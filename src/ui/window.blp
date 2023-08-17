@@ -21,114 +21,86 @@ menu action-menu {
 }
 
 template $FlowtimeWindow : Adw.ApplicationWindow {
-  default-height: 500;
-  default-width: 390;
-  height-request: 240;
+  default-height: 405;
+  default-width: 425;
+  height-request: 300;
   width-request: 350;
   hide-on-close: true;
   title: "";
   close-request => $on_close_request();
 
   Adw.Breakpoint {
-    condition ("max-height: 350sp")
-    apply => $breakpoints_changed ();
-    unapply => $breakpoints_changed ();
-  }
-
-  Adw.Breakpoint {
     condition ("max-width: 400sp")
     setters {
-      // switcher_bar.reveal: true;
+      switcher_bar.reveal: true;
       headerbar.title-widget: null;
     }
-    apply => $breakpoints_changed ();
-    unapply => $breakpoints_changed ();
   }
 
-  Stack content_stack {
-    transition-type: crossfade;
-    StackPage {
-      name: "normal-view";
-      child:
-      Adw.ToolbarView {
-        // width-request: 361;
-        // height-request: 400;
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar headerbar {
+      show-end-title-buttons: true;
 
-        [top]
-        Adw.HeaderBar headerbar {
-          show-end-title-buttons: true;
-          styles ["flat"]
+      [start]
+      MenuButton {
+        menu-model: action-menu;
+        icon-name: "open-menu-symbolic";
+        styles ["circular"]
+      }
 
-          [start]
-          MenuButton {
-            menu-model: action-menu;
-            icon-name: "open-menu-symbolic";
-            styles ["circular"]
-          }
+      title-widget: Adw.ViewSwitcher view_switcher {
+        policy: wide;
+        stack: view_stack;
+      };
+    }
 
-          title-widget:
-          Adw.ViewSwitcher view_switcher {
-            policy: wide;
-            stack: view_stack;
+    WindowHandle {
+      Adw.ViewStack view_stack {
+        Adw.ViewStackPage {
+          icon-name: "timer-sand-symbolic";
+          title: _("_Stages");
+          use-underline: true;
+          child:
+          $FlowtimeTimerPage timer_page {
+            timer:  $FlowtimeServicesTimer timer {};
           };
         }
 
-        WindowHandle {
-          Adw.ViewStack view_stack {
-            Adw.ViewStackPage {
-              icon-name: "timer-sand-symbolic";
-              title: _("_Stages");
-              use-underline: true;
-              child:
-              $FlowtimeTimerPage timer_page {
-                timer:  $FlowtimeServicesTimer timer {};
-              };
-            }
-
-            Adw.ViewStackPage {
-              icon-name: "profit-symbolic";
-              title: _("S_tatistics");
-              use-underline: true;
-              child:
-              Adw.Clamp {
+        Adw.ViewStackPage {
+          icon-name: "profit-symbolic";
+          title: _("S_tatistics");
+          use-underline: true;
+          child:
+          Adw.Clamp {
+            child:
+            Adw.PreferencesGroup {
+              title: _("Overview");
+              halign: center;
+              header-suffix:
+              Button details_button {
+                halign: center;
+                margin-top: 6;
+                margin-bottom: 12;
                 child:
-                Adw.PreferencesGroup {
-                  title: _("Overview");
-                  halign: center;
-                  header-suffix:
-                  Button details_button {
-                    halign: center;
-                    margin-top: 6;
-                    margin-bottom: 12;
-                    child:
-                    Adw.ButtonContent {
-                      icon-name: "info-symbolic";
-                      label: _("See Details");
-                      use-underline: true;
-                    };
-                    clicked => $on_details_button_clicked();
-                  };
-
-                  $FlowtimeStatPage stat_page {}
+                Adw.ButtonContent {
+                  icon-name: "info-symbolic";
+                  label: _("See Details");
+                  use-underline: true;
                 };
+                clicked => $on_details_button_clicked();
               };
-            }
-          }
-        }
 
-        [bottom]
-        Adw.ViewSwitcherBar switcher_bar {
-          stack: view_stack;
+              // $FlowtimeStatPage stat_page {}
+            };
+          };
         }
-      };
+      }
     }
 
-    StackPage {
-      name: "small-view";
-      child:
-      $FlowtimeSmallView small_view {
-        timer: "timer";
-      };
+    [bottom]
+    Adw.ViewSwitcherBar switcher_bar {
+      stack: view_stack;
     }
   }
 

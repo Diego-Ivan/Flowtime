@@ -11,15 +11,6 @@ namespace Flowtime {
         [GtkChild]
         private unowned Services.Timer timer;
 
-        [GtkChild]
-        private unowned SmallView small_view;
-        [GtkChild]
-        private unowned Gtk.Stack content_stack;
-        [GtkChild]
-        private unowned Adw.ViewSwitcherBar switcher_bar;
-        [GtkChild]
-        private unowned Adw.HeaderBar headerbar;
-
         private Adw.TimedAnimation height_animation;
         private Adw.TimedAnimation width_animation;
 
@@ -38,12 +29,6 @@ namespace Flowtime {
             }
             set {
                 height_animation.value_from = (double) value;
-            }
-        }
-
-        public bool small_view_enabled {
-            get {
-                return content_stack.visible_child_name == "small-view";
             }
         }
 
@@ -105,25 +90,6 @@ namespace Flowtime {
                 hide_on_close = false;
             }
             return false;
-        }
-
-        [GtkCallback]
-        private void breakpoints_changed () {
-            const Adw.LengthUnit unit = SP;
-            const int MAX_WIDTH_SP = 400;
-            const int MAX_HEIGHT_SP = 350;
-
-            double height_sp = unit.from_px (default_height, null);
-            double width_sp = unit.from_px (default_width, null);
-
-            bool small_width = width_sp < MAX_WIDTH_SP;
-            bool requires_small_view = height_sp  < MAX_HEIGHT_SP;
-
-            message ("Breakpoints changed");
-            message (@"Small Width: $small_width. Small View Required: $requires_small_view");
-
-            switcher_bar.reveal = small_width;
-            content_stack.visible_child_name = requires_small_view ? "small-view" : "normal-view";
         }
 
         public async bool query_quit () {
