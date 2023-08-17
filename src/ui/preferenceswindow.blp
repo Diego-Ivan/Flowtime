@@ -12,45 +12,32 @@ template $FlowtimePreferencesWindow : Adw.PreferencesWindow {
     Adw.PreferencesGroup {
       title: _("Statistics");
 
-      Adw.ActionRow {
+      Adw.SpinRow months_spinrow {
         title: _("Months Saved");
         subtitle: _("The amount of months that the work data will be saved");
 
-        SpinButton months_spinbutton {
-          valign: center;
-          adjustment: 
-          Adjustment {
-            lower: 1;
-            upper: 6;
-            step-increment: 1;
-            page-increment: 3;
-          }
-
-          ;
-        }
+        adjustment: Adjustment {
+          lower: 1;
+          upper: 6;
+          step-increment: 1;
+          page-increment: 3;
+        };
       }
     }
 
     Adw.PreferencesGroup {
       title: _("Timer");
 
-      Adw.ActionRow {
+      Adw.SpinRow divisor_spinrow {
         title: _("Break time divisor");
         subtitle: _("The factor used to calculate break time");
 
-        [suffix]
-        SpinButton divisor_spinbutton {
-          valign: center;
-          adjustment: 
-          Adjustment {
-            lower: 2;
-            upper: 10;
-            step-increment: 1;
-            page-increment: 3;
-          }
-
-          ;
-        }
+        adjustment: Adjustment {
+          lower: 2;
+          upper: 10;
+          step-increment: 1;
+          page-increment: 3;
+        };
       }
 
       Adw.ActionRow {
