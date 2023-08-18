@@ -11,11 +11,16 @@ namespace Flowtime {
         [GtkChild]
         private unowned Services.Timer timer;
         [GtkChild]
-        private unowned Adw.ToolbarView main_view;
+        private unowned Adw.ViewStack view_stack;
         [GtkChild]
         private unowned Adw.ViewSwitcher view_switcher;
         [GtkChild]
         private unowned Adw.ViewSwitcherBar switcher_bar;
+
+        private Adw.Animation hide_animation;
+        private Adw.Animation show_animation;
+        private Adw.AnimationTarget content_target;
+        private Adw.AnimationTarget switchers_target;
 
         private bool _distraction_free = false;
         public bool distraction_free {
@@ -23,14 +28,15 @@ namespace Flowtime {
                 return _distraction_free;
             }
             set {
-                if (value == distraction_free) {
+                bool animations_playing =
+                    hide_animation.state == PLAYING || show_animation.state == PLAYING;
+
+                if (value == distraction_free || animations_playing) {
                     return;
                 }
 
                 _distraction_free = value;
-
-                view_switcher.visible = !value;
-                switcher_bar.visible = !value;
+                distraction_free_transition ();
             }
         }
 
@@ -46,7 +52,44 @@ namespace Flowtime {
 
         construct {
             install_property_action ("win.distraction-free", "distraction-free");
+
+            content_target = new Adw.CallbackAnimationTarget (change_content_opacity);
+            switchers_target = new Adw.CallbackAnimationTarget (change_switchers_opacity);
+
+            hide_animation = new Adw.TimedAnimation (view_stack, 1, 0, 200, switchers_target) {
+                easing = EASE_IN_OUT_CUBIC
+            };
+
+            show_animation = new Adw.TimedAnimation (view_stack, 0, 1, 200, content_target) {
+                easing = EASE_IN_OUT_CUBIC
+            };
+
+            hide_animation.done.connect (() => {
+                switcher_bar.visible = view_switcher.visible = !distraction_free;
+                view_stack.visible_child_name = "timer";
+                show_animation.play ();
+            });
             distraction_free = false;
+        }
+
+        private void distraction_free_transition () {
+            bool switcher_bar_active = current_breakpoint != null;
+
+            if (view_stack.visible_child_name == "statistics" || switcher_bar_active) {
+                hide_animation.target = show_animation.target = content_target;
+            } else {
+                hide_animation.target = show_animation.target = switchers_target;
+            }
+
+            hide_animation.play ();
+        }
+
+        private void change_switchers_opacity (double @value) {
+            switcher_bar.opacity = view_switcher.opacity = value;
+        }
+
+        private void change_content_opacity (double @value) {
+            switcher_bar.opacity = view_switcher.opacity = view_stack.opacity = value;
         }
 
         [GtkCallback]
