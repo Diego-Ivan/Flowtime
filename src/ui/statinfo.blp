@@ -16,6 +16,10 @@ template $FlowtimeStatInfo : Adw.Bin {
       name: "info";
       child: Adw.PreferencesGroup overview_group {
         title: _("Today");
+
+        $FlowtimeStatGraph {
+          state-info: bind template.info-state;
+        }
       };
     }
   }

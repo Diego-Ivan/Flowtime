@@ -12,7 +12,7 @@ public class Flowtime.StatInfo : Adw.Bin {
     [GtkChild]
     private unowned Gtk.Stack content_stack;
 
-    private unowned Models.InformationHolder info_state;
+    public unowned Models.InformationHolder info_state { get; private set; }
     private Services.Statistics statistics = new Services.Statistics ();
 
     private Services.TimePeriod _time_period;
@@ -24,6 +24,10 @@ public class Flowtime.StatInfo : Adw.Bin {
             _time_period = value;
             set_state_from_period ();
         }
+    }
+
+    static construct {
+        typeof (StatGraph).ensure ();
     }
 
     private void format_description () {
