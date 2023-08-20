@@ -44,7 +44,7 @@ public class Flowtime.Window : Adw.ApplicationWindow {
     }
 
     static construct {
-        typeof(StatInfo).ensure ();
+        typeof(StatPage).ensure ();
         typeof(TimerPage).ensure ();
     }
 
@@ -131,10 +131,5 @@ public class Flowtime.Window : Adw.ApplicationWindow {
 
     public void query_save_for_shutdown () {
         timer.save_to_statistics ();
-    }
-
-    [GtkCallback]
-    private void on_details_button_clicked () {
-        new StatsWindow (this);
     }
 }

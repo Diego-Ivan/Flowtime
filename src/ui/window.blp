@@ -73,31 +73,7 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
           name: "statistics";
           title: _("S_tatistics");
           use-underline: true;
-          child:
-          Adw.Clamp {
-            child:
-            Adw.PreferencesGroup {
-              title: _("Overview");
-              halign: center;
-              header-suffix:
-              Button details_button {
-                halign: center;
-                margin-top: 6;
-                margin-bottom: 12;
-                child:
-                Adw.ButtonContent {
-                  icon-name: "info-symbolic";
-                  label: _("See Details");
-                  use-underline: true;
-                };
-                clicked => $on_details_button_clicked();
-              };
-
-              $FlowtimeStatInfo stat_info {
-                time_period: all;
-              }
-            };
-          };
+          child: $FlowtimeStatPage {};
         }
       }
     }

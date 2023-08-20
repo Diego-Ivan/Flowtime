@@ -1,62 +1,36 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $FlowtimeStatPage : Box {
-  orientation: vertical;
-  spacing: 6;
+template $FlowtimeStatPage : Adw.Bin {
+  ScrolledWindow {
+    propagate-natural-width: true;
+    propagate-natural-height: true;
 
-  Grid {
-    row-spacing: 6;
-    column-spacing: 12;
-    halign: center;
-    vexpand: true;
+    Adw.Clamp {
+      margin-start: 12;
+      margin-end: 12;
+      margin-top: 12;
+      margin-bottom: 24;
+      Box {
+        spacing: 18;
+        orientation: vertical;
 
-    $FlowtimeStatCircle today_circle {
-      css-name: "statcircle";
-      caption: _("Today");
-      timer-mode: bind template.displayed-mode;
+        $FlowtimeStatInfo today_info {
+          time-period: today;
+        }
 
-      layout {
-        column: 0;
-        row: 1;
+        $FlowtimeStatInfo week_info {
+          time-period: week;
+        }
+
+        $FlowtimeStatInfo month_info {
+          time-period: month;
+        }
+
+        $FlowtimeStatInfo all_info {
+          time-period: all;
+        }
       }
     }
-
-    $FlowtimeStatCircle week_circle {
-      css-name: "statcircle";
-      caption: _("Week");
-      timer-mode: bind template.displayed-mode;
-
-      layout {
-        column: 1;
-        row: 1;
-      }
-    }
-
-    $FlowtimeStatCircle month_circle {
-      css-name: "statcircle";
-      caption: _("Month");
-      timer-mode: bind template.displayed-mode;
-
-      layout {
-        column: 0;
-        row: 2;
-        column-span: 2;
-      }
-    }
-  }
-
-  DropDown {
-    model: $FlowtimeEnumListModel {};
-    notify::selected => $on_value_changed ();
-
-    factory: BuilderListItemFactory {
-      template ListItem {
-        child: Gtk.Label label {
-          xalign: 0;
-          label: bind template.item as <$FlowtimeEnumListItem>.name;
-        };
-      }
-    };
   }
 }
