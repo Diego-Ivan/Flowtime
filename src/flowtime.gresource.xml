@@ -4,7 +4,6 @@
     <file alias="style.css">ui/style.css</file>
 
     <file alias="window.ui">ui/window.ui</file>
-    <file alias="smallview.ui">ui/smallview.ui</file>
     <file alias="statcircle.ui">ui/statcircle.ui</file>
     <file alias="statpage.ui">ui/statpage.ui</file>
     <file alias="statrow.ui">ui/statrow.ui</file>
