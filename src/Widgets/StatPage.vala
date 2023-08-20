@@ -1,6 +1,6 @@
 /* StatPage.vala
  *
- * Copyright 2022 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2022-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -32,7 +32,7 @@ namespace Flowtime {
         }
 
         public Object? get_item (uint position) {
-            return list.get ((int) position);
+            return list[(int) position];
         }
 
         public Type get_item_type () {
@@ -44,7 +44,7 @@ namespace Flowtime {
         }
 
         public Object? get_object (uint position) {
-            return list.get ((int) position);
+            return list[(int) position];
         }
     }
 

@@ -1,6 +1,6 @@
 /* StatCircle.vala
  *
- * Copyright 2022 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2022-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -74,16 +74,18 @@ namespace Flowtime {
         }
 
         private string format_time (int seconds) {
-            // If seconds is less than a minute, it will display seconds
-            if (seconds < 60) {
+            const int MINUTE = 60;
+            const int HOUR = 3600;
+            const int DAY = 86400;
+
+            if (seconds < MINUTE) {
                 unit = _("seconds");
                 return seconds.to_string ();
             }
 
-            // If seconds is less than an hour, it will display minutes
-            if (seconds < 3600) {
-                uint minutes = seconds / 60;
-                uint s = seconds % 60;
+            if (seconds < HOUR) {
+                uint minutes = seconds / MINUTE;
+                uint s = seconds % MINUTE;
                 string seconds_format, minutes_format;
 
                 unit = _("minutes");
@@ -106,10 +108,9 @@ namespace Flowtime {
                 return format;
             }
 
-            // If seconds is less than a day, it will display hours
-            if (seconds < 86400) {
-                uint hours = seconds / 3600;
-                uint m = (seconds % 3600) / 60;
+            if (seconds < DAY) {
+                uint hours = seconds / HOUR;
+                uint m = (seconds % HOUR) / MINUTE;
 
                 string minutes_format;
 
@@ -130,9 +131,7 @@ namespace Flowtime {
                 return "%u:%s".printf (hours, minutes_format);
             }
 
-            // If it's not any of the options before, it will display days :)
-            uint days = seconds / 86400;
-
+            uint days = seconds / DAY;
             if (days == 1) {
                 unit = _("day");
             }
