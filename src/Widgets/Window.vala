@@ -44,7 +44,7 @@ public class Flowtime.Window : Adw.ApplicationWindow {
     }
 
     static construct {
-        typeof(StatPage).ensure ();
+        typeof(StatInfo).ensure ();
         typeof(TimerPage).ensure ();
     }
 

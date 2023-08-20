@@ -11,6 +11,7 @@
     <file alias="preferenceswindow.ui">ui/preferenceswindow.ui</file>
     <file alias="timerpage.ui">ui/timerpage.ui</file>
     <file alias="statlist.ui">ui/statlist.ui</file>
+    <file alias="statinfo.ui">ui/statinfo.ui</file>
 
     <file alias="tone.ogg">ui/sounds/tone.ogg</file>
     <file alias="baum.ogg">ui/sounds/baum.ogg</file>
