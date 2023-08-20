@@ -7,6 +7,7 @@ flowtime_sources = [
   'Models/Day.vala',
   'Models/State.vala',
   'Models/StatObject.vala',
+  'Models/InformationHolder.vala',
 
   # Services
   'Services/Timer.vala',
@@ -19,6 +20,7 @@ flowtime_sources = [
   'Widgets/PreferencesWindow.vala',
   'Widgets/SoundRow.vala',
   'Widgets/StatCircle.vala',
+  # 'Widgets/StatInfo.vala',
   'Widgets/StatList.vala',
   'Widgets/StatPage.vala',
   'Widgets/StatRow.vala',
@@ -63,6 +65,7 @@ blueprints = files (
   'ui/statwindow.blp',
   'ui/window.blp',
   'ui/statlist.blp',
+  'ui/statinfo.blp',
   'ui/statpage.blp',
   'ui/timerpage.blp',
 )
