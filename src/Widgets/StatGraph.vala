@@ -14,7 +14,7 @@ public class Flowtime.StatGraph : Gtk.Widget {
         get {
             return _state_info;
         }
-        set construct {
+        set {
             if (_state_info != null) {
                 state_info.notify["worktime"].disconnect (queue_draw);
                 state_info.notify["breaktime"].disconnect (queue_draw);
@@ -28,8 +28,11 @@ public class Flowtime.StatGraph : Gtk.Widget {
         }
     }
 
+    static construct {
+        set_css_name ("graph");
+    }
+
     public override void snapshot (Gtk.Snapshot snapshot) {
-        message ("Creating Snapshot");
         var bounds = Graphene.Rect () {
             size = SIZE,
             origin = { 0, 0 }
@@ -46,9 +49,7 @@ public class Flowtime.StatGraph : Gtk.Widget {
         double radius = DEFAULT_SIZE * 0.5;
 
         double total_time = worktime + breaktime;
-        message (@"$total_time");
         double worktime_proportion = worktime / total_time;
-        message (@"$(state_info.worktime / total_time)");
         double worktime_angle = worktime_proportion * FULL_CIRCLE;
 
         var color_provider = new Services.ColorProvider ();

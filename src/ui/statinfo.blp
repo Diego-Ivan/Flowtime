@@ -19,7 +19,7 @@ template $FlowtimeStatInfo : Adw.Bin {
 
         $FlowtimeStatGraph {
           halign: center;
-          state-info: bind template.info-state;
+          state-info: bind template.info-state no-sync-create;
         }
       };
     }
