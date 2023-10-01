@@ -6,7 +6,7 @@
  */
 
 public class Flowtime.StatGraph : Gtk.Widget {
-    private const int DEFAULT_SIZE = 175;
+    private const int DEFAULT_SIZE = 170;
     private const Graphene.Size SIZE = { DEFAULT_SIZE, DEFAULT_SIZE };
 
     private Models.InformationHolder _state_info = null;
@@ -30,6 +30,10 @@ public class Flowtime.StatGraph : Gtk.Widget {
 
     static construct {
         set_css_name ("graph");
+    }
+
+    construct {
+        accessible_role = IMG;
     }
 
     public override void snapshot (Gtk.Snapshot snapshot) {
