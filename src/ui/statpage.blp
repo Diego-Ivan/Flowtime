@@ -9,26 +9,39 @@ template $FlowtimeStatPage : Adw.Bin {
     Adw.Clamp {
       margin-start: 12;
       margin-end: 12;
-      margin-top: 24;
+      margin-top: 12;
       margin-bottom: 24;
-      Box {
-        spacing: 18;
-        orientation: vertical;
+      Adw.PreferencesGroup {
+        title: _("Overview");
 
-        $FlowtimeStatInfo today_info {
-          time-period: today;
+        [header-suffix]
+        Button details_button {
+          styles["flat"]
+          clicked => $on_details_button_clicked ();
+          Adw.ButtonContent {
+            label: _("See Details");
+            icon-name: "info-symbolic";
+          }
         }
 
-        $FlowtimeStatInfo week_info {
-          time-period: week;
-        }
+        ListBox {
+          styles["boxed-list"]
+          margin-top: 12;
+          selection-mode: none;
+          row-activated => $on_row_activated ();
 
-        $FlowtimeStatInfo month_info {
-          time-period: month;
-        }
-
-        $FlowtimeStatInfo all_info {
-          time-period: all;
+          $FlowtimeTimePeriodRow {
+            time-period: today;
+          }
+          $FlowtimeTimePeriodRow {
+            time-period: week;
+          }
+          $FlowtimeTimePeriodRow {
+            time-period: month;
+          }
+          $FlowtimeTimePeriodRow {
+            time-period: all;
+          }
         }
       }
     }

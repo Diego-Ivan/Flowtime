@@ -14,12 +14,21 @@ template $FlowtimeStatInfo : Adw.Bin {
 
     StackPage {
       name: "info";
-      child: Adw.PreferencesGroup overview_group {
-        title: _("Today");
+      child: Adw.Clamp {
+        Adw.PreferencesGroup overview_group {
+          margin-start: 12;
+          margin-end: 12;
+          margin-top: 6;
+          margin-bottom: 6;
 
-        $FlowtimeStatGraph {
-          halign: center;
-          state-info: bind template.info-state no-sync-create;
+          $FlowtimeStatGraph {
+            halign: center;
+            state-info: bind template.info-state no-sync-create;
+
+            accessibility {
+              labelled-by: overview_group;
+            }
+          }
         }
       };
     }

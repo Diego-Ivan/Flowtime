@@ -15,6 +15,10 @@ public class Flowtime.Window : Adw.ApplicationWindow {
     private unowned Adw.ViewSwitcher view_switcher;
     [GtkChild]
     private unowned Adw.ViewSwitcherBar switcher_bar;
+    [GtkChild]
+    private unowned StatInfo overview_info;
+    [GtkChild]
+    private unowned Adw.NavigationView navigation_view;
 
     private Adw.Animation hide_animation;
     private Adw.Animation show_animation;
@@ -71,9 +75,7 @@ public class Flowtime.Window : Adw.ApplicationWindow {
     }
 
     private void distraction_free_transition () {
-        bool switcher_bar_active = current_breakpoint != null;
-
-        if (view_stack.visible_child_name == "statistics" || switcher_bar_active) {
+        if (view_stack.visible_child_name == "statistics" || switcher_bar.reveal) {
             hide_animation.target = show_animation.target = content_target;
         } else {
             hide_animation.target = show_animation.target = switchers_target;
@@ -97,6 +99,13 @@ public class Flowtime.Window : Adw.ApplicationWindow {
             hide_on_close = false;
         }
         return false;
+    }
+
+    [GtkCallback]
+    private void change_to_overview (Object source, ParamSpec pspec) {
+        var stat_page = (StatPage) source;
+        overview_info.time_period = stat_page.selected_period;
+        navigation_view.activate_action_variant ("navigation.push", "overview");
     }
 
     public async bool query_quit () {
