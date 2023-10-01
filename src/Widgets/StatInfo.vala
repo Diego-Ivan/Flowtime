@@ -128,23 +128,18 @@ public class Flowtime.StatInfo : Adw.Bin {
         switch (time_period) {
             case TODAY:
                 info_state = statistics.today;
-                overview_group.title = _("Today");
                 break;
             case WEEK:
                 info_state = statistics.week;
-                overview_group.title = _("This Week");
                 break;
             case MONTH:
                 info_state = statistics.month;
-                overview_group.title = _("This Month");
                 break;
             case ALL:
                 info_state = statistics.total;
-                overview_group.title = _("All Time");
                 break;
-            default:
-                assert_not_reached ();
         }
+        overview_group.title = time_period.to_string ();
 
         info_state.notify["worktime"].connect (format_description);
         info_state.notify["breaktime"].connect (format_description);

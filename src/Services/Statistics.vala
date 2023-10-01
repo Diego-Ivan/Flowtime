@@ -1,6 +1,6 @@
 /* Statistics.vala
  *
- * Copyright 2022 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2022-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -235,6 +235,21 @@ public enum Flowtime.Services.TimePeriod {
     WEEK,
     MONTH,
     ALL;
+
+    public string to_string () {
+        switch (this) {
+            case TODAY:
+                return _("Today");
+            case WEEK:
+                return _("This Week");
+            case MONTH:
+                return _("This Month");
+            case ALL:
+                return _("All Time");
+            default:
+                assert_not_reached ();
+        }
+    }
 }
 
 public delegate void Flowtime.Services.ForeachStat (Flowtime.Models.Day day);
