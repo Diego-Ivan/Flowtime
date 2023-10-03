@@ -19,7 +19,6 @@ flowtime_sources = [
   # Widgets
   'Widgets/PreferencesWindow.vala',
   'Widgets/SoundRow.vala',
-  'Widgets/StatCircle.vala',
   'Widgets/StatGraph.vala',
   'Widgets/StatInfo.vala',
   'Widgets/StatList.vala',
@@ -60,7 +59,6 @@ blueprint_compiler = find_program('blueprint-compiler')
 
 blueprints = files (
   'ui/preferenceswindow.blp',
-  'ui/statcircle.blp',
   'ui/statrow.blp',
   'ui/statwindow.blp',
   'ui/window.blp',
