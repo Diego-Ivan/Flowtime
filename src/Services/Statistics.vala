@@ -20,7 +20,7 @@ public class Flowtime.Services.Statistics : GLib.Object {
 
     public Day? today { get; private set; default = null; }
 
-    public Gee.LinkedList<Day> all_days = new Gee.LinkedList<Day> ();
+    public List<Day> all_days = new List<Day> ();
     public string productive_day { get; private set; }
 
     public State total = new State ();
@@ -102,7 +102,7 @@ public class Flowtime.Services.Statistics : GLib.Object {
 
                 total.worktime += d.worktime;
                 total.breaktime += d.breaktime;
-                all_days.add (d);
+                all_days.append (d);
 
                 if (ts > MONTH) {
                     continue;
@@ -126,14 +126,14 @@ public class Flowtime.Services.Statistics : GLib.Object {
         if (today == null) {
             today = new Day ();
             root_element->add_child (today.node);
-            all_days.add (today);
+            all_days.append(today);
         }
 
         foreach (var day in overpassed_days) {
             day.unlink ();
         }
 
-        get_most_productive_day.begin ();
+        get_most_productive_day ();
     }
 
     public void add_time_to_mode (TimerMode mode, int time_seconds) {
@@ -197,31 +197,26 @@ public class Flowtime.Services.Statistics : GLib.Object {
         }
     }
 
-    private async void get_most_productive_day () {
-        var map = new Gee.HashMap<string, int?> ();
-        // Now, we will iterate over the all_days list to set the data to the respective day
-        for (int i = 0; i < all_days.size; i++) {
-            Day day = all_days.get (i);
+    private void get_most_productive_day () {
+        var days_table = new HashTable<string, int?> (string.hash, str_equal);
 
-            if (!map.has_key (day.day_of_week)) {
-                map.set (day.day_of_week, day.worktime);
+        foreach (Day day in all_days) {
+            if (!(day.day_of_week in days_table)) {
+                days_table[day.day_of_week] = day.worktime;
                 continue;
             }
-
-            int count = map.get (day.day_of_week);
-            map.unset (day.day_of_week);
-            map.set (day.day_of_week, count + day.worktime);
+            int time = days_table[day.day_of_week] + day.worktime;
+            days_table[day.day_of_week] = time;
         }
 
-        int highest = 0;
-        map.foreach ((entry) => {
-            if (entry.value >= highest) {
-                productive_day = entry.key;
-                highest = entry.value;
+        int highest = -1;
+        foreach (string day_string in days_table.get_keys ()) {
+            int count = days_table[day_string];
+            if (count >= highest) {
+                productive_day = day_string;
+                highest = count;
             }
-
-            return true;
-        });
+        }
     }
 
     public void save () {
@@ -251,5 +246,3 @@ public enum Flowtime.Services.TimePeriod {
         }
     }
 }
-
-public delegate void Flowtime.Services.ForeachStat (Flowtime.Models.Day day);

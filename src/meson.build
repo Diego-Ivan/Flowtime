@@ -38,7 +38,6 @@ flowtime_deps = [
   dependency('libadwaita-1', version: '>= 1.2'),
   dependency('libxml-2.0'),
   dependency('libportal-gtk4'),
-  dependency('gee-0.8'),
 ]
 
 conf = configuration_data()
