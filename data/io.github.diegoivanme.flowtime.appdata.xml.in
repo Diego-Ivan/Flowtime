@@ -32,44 +32,16 @@
   </screenshots>
 
   <releases>
-    <release version="4.2" date="2023-08-02">
-      <description>
-        <p>Flowtime 4.2: Make It Accessible!</p>
-        <p>In this version, some small changes were made to improve accessibility and user experience</p>
-        <ul>
-          <li>Added tooltips for pause and next stage buttons</li>
-          <li>Add mnemonics for pause and next stage buttons (Thanks to @cnygaard)</li>
-          <li>Fix timer label jumping in width (Thanks to @SuborbitalPigeon)</li>
-        </ul>
-      </description>
-    </release>
-
-    <release version="4.1" date="2023-06-15">
-      <description>
-        <p>In this release, some small but neat features have been added</p>
-        <ul>
-          <li>Preference to change the divisor for the break time</li>
-          <li>Flowtime now saves your statistics when the system is shutting down</li>
-        </ul>
-      </description>
-    </release>
-
-    <release version="4.0" date="2023-06-13">
-      <description>
-        <p>Flowtime 4.0</p>
-        <p>After half a year without major changes, Flowtime is back with a new update with small but shiny new features!</p>
-        <p>What's New:</p>
-        <ul>
-          <li>New Icons by Brage Fuglseth!</li>
-          <li>Flowtime can now run in the background! Check your progress in GNOME Shell's background apps panel</li>
-          <li>Belarusian translation by vokaEntropy</li>
-        </ul>
-
-        <p>Bugfixes</p>
-        <ul>
-          <li>Fixed crash when the next button is clicked at 00:00 in the work stage</li>
-        </ul>
-      </description>
+    <release version="5.0" date="2023-10-06">
+      <p>Flowtime v5.0 is out now!</p>
+      <p>This update brings significant cosmetic and functional changes, as well as small bugfixes:</p>
+      <ul>
+        <li>The app has been updated to the GNOME 45 runtime, so it now can use the new fancy Libadwaita widgets.</li>
+        <li>The old "Picture in Picture" mode has been replaced by the "Distraction Free Mode". It is virtually the same, but instead of forcing you to a small window size, it will hide all the window clutter so you can focus on the timer.</li>
+        <li>Thanks to the replacement of the <em>Picture in Picture</em> mode, the window now shows the top/bottom view switchers depending on its width.</li>
+        <li>The old Statistics view has been replaced by graphs! It provides a nicer way to see how you spend your time.</li>
+        <li>Exporting the statistics to CSV now properly formats the work and break time.</li>
+      </ul>
     </release>
   </releases>
 
