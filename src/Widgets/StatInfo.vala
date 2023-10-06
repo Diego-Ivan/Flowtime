@@ -40,6 +40,7 @@ public class Flowtime.StatInfo : Adw.Bin {
         string formatted_worktime = format_time (info_state.worktime);
         string formatted_breaktime = format_time (info_state.breaktime);
 
+        // translators: This phrase is used in the context: You've worked HH:MM:SS...
         overview_group.description = _("You've worked %s and have taken a break during %s.").printf (
             formatted_worktime, formatted_breaktime
         );

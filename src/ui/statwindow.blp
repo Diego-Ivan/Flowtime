@@ -27,6 +27,7 @@ template $FlowtimeStatsWindow : Adw.Window {
       [start]
       Button save_button {
         icon-name: "folder-download-symbolic";
+        tooltip-text: _("Save as CSV");
         clicked => $on_save_button_clicked();
       }
     }

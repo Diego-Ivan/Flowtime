@@ -63,7 +63,8 @@ namespace Flowtime {
             }
         }
 
-        private void on_session_state_changed (bool screensaver_active, Xdp.LoginSessionState session_state) {
+        private void on_session_state_changed (bool screensaver_active,
+                                               Xdp.LoginSessionState session_state) {
             if (session_state == ENDING) {
                 inhibit_to_save.begin ();
             }
@@ -120,9 +121,9 @@ namespace Flowtime {
         }
 
         private void about_flowtime () {
-            const string COPYRIGHT = "Copyright \xc2\xa9 2021-2023 Diego Iván";
+            const string COPYRIGHT = "Copyright \xc2\xa9 2021-2023 Diego Iván M.E";
             const string? DEVELOPERS[] = {
-                "Diego Iván<diegoivan.mae@gmail.com>",
+                "Diego Iván M.E<diegoivan.mae@gmail.com>",
                 null
             };
             const string? ARTISTS[] = {

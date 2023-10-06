@@ -4,11 +4,6 @@ using Adw 1;
 menu action-menu {
   section {
     item {
-      label: _("_About Flowtime");
-      action: "app.about";
-    }
-
-    item {
       label: _("_Preferences");
       action: "app.preferences";
     }
@@ -16,6 +11,12 @@ menu action-menu {
     item {
       label: _("_Distraction Free Mode");
       action: "win.distraction-free";
+    }
+  }
+  section {
+    item {
+      label: _("_About Flowtime");
+      action: "app.about";
     }
   }
 }
