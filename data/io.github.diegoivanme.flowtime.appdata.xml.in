@@ -15,19 +15,16 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v2.0/data/screenshots/01.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v5.0/data/screenshots/01.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v2.0/data/screenshots/02.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v5.0/data/screenshots/02.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v2.0/data/screenshots/03.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v5.0/data/screenshots/03.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v2.0/data/screenshots/04.png</image>
-    </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v2.0/data/screenshots/05.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v5.0/data/screenshots/04.png</image>
     </screenshot>
   </screenshots>
 
@@ -46,7 +43,7 @@
   </releases>
 
   <requires>
-    <display_length compare="ge">361</display_length>
+    <display_length compare="ge">320</display_length>
   </requires>
 
   <recommends>
