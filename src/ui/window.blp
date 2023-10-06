@@ -1,0 +1,115 @@
+using Gtk 4.0;
+using Adw 1;
+
+menu action-menu {
+  section {
+    item {
+      label: _("_Preferences");
+      action: "app.preferences";
+    }
+
+    item {
+      label: _("_Distraction Free Mode");
+      action: "win.distraction-free";
+    }
+  }
+  section {
+    item {
+      label: _("_About Flowtime");
+      action: "app.about";
+    }
+  }
+}
+
+template $FlowtimeWindow : Adw.ApplicationWindow {
+  default-height: 405;
+  default-width: 425;
+  height-request: 300;
+  width-request: 300;
+  hide-on-close: true;
+  title: "";
+  close-request => $on_close_request();
+
+  Adw.Breakpoint {
+    condition ("max-width: 400sp")
+    setters {
+      switcher_bar.reveal: true;
+      headerbar.title-widget: null;
+    }
+  }
+
+  Adw.NavigationView navigation_view {
+    Adw.NavigationPage {
+      tag: "main-view";
+      Adw.ToolbarView main_view {
+        [top]
+        Adw.HeaderBar headerbar {
+          show-end-title-buttons: true;
+
+          [start]
+          MenuButton {
+            menu-model: action-menu;
+            icon-name: "open-menu-symbolic";
+          }
+
+          title-widget: Adw.ViewSwitcher view_switcher {
+            policy: wide;
+            stack: view_stack;
+          };
+        }
+
+        WindowHandle {
+          Adw.ViewStack view_stack {
+            Adw.ViewStackPage {
+              icon-name: "timer-sand-symbolic";
+              name: "timer";
+              title: _("_Stages");
+              use-underline: true;
+              child:
+              $FlowtimeTimerPage timer_page {
+                timer:  $FlowtimeServicesTimer timer {};
+              };
+            }
+
+            Adw.ViewStackPage {
+              icon-name: "profit-symbolic";
+              name: "statistics";
+              title: _("S_tatistics");
+              use-underline: true;
+              child: $FlowtimeStatPage {
+                notify::selected-period => $change_to_overview ();
+              };
+            }
+          }
+        }
+
+        [bottom]
+        Adw.ViewSwitcherBar switcher_bar {
+          stack: view_stack;
+        }
+      }
+    }
+
+    Adw.NavigationPage {
+      title: _("Overview");
+      tag: "overview";
+
+      Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar header_bar {}
+
+        $FlowtimeStatInfo overview_info {
+          time-period: today;
+        }
+      }
+    }
+  }
+
+
+  ShortcutController {
+    Shortcut {
+      trigger: "<Control>w";
+      action: "action(window.close)";
+    }
+  }
+}

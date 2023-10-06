@@ -1,11 +1,11 @@
 /* Day.vala
  *
- * Copyright 2022 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2022-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-public class Flowtime.Models.Day : GLib.Object {
+public class Flowtime.Models.Day : Object, InformationHolder {
     public Xml.Node* node { get; private set; }
     private Xml.Node* worktime_node;
     private Xml.Node* breaktime_node;

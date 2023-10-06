@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/github/diegoivanme/flowtime">
+    <file alias="style.css">ui/style.css</file>
+
+    <file alias="window.ui">ui/window.ui</file>
+    <file alias="statpage.ui">ui/statpage.ui</file>
+    <file alias="statrow.ui">ui/statrow.ui</file>
+    <file alias="statwindow.ui">ui/statwindow.ui</file>
+    <file alias="preferenceswindow.ui">ui/preferenceswindow.ui</file>
+    <file alias="timerpage.ui">ui/timerpage.ui</file>
+    <file alias="statlist.ui">ui/statlist.ui</file>
+    <file alias="statinfo.ui">ui/statinfo.ui</file>
+
+    <file alias="tone.ogg">ui/sounds/tone.ogg</file>
+    <file alias="baum.ogg">ui/sounds/baum.ogg</file>
+    <file alias="bleep.ogg">ui/sounds/bleep.ogg</file>
+    <file alias="beep.ogg">ui/sounds/beep.ogg</file>
+  </gresource>
+  <gresource prefix="/io/github/diegoivanme/flowtime/icons/scalable/actions/">
+    <file preprocess="xml-stripblanks" alias="timer-sand-symbolic.svg">ui/icons/timer-sand-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="profit-symbolic.svg">ui/icons/profit-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="info-symbolic.svg">ui/icons/info-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="month-symbolic.svg">ui/icons/month-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="cafe-symbolic.svg">ui/icons/cafe-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="pip-out-symbolic.svg">ui/icons/pip-out-symbolic.svg</file>
+  </gresource>
+</gresources>

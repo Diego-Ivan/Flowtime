@@ -7,13 +7,13 @@
 
 namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/statwindow.ui")]
-    public class StatsWindow : Gtk.Window {
+    public class StatsWindow : Adw.Window {
         [GtkChild]
         private unowned StatList work_list;
         [GtkChild]
         private unowned StatList break_list;
         [GtkChild]
-        private unowned Gtk.HeaderBar header_bar;
+        private unowned Adw.HeaderBar header_bar;
 
         public StatsWindow (Gtk.Window? parent_window) {
             Object (
@@ -38,7 +38,7 @@ namespace Flowtime {
                 break_list.append (break_object);
             }
 
-            if (statistics.all_days.size > 1) {
+            if (!statistics.all_days.is_empty ()) {
                 work_list.description = _("%s is your most productive day of the week").printf (statistics.productive_day);
             }
         }
@@ -51,7 +51,7 @@ namespace Flowtime {
 
             foreach (Models.Day day in statistics.all_days) {
                 var work_object = new Models.StatObject (day.date, day.worktime);
-                var break_object = new Models.StatObject (day.date, day.worktime);
+                var break_object = new Models.StatObject (day.date, day.breaktime);
 
                 format += "\"%s\",\"%s\",\"%s\"\n".printf(work_object.date, work_object.time, break_object.time);
             }

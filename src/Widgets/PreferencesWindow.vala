@@ -13,9 +13,9 @@ namespace Flowtime {
         [GtkChild]
         private unowned Gtk.Switch autostart_switch;
         [GtkChild]
-        private unowned Gtk.SpinButton months_spinbutton;
+        private unowned Adw.SpinRow months_spinrow;
         [GtkChild]
-        private unowned Gtk.SpinButton divisor_spinbutton;
+        private unowned Adw.SpinRow divisor_spinrow;
 
         private Services.Settings settings = new Services.Settings ();
 
@@ -33,7 +33,7 @@ namespace Flowtime {
 
         construct {
             Gtk.CheckButton? button_group = null;
-            months_spinbutton.value = 0;
+            months_spinrow.value = 0;
 
             settings.bind_property ("autostart",
                 autostart_switch, "active",
@@ -41,12 +41,12 @@ namespace Flowtime {
             );
 
             settings.bind_property ("months-saved",
-                months_spinbutton, "value",
+                months_spinrow, "value",
                 SYNC_CREATE | BIDIRECTIONAL
             );
 
             settings.bind_property ("break-divisor",
-                                    divisor_spinbutton, "value",
+                                    divisor_spinrow, "value",
                                     SYNC_CREATE | BIDIRECTIONAL);
 
             for (int i = 0; i < sounds.length; i++) {

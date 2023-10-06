@@ -1,6 +1,6 @@
 /* ColorProvider.vala
  *
- * Copyright 2022 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2022-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -8,6 +8,7 @@
 namespace Flowtime {
     [SingleInstance]
     public class Services.ColorProvider : Object {
+        private Adw.StyleManager style_manager = Adw.StyleManager.get_default ();
         private Gtk.CssProvider break_provider = new Gtk.CssProvider ();
         public Gtk.CssProvider? current_provider { get; private set; }
 
@@ -28,6 +29,26 @@ namespace Flowtime {
             }
         }
 
+        public Gdk.RGBA work_accent {
+            get {
+                var color = Gdk.RGBA ();
+                string hex = "#1c71d8";
+                color.parse (hex);
+
+                return color;
+            }
+        }
+
+        public Gdk.RGBA break_accent {
+            get {
+                var color = Gdk.RGBA ();
+                string hex = "#8ff0a4";
+                color.parse (hex);
+
+                return color;
+            }
+        }
+
         private static ColorProvider? instance = null;
         public ColorProvider () {
             if (instance == null) {
@@ -36,8 +57,7 @@ namespace Flowtime {
         }
 
         construct {
-            var st_manager = Adw.StyleManager.get_default ();
-            st_manager.notify["dark"].connect (on_style_changed);
+            style_manager.notify["dark"].connect (on_style_changed);
 
             on_style_changed ();
         }

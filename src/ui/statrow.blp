@@ -1,0 +1,33 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $FlowtimeStatRow : Adw.Bin {
+  styles [
+    "card",
+  ]
+
+  Box {
+    orientation: vertical;
+    margin-top: 12;
+    margin-bottom: 12;
+    margin-start: 12;
+
+    Label date_label {
+      halign: start;
+      selectable: true;
+
+      styles [
+        "heading",
+      ]
+    }
+
+    Label time_label {
+      halign: start;
+      selectable: true;
+
+      styles [
+        "body",
+      ]
+    }
+  }
+}

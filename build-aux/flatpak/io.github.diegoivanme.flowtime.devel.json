@@ -31,6 +31,35 @@
     "*.a"
   ],
   "modules": [
+  {
+  "name": "blueprint-compiler",
+  "buildsystem": "meson",
+  "sources": [
+    {
+      "type": "git",
+      "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+      "tag": "v0.10.0"
+    }
+  ]
+},
+   {
+      "name": "libportal",
+      "buildsystem": "meson",
+      "config-opts": [
+	"-Dbackend-gtk3=disabled",
+	"-Dbackend-gtk4=enabled",
+	"-Dbackend-qt5=disabled",
+	"-Ddocs=false",
+	"-Dtests=false"
+      ],
+      "sources": [
+	{
+	  "url": "https://github.com/flatpak/libportal.git",
+	  "type": "git",
+	  "commit": "09ec040159b754c14610ad02e4de17d0b9bc6612"
+	}
+      ]
+    },
     {
       "name": "flowtime",
       "builddir": true,

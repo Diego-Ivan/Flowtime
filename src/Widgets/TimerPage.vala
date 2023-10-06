@@ -7,7 +7,7 @@
 
 namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/timerpage.ui")]
-    public class TimerPage : Gtk.Box {
+    public class TimerPage : Adw.Bin {
         [GtkChild]
         private unowned Gtk.Button pause_button;
         [GtkChild]

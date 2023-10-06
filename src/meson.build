@@ -7,6 +7,7 @@ flowtime_sources = [
   'Models/Day.vala',
   'Models/State.vala',
   'Models/StatObject.vala',
+  'Models/InformationHolder.vala',
 
   # Services
   'Services/Timer.vala',
@@ -17,9 +18,9 @@ flowtime_sources = [
 
   # Widgets
   'Widgets/PreferencesWindow.vala',
-  'Widgets/SmallView.vala',
   'Widgets/SoundRow.vala',
-  'Widgets/StatCircle.vala',
+  'Widgets/StatGraph.vala',
+  'Widgets/StatInfo.vala',
   'Widgets/StatList.vala',
   'Widgets/StatPage.vala',
   'Widgets/StatRow.vala',
@@ -36,7 +37,6 @@ flowtime_deps = [
   dependency('libadwaita-1', version: '>= 1.2'),
   dependency('libxml-2.0'),
   dependency('libportal-gtk4'),
-  dependency('gee-0.8'),
 ]
 
 conf = configuration_data()
@@ -55,19 +55,37 @@ add_project_arguments(
 )
 
 gnome = import('gnome')
+blueprint_compiler = find_program('blueprint-compiler')
 
-flowtime_resources_file = files('ui/flowtime.gresource.xml')
-flowtime_sources += gnome.compile_resources(app_id,
-  flowtime_resources_file,
-  c_name: 'flowtime',
-  source_dir: 'ui',
+blueprints = files (
+  'ui/preferenceswindow.blp',
+  'ui/statrow.blp',
+  'ui/statwindow.blp',
+  'ui/window.blp',
+  'ui/statlist.blp',
+  'ui/statinfo.blp',
+  'ui/statpage.blp',
+  'ui/timerpage.blp',
 )
 
-executable('flowtime', flowtime_sources,
+flowtime_resources_file = files('flowtime.gresource.xml')
+flowtime_resources = gnome.compile_resources('flowtime-resources',
+  flowtime_resources_file,
+  c_name: 'flowtime',
+  dependencies: custom_target(
+    build_always_stale: true,
+    command: [blueprint_compiler, 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
+    input: blueprints,
+    output: '.',
+  ),
+)
+
+executable('flowtime', flowtime_resources, flowtime_sources,
   vala_args: [
     meson.project_source_root() + '/src/vapi/config.vapi',
     '--target-glib=2.50',
-    '--gresources', flowtime_resources_file,
+    '--enable-checking',
+    '--gresourcesdir=src/',
     '--vapidir', meson.project_source_root() / 'vapi',
   ],
   dependencies: flowtime_deps,

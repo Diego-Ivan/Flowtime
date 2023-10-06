@@ -1,0 +1,75 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $FlowtimeStatInfo : Adw.Bin {
+  Stack content_stack {
+    StackPage {
+      name: "empty";
+      child: Adw.StatusPage {
+        styles ["compact"]
+        title: _("Start working to see your progress");
+        icon-name: "timer-sand-symbolic";
+      };
+    }
+
+    StackPage {
+      name: "info";
+      child: ScrolledWindow {
+        propagate-natural-height: true;
+        propagate-natural-width: true;
+        Adw.Clamp {
+          Adw.PreferencesGroup overview_group {
+            margin-start: 12;
+            margin-end: 12;
+            margin-top: 6;
+            margin-bottom: 6;
+
+            Box {
+              orientation: vertical;
+              spacing: 18;
+              $FlowtimeStatGraph {
+                halign: center;
+                state-info: bind template.info-state no-sync-create;
+
+                accessibility {
+                  labelled-by: overview_group;
+                }
+              }
+
+              Box {
+                orientation: horizontal;
+                spacing: 36;
+                halign: center;
+                Box {
+                  orientation: horizontal;
+                  spacing: 6;
+
+                  Adw.Bin work_bin {
+                    styles["work", "stat-detail"]
+                    valign: center;
+                  }
+                  Label {
+                    label: _("Work");
+                  }
+                }
+
+                Box {
+                  orientation: horizontal;
+                  spacing: 6;
+
+                  Adw.Bin break_bin {
+                    styles["break", "stat-detail"]
+                    valign: center;
+                  }
+                  Label {
+                    label: _("Break");
+                  }
+                }
+              }
+            }
+          }
+        }
+      };
+    }
+  }
+}
