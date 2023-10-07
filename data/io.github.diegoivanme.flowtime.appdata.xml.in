@@ -30,15 +30,17 @@
 
   <releases>
     <release version="5.0" date="2023-10-06">
-      <p>Flowtime v5.0 is out now!</p>
-      <p>This update brings significant cosmetic and functional changes, as well as small bugfixes:</p>
-      <ul>
-        <li>The app has been updated to the GNOME 45 runtime, so it now can use the new fancy Libadwaita widgets.</li>
-        <li>The old "Picture in Picture" mode has been replaced by the "Distraction Free Mode". It is virtually the same, but instead of forcing you to a small window size, it will hide all the window clutter so you can focus on the timer.</li>
-        <li>Thanks to the replacement of the <em>Picture in Picture</em> mode, the window now shows the top/bottom view switchers depending on its width.</li>
-        <li>The old Statistics view has been replaced by graphs! It provides a nicer way to see how you spend your time.</li>
-        <li>Exporting the statistics to CSV now properly formats the work and break time.</li>
-      </ul>
+      <description translatable="no">
+        <p>Flowtime v5.0 is out now!</p>
+        <p>This update brings significant cosmetic and functional changes, as well as small bugfixes:</p>
+        <ul>
+          <li>The app has been updated to the GNOME 45 runtime, so it now can use the new fancy Libadwaita widgets.</li>
+          <li>The old "Picture in Picture" mode has been replaced by the "Distraction Free Mode". It is virtually the same, but instead of forcing you to a small window size, it will hide all the window clutter so you can focus on the timer.</li>
+          <li>Thanks to the replacement of the <em>Picture in Picture</em> mode, the window now shows the top/bottom view switchers depending on its width.</li>
+          <li>The old Statistics view has been replaced by graphs! It provides a nicer way to see how you spend your time.</li>
+          <li>Exporting the statistics to CSV now properly formats the work and break time.</li>
+        </ul>
+      </description>
     </release>
   </releases>
 
