@@ -14,9 +14,10 @@
 ## Gallery:
 
 <div align="center">
-	<img src="data/screenshots/01.png" width="256" height="311" style="padding-top=24;"></img>
-	<img src="data/screenshots/03.png" width="256" height="311"></img>
-	<img src="data/screenshots/05.png" width="243.5" height="283"></img>
+	<img src="https://raw.githubusercontent.com/Diego-Ivan/Flowtime/main/data/screenshots/01.png" width="283" height="286" style="padding-top=24;"></img>
+	<img src="https://raw.githubusercontent.com/Diego-Ivan/Flowtime/main/data/screenshots/02.png" width="283" height="286"></img>	
+	<img src="https://raw.githubusercontent.com/Diego-Ivan/Flowtime/main/data/screenshots/03.png" width="283" height="286"></img>
+	<img src="https://raw.githubusercontent.com/Diego-Ivan/Flowtime/main/data/screenshots/04.png" width="283" height="286"></img>
 </div>
 
 ## Features:
