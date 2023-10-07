@@ -13,7 +13,9 @@ namespace Flowtime {
         [GtkChild]
         private unowned StatList break_list;
         [GtkChild]
-        private unowned Adw.HeaderBar header_bar;
+        private unowned Gtk.Button save_button;
+        [GtkChild]
+        private unowned Gtk.Stack content_stack;
 
         public StatsWindow (Gtk.Window? parent_window) {
             Object (
@@ -27,7 +29,8 @@ namespace Flowtime {
         construct {
             var statistics = new Services.Statistics ();
             if (statistics.total.worktime == 0) {
-                empty ();
+                content_stack.visible_child_name = "empty";
+                save_button.visible = false;
             }
 
             foreach (Models.Day day in statistics.all_days) {
@@ -81,21 +84,6 @@ namespace Flowtime {
             catch (Error e) {
                 critical (e.message);
             }
-        }
-
-        private void empty () {
-            // Empty Header
-            header_bar.title_widget = null;
-            header_bar.add_css_class ("flat");
-            title = "";
-
-            // Status Page
-            var status = new Adw.StatusPage () {
-                title = _("Start working to see you progress"),
-                icon_name = "timer-sand-symbolic"
-            };
-            status.add_css_class ("compact");
-            child = status;
         }
     }
 }
