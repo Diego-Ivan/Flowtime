@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 22:03-0600\n"
-"PO-Revision-Date: 2023-06-13 22:07-0600\n"
+"POT-Creation-Date: 2023-10-07 19:11-0600\n"
+"PO-Revision-Date: 2023-10-07 19:15-0600\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish - Mexico <->\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 42.0\n"
+"X-Generator: Gtranslator 45.1\n"
 
 #: data/io.github.diegoivanme.flowtime.desktop.in:3
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
@@ -25,8 +25,8 @@ msgid "Flowtime"
 msgstr "Flowtime"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
-msgid "Get things done, keep concentrated"
-msgstr "Termine sus tareas, manténgase concentrado"
+msgid "Spend your time wisely"
+msgstr "Use su tiempo sabiamente"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
 msgid ""
@@ -40,171 +40,224 @@ msgstr ""
 "puede ser molesto. Es por eso que el método Flowtime existe: tome descansos "
 "apropiadados, sin perder su concentración."
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
-msgid "Flowtime 2.6: Small Changes"
-msgstr "Flowtime 2.6: Pequeños Cambios"
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
-msgid "New Features:"
-msgstr ""
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
-msgid "Icons have been redesigned by daudix-UFO"
-msgstr ""
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
-msgid "New Translations: Turkish and Russian Translations"
-msgstr ""
-
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
-#: src/ui/window.ui:8
-msgid "_About Flowtime"
-msgstr "_Acerca de Flowtime"
+#: src/Application.vala:77
+msgid "Flowtime is saving your statistics"
+msgstr "Flowtime está guardando tu estadísticas"
 
-#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:11
-msgid "_Preferences"
-msgstr "_Preferencias"
+#: src/Application.vala:146
+msgid "translator_credits"
+msgstr "Diego Iván<diegoivan.mae@gmail.com>"
 
-#: src/ui/window.ui:16
-msgid "_Enable Small View"
-msgstr "_Habilitar Vista En Miniatura"
+#. If seconds is less than a minute, it will display seconds
+#: src/Models/StatObject.vala:21 src/Widgets/StatInfo.vala:56
+msgid "seconds"
+msgstr "segundos"
 
-#: src/ui/window.ui:71
-msgid "Stages"
-msgstr "Estaciones"
+#: src/Models/StatObject.vala:31 src/Widgets/StatInfo.vala:65
+msgid "minutes"
+msgstr "minutos"
 
-#: src/ui/window.ui:85 src/ui/preferenceswindow.ui:15
-msgid "Statistics"
-msgstr "Estadísticas"
+#: src/Models/StatObject.vala:59 src/Widgets/StatInfo.vala:92
+msgid "hour"
+msgstr "hora"
 
-#: src/ui/window.ui:91
-msgid "Overview"
-msgstr "Vista General"
+#: src/Models/StatObject.vala:62 src/Widgets/StatInfo.vala:95
+msgid "hours"
+msgstr "horas"
 
-#: src/ui/window.ui:102
-msgid "See Details"
-msgstr "Ver detalles"
+#: src/Models/StatObject.vala:79 src/Widgets/StatInfo.vala:110
+msgid "day"
+msgstr "día"
 
-#: src/ui/preferenceswindow.ui:19
-msgid "Months Saved"
-msgstr "Meses Guardados"
+#: src/Models/StatObject.vala:82 src/Widgets/StatInfo.vala:113
+msgid "days"
+msgstr "días"
 
-#: src/ui/preferenceswindow.ui:20
-msgid "The amount of months that the work data will be saved"
-msgstr "El tiempo en meses que la información de trabajo será guardada"
-
-#: src/ui/preferenceswindow.ui:41
-msgid "Timer"
-msgstr "Temporizador"
-
-#: src/ui/preferenceswindow.ui:45
-msgid "Autostart"
-msgstr "Iniciar Automáticamente"
-
-#: src/ui/preferenceswindow.ui:46
-msgid "Automatically start the timer when the stage is changed"
-msgstr "Iniciar automáticamente el temporizador cuando la estación cambie"
-
-#: src/ui/preferenceswindow.ui:62
-msgid "Sounds"
-msgstr "Sonidos"
-
-#: src/ui/preferenceswindow.ui:63
-msgid "Alarm sounds that mark break time"
-msgstr "Sonidos de alarma que marcan el fin del descanso"
-
-#: src/ui/statpage.ui:17
-msgid "Today"
-msgstr "Hoy"
-
-#: src/ui/statpage.ui:29
-msgid "This Week"
-msgstr "Esta semana"
-
-#: src/ui/statpage.ui:41
-msgid "This Month"
-msgstr "Este mes"
-
-#: src/ui/statwindow.ui:51 src/ui/statwindow.ui:61
-msgid "Work Time"
-msgstr "Tiempo de Trabajo"
-
-#: src/ui/statwindow.ui:74 src/ui/statwindow.ui:83
-msgid "Break Time"
-msgstr "Tiempo de Descanso"
-
-#: src/Services/Timer.vala:185
+#: src/Services/Alarm.vala:53 src/Services/Timer.vala:186
 msgid "Break is over!"
 msgstr "¡El descanso ha terminado!"
 
-#: src/Services/Timer.vala:188
+#: src/Services/Alarm.vala:54
+msgid "Let's get back to work"
+msgstr "Volvamos al trabajo"
+
+#: src/Services/Statistics.vala:237
+msgid "Today"
+msgstr "Hoy"
+
+#: src/Services/Statistics.vala:239
+msgid "This Week"
+msgstr "Esta semana"
+
+#: src/Services/Statistics.vala:241
+msgid "This Month"
+msgstr "Este mes"
+
+#: src/Services/Statistics.vala:243
+msgid "All Time"
+msgstr "Todo El Tiempo"
+
+#: src/Services/Timer.vala:189
 #, c-format
 msgid "Break Stage: %s"
 msgstr "Estación de Descanso: %s"
 
-#: src/Services/Timer.vala:192
+#: src/Services/Timer.vala:193
 #, c-format
 msgid "Work Stage: %s"
 msgstr "Estación de Trabajo: %s"
 
-#: src/Services/Timer.vala:215
+#: src/Services/Timer.vala:216 src/ui/statinfo.blp:52
 msgid "Work"
 msgstr "Trabajo"
 
-#: src/Services/Timer.vala:217
+#: src/Services/Timer.vala:218 src/ui/statinfo.blp:65
 msgid "Break"
 msgstr "Descanso"
 
-#. If seconds is less than a minute, it will display seconds
-#: src/Models/StatObject.vala:21 src/Widgets/StatCircle.vala:60
-#: src/Widgets/StatCircle.vala:79
-msgid "seconds"
-msgstr "segundos"
+#. translators: This phrase is used in the context: You've worked HH:MM:SS...
+#: src/Widgets/StatInfo.vala:44
+#, c-format
+msgid "You've worked %s and have taken a break during %s."
+msgstr "Has trabajado por %s y descansado por %s."
 
-#: src/Models/StatObject.vala:31 src/Widgets/StatCircle.vala:89
-msgid "minutes"
-msgstr "minutos"
-
-#: src/Models/StatObject.vala:59 src/Widgets/StatCircle.vala:117
-msgid "hour"
-msgstr "hora"
-
-#: src/Models/StatObject.vala:62 src/Widgets/StatCircle.vala:120
-msgid "hours"
-msgstr "horas"
-
-#: src/Models/StatObject.vala:79 src/Widgets/StatCircle.vala:137
-msgid "day"
-msgstr "día"
-
-#: src/Models/StatObject.vala:82 src/Widgets/StatCircle.vala:140
-msgid "days"
-msgstr "días"
-
-#: src/Widgets/StatsWindow.vala:42
+#: src/Widgets/StatsWindow.vala:45
 #, c-format
 msgid "%s is your most productive day of the week"
 msgstr "El %s es tu día más productivo de la semana"
 
-#. Status Page
-#: src/Widgets/StatsWindow.vala:94
-msgid "Start working to see you progress"
-msgstr "Empiece a trabajar para ver su progreso"
-
-#: src/Widgets/TimerPage.vala:54
+#: src/Widgets/TimerPage.vala:43
 msgid "Work Stage"
 msgstr "Estación de Trabajo"
 
-#: src/Widgets/TimerPage.vala:57
+#: src/Widgets/TimerPage.vala:46
 msgid "Break Stage"
 msgstr "Estación de Descanso"
 
-#: src/Application.vala:101
-msgid "translator_credits"
-msgstr "Diego Iván<diegoivan.mae@gmail.com>"
+#: src/Widgets/TimerPage.vala:52
+msgid "Pause Timer"
+msgstr "Pausar El Temporizador"
+
+#: src/Widgets/TimerPage.vala:56
+msgid "Start Timer"
+msgstr "Iniciar El Temporizador"
+
+#: src/Widgets/Window.vala:117
+msgid "There is a Session Active"
+msgstr "Hay una Sesión Activa"
+
+#: src/Widgets/Window.vala:117
+msgid "Do you want to quit?"
+msgstr "¿Quiere Salir?"
+
+#: src/Widgets/Window.vala:121
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/Widgets/Window.vala:122
+msgid "Hide Window"
+msgstr "Ocultar Ventana"
+
+#: src/Widgets/Window.vala:123
+msgid "Quit Session"
+msgstr "Abandonar Sesión"
+
+#: src/ui/preferenceswindow.blp:10 src/ui/window.blp:7
+msgid "_Preferences"
+msgstr "_Preferencias"
+
+#: src/ui/preferenceswindow.blp:13 src/ui/statwindow.blp:9
+msgid "Statistics"
+msgstr "Estadísticas"
+
+#: src/ui/preferenceswindow.blp:16
+msgid "Months Saved"
+msgstr "Meses Guardados"
+
+#: src/ui/preferenceswindow.blp:17
+msgid "The amount of months that the work data will be saved"
+msgstr "El tiempo en meses que la información de trabajo será guardada"
+
+#: src/ui/preferenceswindow.blp:29
+msgid "Timer"
+msgstr "Temporizador"
+
+#: src/ui/preferenceswindow.blp:32
+msgid "Break time divisor"
+msgstr "Divisor del tiempo de descanso"
+
+#: src/ui/preferenceswindow.blp:33
+msgid "The factor used to calculate break time"
+msgstr "El factor usado para calcular el tiempo de descanso"
+
+#: src/ui/preferenceswindow.blp:44
+msgid "Autostart"
+msgstr "Iniciar Automáticamente"
+
+#: src/ui/preferenceswindow.blp:45
+msgid "Automatically start the timer when the stage is changed"
+msgstr "Iniciar automáticamente el temporizador cuando la estación cambie"
+
+#: src/ui/preferenceswindow.blp:57
+msgid "Sounds"
+msgstr "Sonidos"
+
+#: src/ui/preferenceswindow.blp:58
+msgid "Alarm sounds that mark break time"
+msgstr "Sonidos de alarma que marcan el fin del descanso"
+
+#: src/ui/statinfo.blp:10 src/ui/statwindow.blp:81
+msgid "Start working to see your progress"
+msgstr "Empiece a trabajar para ver su progreso"
+
+#: src/ui/statpage.blp:15 src/ui/window.blp:94
+msgid "Overview"
+msgstr "Vista General"
+
+#: src/ui/statpage.blp:22
+msgid "See Details"
+msgstr "Ver detalles"
+
+#: src/ui/statwindow.blp:30
+msgid "Save as CSV"
+msgstr "Guardar como CSV"
+
+#: src/ui/statwindow.blp:41 src/ui/statwindow.blp:49
+msgid "Work Time"
+msgstr "Tiempo de Trabajo"
+
+#: src/ui/statwindow.blp:58 src/ui/statwindow.blp:66
+msgid "Break Time"
+msgstr "Tiempo de Descanso"
+
+#: src/ui/window.blp:12
+msgid "_Distraction Free Mode"
+msgstr "_Modo Sin Distracciones"
+
+#: src/ui/window.blp:18
+msgid "_About Flowtime"
+msgstr "_Acerca de Flowtime"
+
+#: src/ui/window.blp:66
+msgid "_Stages"
+msgstr "E_staciones"
+
+#: src/ui/window.blp:77
+msgid "S_tatistics"
+msgstr "_Estadísticas"
+
+#~ msgid "Get things done, keep concentrated"
+#~ msgstr "Termine sus tareas, manténgase concentrado"
+
+#~ msgid "Flowtime 2.6: Small Changes"
+#~ msgstr "Flowtime 2.6: Pequeños Cambios"
+
+#~ msgid "_Enable Small View"
+#~ msgstr "_Habilitar Vista En Miniatura"
 
 #~ msgid "Flowtime 2.0: Keep on track!"
 #~ msgstr "Flowtime 2.0: ¡Manténgase al tanto!"
