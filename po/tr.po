@@ -1,23 +1,23 @@
 # Turkish translation for io.github.diegoivanme.flowtime.
-# Copyright (C) 2022 io.github.diegoivanme.flowtime's COPYRIGHT HOLDER
+# Copyright (C) 2022-2023 io.github.diegoivanme.flowtime's COPYRIGHT HOLDER
 # This file is distributed under the same license as the io.github.diegoivanme.flowtime package.
 #
-# Sabri Ünal <libreajans@gmail.com>, 2022.
+# Sabri Ünal <libreajans@gmail.com>, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegoivanme.flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 22:03-0600\n"
-"PO-Revision-Date: 2022-10-05 16:33+0300\n"
+"POT-Creation-Date: 2023-10-07 08:19+0300\n"
+"PO-Revision-Date: 2023-10-07 08:36+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
-"Language-Team: Turkish <gnometurk@gnome.org>\n"
+"Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.4\n"
 
 #: data/io.github.diegoivanme.flowtime.desktop.in:3
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
@@ -25,8 +25,8 @@ msgid "Flowtime"
 msgstr "Flowtime"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
-msgid "Get things done, keep concentrated"
-msgstr "İşleri hallet ve odaklan"
+msgid "Spend your time wisely"
+msgstr "Zamanınızı akıllıca kullanın"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
 msgid ""
@@ -40,192 +40,213 @@ msgstr ""
 "olabilir. Flowtime tekniği bu yüzden mevcuttur: **akışı** kaybetmeden uygun "
 "molalar verin."
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
-msgid "Flowtime 2.6: Small Changes"
-msgstr ""
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
-msgid "New Features:"
-msgstr ""
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
-msgid "Icons have been redesigned by daudix-UFO"
-msgstr ""
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
-msgid "New Translations: Turkish and Russian Translations"
-msgstr ""
-
 # Geliştirici adı
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
-#: src/ui/window.ui:8
-msgid "_About Flowtime"
-msgstr "Flowtime _Hakkında"
+#: src/Application.vala:77
+msgid "Flowtime is saving your statistics"
+msgstr "Flowtime istatistiklerinizi kaydediyor"
 
-#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:11
-msgid "_Preferences"
-msgstr "_Tercihler"
-
-#: src/ui/window.ui:16
-msgid "_Enable Small View"
-msgstr "Küçük Görünümü _Etkinleştir"
-
-#: src/ui/window.ui:71
-msgid "Stages"
-msgstr "Aşamalar"
-
-#: src/ui/window.ui:85 src/ui/preferenceswindow.ui:15
-msgid "Statistics"
-msgstr "İstatistikler"
-
-#: src/ui/window.ui:91
-msgid "Overview"
-msgstr ""
-
-#: src/ui/window.ui:102
-msgid "See Details"
-msgstr "Ayrıntıları Gör"
-
-#: src/ui/preferenceswindow.ui:19
-msgid "Months Saved"
-msgstr "Kaydedilecek Ay"
-
-#: src/ui/preferenceswindow.ui:20
-msgid "The amount of months that the work data will be saved"
-msgstr "Çalışma verilerinin kaydedileceği ay sayısı"
-
-#: src/ui/preferenceswindow.ui:41
-msgid "Timer"
-msgstr "Kronometre"
-
-#: src/ui/preferenceswindow.ui:45
-msgid "Autostart"
-msgstr "Kendiliğinden başlat"
-
-#: src/ui/preferenceswindow.ui:46
-msgid "Automatically start the timer when the stage is changed"
-msgstr "Aşama değiştirildiğinde zamanlayıcıyı kendiliğinden başlat"
-
-#: src/ui/preferenceswindow.ui:62
-msgid "Sounds"
-msgstr "Sesler"
-
-#: src/ui/preferenceswindow.ui:63
-msgid "Alarm sounds that mark break time"
-msgstr "Mola zamanını belirten alarm sesleri"
-
-#: src/ui/statpage.ui:17
-msgid "Today"
-msgstr "Bugün"
-
-#: src/ui/statpage.ui:29
-msgid "This Week"
-msgstr "Bu Hafta"
-
-#: src/ui/statpage.ui:41
-msgid "This Month"
-msgstr "Bu Ay"
-
-#: src/ui/statwindow.ui:51 src/ui/statwindow.ui:61
-msgid "Work Time"
-msgstr "Çalışma Zamanı"
-
-#: src/ui/statwindow.ui:74 src/ui/statwindow.ui:83
-msgid "Break Time"
-msgstr "Mola Zamanı"
-
-#: src/Services/Timer.vala:185
-#, fuzzy
-msgid "Break is over!"
-msgstr "Mola Zamanı"
-
-#: src/Services/Timer.vala:188
-#, fuzzy, c-format
-msgid "Break Stage: %s"
-msgstr "Mola Aşaması"
-
-#: src/Services/Timer.vala:192
-#, fuzzy, c-format
-msgid "Work Stage: %s"
-msgstr "Çalışma Aşaması"
-
-#: src/Services/Timer.vala:215
-#, fuzzy
-msgid "Work"
-msgstr "Çalışma Zamanı"
-
-#: src/Services/Timer.vala:217
-#, fuzzy
-msgid "Break"
-msgstr "Mola Zamanı"
+#: src/Application.vala:146
+msgid "translator_credits"
+msgstr "Sabri Ünal <libreajans@gmail.com>"
 
 #. If seconds is less than a minute, it will display seconds
-#: src/Models/StatObject.vala:21 src/Widgets/StatCircle.vala:60
-#: src/Widgets/StatCircle.vala:79
+#: src/Models/StatObject.vala:21 src/Widgets/StatInfo.vala:56
 msgid "seconds"
 msgstr "saniye"
 
-#: src/Models/StatObject.vala:31 src/Widgets/StatCircle.vala:89
+#: src/Models/StatObject.vala:31 src/Widgets/StatInfo.vala:65
 msgid "minutes"
 msgstr "dakika"
 
-#: src/Models/StatObject.vala:59 src/Widgets/StatCircle.vala:117
+#: src/Models/StatObject.vala:59 src/Widgets/StatInfo.vala:92
 msgid "hour"
 msgstr "saat"
 
-#: src/Models/StatObject.vala:62 src/Widgets/StatCircle.vala:120
+#: src/Models/StatObject.vala:62 src/Widgets/StatInfo.vala:95
 msgid "hours"
 msgstr "saat"
 
-#: src/Models/StatObject.vala:79 src/Widgets/StatCircle.vala:137
+#: src/Models/StatObject.vala:79 src/Widgets/StatInfo.vala:110
 msgid "day"
 msgstr "gün"
 
-#: src/Models/StatObject.vala:82 src/Widgets/StatCircle.vala:140
+#: src/Models/StatObject.vala:82 src/Widgets/StatInfo.vala:113
 msgid "days"
 msgstr "gün"
 
-#: src/Widgets/StatsWindow.vala:42
+#: src/Services/Alarm.vala:53 src/Services/Timer.vala:186
+msgid "Break is over!"
+msgstr "Mola bitti!"
+
+#: src/Services/Alarm.vala:54
+msgid "Let's get back to work"
+msgstr "İşimize geri dönelim"
+
+#: src/Services/Statistics.vala:237
+msgid "Today"
+msgstr "Bugün"
+
+#: src/Services/Statistics.vala:239
+msgid "This Week"
+msgstr "Bu Hafta"
+
+#: src/Services/Statistics.vala:241
+msgid "This Month"
+msgstr "Bu Ay"
+
+#: src/Services/Statistics.vala:243
+msgid "All Time"
+msgstr "Tüm Zamanlar"
+
+#: src/Services/Timer.vala:189
+#, c-format
+msgid "Break Stage: %s"
+msgstr "Mola Aşaması: %s"
+
+#: src/Services/Timer.vala:193
+#, c-format
+msgid "Work Stage: %s"
+msgstr "Çalışma Aşaması: %s"
+
+#: src/Services/Timer.vala:216 src/ui/statinfo.blp:52
+msgid "Work"
+msgstr "Çalışma"
+
+#: src/Services/Timer.vala:218 src/ui/statinfo.blp:65
+msgid "Break"
+msgstr "Mola"
+
+#. translators: This phrase is used in the context: You've worked HH:MM:SS...
+#: src/Widgets/StatInfo.vala:44
+#, c-format
+msgid "You've worked %s and have taken a break during %s."
+msgstr "%s çalıştınız ve %s mola verdiniz."
+
+#: src/Widgets/StatsWindow.vala:45
 #, c-format
 msgid "%s is your most productive day of the week"
 msgstr "haftanın en verimli gününüz %s"
 
-#. Status Page
-#: src/Widgets/StatsWindow.vala:94
-msgid "Start working to see you progress"
-msgstr ""
-
-#: src/Widgets/TimerPage.vala:54
+#: src/Widgets/TimerPage.vala:43
 msgid "Work Stage"
 msgstr "Çalışma Aşaması"
 
-#: src/Widgets/TimerPage.vala:57
+#: src/Widgets/TimerPage.vala:46
 msgid "Break Stage"
 msgstr "Mola Aşaması"
 
-#: src/Application.vala:101
-#, fuzzy
-msgid "translator_credits"
-msgstr "Sabri Ünal <libreajans@gmail.com>"
+#: src/Widgets/TimerPage.vala:52
+msgid "Pause Timer"
+msgstr "Zamanlayıcıyı Duraklat"
 
-#~ msgid "Flowtime 2.0: Keep on track!"
-#~ msgstr "Flowtime 2.0: Yolda kalın!"
+#: src/Widgets/TimerPage.vala:56
+msgid "Start Timer"
+msgstr "Zamanlayıcıyı Başlat"
 
-#~ msgid "In this new version, a shiny new feature was added: Statistics!"
-#~ msgstr "Bu yeni sürümde yepyeni bir özellik eklendi: İstatistikler!"
+#: src/Widgets/Window.vala:117
+msgid "There is a Session Active"
+msgstr "Etkin Oturum Var"
 
-#~ msgid ""
-#~ "Have an overview of how much time you have worked in the last month, week "
-#~ "and day"
-#~ msgstr ""
-#~ "Geçen ay, hafta ve gün içinde ne kadar çalıştığınıza dair bir genel "
-#~ "görünüme sahip olun"
+#: src/Widgets/Window.vala:117
+msgid "Do you want to quit?"
+msgstr "Çıkmak mı istiyorsun?"
 
-#~ msgid "Take a look at your day-specific data"
-#~ msgstr "Güne özel verilerinize göz atın"
+#: src/Widgets/Window.vala:121
+msgid "Cancel"
+msgstr "İptal"
 
-#~ msgid "Export your statistics to CSV format"
-#~ msgstr "İstatistiklerinizi CSV biçiminde dışa aktarın"
+#: src/Widgets/Window.vala:122
+msgid "Hide Window"
+msgstr "Pencereyi Gizle"
+
+#: src/Widgets/Window.vala:123
+msgid "Quit Session"
+msgstr "Oturumdan Çık"
+
+#: src/ui/preferenceswindow.blp:10 src/ui/window.blp:7
+msgid "_Preferences"
+msgstr "_Tercihler"
+
+#: src/ui/preferenceswindow.blp:13 src/ui/statwindow.blp:9
+msgid "Statistics"
+msgstr "İstatistikler"
+
+#: src/ui/preferenceswindow.blp:16
+msgid "Months Saved"
+msgstr "Kaydedilecek Ay"
+
+#: src/ui/preferenceswindow.blp:17
+msgid "The amount of months that the work data will be saved"
+msgstr "Çalışma verilerinin kaydedileceği ay sayısı"
+
+#: src/ui/preferenceswindow.blp:29
+msgid "Timer"
+msgstr "Kronometre"
+
+#: src/ui/preferenceswindow.blp:32
+msgid "Break time divisor"
+msgstr "Mola zamanı ayracı"
+
+#: src/ui/preferenceswindow.blp:33
+msgid "The factor used to calculate break time"
+msgstr "Mola süresini hesaplamak için kullanılan faktör"
+
+#: src/ui/preferenceswindow.blp:44
+msgid "Autostart"
+msgstr "Kendiliğinden başlat"
+
+#: src/ui/preferenceswindow.blp:45
+msgid "Automatically start the timer when the stage is changed"
+msgstr "Aşama değiştirildiğinde zamanlayıcıyı kendiliğinden başlat"
+
+#: src/ui/preferenceswindow.blp:57
+msgid "Sounds"
+msgstr "Sesler"
+
+#: src/ui/preferenceswindow.blp:58
+msgid "Alarm sounds that mark break time"
+msgstr "Mola zamanını belirten alarm sesleri"
+
+#: src/ui/statinfo.blp:10 src/ui/statwindow.blp:81
+msgid "Start working to see your progress"
+msgstr "İlerlemenizi görmek için çalışmaya başlayın"
+
+#: src/ui/statpage.blp:15 src/ui/window.blp:94
+msgid "Overview"
+msgstr "Genel Görünüm"
+
+#: src/ui/statpage.blp:22
+msgid "See Details"
+msgstr "Ayrıntıları Gör"
+
+#: src/ui/statwindow.blp:30
+msgid "Save as CSV"
+msgstr "CSV Olarak Kaydet"
+
+#: src/ui/statwindow.blp:41 src/ui/statwindow.blp:49
+msgid "Work Time"
+msgstr "Çalışma Zamanı"
+
+#: src/ui/statwindow.blp:58 src/ui/statwindow.blp:66
+msgid "Break Time"
+msgstr "Mola Zamanı"
+
+#: src/ui/window.blp:12
+msgid "_Distraction Free Mode"
+msgstr "_Dikkat Dağıtmayan Kip"
+
+#: src/ui/window.blp:18
+msgid "_About Flowtime"
+msgstr "Flowtime _Hakkında"
+
+#: src/ui/window.blp:66
+msgid "_Stages"
+msgstr "_Aşamalar"
+
+#: src/ui/window.blp:77
+msgid "S_tatistics"
+msgstr "İ_statistikler"
