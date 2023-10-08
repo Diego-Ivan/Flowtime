@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 22:03-0600\n"
-"PO-Revision-Date: 2023-10-08 00:03+0200\n"
+"POT-Creation-Date: 2023-10-07 08:19+0300\n"
+"PO-Revision-Date: 2023-10-08 02:35+0200\n"
 "Last-Translator: Alexandre Prokoudine <alexandre.prokoudine@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@lists.gnome.org>\n"
 "Language: ru\n"
@@ -26,8 +26,8 @@ msgid "Flowtime"
 msgstr "Flowtime"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
-msgid "Get things done, keep concentrated"
-msgstr "Решайте задачи, не теряйте концентрацию"
+msgid "Spend your time wisely"
+msgstr "Используйте время разумно"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
 msgid ""
@@ -41,172 +41,233 @@ msgstr ""
 "неприятно. Поэтому и разработана техника Flowtime: делайте перерывы, не "
 "теряя ощущение потока."
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
-msgid "Flowtime 2.6: Small Changes"
-msgstr "Flowtime 2.6: небольшие изменения"
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
-msgid "New Features:"
-msgstr "Новые функции:"
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
-msgid "Icons have been redesigned by daudix-UFO"
-msgstr "Новые значки нарисованы daudix-UFO"
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
-msgid "New Translations: Turkish and Russian Translations"
-msgstr "Новые переводы: турецкий и русский"
-
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
-#: src/ui/window.ui:8
-msgid "_About Flowtime"
-msgstr "_О программе"
+#: src/Application.vala:77
+msgid "Flowtime is saving your statistics"
+msgstr "Flowtime сохраняет статистику"
 
-#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:11
-msgid "_Preferences"
-msgstr "_Параметры"
+#: src/Application.vala:146
+msgid "translator_credits"
+msgstr "Александр Прокудин, alexandre.prokoudine@gmail.com"
 
-#: src/ui/window.ui:16
-msgid "_Enable Small View"
-msgstr "_Включить компактный режим"
+#. If seconds is less than a minute, it will display seconds
+#: src/Models/StatObject.vala:21 src/Widgets/StatInfo.vala:56
+msgid "seconds"
+msgstr "секунд"
 
-#: src/ui/window.ui:71
-msgid "Stages"
-msgstr "Этапы"
+#: src/Models/StatObject.vala:31 src/Widgets/StatInfo.vala:65
+msgid "minutes"
+msgstr "минут"
 
-#: src/ui/window.ui:85 src/ui/preferenceswindow.ui:15
-msgid "Statistics"
-msgstr "Статистика"
+#: src/Models/StatObject.vala:59 src/Widgets/StatInfo.vala:92
+msgid "hour"
+msgstr "час"
 
-#: src/ui/window.ui:91
-msgid "Overview"
-msgstr "Обзор"
+#: src/Models/StatObject.vala:62 src/Widgets/StatInfo.vala:95
+msgid "hours"
+msgstr "часов"
 
-#: src/ui/window.ui:102
-msgid "See Details"
-msgstr "Подробнее"
+#: src/Models/StatObject.vala:79 src/Widgets/StatInfo.vala:110
+msgid "day"
+msgstr "день"
 
-#: src/ui/preferenceswindow.ui:19
-msgid "Months Saved"
-msgstr "Сохранено месяцев"
+#: src/Models/StatObject.vala:82 src/Widgets/StatInfo.vala:113
+msgid "days"
+msgstr "дней"
 
-#: src/ui/preferenceswindow.ui:20
-msgid "The amount of months that the work data will be saved"
-msgstr "Данные за сколько месяцев будут сохранены"
-
-#: src/ui/preferenceswindow.ui:41
-msgid "Timer"
-msgstr "Таймер"
-
-#: src/ui/preferenceswindow.ui:45
-msgid "Autostart"
-msgstr "Автозапуск"
-
-#: src/ui/preferenceswindow.ui:46
-msgid "Automatically start the timer when the stage is changed"
-msgstr "Автоматически запускать таймер при смене этапа"
-
-#: src/ui/preferenceswindow.ui:62
-msgid "Sounds"
-msgstr "Звуки"
-
-#: src/ui/preferenceswindow.ui:63
-msgid "Alarm sounds that mark break time"
-msgstr "Звук предупреждения, что перерыв закончился"
-
-#: src/ui/statpage.ui:17
-msgid "Today"
-msgstr "Сегодня"
-
-#: src/ui/statpage.ui:29
-msgid "This Week"
-msgstr "На этой неделе"
-
-#: src/ui/statpage.ui:41
-msgid "This Month"
-msgstr "В этом месяце"
-
-#: src/ui/statwindow.ui:51 src/ui/statwindow.ui:61
-msgid "Work Time"
-msgstr "Всего работы"
-
-#: src/ui/statwindow.ui:74 src/ui/statwindow.ui:83
-msgid "Break Time"
-msgstr "Всего перерывов"
-
-#: src/Services/Timer.vala:185
+#: src/Services/Alarm.vala:53 src/Services/Timer.vala:186
 msgid "Break is over!"
 msgstr "Перерыв закончен!"
 
-#: src/Services/Timer.vala:188
+#: src/Services/Alarm.vala:54
+msgid "Let's get back to work"
+msgstr "Давайте вернемся к работе"
+
+#: src/Services/Statistics.vala:237
+msgid "Today"
+msgstr "Сегодня"
+
+#: src/Services/Statistics.vala:239
+msgid "This Week"
+msgstr "На этой неделе"
+
+#: src/Services/Statistics.vala:241
+msgid "This Month"
+msgstr "В этом месяце"
+
+#: src/Services/Statistics.vala:243
+msgid "All Time"
+msgstr "Всё время"
+
+#: src/Services/Timer.vala:189
 #, c-format
 msgid "Break Stage: %s"
 msgstr "Стадия перерыва: %s"
 
-#: src/Services/Timer.vala:192
+#: src/Services/Timer.vala:193
 #, c-format
 msgid "Work Stage: %s"
 msgstr "Стадия работы: %s"
 
-#: src/Services/Timer.vala:215
+#: src/Services/Timer.vala:216 src/ui/statinfo.blp:52
 msgid "Work"
 msgstr "Работа"
 
-#: src/Services/Timer.vala:217
+#: src/Services/Timer.vala:218 src/ui/statinfo.blp:65
 msgid "Break"
 msgstr "Перерыв"
 
-#. If seconds is less than a minute, it will display seconds
-#: src/Models/StatObject.vala:21 src/Widgets/StatCircle.vala:60
-#: src/Widgets/StatCircle.vala:79
-msgid "seconds"
-msgstr "секунд"
+#. translators: This phrase is used in the context: You've worked HH:MM:SS...
+#: src/Widgets/StatInfo.vala:44
+#, c-format
+msgid "You've worked %s and have taken a break during %s."
+msgstr "Вы проработали %s и сделали перерыв во время %s."
 
-#: src/Models/StatObject.vala:31 src/Widgets/StatCircle.vala:89
-msgid "minutes"
-msgstr "минут"
-
-#: src/Models/StatObject.vala:59 src/Widgets/StatCircle.vala:117
-msgid "hour"
-msgstr "час"
-
-#: src/Models/StatObject.vala:62 src/Widgets/StatCircle.vala:120
-msgid "hours"
-msgstr "часов"
-
-#: src/Models/StatObject.vala:79 src/Widgets/StatCircle.vala:137
-msgid "day"
-msgstr "день"
-
-#: src/Models/StatObject.vala:82 src/Widgets/StatCircle.vala:140
-msgid "days"
-msgstr "дней"
-
-#: src/Widgets/StatsWindow.vala:42
+#: src/Widgets/StatsWindow.vala:45
 #, c-format
 msgid "%s is your most productive day of the week"
 msgstr "%s — ваш самый продуктивный день недели"
 
-#. Status Page
-#: src/Widgets/StatsWindow.vala:94
-msgid "Start working to see you progress"
-msgstr "Начните работу, чтобы увидеть прогресс"
-
-#: src/Widgets/TimerPage.vala:54
+#: src/Widgets/TimerPage.vala:43
 msgid "Work Stage"
 msgstr "Работа"
 
-#: src/Widgets/TimerPage.vala:57
+#: src/Widgets/TimerPage.vala:46
 msgid "Break Stage"
 msgstr "Перерыв"
 
-#: src/Application.vala:101
-#, fuzzy
-msgid "translator_credits"
-msgstr "Александр Прокудин, alexandre.prokoudine@gmail.com"
+#: src/Widgets/TimerPage.vala:52
+msgid "Pause Timer"
+msgstr "Пауза"
+
+#: src/Widgets/TimerPage.vala:56
+msgid "Start Timer"
+msgstr "Запустить"
+
+#: src/Widgets/Window.vala:117
+msgid "There is a Session Active"
+msgstr "Прямо сейчас есть запущенный сеанс"
+
+#: src/Widgets/Window.vala:117
+msgid "Do you want to quit?"
+msgstr "Вы хотите выйти из программы?"
+
+#: src/Widgets/Window.vala:121
+msgid "Cancel"
+msgstr "Отмена"
+
+#: src/Widgets/Window.vala:122
+msgid "Hide Window"
+msgstr "Скрыть окно"
+
+#: src/Widgets/Window.vala:123
+msgid "Quit Session"
+msgstr "Завершить сеанс"
+
+#: src/ui/preferenceswindow.blp:10 src/ui/window.blp:7
+msgid "_Preferences"
+msgstr "_Параметры"
+
+#: src/ui/preferenceswindow.blp:13 src/ui/statwindow.blp:9
+msgid "Statistics"
+msgstr "Статистика"
+
+#: src/ui/preferenceswindow.blp:16
+msgid "Months Saved"
+msgstr "Сохранено месяцев"
+
+#: src/ui/preferenceswindow.blp:17
+msgid "The amount of months that the work data will be saved"
+msgstr "Данные за сколько месяцев будут сохранены"
+
+#: src/ui/preferenceswindow.blp:29
+msgid "Timer"
+msgstr "Таймер"
+
+#: src/ui/preferenceswindow.blp:32
+msgid "Break time divisor"
+msgstr "Делитель перерывов"
+
+#: src/ui/preferenceswindow.blp:33
+msgid "The factor used to calculate break time"
+msgstr "Коэффициент для расчета времени на перерыв"
+
+#: src/ui/preferenceswindow.blp:44
+msgid "Autostart"
+msgstr "Автозапуск"
+
+#: src/ui/preferenceswindow.blp:45
+msgid "Automatically start the timer when the stage is changed"
+msgstr "Автоматически запускать таймер при смене этапа"
+
+#: src/ui/preferenceswindow.blp:57
+msgid "Sounds"
+msgstr "Звуки"
+
+#: src/ui/preferenceswindow.blp:58
+msgid "Alarm sounds that mark break time"
+msgstr "Звук предупреждения, что перерыв закончился"
+
+#: src/ui/statinfo.blp:10 src/ui/statwindow.blp:81
+msgid "Start working to see your progress"
+msgstr "Начните работу, чтобы увидеть прогресс"
+
+#: src/ui/statpage.blp:15 src/ui/window.blp:94
+msgid "Overview"
+msgstr "Обзор"
+
+#: src/ui/statpage.blp:22
+msgid "See Details"
+msgstr "Подробнее"
+
+#: src/ui/statwindow.blp:30
+msgid "Save as CSV"
+msgstr "Сохранить как CSV"
+
+#: src/ui/statwindow.blp:41 src/ui/statwindow.blp:49
+msgid "Work Time"
+msgstr "Всего работы"
+
+#: src/ui/statwindow.blp:58 src/ui/statwindow.blp:66
+msgid "Break Time"
+msgstr "Всего перерывов"
+
+#: src/ui/window.blp:12
+msgid "_Distraction Free Mode"
+msgstr "_Режим без отвлечений"
+
+#: src/ui/window.blp:18
+msgid "_About Flowtime"
+msgstr "_О программе"
+
+#: src/ui/window.blp:66
+msgid "_Stages"
+msgstr "_Стадии"
+
+#: src/ui/window.blp:77
+msgid "S_tatistics"
+msgstr "Ст_атистика"
+
+#~ msgid "Get things done, keep concentrated"
+#~ msgstr "Решайте задачи, не теряйте концентрацию"
+
+#~ msgid "Flowtime 2.6: Small Changes"
+#~ msgstr "Flowtime 2.6: небольшие изменения"
+
+#~ msgid "New Features:"
+#~ msgstr "Новые функции:"
+
+#~ msgid "Icons have been redesigned by daudix-UFO"
+#~ msgstr "Новые значки нарисованы daudix-UFO"
+
+#~ msgid "New Translations: Turkish and Russian Translations"
+#~ msgstr "Новые переводы: турецкий и русский"
+
+#~ msgid "_Enable Small View"
+#~ msgstr "_Включить компактный режим"
 
 #~ msgid "Flowtime 2.0: Keep on track!"
 #~ msgstr "Flowtime 2.0: не отвлекайтесь!"
