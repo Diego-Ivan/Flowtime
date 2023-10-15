@@ -116,7 +116,7 @@ namespace Flowtime {
 
         private async void query_close () {
             if (yield main_window.query_quit ()) {
-                quit ();
+                shutdown ();
             }
         }
 
