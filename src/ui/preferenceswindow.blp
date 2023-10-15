@@ -51,6 +51,12 @@ template $FlowtimePreferencesWindow : Adw.PreferencesWindow {
 
         activatable-widget: autostart_switch;
       }
+
+      Adw.SwitchRow screensaver_row {
+        title: _("Activate Screensaver on Break Time");
+        subtitle: _("Activate the screensaver when the break stage starts. Requires Autostart");
+        sensitive: bind autostart_switch.active;
+      }
     }
 
     Adw.PreferencesGroup sounds_group {

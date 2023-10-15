@@ -38,5 +38,11 @@
 	    <summary>Enable/Disable Distraction Free Mode</summary>
 	    <description>The distraction free mode uses a special window without too much clutter. Ideal when you just want what matters</description>
 	  </key>
+
+	  <key name="activate-screensaver" type="b">
+	    <default>false</default>
+	    <summary>Activate screensaver in break time</summary>
+	    <description>Activates the screensaver when the break stage starts</description>
+	  </key>
 	</schema>
 </schemalist>

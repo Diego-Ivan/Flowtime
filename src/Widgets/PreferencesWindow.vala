@@ -16,6 +16,8 @@ namespace Flowtime {
         private unowned Adw.SpinRow months_spinrow;
         [GtkChild]
         private unowned Adw.SpinRow divisor_spinrow;
+        [GtkChild]
+        private unowned Adw.SwitchRow screensaver_row;
 
         private Services.Settings settings = new Services.Settings ();
 
@@ -44,6 +46,10 @@ namespace Flowtime {
                 months_spinrow, "value",
                 SYNC_CREATE | BIDIRECTIONAL
             );
+
+            settings.bind_property ("activate-screensaver",
+                                    screensaver_row, "active",
+                                    SYNC_CREATE | BIDIRECTIONAL);
 
             settings.bind_property ("break-divisor",
                                     divisor_spinrow, "value",

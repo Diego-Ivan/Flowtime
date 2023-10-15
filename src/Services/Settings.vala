@@ -40,6 +40,7 @@ public class Flowtime.Services.Settings : Object {
     public string tone { get; set; }
     public bool autostart { get; set; }
     public bool distraction_free { get; set; }
+    public bool activate_screensaver { get; set; }
 
     private Settings? instance = null;
     public Settings () {
@@ -54,6 +55,7 @@ public class Flowtime.Services.Settings : Object {
         settings.bind ("distraction-free", this, "distraction-free", DEFAULT);
         settings.bind ("months-saved", this, "months-saved", DEFAULT);
         settings.bind ("break-divisor", this, "break-divisor", DEFAULT);
+        settings.bind ("activate-screensaver", this, "activate-screensaver", DEFAULT);
 
         settings.delay ();
     }
