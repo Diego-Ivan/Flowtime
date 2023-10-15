@@ -15,6 +15,7 @@ flowtime_sources = [
   'Services/Statistics.vala',
   'Services/Alarm.vala',
   'Services/Settings.vala',
+  'Services/Screensaver.vala',
 
   # Widgets
   'Widgets/PreferencesWindow.vala',

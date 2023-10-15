@@ -25,6 +25,8 @@ public class Flowtime.Window : Adw.ApplicationWindow {
     private Adw.AnimationTarget content_target;
     private Adw.AnimationTarget switchers_target;
 
+    private Services.Screensaver? screensaver = null;
+
     private bool _distraction_free = false;
     public bool distraction_free {
         get {
@@ -72,6 +74,16 @@ public class Flowtime.Window : Adw.ApplicationWindow {
             show_animation.play ();
         });
         distraction_free = false;
+
+        init_screensaver.begin ();
+    }
+
+    private async void init_screensaver () {
+        try {
+            screensaver = yield new Services.Screensaver (timer);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 
     private void distraction_free_transition () {
