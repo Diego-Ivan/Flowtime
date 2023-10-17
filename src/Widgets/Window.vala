@@ -27,6 +27,7 @@ public class Flowtime.Window : Adw.ApplicationWindow {
 
     private Services.Screensaver? screensaver = null;
     private Services.BackgroundStatusReporter background_reporter;
+    private Services.Alarm alarm;
 
     private bool _distraction_free = false;
     public bool distraction_free {
@@ -81,6 +82,11 @@ public class Flowtime.Window : Adw.ApplicationWindow {
 
     private async void init_services () {
         background_reporter = new Services.BackgroundStatusReporter (timer);
+        alarm = new Services.Alarm (timer);
+
+        var color_provider = new Services.ColorProvider ();
+        timer.bind_property ("mode", color_provider, "mode", SYNC_CREATE);
+
         try {
             screensaver = yield new Services.Screensaver (timer);
         } catch (Error e) {

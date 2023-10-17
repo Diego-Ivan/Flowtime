@@ -1,29 +1,22 @@
 /* SoundRow.vala
  *
- * Copyright 2021 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2021-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 namespace Flowtime {
-    public struct Sound {
-        string title;
-        string path;
-    }
-
     public class SoundRow : Adw.ActionRow {
-        public Sound sound { get; construct; }
+        public string tone_key { get; set; }
         public Gtk.CheckButton check_button { get; private set; }
         public Gtk.Button play_button { get; private set; }
 
         private Services.Settings settings = new Services.Settings ();
-        private Gst.Player player = new Gst.Player (null, null);
+        private Services.TonePlayer player = new Services.TonePlayer ();
 
-        public SoundRow (Sound sound) {
-            Object (
-                sound: sound
-            );
-            title = sound.title;
+        public SoundRow (string tone_key) {
+            Object (tone_key: tone_key);
+            title = player.get_tone_name (tone_key);
         }
 
         construct {
@@ -35,9 +28,8 @@ namespace Flowtime {
         }
 
         private void play_sound () {
-            player.uri = sound.path;
-            settings.tone = (sound.title.down () + ".ogg");
-            player.play ();
+            settings.tone = tone_key;
+            player.play_tone (tone_key);
         }
     }
 }

@@ -27,7 +27,6 @@ public class Flowtime.Services.Timer : Object {
     }
 
     public TimerMode mode { get; private set; default = WORK; }
-    private Alarm alarm { get; set; }
     public string formatted_time { get; private set; }
 
     public signal void updated ();
@@ -46,12 +45,6 @@ public class Flowtime.Services.Timer : Object {
 
     construct {
         seconds = 0;
-
-        var color_provider = new ColorProvider ();
-        bind_property ("mode", color_provider, "mode", SYNC_CREATE);
-
-        // Init Alarm Service
-        alarm = new Alarm (this);
     }
 
     public void start () {

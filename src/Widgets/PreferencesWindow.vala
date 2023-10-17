@@ -21,13 +21,6 @@ namespace Flowtime {
 
         private Services.Settings settings = new Services.Settings ();
 
-        public Sound[] sounds = {
-            { "Baum", "resource:///io/github/diegoivanme/flowtime/baum.ogg" },
-            { "Beep", "resource:///io/github/diegoivanme/flowtime/beep.ogg" },
-            { "Bleep", "resource:///io/github/diegoivanme/flowtime/bleep.ogg" },
-            { "Tone", "resource:///io/github/diegoivanme/flowtime/tone.ogg" }
-        };
-
         public PreferencesWindow (Gtk.Window parent) {
             transient_for = parent;
             show ();
@@ -55,15 +48,16 @@ namespace Flowtime {
                                     percentage_spinrow, "value",
                                     SYNC_CREATE | BIDIRECTIONAL);
 
-            for (int i = 0; i < sounds.length; i++) {
-                var row = new SoundRow (sounds[i]);
+            var tone_player = new Services.TonePlayer ();
+            foreach (unowned string key in tone_player.get_tone_keys ()) {
+                var row = new SoundRow (key);
                 if (button_group == null) {
                     button_group = row.check_button;
                 }
 
                 row.check_button.group = button_group;
 
-                if (settings.tone == sounds[i].title.down () + ".ogg") {
+                if (row.tone_key == settings.tone) {
                     row.check_button.active = true;
                 }
 
