@@ -28,15 +28,15 @@ template $FlowtimePreferencesWindow : Adw.PreferencesWindow {
     Adw.PreferencesGroup {
       title: _("Timer");
 
-      Adw.SpinRow divisor_spinrow {
-        title: _("Break time divisor");
-        subtitle: _("The factor used to calculate break time");
+      Adw.SpinRow percentage_spinrow {
+        title: _("Break time percentage");
+        subtitle: _("The percetage of work time that is used as break time");
 
         adjustment: Adjustment {
-          lower: 2;
-          upper: 10;
+          lower: 10;
+          upper: 100;
           step-increment: 1;
-          page-increment: 3;
+          page-increment: 10;
         };
       }
 

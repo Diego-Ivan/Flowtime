@@ -87,7 +87,7 @@ public class Flowtime.Services.Timer : Object {
          * mode and change it accordingly
          */
         if (mode == WORK) {
-            initial_breaktime = seconds / settings.break_divisor;
+            initial_breaktime = (int) (seconds * settings.break_percentage / 100);
             seconds = initial_breaktime;
             mode = BREAK;
         }

@@ -14,10 +14,15 @@
 	  </key>
 
 	  <key name="break-divisor" type="i">
-	    <range min="2" max="10"/>
-	    <default>5</default>
-	    <summary>Divisor for break time</summary>
-	    <description>The value by which the work time will be divided to calculate the break time</description>
+	    <default>-1</default>
+	    <summary>[LEGACY]</summary>
+	    <description>[LEGACY]</description>
+	  </key>
+
+	  <key name="break-percentage" type="d">
+	    <range min="10" max="100"/>
+	    <default>20</default>
+	    <summary>Percentage of work time to take into break time</summary>
 	  </key>
 
 	  <key name="months-saved" type="i">

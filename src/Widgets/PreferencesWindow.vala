@@ -15,7 +15,7 @@ namespace Flowtime {
         [GtkChild]
         private unowned Adw.SpinRow months_spinrow;
         [GtkChild]
-        private unowned Adw.SpinRow divisor_spinrow;
+        private unowned Adw.SpinRow percentage_spinrow;
         [GtkChild]
         private unowned Adw.SwitchRow screensaver_row;
 
@@ -51,8 +51,8 @@ namespace Flowtime {
                                     screensaver_row, "active",
                                     SYNC_CREATE | BIDIRECTIONAL);
 
-            settings.bind_property ("break-divisor",
-                                    divisor_spinrow, "value",
+            settings.bind_property ("break-percentage",
+                                    percentage_spinrow, "value",
                                     SYNC_CREATE | BIDIRECTIONAL);
 
             for (int i = 0; i < sounds.length; i++) {

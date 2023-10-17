@@ -23,17 +23,17 @@ public class Flowtime.Services.Settings : Object {
         }
     }
 
-    private int _break_divisor;
-    public int break_divisor {
+    private double _break_percentage;
+    public double break_percentage {
         get {
-            return _break_divisor;
+            return _break_percentage;
         }
         set {
-            if (value < 2 || value > 10) {
-                critical ("Break divisor is out of bounds");
+            if (value < 20 || value > 100) {
+                critical ("Break percentage is out of bounds");
                 return;
             }
-            _break_divisor = value;
+            _break_percentage = value;
         }
     }
 
@@ -50,11 +50,13 @@ public class Flowtime.Services.Settings : Object {
     }
 
     construct {
+        port_divisor ();
+
         settings.bind ("tone", this, "tone", DEFAULT);
         settings.bind ("autostart", this, "autostart", DEFAULT);
         settings.bind ("distraction-free", this, "distraction-free", DEFAULT);
         settings.bind ("months-saved", this, "months-saved", DEFAULT);
-        settings.bind ("break-divisor", this, "break-divisor", DEFAULT);
+        settings.bind ("break-percentage", this, "break-percentage", DEFAULT);
         settings.bind ("activate-screensaver", this, "activate-screensaver", DEFAULT);
 
         settings.delay ();
@@ -62,5 +64,15 @@ public class Flowtime.Services.Settings : Object {
 
     public void save () {
         settings.apply ();
+    }
+
+    private void port_divisor () {
+        int divisor = settings.get_int ("break-divisor");
+        if (divisor < 0) {
+            return;
+        }
+
+        settings.set_double ("break-percentage", 100.0 / divisor);
+        settings.set_int ("break-divisor", -1);
     }
 }
