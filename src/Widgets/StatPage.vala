@@ -16,7 +16,8 @@ public class Flowtime.StatPage : Adw.Bin {
 
     [GtkCallback]
     private void on_details_button_clicked () {
-        new StatsWindow ((Gtk.Window) root);
+        var stat_window = new StatsWindow ((Gtk.Window) root);
+        stat_window.show ();
     }
 
     [GtkCallback]
