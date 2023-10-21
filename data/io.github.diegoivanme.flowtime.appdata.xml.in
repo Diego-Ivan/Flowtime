@@ -29,16 +29,12 @@
   </screenshots>
 
   <releases>
-    <release version="5.0" date="2023-10-06">
+    <release version="6.0" date="2023-10-21">
       <description translatable="no">
-        <p>Flowtime v5.0 is out now!</p>
-        <p>This update brings significant cosmetic and functional changes, as well as small bugfixes:</p>
+        <p>Flowtime v6.0 is here! This release has some small but interesting features that improve the overall Flowtime experience 🤓️</p>
         <ul>
-          <li>The app has been updated to the GNOME 45 runtime, so it now can use the new fancy Libadwaita widgets.</li>
-          <li>The old "Picture in Picture" mode has been replaced by the "Distraction Free Mode". It is virtually the same, but instead of forcing you to a small window size, it will hide all the window clutter so you can focus on the timer.</li>
-          <li>Thanks to the replacement of the <em>Picture in Picture</em> mode, the window now shows the top/bottom view switchers depending on its width.</li>
-          <li>The old Statistics view has been replaced by graphs! It provides a nicer way to see how you spend your time.</li>
-          <li>Exporting the statistics to CSV now properly formats the work and break time.</li>
+          <li>A new preference has been added to activate the screensaver when the break time starts. This setting requires the <em>Autostart</em> feature to be enabled too.</li>
+          <li>The dependency on GStreamer has been removed in favor of the <code>GtkMediaStream</code> API's. While making this change, memory usage was also improved a little bit too 😉️</li>
         </ul>
       </description>
     </release>
