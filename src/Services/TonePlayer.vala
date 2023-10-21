@@ -44,12 +44,11 @@ public class Flowtime.Services.TonePlayer : Object {
 
     public void play_tone (string key)
     requires (key in tone_map) {
-        // FIXME: This produces a quite severe memory leak. Too tired to do it now, will land
-        // before 6.0 for sure :)
         unowned File sound = tone_map[key].sound_file;
         if (media_file != null && media_file.playing) {
             media_file.pause ();
         }
+        media_file?.close ();
         media_file = Gtk.MediaFile.for_file (sound);
         media_file.play_now ();
     }
