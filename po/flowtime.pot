@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 08:19+0300\n"
+"POT-Creation-Date: 2023-10-21 12:27-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgid ""
 "without loosing you **flow**."
 msgstr ""
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:78
 msgid "Diego Iván"
 msgstr ""
 
@@ -71,11 +71,11 @@ msgstr ""
 msgid "days"
 msgstr ""
 
-#: src/Services/Alarm.vala:53 src/Services/Timer.vala:186
+#: src/Services/Alarm.vala:28 src/Services/BackgroundStatusReporter.vala:34
 msgid "Break is over!"
 msgstr ""
 
-#: src/Services/Alarm.vala:54
+#: src/Services/Alarm.vala:29
 msgid "Let's get back to work"
 msgstr ""
 
@@ -95,21 +95,21 @@ msgstr ""
 msgid "All Time"
 msgstr ""
 
-#: src/Services/Timer.vala:189
+#: src/Services/BackgroundStatusReporter.vala:36
 #, c-format
 msgid "Break Stage: %s"
 msgstr ""
 
-#: src/Services/Timer.vala:193
+#: src/Services/BackgroundStatusReporter.vala:40
 #, c-format
 msgid "Work Stage: %s"
 msgstr ""
 
-#: src/Services/Timer.vala:216 src/ui/statinfo.blp:52
+#: src/Services/Timer.vala:177 src/ui/statinfo.blp:52
 msgid "Work"
 msgstr ""
 
-#: src/Services/Timer.vala:218 src/ui/statinfo.blp:65
+#: src/Services/Timer.vala:179 src/ui/statinfo.blp:65
 msgid "Break"
 msgstr ""
 
@@ -119,7 +119,7 @@ msgstr ""
 msgid "You've worked %s and have taken a break during %s."
 msgstr ""
 
-#: src/Widgets/StatsWindow.vala:45
+#: src/Widgets/StatsWindow.vala:43
 #, c-format
 msgid "%s is your most productive day of the week"
 msgstr ""
@@ -140,23 +140,23 @@ msgstr ""
 msgid "Start Timer"
 msgstr ""
 
-#: src/Widgets/Window.vala:117
+#: src/Widgets/Window.vala:137
 msgid "There is a Session Active"
 msgstr ""
 
-#: src/Widgets/Window.vala:117
+#: src/Widgets/Window.vala:137
 msgid "Do you want to quit?"
 msgstr ""
 
-#: src/Widgets/Window.vala:121
+#: src/Widgets/Window.vala:141
 msgid "Cancel"
 msgstr ""
 
-#: src/Widgets/Window.vala:122
+#: src/Widgets/Window.vala:142
 msgid "Hide Window"
 msgstr ""
 
-#: src/Widgets/Window.vala:123
+#: src/Widgets/Window.vala:143
 msgid "Quit Session"
 msgstr ""
 
@@ -181,30 +181,44 @@ msgid "Timer"
 msgstr ""
 
 #: src/ui/preferenceswindow.blp:32
-msgid "Break time divisor"
+msgid "Break time percentage"
 msgstr ""
 
 #: src/ui/preferenceswindow.blp:33
-msgid "The factor used to calculate break time"
+msgid "The percetage of work time that will be used as break time"
 msgstr ""
 
-#: src/ui/preferenceswindow.blp:44
+#: src/ui/preferenceswindow.blp:45 src/ui/statwindow.blp:61
+#: src/ui/statwindow.blp:71
+msgid "Break Time"
+msgstr ""
+
+#: src/ui/preferenceswindow.blp:47
 msgid "Autostart"
 msgstr ""
 
-#: src/ui/preferenceswindow.blp:45
+#: src/ui/preferenceswindow.blp:48
 msgid "Automatically start the timer when the stage is changed"
 msgstr ""
 
-#: src/ui/preferenceswindow.blp:57
+#: src/ui/preferenceswindow.blp:59
+msgid "Activate Screensaver on Break Time"
+msgstr ""
+
+#: src/ui/preferenceswindow.blp:60
+msgid ""
+"Activate the screensaver when the break stage starts. Requires Autostart"
+msgstr ""
+
+#: src/ui/preferenceswindow.blp:66
 msgid "Sounds"
 msgstr ""
 
-#: src/ui/preferenceswindow.blp:58
+#: src/ui/preferenceswindow.blp:67
 msgid "Alarm sounds that mark break time"
 msgstr ""
 
-#: src/ui/statinfo.blp:10 src/ui/statwindow.blp:81
+#: src/ui/statinfo.blp:10 src/ui/statwindow.blp:86
 msgid "Start working to see your progress"
 msgstr ""
 
@@ -220,12 +234,8 @@ msgstr ""
 msgid "Save as CSV"
 msgstr ""
 
-#: src/ui/statwindow.blp:41 src/ui/statwindow.blp:49
+#: src/ui/statwindow.blp:41 src/ui/statwindow.blp:51
 msgid "Work Time"
-msgstr ""
-
-#: src/ui/statwindow.blp:58 src/ui/statwindow.blp:66
-msgid "Break Time"
 msgstr ""
 
 #: src/ui/window.blp:12

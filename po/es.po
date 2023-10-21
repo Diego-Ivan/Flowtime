@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 19:11-0600\n"
+"POT-Creation-Date: 2023-10-21 12:27-0600\n"
 "PO-Revision-Date: 2023-10-07 19:15-0600\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish - Mexico <->\n"
@@ -40,7 +40,7 @@ msgstr ""
 "puede ser molesto. Es por eso que el método Flowtime existe: tome descansos "
 "apropiadados, sin perder su concentración."
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:78
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
@@ -77,11 +77,11 @@ msgstr "día"
 msgid "days"
 msgstr "días"
 
-#: src/Services/Alarm.vala:53 src/Services/Timer.vala:186
+#: src/Services/Alarm.vala:28 src/Services/BackgroundStatusReporter.vala:34
 msgid "Break is over!"
 msgstr "¡El descanso ha terminado!"
 
-#: src/Services/Alarm.vala:54
+#: src/Services/Alarm.vala:29
 msgid "Let's get back to work"
 msgstr "Volvamos al trabajo"
 
@@ -101,21 +101,21 @@ msgstr "Este mes"
 msgid "All Time"
 msgstr "Todo El Tiempo"
 
-#: src/Services/Timer.vala:189
+#: src/Services/BackgroundStatusReporter.vala:36
 #, c-format
 msgid "Break Stage: %s"
 msgstr "Estación de Descanso: %s"
 
-#: src/Services/Timer.vala:193
+#: src/Services/BackgroundStatusReporter.vala:40
 #, c-format
 msgid "Work Stage: %s"
 msgstr "Estación de Trabajo: %s"
 
-#: src/Services/Timer.vala:216 src/ui/statinfo.blp:52
+#: src/Services/Timer.vala:177 src/ui/statinfo.blp:52
 msgid "Work"
 msgstr "Trabajo"
 
-#: src/Services/Timer.vala:218 src/ui/statinfo.blp:65
+#: src/Services/Timer.vala:179 src/ui/statinfo.blp:65
 msgid "Break"
 msgstr "Descanso"
 
@@ -125,7 +125,7 @@ msgstr "Descanso"
 msgid "You've worked %s and have taken a break during %s."
 msgstr "Has trabajado por %s y descansado por %s."
 
-#: src/Widgets/StatsWindow.vala:45
+#: src/Widgets/StatsWindow.vala:43
 #, c-format
 msgid "%s is your most productive day of the week"
 msgstr "El %s es tu día más productivo de la semana"
@@ -146,23 +146,23 @@ msgstr "Pausar El Temporizador"
 msgid "Start Timer"
 msgstr "Iniciar El Temporizador"
 
-#: src/Widgets/Window.vala:117
+#: src/Widgets/Window.vala:137
 msgid "There is a Session Active"
 msgstr "Hay una Sesión Activa"
 
-#: src/Widgets/Window.vala:117
+#: src/Widgets/Window.vala:137
 msgid "Do you want to quit?"
 msgstr "¿Quiere Salir?"
 
-#: src/Widgets/Window.vala:121
+#: src/Widgets/Window.vala:141
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/Widgets/Window.vala:122
+#: src/Widgets/Window.vala:142
 msgid "Hide Window"
 msgstr "Ocultar Ventana"
 
-#: src/Widgets/Window.vala:123
+#: src/Widgets/Window.vala:143
 msgid "Quit Session"
 msgstr "Abandonar Sesión"
 
@@ -187,30 +187,45 @@ msgid "Timer"
 msgstr "Temporizador"
 
 #: src/ui/preferenceswindow.blp:32
-msgid "Break time divisor"
-msgstr "Divisor del tiempo de descanso"
+#, fuzzy
+msgid "Break time percentage"
+msgstr "Estación de Descanso"
 
 #: src/ui/preferenceswindow.blp:33
-msgid "The factor used to calculate break time"
-msgstr "El factor usado para calcular el tiempo de descanso"
+msgid "The percetage of work time that will be used as break time"
+msgstr ""
 
-#: src/ui/preferenceswindow.blp:44
+#: src/ui/preferenceswindow.blp:45 src/ui/statwindow.blp:61
+#: src/ui/statwindow.blp:71
+msgid "Break Time"
+msgstr "Tiempo de Descanso"
+
+#: src/ui/preferenceswindow.blp:47
 msgid "Autostart"
 msgstr "Iniciar Automáticamente"
 
-#: src/ui/preferenceswindow.blp:45
+#: src/ui/preferenceswindow.blp:48
 msgid "Automatically start the timer when the stage is changed"
 msgstr "Iniciar automáticamente el temporizador cuando la estación cambie"
 
-#: src/ui/preferenceswindow.blp:57
+#: src/ui/preferenceswindow.blp:59
+msgid "Activate Screensaver on Break Time"
+msgstr ""
+
+#: src/ui/preferenceswindow.blp:60
+msgid ""
+"Activate the screensaver when the break stage starts. Requires Autostart"
+msgstr ""
+
+#: src/ui/preferenceswindow.blp:66
 msgid "Sounds"
 msgstr "Sonidos"
 
-#: src/ui/preferenceswindow.blp:58
+#: src/ui/preferenceswindow.blp:67
 msgid "Alarm sounds that mark break time"
 msgstr "Sonidos de alarma que marcan el fin del descanso"
 
-#: src/ui/statinfo.blp:10 src/ui/statwindow.blp:81
+#: src/ui/statinfo.blp:10 src/ui/statwindow.blp:86
 msgid "Start working to see your progress"
 msgstr "Empiece a trabajar para ver su progreso"
 
@@ -226,13 +241,9 @@ msgstr "Ver detalles"
 msgid "Save as CSV"
 msgstr "Guardar como CSV"
 
-#: src/ui/statwindow.blp:41 src/ui/statwindow.blp:49
+#: src/ui/statwindow.blp:41 src/ui/statwindow.blp:51
 msgid "Work Time"
 msgstr "Tiempo de Trabajo"
-
-#: src/ui/statwindow.blp:58 src/ui/statwindow.blp:66
-msgid "Break Time"
-msgstr "Tiempo de Descanso"
 
 #: src/ui/window.blp:12
 msgid "_Distraction Free Mode"
@@ -249,6 +260,12 @@ msgstr "E_staciones"
 #: src/ui/window.blp:77
 msgid "S_tatistics"
 msgstr "_Estadísticas"
+
+#~ msgid "Break time divisor"
+#~ msgstr "Divisor del tiempo de descanso"
+
+#~ msgid "The factor used to calculate break time"
+#~ msgstr "El factor usado para calcular el tiempo de descanso"
 
 #~ msgid "Get things done, keep concentrated"
 #~ msgstr "Termine sus tareas, manténgase concentrado"
