@@ -66,7 +66,7 @@ GNOME Builder provides a high quality Flatpak integration. All dependencies, run
 | ---------- | ------- |
 | Meson | 0.59.0 |
 | gtk-4  | 4.11 |
-| libportal | Unstable, check Flatpak manifest |
+| libportal | 0.7.1 |
 | libadwaita-1 |  1.4 |
 | libxml-2.0 |  1.0 |
 
