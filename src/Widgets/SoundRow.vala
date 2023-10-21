@@ -9,7 +9,6 @@ namespace Flowtime {
     public class SoundRow : Adw.ActionRow {
         public string tone_key { get; set; }
         public Gtk.CheckButton check_button { get; private set; }
-        public Gtk.Button play_button { get; private set; }
 
         private Services.Settings settings = new Services.Settings ();
         private Services.TonePlayer player = new Services.TonePlayer ();
