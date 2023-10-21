@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-public class Flowtime.Services.Alarm : Object {
+public class Flowtime.Services.Alarm {
     private TonePlayer player = new TonePlayer ();
     private unowned GLib.Application application = GLib.Application.get_default ();
 
@@ -21,7 +21,7 @@ public class Flowtime.Services.Alarm : Object {
     }
 
     public Alarm (Timer timer) {
-        Object (timer: timer);
+        this.timer = timer;
     }
 
     private void on_timer_done () {

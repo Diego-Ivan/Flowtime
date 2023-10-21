@@ -38,7 +38,7 @@ public class Flowtime.Services.Screensaver : Object {
 
     ~Screensaver () {
         try {
-            connection.close_sync (null);
+            connection?.close_sync (null);
         } catch (Error e) {
             warning (e.message);
         }
