@@ -21,7 +21,7 @@
 
 	  <key name="break-percentage" type="d">
 	    <range min="10" max="100"/>
-	    <default>20</default>
+	    <default>25</default>
 	    <summary>Percentage of work time to take into break time</summary>
 	  </key>
 
