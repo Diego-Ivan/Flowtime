@@ -69,7 +69,6 @@ namespace Flowtime {
                 sounds_group.add (row);
             }
 
-            message (@"$(screensaver.supported)");
             screensaver_row.visible = screensaver == null ? false : screensaver.supported;
         }
     }
