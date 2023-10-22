@@ -1,6 +1,6 @@
 /* StatObject.vala
  *
- * Copyright 2022 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2022-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -15,66 +15,36 @@ public class Flowtime.Models.StatObject : Object {
     }
 
     private string format_time (int seconds) {
-        string unit;
-        // If seconds is less than a minute, it will display seconds
-        if (seconds < 60) {
+        const int MINUTE = 60;
+        const int HOUR = 3600;
+        const int DAY = 86400;
+        string unit = "";
+
+        if (seconds < MINUTE) {
             unit = _("seconds");
-            return "%u seconds".printf (seconds);
+            return @"$seconds $unit";
         }
 
-        // If seconds is less than an hour, it will display minutes
-        if (seconds < 3600) {
-            uint minutes = seconds / 60;
-            uint s = seconds % 60;
-            string seconds_format, minutes_format;
-
+        if (seconds < HOUR) {
             unit = _("minutes");
-
-            if (s < 10) {
-                seconds_format = "0%u".printf (s);
-            }
-            else {
-                seconds_format = "%u".printf (s);
-            }
-
-            if (minutes < 10) {
-                minutes_format = "0%u".printf (minutes);
-            }
-            else {
-                minutes_format = "%u".printf (minutes);
-            }
-
-            var format = "%s:%s %s".printf (minutes_format, seconds_format, unit);
-            return format;
+            return "%02d:%02d %s".printf (seconds / MINUTE, seconds % MINUTE, unit);
         }
 
-        // If seconds is less than a day, it will display hours
-        if (seconds < 86400) {
-            uint minutes = seconds / 60;
-            uint hours = minutes / 60;
-            uint m = seconds % 60;
-            string minutes_format;
+        if (seconds < DAY) {
+            int hours = seconds / HOUR;
+            int minutes = (seconds % HOUR) / MINUTE;
 
-            if (hours == 1 && m == 0) {
+            if (hours == 1 && minutes == 0) {
                 unit = _("hour");
             }
             else {
                 unit = _("hours");
             }
 
-            if (m < 10) {
-                minutes_format = "0%u".printf (m);
-            }
-            else {
-                minutes_format = "%u".printf (m);
-            }
-
-            return "%u:%s %s".printf (hours, minutes_format, unit);
+            return "%d:%02d %s".printf (seconds / HOUR, minutes, unit);
         }
 
-        // If it's not any of the options before, it will display days :)
-        uint days = seconds / 86400;
-
+        int days = seconds / DAY;
         if (days == 1) {
             unit = _("day");
         }
@@ -82,6 +52,6 @@ public class Flowtime.Models.StatObject : Object {
             unit = _("days");
         }
 
-        return "%u %s".printf (days, unit);
+        return @"$days $unit";
     }
 }

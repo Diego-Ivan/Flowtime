@@ -114,7 +114,7 @@ public class Flowtime.Window : Adw.ApplicationWindow {
 
     [GtkCallback]
     private bool on_close_request () {
-        if (!timer.is_used) {
+        if (!timer.running || timer.seconds == 0) {
             timer.save_to_statistics ();
             hide_on_close = false;
         }

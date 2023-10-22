@@ -61,12 +61,6 @@ public class Flowtime.Services.Timer : Object {
         Source.remove (timeout_id);
     }
 
-    public void resume () {
-        running = true;
-        last_datetime = null;
-        timeout_id = Timeout.add (INTERVAL_MILLISECONDS, timeout);
-    }
-
     public void next_mode () {
         stop ();
         last_datetime = null;
