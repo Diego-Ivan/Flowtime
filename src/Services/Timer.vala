@@ -95,27 +95,8 @@ public class Flowtime.Services.Timer : Object {
         }
     }
 
-    public string format_time () {
-        uint minutes = seconds / 60;
-        uint s = seconds % 60;
-
-        var builder = new StringBuilder ();
-
-        if (minutes < 10) {
-            builder.append_printf ("0%u:", minutes);
-        }
-        else {
-            builder.append_printf ("%u:", minutes);
-        }
-
-        if (s < 10) {
-            builder.append_printf ("0%u", s);
-        }
-        else {
-            builder.append_printf ("%u", s);
-        }
-
-        return builder.str;
+    private string format_time () {
+        return "%02d:%02d".printf (seconds / 60, seconds % 60);
     }
 
     public void save_to_statistics () {
@@ -150,6 +131,7 @@ public class Flowtime.Services.Timer : Object {
             case BREAK:
                 if (time_seconds >= seconds) {
                     seconds = 0;
+                    running = false;
                     done ();
                     return false;
                 }
