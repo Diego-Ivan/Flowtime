@@ -138,13 +138,13 @@ public class Flowtime.Window : Adw.ApplicationWindow {
             return true;
         }
 
-        var warning = new Adw.MessageDialog (this, _("There is a Session Active"), _("Do you want to quit?")) {
+        var warning = new Adw.MessageDialog (this, _("There is a timer active"), _("Do you want to quit?")) {
             close_response = "cancel",
         };
 
         warning.add_response ("cancel", _("Cancel"));
-        warning.add_response ("hide", _("Hide Window"));
-        warning.add_response ("quit", _("Quit Session"));
+        warning.add_response ("hide", _("Hide window"));
+        warning.add_response ("quit", _("Quit"));
 
         warning.set_response_appearance ("quit", DESTRUCTIVE);
 
