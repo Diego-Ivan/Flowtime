@@ -31,6 +31,9 @@ public class Flowtime.Services.TonePlayer : Object {
         register_sound ("Beep", "beep.ogg");
         register_sound ("Tone", "tone.ogg");
         register_sound ("Bleep", "bleep.ogg");
+
+        var settings = new Settings ();
+        swap_media_file (tone_map[settings.tone].sound_file);
     }
 
     public void register_sound (string name, string sound_file) {
@@ -48,9 +51,13 @@ public class Flowtime.Services.TonePlayer : Object {
         if (media_file != null && media_file.playing) {
             media_file.pause ();
         }
-        media_file?.close ();
-        media_file = Gtk.MediaFile.for_file (sound);
+        swap_media_file (sound);
         media_file.play_now ();
+    }
+
+    private void swap_media_file (File new_file) {
+        media_file?.close ();
+        media_file = Gtk.MediaFile.for_file (new_file);
     }
 
     public List<unowned string> get_tone_keys () {
