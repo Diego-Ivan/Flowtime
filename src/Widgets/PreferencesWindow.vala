@@ -21,8 +21,13 @@ namespace Flowtime {
 
         private Services.Settings settings = new Services.Settings ();
 
-        public PreferencesWindow (Gtk.Window parent) {
-            transient_for = parent;
+        public Services.Screensaver? screensaver { get; construct; default = null; }
+
+        public PreferencesWindow (Gtk.Window parent, Services.Screensaver? screensaver) {
+            Object (
+                screensaver: screensaver,
+                transient_for: parent
+            );
             show ();
         }
 
@@ -63,6 +68,9 @@ namespace Flowtime {
 
                 sounds_group.add (row);
             }
+
+            message (@"$(screensaver.supported)");
+            screensaver_row.visible = screensaver == null ? false : screensaver.supported;
         }
     }
 }

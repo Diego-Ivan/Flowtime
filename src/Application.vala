@@ -103,7 +103,7 @@ namespace Flowtime {
         }
 
         private void flowtime_preferences () {
-            new PreferencesWindow (main_window);
+            main_window.show_preferences ();
         }
 
         private void action_close () {

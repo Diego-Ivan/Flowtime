@@ -128,6 +128,10 @@ public class Flowtime.Window : Adw.ApplicationWindow {
         navigation_view.activate_action_variant ("navigation.push", "overview");
     }
 
+    public void show_preferences () {
+        new PreferencesWindow (this, screensaver);
+    }
+
     public async bool query_quit () {
         if (!timer.running) {
             timer.save_to_statistics ();

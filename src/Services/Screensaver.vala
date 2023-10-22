@@ -5,10 +5,21 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
+public errordomain ScreensaverError {
+    UNSUPPORTED
+}
+
 public class Flowtime.Services.Screensaver : Object {
+    private enum ScreensaverInterface {
+        FREEDESKTOP,
+        GNOME,
+        NONE
+    }
+
     private const string BUS_NAME = "org.freedesktop.ScreenSaver";
     private const string OBJECT_PATH = "/org/freedesktop/ScreenSaver";
-    private const string METHOD_NAME = "SetActive";
+    private const string SET_METHOD_NAME = "SetActive";
+    private const string GET_METHOD_NAME = "GetActive";
 
     private const string GNOME_BUS_NAME = "org.gnome.ScreenSaver";
     private const string GNOME_OBJECT_PATH = "/org/gnome/ScreenSaver";
@@ -19,11 +30,16 @@ public class Flowtime.Services.Screensaver : Object {
      * In case using BUS_NAME fails, we'll try communicating to org.gnome.ScreenSaver.
      *
      * The reason we are using it as fallback is because org.freedesktop.ScreenSaver.SetActive
-     * is not implemented in GNOME, thus throwing an error every time it is called. This fallback is
-     * unfortunately desktop-specific, a better one must be found.
+     * is not implemented in GNOME, thus throwing an error every time it is called.
      */
-    private bool use_gnome = false;
-    private bool supported = true;
+    private ScreensaverInterface @interface = NONE;
+
+    [CCode (notify = false)]
+    public bool supported {
+        get {
+            return @interface != NONE;
+        }
+    }
 
     private Timer _timer;
     public Timer timer {
@@ -44,56 +60,86 @@ public class Flowtime.Services.Screensaver : Object {
         }
     }
 
-    public async Screensaver (Timer timer) throws IOError {
+    public async Screensaver (Timer timer) throws IOError, ScreensaverError {
         Object (timer: timer);
+
         connection = yield Bus.get (SESSION, null);
+        bool supports_screensaver = yield system_supports_screensaver ();
+
+        if (!supports_screensaver) {
+            throw new ScreensaverError.UNSUPPORTED ("Screensaver is not supported on this system");
+        }
+    }
+
+    private async bool system_supports_screensaver () {
+        try {
+            yield connection.call (BUS_NAME, OBJECT_PATH,
+                                   BUS_NAME, GET_METHOD_NAME,
+                                   null, VariantType.BOOLEAN,
+                                   NONE, -1, null);
+            @interface = FREEDESKTOP;
+            return true;
+        } catch (Error e) {
+            warning (@"$BUS_NAME.$SET_METHOD_NAME unsupported: $(e.message). Trying fallback...");
+        }
+
+        try {
+            yield connection.call (GNOME_BUS_NAME, GNOME_OBJECT_PATH,
+                                   GNOME_BUS_NAME, GET_METHOD_NAME,
+                                   null, VariantType.TUPLE,
+                                   NONE, -1, null);
+            @interface = GNOME;
+            return true;
+        } catch (Error e) {
+            warning (@"Screensaver is not supported in this system: $(e.message)");
+        }
+
+        return false;
     }
 
     private void timer_mode_changed () {
         var settings = new Settings ();
         bool screensaver = settings.activate_screensaver && settings.autostart;
-        if (timer.mode == BREAK && screensaver) {
-            try_activate_screensaver.begin ();
+
+        if (timer.mode == BREAK && screensaver && supported) {
+            activate_screensaver.begin ();
         }
     }
 
-    private async void try_activate_screensaver () {
-        try {
-            yield activate_screensaver ();
-        } catch (Error e) {
-            critical (e.message);
-            supported = false;
-        }
-    }
-
-    public async void activate_screensaver () throws Error
-    requires (connection != null)
-    requires (supported) {
-        bool succeeded = false;
+    public async void activate_screensaver () {
         Variant parameters = new Variant.tuple ({ new Variant.boolean (true) });
 
-        if (!use_gnome) {
-            try {
-                Variant result = yield connection.call (BUS_NAME, OBJECT_PATH,
-                                                        BUS_NAME, METHOD_NAME,
-                                                        parameters, VariantType.BOOLEAN,
-                                                        NONE, -1, null);
-                succeeded = result.get_boolean ();
-            } catch (Error e) {
-                warning (e.message);
-            }
+        switch (@interface) {
+            case FREEDESKTOP:
+                yield activate_freedesktop (parameters);
+                break;
+            case GNOME:
+                yield activate_gnome (parameters);
+                break;
+            case NONE:
+                break;
         }
+    }
 
-        if (succeeded) {
-            return;
+    private async void activate_freedesktop (Variant parameters) {
+        try {
+            yield connection.call (BUS_NAME, OBJECT_PATH,
+                                   BUS_NAME, SET_METHOD_NAME,
+                                   parameters, VariantType.BOOLEAN,
+                                   NONE, -1, null);
+        } catch (Error e) {
+            warning (e.message);
         }
+    }
 
-        use_gnome = true;
-        warning (@"Calling $BUS_NAME.$METHOD_NAME failed. Trying $GNOME_BUS_NAME");
-
-        yield connection.call (GNOME_BUS_NAME, GNOME_OBJECT_PATH,
-                               GNOME_BUS_NAME, METHOD_NAME,
-                               parameters, null,
-                               NONE, -1, null);
+    private async void activate_gnome (Variant parameters) {
+        try {
+            yield connection.call (GNOME_BUS_NAME, GNOME_OBJECT_PATH,
+                                   GNOME_BUS_NAME, SET_METHOD_NAME,
+                                   parameters, null,
+                                   NONE, -1, null);
+        } catch (Error e) {
+            warning (e.message);
+        }
     }
 }
