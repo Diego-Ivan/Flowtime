@@ -20,7 +20,6 @@
 
 namespace Flowtime {
     public class Application : Adw.Application {
-        public string sound_uri_prefix;
         private Window main_window;
         private Xdp.Portal session_monitor = new Xdp.Portal ();
 
@@ -35,9 +34,6 @@ namespace Flowtime {
                 application_id: "io.github.diegoivanme.flowtime",
                 flags: GLib.ApplicationFlags.FLAGS_NONE
             );
-            resource_base_path = "/io/github/diegoivanme/flowtime";
-            sound_uri_prefix = "resource://" + resource_base_path + "/";
-
             add_action_entries (APP_ENTRIES, this);
             set_accels_for_action ("app.quit", { "<Ctrl>Q" });
             set_accels_for_action ("app.preferences", { "<Ctrl>comma" });
@@ -129,9 +125,11 @@ namespace Flowtime {
             const string? ARTISTS[] = {
                 "Brage Fuglseth",
                 "David Lapshin",
+                null
+            };
+            const string SOUND_ARTISTS[] = {
                 "Mike Koenig https://soundbible.com/1251-Beep.html",
                 "SoundBible https://soundbible.com/1815-A-Tone.html",
-                null
             };
 
             var about = new Adw.AboutWindow () {
@@ -147,6 +145,8 @@ namespace Flowtime {
                 version = Config.VERSION,
                 website = "https://github.com/Diego-Ivan/Flowtime",
             };
+
+            about.add_credit_section (_("Sounds by: "), SOUND_ARTISTS);
 
             about.present ();
         }

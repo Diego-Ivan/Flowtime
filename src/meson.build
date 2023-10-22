@@ -33,8 +33,6 @@ flowtime_sources = [
 ]
 
 flowtime_deps = [
-  dependency('gio-2.0', version: '>= 2.50'),
-  dependency('gtk4', version: '>= 4.11'),
   dependency('libadwaita-1', version: '>= 1.4'),
   dependency('libxml-2.0'),
   dependency('libportal-gtk4'),
