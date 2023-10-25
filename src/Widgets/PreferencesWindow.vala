@@ -15,19 +15,19 @@ namespace Flowtime {
         [GtkChild]
         private unowned Adw.SpinRow months_spinrow;
         [GtkChild]
-        private unowned Adw.SpinRow divisor_spinrow;
+        private unowned Adw.SpinRow percentage_spinrow;
+        [GtkChild]
+        private unowned Adw.SwitchRow screensaver_row;
 
         private Services.Settings settings = new Services.Settings ();
 
-        public Sound[] sounds = {
-            { "Baum", "resource:///io/github/diegoivanme/flowtime/baum.ogg" },
-            { "Beep", "resource:///io/github/diegoivanme/flowtime/beep.ogg" },
-            { "Bleep", "resource:///io/github/diegoivanme/flowtime/bleep.ogg" },
-            { "Tone", "resource:///io/github/diegoivanme/flowtime/tone.ogg" }
-        };
+        public Services.Screensaver? screensaver { get; construct; default = null; }
 
-        public PreferencesWindow (Gtk.Window parent) {
-            transient_for = parent;
+        public PreferencesWindow (Gtk.Window parent, Services.Screensaver? screensaver) {
+            Object (
+                screensaver: screensaver,
+                transient_for: parent
+            );
             show ();
         }
 
@@ -45,24 +45,31 @@ namespace Flowtime {
                 SYNC_CREATE | BIDIRECTIONAL
             );
 
-            settings.bind_property ("break-divisor",
-                                    divisor_spinrow, "value",
+            settings.bind_property ("activate-screensaver",
+                                    screensaver_row, "active",
                                     SYNC_CREATE | BIDIRECTIONAL);
 
-            for (int i = 0; i < sounds.length; i++) {
-                var row = new SoundRow (sounds[i]);
+            settings.bind_property ("break-percentage",
+                                    percentage_spinrow, "value",
+                                    SYNC_CREATE | BIDIRECTIONAL);
+
+            var tone_player = new Services.TonePlayer ();
+            foreach (unowned string key in tone_player.get_tone_keys ()) {
+                var row = new SoundRow (key);
                 if (button_group == null) {
                     button_group = row.check_button;
                 }
 
                 row.check_button.group = button_group;
 
-                if (settings.tone == sounds[i].title.down () + ".ogg") {
+                if (row.tone_key == settings.tone) {
                     row.check_button.active = true;
                 }
 
                 sounds_group.add (row);
             }
+
+            screensaver_row.visible = screensaver == null ? false : screensaver.supported;
         }
     }
 }

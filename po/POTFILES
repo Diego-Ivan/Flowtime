@@ -4,6 +4,7 @@ src/Application.vala
 src/Models/StatObject.vala
 src/Services/Alarm.vala
 src/Services/Statistics.vala
+src/Services/BackgroundStatusReporter.vala
 src/Services/Timer.vala
 src/Widgets/StatInfo.vala
 src/Widgets/StatsWindow.vala

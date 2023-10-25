@@ -58,54 +58,25 @@ public class Flowtime.StatInfo : Adw.Bin {
         }
 
         if (seconds < HOUR) {
-            uint minutes = seconds / MINUTE;
-            uint s = seconds % MINUTE;
-            string seconds_format, minutes_format;
-
             unit = _("minutes");
-
-            if (s < 10) {
-                seconds_format = "0%u".printf (s);
-            }
-            else {
-                seconds_format = "%u".printf (s);
-            }
-
-            if (minutes < 10) {
-                minutes_format = "0%u".printf (minutes);
-            }
-            else {
-                minutes_format = "%u".printf (minutes);
-            }
-
-            var format = "%s:%s".printf (minutes_format, seconds_format);
-            return @"$format $unit";
+            return "%02d:%02d %s".printf (seconds / MINUTE, seconds % MINUTE, unit);
         }
 
         if (seconds < DAY) {
-            uint hours = seconds / HOUR;
-            uint m = (seconds % HOUR) / MINUTE;
+            int hours = seconds / HOUR;
+            int minutes = (seconds % HOUR) / MINUTE;
 
-            string minutes_format;
-
-            if (hours == 1 && m == 0) {
+            if (hours == 1 && minutes == 0) {
                 unit = _("hour");
             }
             else {
                 unit = _("hours");
             }
 
-            if (m < 10) {
-                minutes_format = "0%u".printf (m);
-            }
-            else {
-                minutes_format = "%u".printf (m);
-            }
-
-            return "%u:%s %s".printf (hours, minutes_format, unit);
+            return "%d:%02d %s".printf (seconds / HOUR, minutes, unit);
         }
 
-        uint days = seconds / DAY;
+        int days = seconds / DAY;
         if (days == 1) {
             unit = _("day");
         }

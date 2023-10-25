@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 22:03-0600\n"
+"POT-Creation-Date: 2023-10-21 12:27-0600\n"
 "PO-Revision-Date: 2022-07-09 13:15+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
@@ -23,8 +23,8 @@ msgid "Flowtime"
 msgstr "Flowtime"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
-msgid "Get things done, keep concentrated"
-msgstr "Rond je taken af door gefocust te blijven"
+msgid "Spend your time wisely"
+msgstr ""
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
 msgid ""
@@ -38,175 +38,241 @@ msgstr ""
 "hebben daarom de Flowtime-techniek ontwikkeld: pauzes op momenten dat het "
 "jou uitkomt, zonder uit de **flow** te raken."
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:37
-msgid "Flowtime 2.6: Small Changes"
-msgstr ""
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:38
-msgid "New Features:"
-msgstr ""
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:40
-msgid "Icons have been redesigned by daudix-UFO"
-msgstr ""
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:41
-msgid "New Translations: Turkish and Russian Translations"
-msgstr ""
-
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:78
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
-#: src/ui/window.ui:8
-msgid "_About Flowtime"
-msgstr "_Over Flowtime"
-
-#: src/ui/window.ui:12 src/ui/preferenceswindow.ui:11
-msgid "_Preferences"
-msgstr "_Voorkeuren"
-
-#: src/ui/window.ui:16
-msgid "_Enable Small View"
-msgstr "Compact_e weergave"
-
-#: src/ui/window.ui:71
-msgid "Stages"
-msgstr "Fases"
-
-#: src/ui/window.ui:85 src/ui/preferenceswindow.ui:15
-msgid "Statistics"
-msgstr "Statistieken"
-
-#: src/ui/window.ui:91
-msgid "Overview"
+#: src/Application.vala:77
+msgid "Flowtime is saving your statistics"
 msgstr ""
 
-#: src/ui/window.ui:102
-msgid "See Details"
-msgstr "Details bekijken"
+#: src/Application.vala:146
+#, fuzzy
+msgid "translator_credits"
+msgstr "Heimen Stoffels <vistausss@fastmail.com>"
 
-#: src/ui/preferenceswindow.ui:19
-msgid "Months Saved"
-msgstr "Aantal maanden"
+#. If seconds is less than a minute, it will display seconds
+#: src/Models/StatObject.vala:21 src/Widgets/StatInfo.vala:56
+msgid "seconds"
+msgstr "seconden"
 
-#: src/ui/preferenceswindow.ui:20
-msgid "The amount of months that the work data will be saved"
-msgstr "Het aantal maanden waarin de gegevens dienen te worden bijgehouden"
+#: src/Models/StatObject.vala:31 src/Widgets/StatInfo.vala:65
+msgid "minutes"
+msgstr "minuten"
 
-#: src/ui/preferenceswindow.ui:41
-msgid "Timer"
-msgstr "Tijdklok"
+#: src/Models/StatObject.vala:59 src/Widgets/StatInfo.vala:92
+msgid "hour"
+msgstr "uur"
 
-#: src/ui/preferenceswindow.ui:45
-msgid "Autostart"
-msgstr "Automatisch starten"
+#: src/Models/StatObject.vala:62 src/Widgets/StatInfo.vala:95
+msgid "hours"
+msgstr "uur"
 
-#: src/ui/preferenceswindow.ui:46
-msgid "Automatically start the timer when the stage is changed"
-msgstr "Start de tijdklok direct na het inschakelen van een fase"
+#: src/Models/StatObject.vala:79 src/Widgets/StatInfo.vala:110
+msgid "day"
+msgstr "dag"
 
-#: src/ui/preferenceswindow.ui:62
-msgid "Sounds"
-msgstr "Geluiden"
+#: src/Models/StatObject.vala:82 src/Widgets/StatInfo.vala:113
+msgid "days"
+msgstr "dagen"
 
-#: src/ui/preferenceswindow.ui:63
-msgid "Alarm sounds that mark break time"
-msgstr "Geluiden waarmee pauzes worden aangekondigd"
-
-#: src/ui/statpage.ui:17
-msgid "Today"
-msgstr "Vandaag"
-
-#: src/ui/statpage.ui:29
-msgid "This Week"
-msgstr "Deze week"
-
-#: src/ui/statpage.ui:41
-msgid "This Month"
-msgstr "Deze maand"
-
-#: src/ui/statwindow.ui:51 src/ui/statwindow.ui:61
-msgid "Work Time"
-msgstr "Werktijd"
-
-#: src/ui/statwindow.ui:74 src/ui/statwindow.ui:83
-msgid "Break Time"
-msgstr "Pauzetijd"
-
-#: src/Services/Timer.vala:185
+#: src/Services/Alarm.vala:28 src/Services/BackgroundStatusReporter.vala:34
 #, fuzzy
 msgid "Break is over!"
 msgstr "Pauzetijd"
 
-#: src/Services/Timer.vala:188
+#: src/Services/Alarm.vala:29
+msgid "Let's get back to work"
+msgstr ""
+
+#: src/Services/Statistics.vala:237
+msgid "Today"
+msgstr "Vandaag"
+
+#: src/Services/Statistics.vala:239
+msgid "This Week"
+msgstr "Deze week"
+
+#: src/Services/Statistics.vala:241
+msgid "This Month"
+msgstr "Deze maand"
+
+#: src/Services/Statistics.vala:243
+#, fuzzy
+msgid "All Time"
+msgstr "Tijdklok"
+
+#: src/Services/BackgroundStatusReporter.vala:36
 #, fuzzy, c-format
 msgid "Break Stage: %s"
 msgstr "Pauze"
 
-#: src/Services/Timer.vala:192
+#: src/Services/BackgroundStatusReporter.vala:40
 #, fuzzy, c-format
 msgid "Work Stage: %s"
 msgstr "Werk"
 
-#: src/Services/Timer.vala:215
+#: src/Services/Timer.vala:177 src/ui/statinfo.blp:52
 #, fuzzy
 msgid "Work"
 msgstr "Werktijd"
 
-#: src/Services/Timer.vala:217
+#: src/Services/Timer.vala:179 src/ui/statinfo.blp:65
 #, fuzzy
 msgid "Break"
 msgstr "Pauzetijd"
 
-#. If seconds is less than a minute, it will display seconds
-#: src/Models/StatObject.vala:21 src/Widgets/StatCircle.vala:60
-#: src/Widgets/StatCircle.vala:79
-msgid "seconds"
-msgstr "seconden"
+#. translators: This phrase is used in the context: You've worked HH:MM:SS...
+#: src/Widgets/StatInfo.vala:44
+#, c-format
+msgid "You've worked %s and have taken a break during %s."
+msgstr ""
 
-#: src/Models/StatObject.vala:31 src/Widgets/StatCircle.vala:89
-msgid "minutes"
-msgstr "minuten"
-
-#: src/Models/StatObject.vala:59 src/Widgets/StatCircle.vala:117
-msgid "hour"
-msgstr "uur"
-
-#: src/Models/StatObject.vala:62 src/Widgets/StatCircle.vala:120
-msgid "hours"
-msgstr "uur"
-
-#: src/Models/StatObject.vala:79 src/Widgets/StatCircle.vala:137
-msgid "day"
-msgstr "dag"
-
-#: src/Models/StatObject.vala:82 src/Widgets/StatCircle.vala:140
-msgid "days"
-msgstr "dagen"
-
-#: src/Widgets/StatsWindow.vala:42
+#: src/Widgets/StatsWindow.vala:43
 #, c-format
 msgid "%s is your most productive day of the week"
 msgstr "%s was de productiefste dag van de week"
 
-#. Status Page
-#: src/Widgets/StatsWindow.vala:94
-msgid "Start working to see you progress"
-msgstr ""
-
-#: src/Widgets/TimerPage.vala:54
+#: src/Widgets/TimerPage.vala:43
 msgid "Work Stage"
 msgstr "Werk"
 
-#: src/Widgets/TimerPage.vala:57
+#: src/Widgets/TimerPage.vala:46
 msgid "Break Stage"
 msgstr "Pauze"
 
-#: src/Application.vala:101
+#: src/Widgets/TimerPage.vala:52
 #, fuzzy
-msgid "translator_credits"
-msgstr "Heimen Stoffels <vistausss@fastmail.com>"
+msgid "Pause Timer"
+msgstr "Tijdklok"
+
+#: src/Widgets/TimerPage.vala:56
+#, fuzzy
+msgid "Start Timer"
+msgstr "Tijdklok"
+
+#: src/Widgets/Window.vala:137
+msgid "There is a Session Active"
+msgstr ""
+
+#: src/Widgets/Window.vala:137
+msgid "Do you want to quit?"
+msgstr ""
+
+#: src/Widgets/Window.vala:141
+msgid "Cancel"
+msgstr ""
+
+#: src/Widgets/Window.vala:142
+msgid "Hide Window"
+msgstr ""
+
+#: src/Widgets/Window.vala:143
+msgid "Quit Session"
+msgstr ""
+
+#: src/ui/preferenceswindow.blp:10 src/ui/window.blp:7
+msgid "_Preferences"
+msgstr "_Voorkeuren"
+
+#: src/ui/preferenceswindow.blp:13 src/ui/statwindow.blp:9
+msgid "Statistics"
+msgstr "Statistieken"
+
+#: src/ui/preferenceswindow.blp:16
+msgid "Months Saved"
+msgstr "Aantal maanden"
+
+#: src/ui/preferenceswindow.blp:17
+msgid "The amount of months that the work data will be saved"
+msgstr "Het aantal maanden waarin de gegevens dienen te worden bijgehouden"
+
+#: src/ui/preferenceswindow.blp:29
+msgid "Timer"
+msgstr "Tijdklok"
+
+#: src/ui/preferenceswindow.blp:32
+#, fuzzy
+msgid "Break time percentage"
+msgstr "Pauze"
+
+#: src/ui/preferenceswindow.blp:33
+msgid "The percetage of work time that will be used as break time"
+msgstr ""
+
+#: src/ui/preferenceswindow.blp:45 src/ui/statwindow.blp:61
+#: src/ui/statwindow.blp:71
+msgid "Break Time"
+msgstr "Pauzetijd"
+
+#: src/ui/preferenceswindow.blp:47
+msgid "Autostart"
+msgstr "Automatisch starten"
+
+#: src/ui/preferenceswindow.blp:48
+msgid "Automatically start the timer when the stage is changed"
+msgstr "Start de tijdklok direct na het inschakelen van een fase"
+
+#: src/ui/preferenceswindow.blp:59
+msgid "Activate Screensaver on Break Time"
+msgstr ""
+
+#: src/ui/preferenceswindow.blp:60
+msgid ""
+"Activate the screensaver when the break stage starts. Requires Autostart"
+msgstr ""
+
+#: src/ui/preferenceswindow.blp:66
+msgid "Sounds"
+msgstr "Geluiden"
+
+#: src/ui/preferenceswindow.blp:67
+msgid "Alarm sounds that mark break time"
+msgstr "Geluiden waarmee pauzes worden aangekondigd"
+
+#: src/ui/statinfo.blp:10 src/ui/statwindow.blp:86
+msgid "Start working to see your progress"
+msgstr ""
+
+#: src/ui/statpage.blp:15 src/ui/window.blp:94
+msgid "Overview"
+msgstr ""
+
+#: src/ui/statpage.blp:22
+msgid "See Details"
+msgstr "Details bekijken"
+
+#: src/ui/statwindow.blp:30
+msgid "Save as CSV"
+msgstr ""
+
+#: src/ui/statwindow.blp:41 src/ui/statwindow.blp:51
+msgid "Work Time"
+msgstr "Werktijd"
+
+#: src/ui/window.blp:12
+msgid "_Distraction Free Mode"
+msgstr ""
+
+#: src/ui/window.blp:18
+msgid "_About Flowtime"
+msgstr "_Over Flowtime"
+
+#: src/ui/window.blp:66
+#, fuzzy
+msgid "_Stages"
+msgstr "Fases"
+
+#: src/ui/window.blp:77
+#, fuzzy
+msgid "S_tatistics"
+msgstr "Statistieken"
+
+#~ msgid "Get things done, keep concentrated"
+#~ msgstr "Rond je taken af door gefocust te blijven"
+
+#~ msgid "_Enable Small View"
+#~ msgstr "Compact_e weergave"
 
 #~ msgid "Flowtime 2.0: Keep on track!"
 #~ msgstr "Flowtime 2.0: blijf bij de tijd!"

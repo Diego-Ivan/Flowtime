@@ -1,12 +1,12 @@
 /* Alarm.vala
  *
- * Copyright 2022 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2022-2023 Diego Iván <diegoivan.mae@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-public class Flowtime.Services.Alarm : Object {
-    private Gst.Player player { get; set; default = new Gst.Player (null, null); }
+public class Flowtime.Services.Alarm {
+    private TonePlayer player = new TonePlayer ();
     private unowned GLib.Application application = GLib.Application.get_default ();
 
     private Timer _timer;
@@ -20,33 +20,8 @@ public class Flowtime.Services.Alarm : Object {
         }
     }
 
-    private string sound_prefix {
-        owned get {
-            return "resource://" + application.resource_base_path + "/";
-        }
-    }
-
-    private string _sound_uri;
-    public string sound_uri {
-        get {
-            return _sound_uri;
-        }
-        set {
-            _sound_uri = value;
-
-        }
-    }
-
     public Alarm (Timer timer) {
-        Object (timer: timer);
-    }
-
-    construct {
-        var settings = new Settings ();
-        settings.notify["tone"].connect (on_tone_changed);
-        on_tone_changed ();
-
-        bind_property ("sound_uri", player, "uri", SYNC_CREATE);
+        this.timer = timer;
     }
 
     private void on_timer_done () {
@@ -55,11 +30,8 @@ public class Flowtime.Services.Alarm : Object {
         notification.set_priority (NORMAL);
 
         application.send_notification ("Flowtime-Break-Done", notification);
-        player.play ();
-    }
 
-    private void on_tone_changed () {
         var settings = new Settings ();
-        sound_uri = sound_prefix + settings.tone;
+        player.play_tone (settings.tone);
     }
 }

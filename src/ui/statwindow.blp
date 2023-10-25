@@ -35,41 +35,46 @@ template $FlowtimeStatsWindow : Adw.Window {
     Stack content_stack {
       StackPage {
         name: "main-content";
-        child: Adw.Clamp {
-          Adw.ViewStack view_stack {
-            Adw.ViewStackPage {
-              title: _("Work Time");
-              name: "work";
-              icon-name: "computer-symbolic";
-              child: ScrolledWindow {
+
+        child: Adw.ViewStack view_stack {
+          Adw.ViewStackPage {
+            title: _("Work Time");
+            name: "work";
+            icon-name: "computer-symbolic";
+
+            child: ScrolledWindow {
                 propagate-natural-height: true;
                 propagate-natural-width: true;
 
-                $FlowtimeStatList work_list {
-                  title: _("Work Time");
-                  margin-top: "12";
-                  margin-start: "12";
-                  margin-end: "12";
+                Adw.Clamp {
+                  $FlowtimeStatList work_list {
+                    title: _("Work Time");
+                    margin-top: "12";
+                    margin-start: "12";
+                    margin-end: "12";
+                  }
                 }
               };
-            }
+          }
 
-            Adw.ViewStackPage {
-              title: _("Break Time");
-              name: "break";
-              icon-name: "cafe-symbolic";
-              child:  ScrolledWindow {
+          Adw.ViewStackPage {
+            title: _("Break Time");
+            name: "break";
+            icon-name: "cafe-symbolic";
+
+            child: ScrolledWindow {
                 propagate-natural-height: true;
                 propagate-natural-width: true;
 
-                $FlowtimeStatList break_list {
-                  title: _("Break Time");
-                  margin-top: "6";
-                  margin-start: "12";
-                  margin-end: "12";
+                Adw.Clamp {
+                  $FlowtimeStatList break_list {
+                    title: _("Break Time");
+                    margin-top: "3";
+                    margin-start: "12";
+                    margin-end: "12";
+                  }
                 }
               };
-            }
           }
         };
       }

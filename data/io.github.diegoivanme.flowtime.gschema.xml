@@ -14,10 +14,15 @@
 	  </key>
 
 	  <key name="break-divisor" type="i">
-	    <range min="2" max="10"/>
-	    <default>5</default>
-	    <summary>Divisor for break time</summary>
-	    <description>The value by which the work time will be divided to calculate the break time</description>
+	    <default>-1</default>
+	    <summary>[LEGACY]</summary>
+	    <description>[LEGACY]</description>
+	  </key>
+
+	  <key name="break-percentage" type="d">
+	    <range min="10" max="100"/>
+	    <default>25</default>
+	    <summary>Percentage of work time to take into break time</summary>
 	  </key>
 
 	  <key name="months-saved" type="i">
@@ -37,6 +42,12 @@
 	    <default>true</default>
 	    <summary>Enable/Disable Distraction Free Mode</summary>
 	    <description>The distraction free mode uses a special window without too much clutter. Ideal when you just want what matters</description>
+	  </key>
+
+	  <key name="activate-screensaver" type="b">
+	    <default>false</default>
+	    <summary>Activate screensaver in break time</summary>
+	    <description>Activates the screensaver when the break stage starts</description>
 	  </key>
 	</schema>
 </schemalist>

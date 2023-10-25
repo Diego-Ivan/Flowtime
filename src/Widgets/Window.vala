@@ -25,6 +25,10 @@ public class Flowtime.Window : Adw.ApplicationWindow {
     private Adw.AnimationTarget content_target;
     private Adw.AnimationTarget switchers_target;
 
+    private Services.Screensaver? screensaver = null;
+    private Services.BackgroundStatusReporter background_reporter;
+    private Services.Alarm alarm;
+
     private bool _distraction_free = false;
     public bool distraction_free {
         get {
@@ -72,6 +76,22 @@ public class Flowtime.Window : Adw.ApplicationWindow {
             show_animation.play ();
         });
         distraction_free = false;
+
+        init_services.begin ();
+    }
+
+    private async void init_services () {
+        background_reporter = new Services.BackgroundStatusReporter (timer);
+        alarm = new Services.Alarm (timer);
+
+        var color_provider = new Services.ColorProvider ();
+        timer.bind_property ("mode", color_provider, "mode", SYNC_CREATE);
+
+        try {
+            screensaver = yield new Services.Screensaver (timer);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 
     private void distraction_free_transition () {
@@ -94,7 +114,7 @@ public class Flowtime.Window : Adw.ApplicationWindow {
 
     [GtkCallback]
     private bool on_close_request () {
-        if (!timer.is_used) {
+        if (!timer.running || timer.seconds == 0) {
             timer.save_to_statistics ();
             hide_on_close = false;
         }
@@ -108,19 +128,23 @@ public class Flowtime.Window : Adw.ApplicationWindow {
         navigation_view.activate_action_variant ("navigation.push", "overview");
     }
 
+    public void show_preferences () {
+        new PreferencesWindow (this, screensaver);
+    }
+
     public async bool query_quit () {
         if (!timer.running) {
             timer.save_to_statistics ();
             return true;
         }
 
-        var warning = new Adw.MessageDialog (this, _("There is a Session Active"), _("Do you want to quit?")) {
+        var warning = new Adw.MessageDialog (this, _("There is a timer active"), _("Do you want to quit?")) {
             close_response = "cancel",
         };
 
         warning.add_response ("cancel", _("Cancel"));
-        warning.add_response ("hide", _("Hide Window"));
-        warning.add_response ("quit", _("Quit Session"));
+        warning.add_response ("hide", _("Hide window"));
+        warning.add_response ("quit", _("Quit"));
 
         warning.set_response_appearance ("quit", DESTRUCTIVE);
 

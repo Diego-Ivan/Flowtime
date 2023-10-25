@@ -28,19 +28,22 @@ template $FlowtimePreferencesWindow : Adw.PreferencesWindow {
     Adw.PreferencesGroup {
       title: _("Timer");
 
-      Adw.SpinRow divisor_spinrow {
-        title: _("Break time divisor");
-        subtitle: _("The factor used to calculate break time");
+      Adw.SpinRow percentage_spinrow {
+        title: _("Break time percentage");
+        subtitle: _("The percetage of work time that will be used as break time");
 
         adjustment: Adjustment {
-          lower: 2;
-          upper: 10;
+          lower: 10;
+          upper: 100;
           step-increment: 1;
-          page-increment: 3;
+          page-increment: 10;
         };
       }
+    }
 
-      Adw.ActionRow {
+    Adw.PreferencesGroup {
+      title: _("Break Time");
+       Adw.ActionRow {
         title: _("Autostart");
         subtitle: _("Automatically start the timer when the stage is changed");
 
@@ -50,6 +53,12 @@ template $FlowtimePreferencesWindow : Adw.PreferencesWindow {
         }
 
         activatable-widget: autostart_switch;
+      }
+
+      Adw.SwitchRow screensaver_row {
+        title: _("Activate Screensaver on Break Time");
+        subtitle: _("Activate the screensaver when the break stage starts. Requires Autostart");
+        sensitive: bind autostart_switch.active;
       }
     }
 

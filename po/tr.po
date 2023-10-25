@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegoivanme.flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 08:19+0300\n"
+"POT-Creation-Date: 2023-10-21 12:27-0600\n"
 "PO-Revision-Date: 2023-10-07 08:36+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -41,7 +41,7 @@ msgstr ""
 "molalar verin."
 
 # Geliştirici adı
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:82
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:78
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
@@ -78,11 +78,11 @@ msgstr "gün"
 msgid "days"
 msgstr "gün"
 
-#: src/Services/Alarm.vala:53 src/Services/Timer.vala:186
+#: src/Services/Alarm.vala:28 src/Services/BackgroundStatusReporter.vala:34
 msgid "Break is over!"
 msgstr "Mola bitti!"
 
-#: src/Services/Alarm.vala:54
+#: src/Services/Alarm.vala:29
 msgid "Let's get back to work"
 msgstr "İşimize geri dönelim"
 
@@ -102,21 +102,21 @@ msgstr "Bu Ay"
 msgid "All Time"
 msgstr "Tüm Zamanlar"
 
-#: src/Services/Timer.vala:189
+#: src/Services/BackgroundStatusReporter.vala:36
 #, c-format
 msgid "Break Stage: %s"
 msgstr "Mola Aşaması: %s"
 
-#: src/Services/Timer.vala:193
+#: src/Services/BackgroundStatusReporter.vala:40
 #, c-format
 msgid "Work Stage: %s"
 msgstr "Çalışma Aşaması: %s"
 
-#: src/Services/Timer.vala:216 src/ui/statinfo.blp:52
+#: src/Services/Timer.vala:177 src/ui/statinfo.blp:52
 msgid "Work"
 msgstr "Çalışma"
 
-#: src/Services/Timer.vala:218 src/ui/statinfo.blp:65
+#: src/Services/Timer.vala:179 src/ui/statinfo.blp:65
 msgid "Break"
 msgstr "Mola"
 
@@ -126,7 +126,7 @@ msgstr "Mola"
 msgid "You've worked %s and have taken a break during %s."
 msgstr "%s çalıştınız ve %s mola verdiniz."
 
-#: src/Widgets/StatsWindow.vala:45
+#: src/Widgets/StatsWindow.vala:43
 #, c-format
 msgid "%s is your most productive day of the week"
 msgstr "haftanın en verimli gününüz %s"
@@ -147,23 +147,23 @@ msgstr "Zamanlayıcıyı Duraklat"
 msgid "Start Timer"
 msgstr "Zamanlayıcıyı Başlat"
 
-#: src/Widgets/Window.vala:117
+#: src/Widgets/Window.vala:137
 msgid "There is a Session Active"
 msgstr "Etkin Oturum Var"
 
-#: src/Widgets/Window.vala:117
+#: src/Widgets/Window.vala:137
 msgid "Do you want to quit?"
 msgstr "Çıkmak mı istiyorsun?"
 
-#: src/Widgets/Window.vala:121
+#: src/Widgets/Window.vala:141
 msgid "Cancel"
 msgstr "İptal"
 
-#: src/Widgets/Window.vala:122
+#: src/Widgets/Window.vala:142
 msgid "Hide Window"
 msgstr "Pencereyi Gizle"
 
-#: src/Widgets/Window.vala:123
+#: src/Widgets/Window.vala:143
 msgid "Quit Session"
 msgstr "Oturumdan Çık"
 
@@ -188,30 +188,45 @@ msgid "Timer"
 msgstr "Kronometre"
 
 #: src/ui/preferenceswindow.blp:32
-msgid "Break time divisor"
-msgstr "Mola zamanı ayracı"
+#, fuzzy
+msgid "Break time percentage"
+msgstr "Mola Aşaması"
 
 #: src/ui/preferenceswindow.blp:33
-msgid "The factor used to calculate break time"
-msgstr "Mola süresini hesaplamak için kullanılan faktör"
+msgid "The percetage of work time that will be used as break time"
+msgstr ""
 
-#: src/ui/preferenceswindow.blp:44
+#: src/ui/preferenceswindow.blp:45 src/ui/statwindow.blp:61
+#: src/ui/statwindow.blp:71
+msgid "Break Time"
+msgstr "Mola Zamanı"
+
+#: src/ui/preferenceswindow.blp:47
 msgid "Autostart"
 msgstr "Kendiliğinden başlat"
 
-#: src/ui/preferenceswindow.blp:45
+#: src/ui/preferenceswindow.blp:48
 msgid "Automatically start the timer when the stage is changed"
 msgstr "Aşama değiştirildiğinde zamanlayıcıyı kendiliğinden başlat"
 
-#: src/ui/preferenceswindow.blp:57
+#: src/ui/preferenceswindow.blp:59
+msgid "Activate Screensaver on Break Time"
+msgstr ""
+
+#: src/ui/preferenceswindow.blp:60
+msgid ""
+"Activate the screensaver when the break stage starts. Requires Autostart"
+msgstr ""
+
+#: src/ui/preferenceswindow.blp:66
 msgid "Sounds"
 msgstr "Sesler"
 
-#: src/ui/preferenceswindow.blp:58
+#: src/ui/preferenceswindow.blp:67
 msgid "Alarm sounds that mark break time"
 msgstr "Mola zamanını belirten alarm sesleri"
 
-#: src/ui/statinfo.blp:10 src/ui/statwindow.blp:81
+#: src/ui/statinfo.blp:10 src/ui/statwindow.blp:86
 msgid "Start working to see your progress"
 msgstr "İlerlemenizi görmek için çalışmaya başlayın"
 
@@ -227,13 +242,9 @@ msgstr "Ayrıntıları Gör"
 msgid "Save as CSV"
 msgstr "CSV Olarak Kaydet"
 
-#: src/ui/statwindow.blp:41 src/ui/statwindow.blp:49
+#: src/ui/statwindow.blp:41 src/ui/statwindow.blp:51
 msgid "Work Time"
 msgstr "Çalışma Zamanı"
-
-#: src/ui/statwindow.blp:58 src/ui/statwindow.blp:66
-msgid "Break Time"
-msgstr "Mola Zamanı"
 
 #: src/ui/window.blp:12
 msgid "_Distraction Free Mode"
@@ -250,3 +261,9 @@ msgstr "_Aşamalar"
 #: src/ui/window.blp:77
 msgid "S_tatistics"
 msgstr "İ_statistikler"
+
+#~ msgid "Break time divisor"
+#~ msgstr "Mola zamanı ayracı"
+
+#~ msgid "The factor used to calculate break time"
+#~ msgstr "Mola süresini hesaplamak için kullanılan faktör"

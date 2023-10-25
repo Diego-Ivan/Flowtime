@@ -15,6 +15,9 @@ flowtime_sources = [
   'Services/Statistics.vala',
   'Services/Alarm.vala',
   'Services/Settings.vala',
+  'Services/Screensaver.vala',
+  'Services/BackgroundStatusReporter.vala',
+  'Services/TonePlayer.vala',
 
   # Widgets
   'Widgets/PreferencesWindow.vala',
@@ -30,11 +33,7 @@ flowtime_sources = [
 ]
 
 flowtime_deps = [
-  dependency('gio-2.0', version: '>= 2.50'),
-  dependency('gtk4', version: '>= 4.4.6'),
-  dependency ('gstreamer-1.0'),
-  dependency('gstreamer-player-1.0'),
-  dependency('libadwaita-1', version: '>= 1.2'),
+  dependency('libadwaita-1', version: '>= 1.4'),
   dependency('libxml-2.0'),
   dependency('libportal-gtk4'),
 ]

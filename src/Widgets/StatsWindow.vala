@@ -22,8 +22,6 @@ namespace Flowtime {
                 transient_for: parent_window,
                 modal: true
             );
-
-            show ();
         }
 
         construct {

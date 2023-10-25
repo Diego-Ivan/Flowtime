@@ -7,7 +7,6 @@
 
 public class Flowtime.Services.Timer : Object {
     public bool running { get; protected set; default = false; }
-    private Xdp.Portal portal = new Xdp.Portal ();
 
     private int _seconds;
     public int seconds {
@@ -28,7 +27,6 @@ public class Flowtime.Services.Timer : Object {
     }
 
     public TimerMode mode { get; private set; default = WORK; }
-    private Alarm alarm { get; set; }
     public string formatted_time { get; private set; }
 
     public signal void updated ();
@@ -47,12 +45,6 @@ public class Flowtime.Services.Timer : Object {
 
     construct {
         seconds = 0;
-
-        var color_provider = new ColorProvider ();
-        bind_property ("mode", color_provider, "mode", SYNC_CREATE);
-
-        // Init Alarm Service
-        alarm = new Alarm (this);
     }
 
     public void start () {
@@ -63,16 +55,10 @@ public class Flowtime.Services.Timer : Object {
 
     public void stop () {
         running = false;
-        if (timeout_id == null || !running) {
+        if (timeout_id == null) {
             return;
         }
         Source.remove (timeout_id);
-    }
-
-    public void resume () {
-        running = true;
-        last_datetime = null;
-        timeout_id = Timeout.add (INTERVAL_MILLISECONDS, timeout);
     }
 
     public void next_mode () {
@@ -87,7 +73,7 @@ public class Flowtime.Services.Timer : Object {
          * mode and change it accordingly
          */
         if (mode == WORK) {
-            initial_breaktime = seconds / settings.break_divisor;
+            initial_breaktime = (int) (seconds * settings.break_percentage / 100);
             seconds = initial_breaktime;
             mode = BREAK;
         }
@@ -103,27 +89,8 @@ public class Flowtime.Services.Timer : Object {
         }
     }
 
-    public string format_time () {
-        uint minutes = seconds / 60;
-        uint s = seconds % 60;
-
-        var builder = new StringBuilder ();
-
-        if (minutes < 10) {
-            builder.append_printf ("0%u:", minutes);
-        }
-        else {
-            builder.append_printf ("%u:", minutes);
-        }
-
-        if (s < 10) {
-            builder.append_printf ("0%u", s);
-        }
-        else {
-            builder.append_printf ("%u", s);
-        }
-
-        return builder.str;
+    private string format_time () {
+        return "%02d:%02d".printf (seconds / 60, seconds % 60);
     }
 
     public void save_to_statistics () {
@@ -158,8 +125,8 @@ public class Flowtime.Services.Timer : Object {
             case BREAK:
                 if (time_seconds >= seconds) {
                     seconds = 0;
+                    running = false;
                     done ();
-                    update_status_to_background.begin ();
                     return false;
                 }
                 else {
@@ -170,39 +137,9 @@ public class Flowtime.Services.Timer : Object {
             default:
                 assert_not_reached ();
         }
-
         last_datetime = current_time;
 
-        update_status_to_background.begin ();
-
         return true;
-    }
-
-    private async void update_status_to_background () {
-        string status = "";
-        switch (mode) {
-            case BREAK:
-                if (seconds == 0) {
-                    status = _("Break is over!");
-                }
-                else {
-                    status = _("Break Stage: %s".printf (formatted_time));
-                }
-                break;
-            case WORK:
-                status = _("Work Stage: %s".printf (formatted_time));
-                break;
-        }
-
-        try {
-            bool success = yield portal.set_background_status (status, null);
-            if (!success) {
-                critical ("Updating background status failed");
-            }
-        }
-        catch (Error e) {
-            critical (e.message);
-        }
     }
 }
 
