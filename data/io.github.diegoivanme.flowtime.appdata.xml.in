@@ -29,12 +29,13 @@
   </screenshots>
 
   <releases>
-    <release version="6.0" date="2023-10-21">
+    <release version="6.0" date="2023-10-25">
       <description translatable="no">
         <p>Flowtime v6.0 is here! This release has some small but interesting features that improve the overall Flowtime experience 🤓️</p>
         <ul>
           <li>A new preference has been added to activate the screensaver when the break time starts. This setting requires the <em>Autostart</em> feature to be enabled too.</li>
-          <li>The dependency on GStreamer has been removed in favor of the <code>GtkMediaStream</code> API's. While making this change, memory usage was also improved a little bit too 😉️</li>
+          <li>The dependency on GStreamer has been removed in favor of the <code>GtkMediaStream</code> API</li>
+          <li>The preference <em>Break Time Divisor</em> has been changed in favor of a percentage, which allows you to have more control over your break time. Your workflow will not be broken with this, as the previous setting will be automatically ported</li>
         </ul>
       </description>
     </release>
