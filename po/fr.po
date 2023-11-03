@@ -2,21 +2,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the flowtime package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Irénée THIRION <irenee.thirion@e.email>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-21 12:27-0600\n"
-"PO-Revision-Date: 2022-07-03 00:43+0200\n"
-"Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2023-11-03 15:55+0100\n"
+"Last-Translator: Irénée THIRION <irenee.thirion@e.email>\n"
+"Language-Team: French <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Gtranslator 45.3\n"
 
 #: data/io.github.diegoivanme.flowtime.desktop.in:3
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
@@ -25,7 +26,7 @@ msgstr "Flowtime"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
 msgid "Spend your time wisely"
-msgstr ""
+msgstr "Dépensez votre temps avec sagesse"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
 msgid ""
@@ -36,7 +37,7 @@ msgid ""
 msgstr ""
 "La technique Pomodoro est efficace pour les tâches que vous trouvez "
 "ennuyeuses, mais devoir faire une pause lorsque vous êtes concentré à 100% "
-"sur quelque chose que vous aimez peut être ennuyeux. C'est pourquoi la "
+"sur quelque chose que vous aimez peut être frustrant. C’est pourquoi la "
 "technique Flowtime existe : faire des pauses appropriées sans perdre son "
 "**flow**."
 
@@ -46,12 +47,11 @@ msgstr "Diego Iván"
 
 #: src/Application.vala:77
 msgid "Flowtime is saving your statistics"
-msgstr ""
+msgstr "Flowtime enregistre vos statistiques"
 
 #: src/Application.vala:146
-#, fuzzy
 msgid "translator_credits"
-msgstr "Irénée Thirion <irenee.thirion@e.email>"
+msgstr "Irénée Thirion"
 
 #. If seconds is less than a minute, it will display seconds
 #: src/Models/StatObject.vala:21 src/Widgets/StatInfo.vala:56
@@ -79,13 +79,12 @@ msgid "days"
 msgstr "jours"
 
 #: src/Services/Alarm.vala:28 src/Services/BackgroundStatusReporter.vala:34
-#, fuzzy
 msgid "Break is over!"
-msgstr "Temps de pause"
+msgstr "La pause est terminée !"
 
 #: src/Services/Alarm.vala:29
 msgid "Let's get back to work"
-msgstr ""
+msgstr "Retournons au travail"
 
 #: src/Services/Statistics.vala:237
 msgid "Today"
@@ -97,38 +96,35 @@ msgstr "Cette semaine"
 
 #: src/Services/Statistics.vala:241
 msgid "This Month"
-msgstr "Ce mois"
+msgstr "Ce mois-ci"
 
 #: src/Services/Statistics.vala:243
-#, fuzzy
 msgid "All Time"
-msgstr "Minuteur"
+msgstr "Total"
 
 #: src/Services/BackgroundStatusReporter.vala:36
-#, fuzzy, c-format
+#, c-format
 msgid "Break Stage: %s"
-msgstr "Phase de pause"
+msgstr "Phase de pause : %s"
 
 #: src/Services/BackgroundStatusReporter.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Work Stage: %s"
-msgstr "Phase de travail"
+msgstr "Phase de travail : %s"
 
 #: src/Services/Timer.vala:177 src/ui/statinfo.blp:52
-#, fuzzy
 msgid "Work"
-msgstr "Temps de travail"
+msgstr "Travail"
 
 #: src/Services/Timer.vala:179 src/ui/statinfo.blp:65
-#, fuzzy
 msgid "Break"
-msgstr "Temps de pause"
+msgstr "Pause"
 
 #. translators: This phrase is used in the context: You've worked HH:MM:SS...
 #: src/Widgets/StatInfo.vala:44
 #, c-format
 msgid "You've worked %s and have taken a break during %s."
-msgstr ""
+msgstr "Vous avez travaillé %s et avez pris %s de pause."
 
 #: src/Widgets/StatsWindow.vala:43
 #, c-format
@@ -144,34 +140,32 @@ msgid "Break Stage"
 msgstr "Phase de pause"
 
 #: src/Widgets/TimerPage.vala:52
-#, fuzzy
 msgid "Pause Timer"
-msgstr "Minuteur"
+msgstr "Mettre le minuteur en pause"
 
 #: src/Widgets/TimerPage.vala:56
-#, fuzzy
 msgid "Start Timer"
-msgstr "Minuteur"
+msgstr "Démarrer le minuteur"
 
 #: src/Widgets/Window.vala:137
 msgid "There is a Session Active"
-msgstr ""
+msgstr "Il y a une session active"
 
 #: src/Widgets/Window.vala:137
 msgid "Do you want to quit?"
-msgstr ""
+msgstr "Souhaitez-vous quitter ?"
 
 #: src/Widgets/Window.vala:141
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: src/Widgets/Window.vala:142
 msgid "Hide Window"
-msgstr ""
+msgstr "Masquer la fenêtre"
 
 #: src/Widgets/Window.vala:143
 msgid "Quit Session"
-msgstr ""
+msgstr "Quitter la session"
 
 #: src/ui/preferenceswindow.blp:10 src/ui/window.blp:7
 msgid "_Preferences"
@@ -188,20 +182,19 @@ msgstr "Mois enregistrés"
 #: src/ui/preferenceswindow.blp:17
 msgid "The amount of months that the work data will be saved"
 msgstr ""
-"Le nombre de mois pendant lesquels les données de travail seront sauvegardées"
+"Nombre de mois pendant lesquels les données de travail seront sauvegardées"
 
 #: src/ui/preferenceswindow.blp:29
 msgid "Timer"
 msgstr "Minuteur"
 
 #: src/ui/preferenceswindow.blp:32
-#, fuzzy
 msgid "Break time percentage"
-msgstr "Phase de pause"
+msgstr "Pourcentage de temps de pause"
 
 #: src/ui/preferenceswindow.blp:33
 msgid "The percetage of work time that will be used as break time"
-msgstr ""
+msgstr "Pourcentage du temps de travail qui sera utilisé comme temps de pause"
 
 #: src/ui/preferenceswindow.blp:45 src/ui/statwindow.blp:61
 #: src/ui/statwindow.blp:71
@@ -218,12 +211,14 @@ msgstr "Démarre automatiquement le minuteur quand la phase est changée"
 
 #: src/ui/preferenceswindow.blp:59
 msgid "Activate Screensaver on Break Time"
-msgstr ""
+msgstr "Activer l’économiseur d’écran pendant les temps de pause"
 
 #: src/ui/preferenceswindow.blp:60
 msgid ""
 "Activate the screensaver when the break stage starts. Requires Autostart"
 msgstr ""
+"Activer l’économiseur d’écran quand une phase de pause commence. Requiert un "
+"redémarrage de l’application"
 
 #: src/ui/preferenceswindow.blp:66
 msgid "Sounds"
@@ -235,11 +230,11 @@ msgstr "Sons d’alarme marquant l’heure de pause"
 
 #: src/ui/statinfo.blp:10 src/ui/statwindow.blp:86
 msgid "Start working to see your progress"
-msgstr ""
+msgstr "Commencez à travailler pour voir votre progression"
 
 #: src/ui/statpage.blp:15 src/ui/window.blp:94
 msgid "Overview"
-msgstr ""
+msgstr "Aperçu"
 
 #: src/ui/statpage.blp:22
 msgid "See Details"
@@ -247,7 +242,7 @@ msgstr "Voir les détails"
 
 #: src/ui/statwindow.blp:30
 msgid "Save as CSV"
-msgstr ""
+msgstr "Enregistrer au format CSV"
 
 #: src/ui/statwindow.blp:41 src/ui/statwindow.blp:51
 msgid "Work Time"
@@ -255,21 +250,19 @@ msgstr "Temps de travail"
 
 #: src/ui/window.blp:12
 msgid "_Distraction Free Mode"
-msgstr ""
+msgstr "Mode sans _distractions"
 
 #: src/ui/window.blp:18
 msgid "_About Flowtime"
 msgstr "À _propos de Flowtime"
 
 #: src/ui/window.blp:66
-#, fuzzy
 msgid "_Stages"
-msgstr "Phases"
+msgstr "_Phases"
 
 #: src/ui/window.blp:77
-#, fuzzy
 msgid "S_tatistics"
-msgstr "Statistiques"
+msgstr "_Statistiques"
 
 #~ msgid "Get things done, keep concentrated"
 #~ msgstr "Faites ce que vous avez à faire, restez concentré"
