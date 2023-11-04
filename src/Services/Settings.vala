@@ -29,7 +29,7 @@ public class Flowtime.Services.Settings : Object {
             return _break_percentage;
         }
         set {
-            if (value < 20 || value > 100) {
+            if (value < 10 || value > 100) {
                 critical ("Break percentage is out of bounds");
                 return;
             }
