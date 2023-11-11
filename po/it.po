@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-21 12:27-0600\n"
-"PO-Revision-Date: 2023-06-16 14:35+0100\n"
-"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
+"PO-Revision-Date: 2023-10-11 14:35+0100\n"
+"Last-Translator: Albano Battistella <albano_battistella@gmail.com>\n"
 "Language-Team: italian <LL@li.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "Flowtime"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
 msgid "Spend your time wisely"
-msgstr ""
+msgstr "Trascorri saggiamente il tuo tempo"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
 msgid ""
@@ -43,7 +43,7 @@ msgstr "Diego Iván"
 
 #: src/Application.vala:77
 msgid "Flowtime is saving your statistics"
-msgstr ""
+msgstr "Flowtime sta salvando le tue statistiche"
 
 #: src/Application.vala:146
 msgid "translator_credits"
@@ -75,13 +75,12 @@ msgid "days"
 msgstr "giorni"
 
 #: src/Services/Alarm.vala:28 src/Services/BackgroundStatusReporter.vala:34
-#, fuzzy
 msgid "Break is over!"
 msgstr "La pausa è finita!"
 
 #: src/Services/Alarm.vala:29
 msgid "Let's get back to work"
-msgstr ""
+msgstr "Torniamo al lavoro"
 
 #: src/Services/Statistics.vala:237
 msgid "Today"
@@ -96,9 +95,8 @@ msgid "This Month"
 msgstr "Questo mese"
 
 #: src/Services/Statistics.vala:243
-#, fuzzy
 msgid "All Time"
-msgstr "Timer"
+msgstr "Tutto il tempo"
 
 #: src/Services/BackgroundStatusReporter.vala:36
 #, c-format
@@ -122,7 +120,7 @@ msgstr "Pausa"
 #: src/Widgets/StatInfo.vala:44
 #, c-format
 msgid "You've worked %s and have taken a break during %s."
-msgstr ""
+msgstr "Hai lavorato %s e ti sei preso una pausa durante %s."
 
 #: src/Widgets/StatsWindow.vala:43
 #, c-format
@@ -138,34 +136,32 @@ msgid "Break Stage"
 msgstr "Fase di pausa"
 
 #: src/Widgets/TimerPage.vala:52
-#, fuzzy
 msgid "Pause Timer"
-msgstr "Timer"
+msgstr "Pausa Timer"
 
 #: src/Widgets/TimerPage.vala:56
-#, fuzzy
 msgid "Start Timer"
-msgstr "Timer"
+msgstr "Avvia Timer"
 
 #: src/Widgets/Window.vala:137
 msgid "There is a Session Active"
-msgstr ""
+msgstr "C'è una sessione attiva"
 
 #: src/Widgets/Window.vala:137
 msgid "Do you want to quit?"
-msgstr ""
+msgstr "Vuoi uscire?"
 
 #: src/Widgets/Window.vala:141
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #: src/Widgets/Window.vala:142
 msgid "Hide Window"
-msgstr ""
+msgstr "Nascondi finestra"
 
 #: src/Widgets/Window.vala:143
 msgid "Quit Session"
-msgstr ""
+msgstr "Esci dalla sessione"
 
 #: src/ui/preferenceswindow.blp:10 src/ui/window.blp:7
 msgid "_Preferences"
@@ -188,13 +184,12 @@ msgid "Timer"
 msgstr "Timer"
 
 #: src/ui/preferenceswindow.blp:32
-#, fuzzy
 msgid "Break time percentage"
-msgstr "Fase di pausa"
+msgstr "Percentuale del tempo di pausa"
 
 #: src/ui/preferenceswindow.blp:33
 msgid "The percetage of work time that will be used as break time"
-msgstr ""
+msgstr "La percentuale del tempo di lavoro che verrà utilizzata come pausa"
 
 #: src/ui/preferenceswindow.blp:45 src/ui/statwindow.blp:61
 #: src/ui/statwindow.blp:71
@@ -211,12 +206,13 @@ msgstr "Avvia automaticamente il timer quando si cambia fase"
 
 #: src/ui/preferenceswindow.blp:59
 msgid "Activate Screensaver on Break Time"
-msgstr ""
+msgstr "Attiva il salvaschermo durante la pausa"
 
 #: src/ui/preferenceswindow.blp:60
 msgid ""
 "Activate the screensaver when the break stage starts. Requires Autostart"
 msgstr ""
+"Attiva lo screensaver quando inizia la fase di interruzione. Richiede l'avvio automatico"
 
 #: src/ui/preferenceswindow.blp:66
 msgid "Sounds"
@@ -227,7 +223,6 @@ msgid "Alarm sounds that mark break time"
 msgstr "Suoni di allarme che segnano il tempo di pausa"
 
 #: src/ui/statinfo.blp:10 src/ui/statwindow.blp:86
-#, fuzzy
 msgid "Start working to see your progress"
 msgstr "Inizia a lavorare per vedere i tuoi progressi"
 
@@ -241,7 +236,7 @@ msgstr "Vedi dettagli"
 
 #: src/ui/statwindow.blp:30
 msgid "Save as CSV"
-msgstr ""
+msgstr "Salva come CSV"
 
 #: src/ui/statwindow.blp:41 src/ui/statwindow.blp:51
 msgid "Work Time"
@@ -249,21 +244,19 @@ msgstr "Tempo di lavoro"
 
 #: src/ui/window.blp:12
 msgid "_Distraction Free Mode"
-msgstr ""
+msgstr "_Modalità senza distrazioni"
 
 #: src/ui/window.blp:18
 msgid "_About Flowtime"
 msgstr "_Informazioni su Flowtime"
 
 #: src/ui/window.blp:66
-#, fuzzy
 msgid "_Stages"
-msgstr "Fasi"
+msgstr "_Fasi"
 
 #: src/ui/window.blp:77
-#, fuzzy
 msgid "S_tatistics"
-msgstr "Statistiche"
+msgstr "S_tatistiche"
 
 #~ msgid "Get things done, keep concentrated"
 #~ msgstr "Porta a termine le cose, mantieni la concentrazione"
