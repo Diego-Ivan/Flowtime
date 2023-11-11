@@ -52,14 +52,6 @@ public class Flowtime.Services.Screensaver : Object {
         }
     }
 
-    ~Screensaver () {
-        try {
-            connection?.close_sync (null);
-        } catch (Error e) {
-            warning (e.message);
-        }
-    }
-
     public async Screensaver (Timer timer) throws IOError, ScreensaverError {
         Object (timer: timer);
 
