@@ -15,27 +15,26 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v5.0/data/screenshots/01.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/main/data/screenshots/01.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v5.0/data/screenshots/02.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/main/data/screenshots/02.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v5.0/data/screenshots/03.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/main/data/screenshots/03.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/v5.0/data/screenshots/04.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/Flowtime/main/data/screenshots/04.png</image>
     </screenshot>
   </screenshots>
 
   <releases>
-    <release version="6.0" date="2023-10-25">
+    <release version="6.1" date="2023-11-10">
       <description translatable="no">
-        <p>Flowtime v6.0 is here! This release has some small but interesting features that improve the overall Flowtime experience 🤓️</p>
+        <p>Flowtime v6.1 has arrived with a couple of minor fixes and improvements</p>
         <ul>
-          <li>A new preference has been added to activate the screensaver when the break time starts. This setting requires the <em>Autostart</em> feature to be enabled too.</li>
-          <li>The dependency on GStreamer has been removed in favor of the <code>GtkMediaStream</code> API</li>
-          <li>The preference <em>Break Time Divisor</em> has been changed in favor of a percentage, which allows you to have more control over your break time. Your workflow will not be broken with this, as the previous setting will be automatically ported</li>
+          <li>Updated French Translation</li>
+          <li>Break Time Percentage is now actually saved below the 10% (Bugfix)</li>
         </ul>
       </description>
     </release>
