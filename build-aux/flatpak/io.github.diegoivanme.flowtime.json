@@ -56,8 +56,8 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "."
+                    "type" : "dir",
+                    "path" : "../../"
                 }
             ]
         }
