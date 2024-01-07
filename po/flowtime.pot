@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 12:27-0600\n"
+"POT-Creation-Date: 2024-01-06 16:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,40 +34,43 @@ msgid ""
 "without loosing you **flow**."
 msgstr ""
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:78
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:60
 msgid "Diego Iván"
 msgstr ""
 
-#: src/Application.vala:77
+#: src/Application.vala:73
 msgid "Flowtime is saving your statistics"
 msgstr ""
 
-#: src/Application.vala:146
+#: src/Application.vala:144
 msgid "translator_credits"
 msgstr ""
 
-#. If seconds is less than a minute, it will display seconds
-#: src/Models/StatObject.vala:21 src/Widgets/StatInfo.vala:56
+#: src/Application.vala:149
+msgid "Sounds by: "
+msgstr ""
+
+#: src/Models/StatObject.vala:24 src/Widgets/StatInfo.vala:56
 msgid "seconds"
 msgstr ""
 
-#: src/Models/StatObject.vala:31 src/Widgets/StatInfo.vala:65
+#: src/Models/StatObject.vala:29 src/Widgets/StatInfo.vala:61
 msgid "minutes"
 msgstr ""
 
-#: src/Models/StatObject.vala:59 src/Widgets/StatInfo.vala:92
+#: src/Models/StatObject.vala:38 src/Widgets/StatInfo.vala:70
 msgid "hour"
 msgstr ""
 
-#: src/Models/StatObject.vala:62 src/Widgets/StatInfo.vala:95
+#: src/Models/StatObject.vala:41 src/Widgets/StatInfo.vala:73
 msgid "hours"
 msgstr ""
 
-#: src/Models/StatObject.vala:79 src/Widgets/StatInfo.vala:110
+#: src/Models/StatObject.vala:49 src/Widgets/StatInfo.vala:81
 msgid "day"
 msgstr ""
 
-#: src/Models/StatObject.vala:82 src/Widgets/StatInfo.vala:113
+#: src/Models/StatObject.vala:52 src/Widgets/StatInfo.vala:84
 msgid "days"
 msgstr ""
 
@@ -105,11 +108,11 @@ msgstr ""
 msgid "Work Stage: %s"
 msgstr ""
 
-#: src/Services/Timer.vala:177 src/ui/statinfo.blp:52
+#: src/Services/Timer.vala:153 src/ui/statinfo.blp:52
 msgid "Work"
 msgstr ""
 
-#: src/Services/Timer.vala:179 src/ui/statinfo.blp:65
+#: src/Services/Timer.vala:155 src/ui/statinfo.blp:65
 msgid "Break"
 msgstr ""
 
@@ -140,24 +143,24 @@ msgstr ""
 msgid "Start Timer"
 msgstr ""
 
-#: src/Widgets/Window.vala:137
-msgid "There is a Session Active"
-msgstr ""
-
-#: src/Widgets/Window.vala:137
-msgid "Do you want to quit?"
+#: src/Widgets/Window.vala:141
+msgid "There is a timer active"
 msgstr ""
 
 #: src/Widgets/Window.vala:141
+msgid "Do you want to quit?"
+msgstr ""
+
+#: src/Widgets/Window.vala:145
 msgid "Cancel"
 msgstr ""
 
-#: src/Widgets/Window.vala:142
-msgid "Hide Window"
+#: src/Widgets/Window.vala:146
+msgid "Hide window"
 msgstr ""
 
-#: src/Widgets/Window.vala:143
-msgid "Quit Session"
+#: src/Widgets/Window.vala:147
+msgid "Quit"
 msgstr ""
 
 #: src/ui/preferenceswindow.blp:10 src/ui/window.blp:7

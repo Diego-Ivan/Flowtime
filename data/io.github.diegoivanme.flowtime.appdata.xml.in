@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-	<id>io.github.diegoivanme.flowtime.desktop</id>
+	<id>io.github.diegoivanme.flowtime</id>
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
 
@@ -44,39 +44,23 @@
     <display_length compare="ge">320</display_length>
   </requires>
 
+  <provides>
+    <id>io.github.diegoivanme.flowtime.desktop</id>
+  </provides>
+
   <recommends>
     <control>keyboard</control>
     <control>pointing</control>
     <control>touch</control>
   </recommends>
 
-  <content_rating type="oars-1.1">
-    <content_attribute id="violence-cartoon">none</content_attribute>
-    <content_attribute id="violence-fantasy">none</content_attribute>
-    <content_attribute id="violence-realistic">none</content_attribute>
-    <content_attribute id="violence-bloodshed">none</content_attribute>
-    <content_attribute id="violence-sexual">none</content_attribute>
-    <content_attribute id="violence-desecration">none</content_attribute>
-    <content_attribute id="violence-slavery">none</content_attribute>
-    <content_attribute id="violence-worship">none</content_attribute>
-    <content_attribute id="drugs-alcohol">none</content_attribute>
-    <content_attribute id="drugs-narcotics">none</content_attribute>
-    <content_attribute id="drugs-tobacco">none</content_attribute>
-    <content_attribute id="sex-nudity">none</content_attribute>
-    <content_attribute id="language-profanity">none</content_attribute>
-    <content_attribute id="language-humor">none</content_attribute>
-    <content_attribute id="language-discrimination">none</content_attribute>
-    <content_attribute id="social-chat">none</content_attribute>
-    <content_attribute id="social-info">none</content_attribute>
-    <content_attribute id="social-audio">none</content_attribute>
-    <content_attribute id="social-location">none</content_attribute>
-    <content_attribute id="social-contacts">none</content_attribute>
-    <content_attribute id="money-purchasing">none</content_attribute>
-    <content_attribute id="money-gambling">none</content_attribute>
-  </content_rating>
-
+  <content_rating type="oars-1.1" />
+  <translation type="gettext">flowtime</translation>
+  <launchable type="desktop-id">io.github.diegoivanme.flowtime.desktop</launchable>
   <developer_name>Diego Iván</developer_name>
   <url type="homepage">https://github.com/Diego-Ivan/Flowtime</url>
   <url type="bugtracker">https://github.com/Diego-Ivan/Flowtime/issues</url>
+  <url type="vcs-browser">https://github.com/Diego-Ivan/Flowtime</url>
+  <url type="translate">https://github.com/Diego-Ivan/Flowtime/tree/main/po</url>
 
 </component>
