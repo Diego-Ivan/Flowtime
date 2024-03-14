@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-21 12:27-0600\n"
-"PO-Revision-Date: 2022-05-18 17:10+0300\n"
+"PO-Revision-Date: 2024-03-13 16:44+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: \n"
 "Language: he\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/io.github.diegoivanme.flowtime.desktop.in:3
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
@@ -26,7 +26,7 @@ msgstr "Flowtime"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
 msgid "Spend your time wisely"
-msgstr ""
+msgstr "ניצול נכון של הזמן שלך"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
 msgid ""
@@ -45,10 +45,9 @@ msgstr "דייגו איוון"
 
 #: src/Application.vala:77
 msgid "Flowtime is saving your statistics"
-msgstr ""
+msgstr "‫Flowtime שומר את הסטטיסטיקה שלך"
 
 #: src/Application.vala:146
-#, fuzzy
 msgid "translator_credits"
 msgstr "ירון שהרבני <sh.yaron@gmail.com>"
 
@@ -78,13 +77,12 @@ msgid "days"
 msgstr "יומיים"
 
 #: src/Services/Alarm.vala:28 src/Services/BackgroundStatusReporter.vala:34
-#, fuzzy
 msgid "Break is over!"
-msgstr "זמן הפסקה"
+msgstr "ההפסקה הסתיימה!"
 
 #: src/Services/Alarm.vala:29
 msgid "Let's get back to work"
-msgstr ""
+msgstr "נחזור לעבודה"
 
 #: src/Services/Statistics.vala:237
 msgid "Today"
@@ -99,35 +97,32 @@ msgid "This Month"
 msgstr "החודש"
 
 #: src/Services/Statistics.vala:243
-#, fuzzy
 msgid "All Time"
-msgstr "מתזמן"
+msgstr "כל הזמן"
 
 #: src/Services/BackgroundStatusReporter.vala:36
-#, fuzzy, c-format
+#, c-format
 msgid "Break Stage: %s"
-msgstr "שלב הפסקה"
+msgstr "שלב הפסקה: %s"
 
 #: src/Services/BackgroundStatusReporter.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Work Stage: %s"
-msgstr "שלב עבודה"
+msgstr "שלב עבודה: %s"
 
 #: src/Services/Timer.vala:177 src/ui/statinfo.blp:52
-#, fuzzy
 msgid "Work"
-msgstr "זמן עבודה"
+msgstr "עבודה"
 
 #: src/Services/Timer.vala:179 src/ui/statinfo.blp:65
-#, fuzzy
 msgid "Break"
-msgstr "זמן הפסקה"
+msgstr "הפסקה"
 
 #. translators: This phrase is used in the context: You've worked HH:MM:SS...
 #: src/Widgets/StatInfo.vala:44
 #, c-format
 msgid "You've worked %s and have taken a break during %s."
-msgstr ""
+msgstr "עבדת %s ויצאת להפסקה במשך %s."
 
 #: src/Widgets/StatsWindow.vala:43
 #, c-format
@@ -143,34 +138,32 @@ msgid "Break Stage"
 msgstr "שלב הפסקה"
 
 #: src/Widgets/TimerPage.vala:52
-#, fuzzy
 msgid "Pause Timer"
-msgstr "מתזמן"
+msgstr "השהיית מתזמן"
 
 #: src/Widgets/TimerPage.vala:56
-#, fuzzy
 msgid "Start Timer"
-msgstr "מתזמן"
+msgstr "התחלת מתזמן"
 
 #: src/Widgets/Window.vala:137
 msgid "There is a Session Active"
-msgstr ""
+msgstr "יש הפעלה רצה"
 
 #: src/Widgets/Window.vala:137
 msgid "Do you want to quit?"
-msgstr ""
+msgstr "לצאת?"
 
 #: src/Widgets/Window.vala:141
 msgid "Cancel"
-msgstr ""
+msgstr "הסגה"
 
 #: src/Widgets/Window.vala:142
 msgid "Hide Window"
-msgstr ""
+msgstr "הסתרת חלון"
 
 #: src/Widgets/Window.vala:143
 msgid "Quit Session"
-msgstr ""
+msgstr "יציאה מהפעלה"
 
 #: src/ui/preferenceswindow.blp:10 src/ui/window.blp:7
 msgid "_Preferences"
@@ -193,13 +186,12 @@ msgid "Timer"
 msgstr "מתזמן"
 
 #: src/ui/preferenceswindow.blp:32
-#, fuzzy
 msgid "Break time percentage"
-msgstr "שלב הפסקה"
+msgstr "אחוז זמני הפסקה"
 
 #: src/ui/preferenceswindow.blp:33
 msgid "The percetage of work time that will be used as break time"
-msgstr ""
+msgstr "אחוז העבודה שייחשב לזמן הפסקה"
 
 #: src/ui/preferenceswindow.blp:45 src/ui/statwindow.blp:61
 #: src/ui/statwindow.blp:71
@@ -216,12 +208,12 @@ msgstr "להתחיל את המתזמן אוטומטית כאשר השלב משת
 
 #: src/ui/preferenceswindow.blp:59
 msgid "Activate Screensaver on Break Time"
-msgstr ""
+msgstr "הפעלת שומר מסך בזמן ההפסקה"
 
 #: src/ui/preferenceswindow.blp:60
 msgid ""
 "Activate the screensaver when the break stage starts. Requires Autostart"
-msgstr ""
+msgstr "להפעיל שומר מסך עם תחילת שלב ההפסקה. דורש הפעלה אוטומטית"
 
 #: src/ui/preferenceswindow.blp:66
 msgid "Sounds"
@@ -233,11 +225,11 @@ msgstr "צלילי התראה שמסמנים את זמן ההפסקה"
 
 #: src/ui/statinfo.blp:10 src/ui/statwindow.blp:86
 msgid "Start working to see your progress"
-msgstr ""
+msgstr "ניתן להתחיל לעבוד כדי לראות את ההתקדמות שלך"
 
 #: src/ui/statpage.blp:15 src/ui/window.blp:94
 msgid "Overview"
-msgstr ""
+msgstr "סקירה"
 
 #: src/ui/statpage.blp:22
 msgid "See Details"
@@ -245,7 +237,7 @@ msgstr "הצגת פרטים"
 
 #: src/ui/statwindow.blp:30
 msgid "Save as CSV"
-msgstr ""
+msgstr "שמירה כ־CSV"
 
 #: src/ui/statwindow.blp:41 src/ui/statwindow.blp:51
 msgid "Work Time"
@@ -253,21 +245,19 @@ msgstr "זמן עבודה"
 
 #: src/ui/window.blp:12
 msgid "_Distraction Free Mode"
-msgstr ""
+msgstr "מצב _נטול הסחות"
 
 #: src/ui/window.blp:18
 msgid "_About Flowtime"
 msgstr "_על Flowtime"
 
 #: src/ui/window.blp:66
-#, fuzzy
 msgid "_Stages"
 msgstr "_שלבים"
 
 #: src/ui/window.blp:77
-#, fuzzy
 msgid "S_tatistics"
-msgstr "סטטיסטיקה"
+msgstr "ס_טטיסטיקה"
 
 #~ msgid "Get things done, keep concentrated"
 #~ msgstr "לקדם משימות, לשמור על מיקוד"
