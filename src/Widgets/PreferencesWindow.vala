@@ -7,7 +7,7 @@
 
 namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/preferenceswindow.ui")]
-    public class PreferencesWindow : Adw.PreferencesWindow {
+    public class PreferencesWindow : Adw.PreferencesDialog {
         [GtkChild]
         private unowned Adw.PreferencesGroup sounds_group;
         [GtkChild]
@@ -23,12 +23,9 @@ namespace Flowtime {
 
         public Services.Screensaver? screensaver { get; construct; default = null; }
 
-        public PreferencesWindow (Gtk.Window parent, Services.Screensaver? screensaver) {
-            Object (
-                screensaver: screensaver,
-                transient_for: parent
-            );
-            show ();
+        public PreferencesWindow (Gtk.Window? parent, Services.Screensaver? screensaver) {
+            Object (screensaver: screensaver);
+            present (parent);
         }
 
         construct {
