@@ -7,7 +7,7 @@
 
 namespace Flowtime {
     [GtkTemplate (ui = "/io/github/diegoivanme/flowtime/statwindow.ui")]
-    public class StatsWindow : Adw.Window {
+    public class StatsWindow : Adw.Dialog {
         [GtkChild]
         private unowned StatList work_list;
         [GtkChild]
@@ -16,13 +16,6 @@ namespace Flowtime {
         private unowned Gtk.Button save_button;
         [GtkChild]
         private unowned Gtk.Stack content_stack;
-
-        public StatsWindow (Gtk.Window? parent_window) {
-            Object (
-                transient_for: parent_window,
-                modal: true
-            );
-        }
 
         construct {
             var statistics = new Services.Statistics ();
@@ -76,7 +69,7 @@ namespace Flowtime {
             };
 
             try {
-                File file = yield file_dialog.save (this, null);
+                File file = yield file_dialog.save ((Gtk.Window) this.root, null);
                 yield save_as_csv (file);
             }
             catch (Error e) {
