@@ -138,7 +138,7 @@ public class Flowtime.Window : Adw.ApplicationWindow {
             return true;
         }
 
-        var warning = new Adw.MessageDialog (this, _("There is a timer active"), _("Do you want to quit?")) {
+        var warning = new Adw.AlertDialog (_("There is a timer active"), _("Do you want to quit?")) {
             close_response = "cancel",
         };
 
@@ -148,7 +148,7 @@ public class Flowtime.Window : Adw.ApplicationWindow {
 
         warning.set_response_appearance ("quit", DESTRUCTIVE);
 
-        string response = yield warning.choose (null);
+        string response = yield warning.choose (this, null);
 
         if (response == "quit") {
             timer.save_to_statistics ();
