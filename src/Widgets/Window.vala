@@ -125,6 +125,7 @@ public class Flowtime.Window : Adw.ApplicationWindow {
     private void change_to_overview (Object source, ParamSpec pspec) {
         var stat_page = (StatPage) source;
         overview_info.time_period = stat_page.selected_period;
+        navigation_view.pop ();
         navigation_view.activate_action_variant ("navigation.push", "overview");
     }
 

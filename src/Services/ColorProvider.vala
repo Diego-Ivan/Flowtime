@@ -85,14 +85,14 @@ public class Flowtime.Services.ColorProvider : Object {
     }
 
     private void load_break_dark () {
-        break_provider.load_from_data (
-            (uint8[]) "@define-color accent_color @green_1;@define-color accent_bg_color @green_5;"
+        break_provider.load_from_string (
+            "@define-color accent_color @green_1;@define-color accent_bg_color @green_5;"
         );
     }
 
     private void load_break_light () {
-        break_provider.load_from_data (
-            (uint8[]) "@define-color accent_color @green_5;@define-color accent_bg_color @green_4;"
+        break_provider.load_from_string (
+            "@define-color accent_color @green_5;@define-color accent_bg_color @green_4;"
         );
     }
 }

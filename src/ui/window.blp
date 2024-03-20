@@ -34,13 +34,14 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
     condition ("max-width: 400sp")
     setters {
       switcher_bar.reveal: true;
-      headerbar.title-widget: null;
+      headerbar.show-title: false;
     }
   }
 
   Adw.NavigationView navigation_view {
     Adw.NavigationPage {
       tag: "main-view";
+      title: "Flowtime";
       Adw.ToolbarView main_view {
         [top]
         Adw.HeaderBar headerbar {
