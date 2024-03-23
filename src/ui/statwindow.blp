@@ -1,11 +1,10 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $FlowtimeStatsWindow : Adw.Window {
-  default-height: 440;
-  default-width: 490;
+template $FlowtimeStatsWindow : Adw.Dialog {
   width-request: 355;
-  height-request: 420;
+  height-request: 200;
+  follows-content-size: true;
   title: _("Statistics");
 
   Adw.Breakpoint {

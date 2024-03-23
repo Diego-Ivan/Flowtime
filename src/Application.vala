@@ -117,7 +117,7 @@ namespace Flowtime {
         }
 
         private void about_flowtime () {
-            const string COPYRIGHT = "Copyright \xc2\xa9 2021-2023 Diego Iván M.E";
+            const string COPYRIGHT = "Copyright \xc2\xa9 2021-2024 Diego Iván M.E";
             const string? DEVELOPERS[] = {
                 "Diego Iván M.E<diegoivan.mae@gmail.com>",
                 null
@@ -132,7 +132,7 @@ namespace Flowtime {
                 "SoundBible https://soundbible.com/1815-A-Tone.html",
             };
 
-            var about = new Adw.AboutWindow () {
+            var about = new Adw.AboutDialog () {
                 application_icon = Config.APP_ID,
                 application_name = "Flowtime",
                 artists = ARTISTS,
@@ -140,7 +140,6 @@ namespace Flowtime {
                 developers = DEVELOPERS,
                 issue_url = "https://github.com/Diego-Ivan/Flowtime/issues",
                 license_type = GPL_3_0,
-                transient_for = active_window,
                 translator_credits = _("translator_credits"),
                 version = Config.VERSION,
                 website = "https://github.com/Diego-Ivan/Flowtime",
@@ -148,7 +147,7 @@ namespace Flowtime {
 
             about.add_credit_section (_("Sounds by: "), SOUND_ARTISTS);
 
-            about.present ();
+            about.present (this.active_window);
         }
     }
 }

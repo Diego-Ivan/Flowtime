@@ -125,6 +125,7 @@ public class Flowtime.Window : Adw.ApplicationWindow {
     private void change_to_overview (Object source, ParamSpec pspec) {
         var stat_page = (StatPage) source;
         overview_info.time_period = stat_page.selected_period;
+        navigation_view.pop ();
         navigation_view.activate_action_variant ("navigation.push", "overview");
     }
 
@@ -138,7 +139,7 @@ public class Flowtime.Window : Adw.ApplicationWindow {
             return true;
         }
 
-        var warning = new Adw.MessageDialog (this, _("There is a timer active"), _("Do you want to quit?")) {
+        var warning = new Adw.AlertDialog (_("There is a timer active"), _("Do you want to quit?")) {
             close_response = "cancel",
         };
 
@@ -148,7 +149,7 @@ public class Flowtime.Window : Adw.ApplicationWindow {
 
         warning.set_response_appearance ("quit", DESTRUCTIVE);
 
-        string response = yield warning.choose (null);
+        string response = yield warning.choose (this, null);
 
         if (response == "quit") {
             timer.save_to_statistics ();
