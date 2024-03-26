@@ -63,4 +63,9 @@
   <url type="vcs-browser">https://github.com/Diego-Ivan/Flowtime</url>
   <url type="translate">https://github.com/Diego-Ivan/Flowtime/tree/main/po</url>
 
+  <branding>
+		<color type="primary" scheme_preference="light">#8ee5f9</color>
+		<color type="primary" scheme_preference="dark">#26a269</color>
+	</branding>
+
 </component>
