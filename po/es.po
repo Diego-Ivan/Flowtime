@@ -8,16 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 12:27-0600\n"
-"PO-Revision-Date: 2023-10-07 19:15-0600\n"
+"POT-Creation-Date: 2024-01-06 16:17+0300\n"
+"PO-Revision-Date: 2024-03-26 17:02-0300\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish - Mexico <->\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 45.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/io.github.diegoivanme.flowtime.desktop.in:3
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
@@ -26,7 +26,7 @@ msgstr "Flowtime"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
 msgid "Spend your time wisely"
-msgstr "Use su tiempo sabiamente"
+msgstr "Emplee su tiempo sabiamente"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
 msgid ""
@@ -35,45 +35,48 @@ msgid ""
 "annoying. That's why the Flowtime technique exists: take appropiate breaks "
 "without loosing you **flow**."
 msgstr ""
-"El método Pomodoro es eficiente para las tareas que encuentra aburridas, "
-"pero tomar un descanso cuando estás 100% concentrado en algo que te gusta "
-"puede ser molesto. Es por eso que el método Flowtime existe: tome descansos "
-"apropiadados, sin perder su concentración."
+"La técnica Pomodoro es eficaz para tareas que te resultan aburridas, pero "
+"tener que hacer una pausa cuando estás concentrado al 100% en algo que te "
+"gusta puede resultar molesto. Es por eso que el método Flowtime existe: tome "
+"descansos apropiadados, sin perder su **flujo**."
 
-#: data/io.github.diegoivanme.flowtime.appdata.xml.in:78
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:60
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
-#: src/Application.vala:77
+#: src/Application.vala:73
 msgid "Flowtime is saving your statistics"
-msgstr "Flowtime está guardando tu estadísticas"
+msgstr "Flowtime está guardando sus estadísticas"
 
-#: src/Application.vala:146
+#: src/Application.vala:144
 msgid "translator_credits"
 msgstr "Diego Iván<diegoivan.mae@gmail.com>"
 
-#. If seconds is less than a minute, it will display seconds
-#: src/Models/StatObject.vala:21 src/Widgets/StatInfo.vala:56
+#: src/Application.vala:149
+msgid "Sounds by: "
+msgstr "Sonidos por: "
+
+#: src/Models/StatObject.vala:24 src/Widgets/StatInfo.vala:56
 msgid "seconds"
 msgstr "segundos"
 
-#: src/Models/StatObject.vala:31 src/Widgets/StatInfo.vala:65
+#: src/Models/StatObject.vala:29 src/Widgets/StatInfo.vala:61
 msgid "minutes"
 msgstr "minutos"
 
-#: src/Models/StatObject.vala:59 src/Widgets/StatInfo.vala:92
+#: src/Models/StatObject.vala:38 src/Widgets/StatInfo.vala:70
 msgid "hour"
 msgstr "hora"
 
-#: src/Models/StatObject.vala:62 src/Widgets/StatInfo.vala:95
+#: src/Models/StatObject.vala:41 src/Widgets/StatInfo.vala:73
 msgid "hours"
 msgstr "horas"
 
-#: src/Models/StatObject.vala:79 src/Widgets/StatInfo.vala:110
+#: src/Models/StatObject.vala:49 src/Widgets/StatInfo.vala:81
 msgid "day"
 msgstr "día"
 
-#: src/Models/StatObject.vala:82 src/Widgets/StatInfo.vala:113
+#: src/Models/StatObject.vala:52 src/Widgets/StatInfo.vala:84
 msgid "days"
 msgstr "días"
 
@@ -111,11 +114,11 @@ msgstr "Estación de Descanso: %s"
 msgid "Work Stage: %s"
 msgstr "Estación de Trabajo: %s"
 
-#: src/Services/Timer.vala:177 src/ui/statinfo.blp:52
+#: src/Services/Timer.vala:153 src/ui/statinfo.blp:52
 msgid "Work"
 msgstr "Trabajo"
 
-#: src/Services/Timer.vala:179 src/ui/statinfo.blp:65
+#: src/Services/Timer.vala:155 src/ui/statinfo.blp:65
 msgid "Break"
 msgstr "Descanso"
 
@@ -146,25 +149,25 @@ msgstr "Pausar El Temporizador"
 msgid "Start Timer"
 msgstr "Iniciar El Temporizador"
 
-#: src/Widgets/Window.vala:137
-msgid "There is a Session Active"
-msgstr "Hay una Sesión Activa"
+#: src/Widgets/Window.vala:141
+msgid "There is a timer active"
+msgstr "Hay un Temporizador activo"
 
-#: src/Widgets/Window.vala:137
+#: src/Widgets/Window.vala:141
 msgid "Do you want to quit?"
 msgstr "¿Quiere Salir?"
 
-#: src/Widgets/Window.vala:141
+#: src/Widgets/Window.vala:145
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/Widgets/Window.vala:142
-msgid "Hide Window"
+#: src/Widgets/Window.vala:146
+msgid "Hide window"
 msgstr "Ocultar Ventana"
 
-#: src/Widgets/Window.vala:143
-msgid "Quit Session"
-msgstr "Abandonar Sesión"
+#: src/Widgets/Window.vala:147
+msgid "Quit"
+msgstr "Salir"
 
 #: src/ui/preferenceswindow.blp:10 src/ui/window.blp:7
 msgid "_Preferences"
@@ -187,13 +190,13 @@ msgid "Timer"
 msgstr "Temporizador"
 
 #: src/ui/preferenceswindow.blp:32
-#, fuzzy
 msgid "Break time percentage"
-msgstr "Estación de Descanso"
+msgstr "Porcentaje del tiempo de descanso"
 
 #: src/ui/preferenceswindow.blp:33
 msgid "The percetage of work time that will be used as break time"
 msgstr ""
+"El porcentaje de tiempo de trabajo que se utilizará como tiempo de descanso"
 
 #: src/ui/preferenceswindow.blp:45 src/ui/statwindow.blp:61
 #: src/ui/statwindow.blp:71
@@ -202,7 +205,7 @@ msgstr "Tiempo de Descanso"
 
 #: src/ui/preferenceswindow.blp:47
 msgid "Autostart"
-msgstr "Iniciar Automáticamente"
+msgstr "Inicio automático"
 
 #: src/ui/preferenceswindow.blp:48
 msgid "Automatically start the timer when the stage is changed"
@@ -210,12 +213,14 @@ msgstr "Iniciar automáticamente el temporizador cuando la estación cambie"
 
 #: src/ui/preferenceswindow.blp:59
 msgid "Activate Screensaver on Break Time"
-msgstr ""
+msgstr "Activar el Salvapantallas en el Descanso"
 
 #: src/ui/preferenceswindow.blp:60
 msgid ""
 "Activate the screensaver when the break stage starts. Requires Autostart"
 msgstr ""
+"Activa el salvapantallas cuando comienza la etapa de descanso. Requiere "
+"Inicio automático"
 
 #: src/ui/preferenceswindow.blp:66
 msgid "Sounds"
@@ -255,11 +260,14 @@ msgstr "_Acerca de Flowtime"
 
 #: src/ui/window.blp:66
 msgid "_Stages"
-msgstr "E_staciones"
+msgstr "_Estaciones"
 
 #: src/ui/window.blp:77
 msgid "S_tatistics"
 msgstr "_Estadísticas"
+
+#~ msgid "Quit Session"
+#~ msgstr "Abandonar Sesión"
 
 #~ msgid "Break time divisor"
 #~ msgstr "Divisor del tiempo de descanso"
