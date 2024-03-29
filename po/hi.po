@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 16:17+0300\n"
-"PO-Revision-Date: 2024-03-27 17:52+0530\n"
+"PO-Revision-Date: 2024-03-28 00:24+0530\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi\n"
 "Language: hi\n"
@@ -170,7 +170,7 @@ msgstr "छोड़ें"
 
 #: src/ui/preferenceswindow.blp:10 src/ui/window.blp:7
 msgid "_Preferences"
-msgstr "_प्राथमिकताएँ"
+msgstr "प्राथमिकताएँ (_P)"
 
 #: src/ui/preferenceswindow.blp:13 src/ui/statwindow.blp:9
 msgid "Statistics"
@@ -248,16 +248,16 @@ msgstr "कार्य समय"
 
 #: src/ui/window.blp:12
 msgid "_Distraction Free Mode"
-msgstr "_व्याकुलता मुक्त मोड"
+msgstr "व्याकुलता मुक्त मोड (_D)"
 
 #: src/ui/window.blp:18
 msgid "_About Flowtime"
-msgstr "_Flowtime के बारे में"
+msgstr "Flowtime के बारे में (_A)"
 
 #: src/ui/window.blp:66
 msgid "_Stages"
-msgstr "_अवस्था"
+msgstr "अवस्था (_S)"
 
 #: src/ui/window.blp:77
 msgid "S_tatistics"
-msgstr "आं_कड़े"
+msgstr "आंकड़े (_t)"
