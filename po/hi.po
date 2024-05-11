@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: flowtime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 16:17+0300\n"
-"PO-Revision-Date: 2024-03-28 00:24+0530\n"
+"PO-Revision-Date: 2024-05-11 14:37+0530\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
-"Language-Team: Hindi\n"
+"Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 46.0\n"
+"X-Generator: Gtranslator 46.1\n"
 
 #: data/io.github.diegoivanme.flowtime.desktop.in:3
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
@@ -36,8 +36,8 @@ msgid ""
 "without loosing you **flow**."
 msgstr ""
 "Pomodoro तकनीक उन कार्यों के लिए प्रभावी है जो आपको उबाऊ लगते हैं, लेकिन जब आप अपनी "
-"पसंद की किसी चीज़ में 100% केंद्रित होते हैं तो ब्रेक लेना कष्टप्रद हो सकता है। इसीलिए "
-"Flowtime तकनीक मौजूद है: अपना **प्रवाह** खोए बिना उचित ब्रेक लें।"
+"पसंद की किसी चीज़ में 100% केंद्रित होते हैं तो विराम लेना कष्टप्रद हो सकता है। इसीलिए "
+"Flowtime तकनीक मौजूद है: अपना **प्रवाह** खोए बिना उचित विराम लें।"
 
 #: data/io.github.diegoivanme.flowtime.appdata.xml.in:60
 msgid "Diego Iván"
@@ -45,7 +45,7 @@ msgstr "डिएगो इवान"
 
 #: src/Application.vala:73
 msgid "Flowtime is saving your statistics"
-msgstr "Flowtime आपके आँकड़े सहेज रहा है"
+msgstr "Flowtime आपके आंकड़े सहेज रहा है"
 
 #: src/Application.vala:144
 msgid "translator_credits"
@@ -53,11 +53,11 @@ msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
 #: src/Application.vala:149
 msgid "Sounds by: "
-msgstr "ध्वनियाँ द्वारा: "
+msgstr "ध्वनियां द्वारा: "
 
 #: src/Models/StatObject.vala:24 src/Widgets/StatInfo.vala:56
 msgid "seconds"
-msgstr "seconds"
+msgstr "सेकंड"
 
 #: src/Models/StatObject.vala:29 src/Widgets/StatInfo.vala:61
 msgid "minutes"
@@ -81,7 +81,7 @@ msgstr "दिन"
 
 #: src/Services/Alarm.vala:28 src/Services/BackgroundStatusReporter.vala:34
 msgid "Break is over!"
-msgstr "ब्रेक ख़त्म हुआ!"
+msgstr "विराम खत्म हुआ!"
 
 #: src/Services/Alarm.vala:29
 msgid "Let's get back to work"
@@ -106,7 +106,7 @@ msgstr "हर समय"
 #: src/Services/BackgroundStatusReporter.vala:36
 #, c-format
 msgid "Break Stage: %s"
-msgstr "ब्रेक अवस्था: %s"
+msgstr "विराम अवस्था: %s"
 
 #: src/Services/BackgroundStatusReporter.vala:40
 #, c-format
@@ -119,13 +119,13 @@ msgstr "कार्य"
 
 #: src/Services/Timer.vala:155 src/ui/statinfo.blp:65
 msgid "Break"
-msgstr "ब्रेक"
+msgstr "विराम"
 
 #. translators: This phrase is used in the context: You've worked HH:MM:SS...
 #: src/Widgets/StatInfo.vala:44
 #, c-format
 msgid "You've worked %s and have taken a break during %s."
-msgstr "आपने %s पर काम किया है और %s के दौरान ब्रेक लिया है।"
+msgstr "आपने %s पर काम किया है और %s के दौरान विराम लिया है।"
 
 #: src/Widgets/StatsWindow.vala:43
 #, c-format
@@ -138,7 +138,7 @@ msgstr "कार्य अवस्था"
 
 #: src/Widgets/TimerPage.vala:46
 msgid "Break Stage"
-msgstr "ब्रेक अवस्था"
+msgstr "विराम अवस्था"
 
 #: src/Widgets/TimerPage.vala:52
 msgid "Pause Timer"
@@ -158,11 +158,11 @@ msgstr "क्या आप बाहर निकलना चाहते ह�
 
 #: src/Widgets/Window.vala:145
 msgid "Cancel"
-msgstr "रद्द"
+msgstr "रद्द करें"
 
 #: src/Widgets/Window.vala:146
 msgid "Hide window"
-msgstr "विंडो छिपाएँ"
+msgstr "खिड़की छिपाएं"
 
 #: src/Widgets/Window.vala:147
 msgid "Quit"
@@ -170,7 +170,7 @@ msgstr "छोड़ें"
 
 #: src/ui/preferenceswindow.blp:10 src/ui/window.blp:7
 msgid "_Preferences"
-msgstr "प्राथमिकताएँ (_P)"
+msgstr "प्राथमिकताएं (_P)"
 
 #: src/ui/preferenceswindow.blp:13 src/ui/statwindow.blp:9
 msgid "Statistics"
@@ -190,16 +190,16 @@ msgstr "टाइमर"
 
 #: src/ui/preferenceswindow.blp:32
 msgid "Break time percentage"
-msgstr "ब्रेक समय प्रतिशत"
+msgstr "विराम समय प्रतिशत"
 
 #: src/ui/preferenceswindow.blp:33
 msgid "The percetage of work time that will be used as break time"
-msgstr "कार्य समय का वह प्रतिशत जिसका उपयोग ब्रेक टाइम के रूप में किया जाएगा"
+msgstr "कार्य समय का वह प्रतिशत जिसका उपयोग विराम टाइम के रूप में किया जाएगा"
 
 #: src/ui/preferenceswindow.blp:45 src/ui/statwindow.blp:61
 #: src/ui/statwindow.blp:71
 msgid "Break Time"
-msgstr "ब्रेक समय"
+msgstr "विराम समय"
 
 #: src/ui/preferenceswindow.blp:47
 msgid "Autostart"
@@ -207,16 +207,16 @@ msgstr "स्वतः प्रारंभ"
 
 #: src/ui/preferenceswindow.blp:48
 msgid "Automatically start the timer when the stage is changed"
-msgstr "स्टेज बदलने पर स्वचालित रूप से टाइमर शुरू हो जाता है"
+msgstr "अवस्था बदलने पर स्वचालित रूप से टाइमर शुरू हो जाता है"
 
 #: src/ui/preferenceswindow.blp:59
 msgid "Activate Screensaver on Break Time"
-msgstr "ब्रेक टाइम पर स्क्रीनसेवर सक्रिय करें"
+msgstr "विराम टाइम पर स्क्रीनसेवर सक्रिय करें"
 
 #: src/ui/preferenceswindow.blp:60
 msgid ""
 "Activate the screensaver when the break stage starts. Requires Autostart"
-msgstr "ब्रेक चरण शुरू होने पर स्क्रीनसेवर सक्रिय करें। ऑटोस्टार्ट की आवश्यकता है"
+msgstr "विराम अवस्था शुरू होने पर स्क्रीनसेवर सक्रिय करें। स्वतः प्रारंभ की आवश्यकता है"
 
 #: src/ui/preferenceswindow.blp:66
 msgid "Sounds"
@@ -224,7 +224,7 @@ msgstr "ध्वनि"
 
 #: src/ui/preferenceswindow.blp:67
 msgid "Alarm sounds that mark break time"
-msgstr "अलार्म बजता है जो ब्रेक टाइम को चिह्नित करता है"
+msgstr "अलार्म बजता है जो विराम टाइम को चिह्नित करता है"
 
 #: src/ui/statinfo.blp:10 src/ui/statwindow.blp:86
 msgid "Start working to see your progress"
