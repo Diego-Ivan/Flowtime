@@ -48,6 +48,13 @@
     <id>io.github.diegoivanme.flowtime.desktop</id>
   </provides>
 
+  <categories>
+    <category>GTK</category>
+    <category>GNOME</category>
+    <category>Utility</category>
+    <category>Clock</category>
+  </categories>
+
   <recommends>
     <control>keyboard</control>
     <control>pointing</control>
