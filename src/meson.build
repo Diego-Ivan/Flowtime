@@ -1,76 +1,24 @@
-flowtime_sources = [
-  'main.vala',
-  'Application.vala',
-  'XmlUtils.vala',
-
-  # Models
-  'Models/Day.vala',
-  'Models/State.vala',
-  'Models/StatObject.vala',
-  'Models/InformationHolder.vala',
-
-  # Services
-  'Services/Timer.vala',
-  'Services/ColorProvider.vala',
-  'Services/Statistics.vala',
-  'Services/Alarm.vala',
-  'Services/Settings.vala',
-  'Services/Screensaver.vala',
-  'Services/BackgroundStatusReporter.vala',
-  'Services/TonePlayer.vala',
-
-  # Widgets
-  'Widgets/PreferencesWindow.vala',
-  'Widgets/SoundRow.vala',
-  'Widgets/StatGraph.vala',
-  'Widgets/StatInfo.vala',
-  'Widgets/StatList.vala',
-  'Widgets/StatPage.vala',
-  'Widgets/StatRow.vala',
-  'Widgets/StatsWindow.vala',
-  'Widgets/TimerPage.vala',
-  'Widgets/Window.vala',
-]
-
-flowtime_deps = [
-  dependency('libadwaita-1', version: '>= 1.4'),
-  dependency('libxml-2.0'),
-  dependency('libportal-gtk4'),
-]
-
-conf = configuration_data()
-conf.set_quoted('APP_ID', app_id)
-conf.set_quoted('G_LOG_DOMAIN', 'Flowtime')
-conf.set_quoted('VERSION', meson.project_version())
-conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
-conf.set_quoted('DATADIR', join_paths(get_option('prefix'), get_option('datadir')))
-conf.set_quoted('GNOMELOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
-configure_file(output: 'config.h', configuration: conf)
-
-add_project_arguments(
-    '-include', 'config.h',
-    '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
-    language: 'c'
-)
-
+pkgdatadir = get_option('prefix') / get_option('datadir') / meson.project_name()
 gnome = import('gnome')
-blueprint_compiler = find_program('blueprint-compiler')
 
 blueprints = files (
-  'ui/preferenceswindow.blp',
-  'ui/statrow.blp',
-  'ui/statwindow.blp',
+  # 'ui/preferenceswindow.blp',
+  # 'ui/statrow.blp',
+  # 'ui/statwindow.blp',
   'ui/window.blp',
-  'ui/statlist.blp',
-  'ui/statinfo.blp',
-  'ui/statpage.blp',
-  'ui/timerpage.blp',
+  # 'ui/statlist.blp',
+  # 'ui/statinfo.blp',
+  # 'ui/statpage.blp',
+  # 'ui/timerpage.blp',
 )
 
-flowtime_resources_file = files('flowtime.gresource.xml')
-flowtime_resources = gnome.compile_resources('flowtime-resources',
-  flowtime_resources_file,
-  c_name: 'flowtime',
+blueprint_compiler = find_program('blueprint-compiler')
+
+gnome.compile_resources('flowtime',
+  'flowtime.gresource.xml',
+  gresource_bundle: true,
+  install: true,
+  install_dir: pkgdatadir,
   dependencies: custom_target(
     build_always_stale: true,
     command: [blueprint_compiler, 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
@@ -79,14 +27,49 @@ flowtime_resources = gnome.compile_resources('flowtime-resources',
   ),
 )
 
-executable('flowtime', flowtime_resources, flowtime_sources,
-  vala_args: [
-    meson.project_source_root() + '/src/vapi/config.vapi',
-    '--target-glib=2.50',
-    '--enable-checking',
-    '--gresourcesdir=src/',
-    '--vapidir', meson.project_source_root() / 'vapi',
-  ],
-  dependencies: flowtime_deps,
+conf = configuration_data()
+conf.set_quoted('VERSION', meson.project_version())
+conf.set_quoted('GETTEXT_PACKAGE', 'flowtime')
+conf.set_quoted('LOCALEDIR', get_option('prefix') / get_option('localedir'))
+conf.set_quoted('PKGDATADIR', pkgdatadir)
+
+configure_file(
+    input: 'config.rs.in',
+    output: 'config.rs',
+    configuration: conf
+)
+
+# Copy the config.rs output to the source directory.
+run_command(
+  'cp',
+  meson.project_build_root() / 'src' / 'config.rs',
+  meson.project_source_root() / 'src' / 'config.rs',
+  check: true
+)
+
+cargo_bin  = find_program('cargo')
+cargo_opt  = [ '--manifest-path', meson.project_source_root() / 'Cargo.toml' ]
+cargo_opt += [ '--target-dir', meson.project_build_root()  / 'src' ]
+cargo_env  = [ 'CARGO_HOME=' + meson.project_build_root()  / 'cargo-home' ]
+
+if get_option('buildtype') == 'release'
+  cargo_opt += [ '--release' ]
+  rust_target = 'release'
+else
+  rust_target = 'debug'
+endif
+
+cargo_build = custom_target(
+  'cargo-build',
+  build_by_default: true,
+  build_always_stale: true,
+  output: meson.project_name(),
+  console: true,
   install: true,
+  install_dir: get_option('bindir'),
+  command: [
+    'env', cargo_env,
+    cargo_bin, 'build',
+    cargo_opt, '&&', 'cp', 'src' / rust_target / meson.project_name(), '@OUTPUT@',
+  ]
 )

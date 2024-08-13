@@ -16,7 +16,7 @@
   <bug-database rdf:resource="https://github.com/Diego-Ivan/Flowtime/issues" />
 
   <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
-  <programming-language>Vala</programming-language>
+  <programming-language>Rust</programming-language>
 
   <maintainer>
     <foaf:Person>

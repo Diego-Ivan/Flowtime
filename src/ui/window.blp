@@ -66,10 +66,10 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
               name: "timer";
               title: _("_Stages");
               use-underline: true;
-              child:
-              $FlowtimeTimerPage timer_page {
-                timer:  $FlowtimeServicesTimer timer {};
-              };
+              // child:
+              // $FlowtimeTimerPage timer_page {
+              //   timer:  $FlowtimeServicesTimer timer {};
+              // };
             }
 
             Adw.ViewStackPage {
@@ -77,9 +77,9 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
               name: "statistics";
               title: _("S_tatistics");
               use-underline: true;
-              child: $FlowtimeStatPage {
-                notify::selected-period => $change_to_overview ();
-              };
+              // child: $FlowtimeStatPage {
+              //   notify::selected-period => $change_to_overview ();
+              // };
             }
           }
         }
@@ -99,9 +99,9 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
         [top]
         Adw.HeaderBar header_bar {}
 
-        $FlowtimeStatInfo overview_info {
-          time-period: today;
-        }
+        // $FlowtimeStatInfo overview_info {
+        //   time-period: today;
+        // }
       }
     }
   }
