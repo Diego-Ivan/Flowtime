@@ -22,14 +22,18 @@
 use adw::prelude::*;
 use adw::subclass::prelude::*;
 use gtk::{gio, glib};
+use crate::services;
 
 
 mod imp {
     use super::*;
 
-    #[derive(Debug, Default, gtk::CompositeTemplate)]
+    use once_cell::sync::OnceCell;
+
+    #[derive(Debug, gtk::CompositeTemplate)]
     #[template(resource = "/io/github/diegoivanme/flowtime/window.ui")]
     pub struct FlowtimeWindow {
+        pub(super) timer: services::FlowtimeTimer,
     }
 
     #[glib::object_subclass]
@@ -37,6 +41,12 @@ mod imp {
         const NAME: &'static str = "FlowtimeWindow";
         type Type = super::FlowtimeWindow;
         type ParentType = adw::ApplicationWindow;
+
+        fn new() -> Self {
+            Self {
+                timer: services::FlowtimeTimer::new()
+            }
+        }
 
         fn class_init(klass: &mut Self::Class) {
             klass.bind_template();
@@ -61,9 +71,14 @@ glib::wrapper! {
 
 impl FlowtimeWindow {
     pub fn new<P: glib::IsA<gtk::Application>>(application: &P) -> Self {
-        glib::Object::builder()
+        let win: FlowtimeWindow = glib::Object::builder()
             .property("application", application)
-            .build()
+            .build();
+        win.imp().timer.connect_seconds_notify(|_| {
+            println!("Tick");
+        });
+        win.imp().timer.start ();
+        win
     }
 }
 

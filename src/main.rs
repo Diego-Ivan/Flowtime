@@ -21,6 +21,7 @@
 mod application;
 mod window;
 mod config;
+mod services;
 
 use self::application::FlowtimeApplication;
 use self::window::FlowtimeWindow;
@@ -36,6 +37,8 @@ fn main() -> glib::ExitCode {
     bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8")
         .expect("Unable to set the text domain encoding");
     textdomain(GETTEXT_PACKAGE).expect("Unable to switch to the text domain");
+
+    println!("Running app");
 
     // Load resources
     let resources = gio::Resource::load(PKGDATADIR.to_owned() + "/flowtime.gresource")
