@@ -116,6 +116,7 @@ impl TimerPage {
     }
 
     pub fn next(&self) {
-        todo!("Missing implementation for next stage")
+        self.timer().next_stage();
+        println!("Current Stage {:?}", self.timer().timer_mode());
     }
 }
