@@ -97,6 +97,29 @@ impl FlowtimeTimer {
         self.imp().last_instant.replace(None);
     }
 
+    pub(crate) fn next_stage(&self) {
+        let imp = self.imp();
+        if imp.running.get() {
+            self.stop ();
+        }
+
+        match imp.timer_mode.get() {
+            FlowtimeTimerMode::Work => {
+                // TODO: Reimplement this once the settings service has been ported
+                imp.seconds.set(imp.seconds.get() / 5);
+                imp.timer_mode.replace(FlowtimeTimerMode::Break);
+                self.notify_seconds();
+            },
+            FlowtimeTimerMode::Break => {
+                imp.seconds.set(0);
+                imp.timer_mode.replace(FlowtimeTimerMode::Work);
+            },
+        };
+
+        self.notify_timer_mode();
+    }
+
+    // TODO: Adapt once the alarm service is back
     fn timeout(&self) -> glib::ControlFlow {
         println!("timeout");
         let imp = self.imp();
