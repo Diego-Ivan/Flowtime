@@ -24,6 +24,8 @@ mod imp {
     use super::*;
     use std::cell::{Cell, RefCell};
     use once_cell::sync::OnceCell;
+    use std::sync::OnceLock;
+    use glib::subclass::Signal;
 
     #[derive(Debug, Default, glib::Properties)]
     #[properties(wrapper_type=super::FlowtimeTimer)]
@@ -49,6 +51,15 @@ mod imp {
 
     #[glib::derived_properties]
     impl ObjectImpl for FlowtimeTimer {
+        fn signals() -> &'static [Signal] {
+            static SIGNALS: OnceLock<Vec<Signal>> = OnceLock::new();
+            SIGNALS.get_or_init(|| {
+                vec![Signal::builder("break-done")
+                    .return_type::<()>()
+                    .build()]
+            })
+        }
+
         fn properties() -> &'static [glib::ParamSpec] {
             Self::derived_properties()
         }
@@ -131,16 +142,30 @@ impl FlowtimeTimer {
         // TODO: Remove the unwrap with a alternative
         let last_instant = imp.last_instant.get().unwrap();
         let diff_since = now.duration_since(last_instant).as_secs();
+        let elapsed_seconds = imp.seconds.get();
+
         let new_value = match imp.timer_mode.get() {
-            FlowtimeTimerMode::Work => imp.seconds.get() + diff_since,
-            FlowtimeTimerMode::Break => imp.seconds.get().checked_sub(diff_since).unwrap_or(0),
+            FlowtimeTimerMode::Work => elapsed_seconds + diff_since,
+            FlowtimeTimerMode::Break => match elapsed_seconds.checked_sub(diff_since) {
+                Some(value) => value,
+                None => {
+                    // TODO: This has to be changed once the settings are read
+                    self.stop();
+                    self.emit_by_name::<()>("break-done", &[]);
+                    0
+                }
+            },
         };
 
-        imp.seconds.set (new_value);
+        imp.seconds.set(new_value);
         self.notify_seconds();
 
         imp.last_instant.replace(Some(now));
 
         glib::ControlFlow::Continue
+    }
+
+    pub(crate) fn connect_break_done<F: Fn(&Self) + 'static> (&self, f: F) -> glib::SignalHandlerId {
+        self.connect_closure("break-done", true, glib::closure_local!(|timer| f(timer)))
     }
 }
