@@ -8,7 +8,7 @@
     <!-- <file alias="statrow.ui">ui/statrow.ui</file> -->
     <!-- <file alias="statwindow.ui">ui/statwindow.ui</file> -->
     <!-- <file alias="preferenceswindow.ui">ui/preferenceswindow.ui</file> -->
-    <!-- <file alias="timerpage.ui">ui/timerpage.ui</file> -->
+    <file alias="timer_page.ui">ui/timerpage.ui</file>
     <!-- <file alias="statlist.ui">ui/statlist.ui</file> -->
     <!-- <file alias="statinfo.ui">ui/statinfo.ui</file> -->
 

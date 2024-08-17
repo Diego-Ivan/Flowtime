@@ -9,7 +9,7 @@ blueprints = files (
   # 'ui/statlist.blp',
   # 'ui/statinfo.blp',
   # 'ui/statpage.blp',
-  # 'ui/timerpage.blp',
+  'ui/timerpage.blp',
 )
 
 blueprint_compiler = find_program('blueprint-compiler')

@@ -35,7 +35,7 @@ template $FlowtimeTimerPage : Adw.Bin {
       Button pause_button {
         icon-name: "media-playback-start-symbolic";
         halign: center;
-        clicked => $on_pause_button_clicked ();
+        action-name: "timer-page.pause";
 
         styles ["suggested-action", "circular", "large-button"]
       }
@@ -43,7 +43,7 @@ template $FlowtimeTimerPage : Adw.Bin {
       Button next_button {
         icon-name: "media-seek-forward-symbolic";
         valign: center;
-        clicked => $on_next_button_clicked ();
+        action-name: "timer-page.next";
 
         styles ["circular", "not-so-large-button"]
       }

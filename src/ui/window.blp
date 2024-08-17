@@ -38,80 +38,72 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
     }
   }
 
-  Adw.ToolbarView {
-    [top]
-    Adw.HeaderBar headerbar {
-      show-end-title-buttons: true;
-    }
-  }
+  Adw.NavigationView navigation_view {
+    Adw.NavigationPage {
+      tag: "main-view";
+      title: "Flowtime";
+      Adw.ToolbarView main_view {
+        [top]
+        Adw.HeaderBar headerbar {
+          show-end-title-buttons: true;
 
-  // Adw.NavigationView navigation_view {
-  //   Adw.NavigationPage {
-  //     tag: "main-view";
-  //     title: "Flowtime";
-  //     Adw.ToolbarView main_view {
-  //       [top]
-  //       Adw.HeaderBar headerbar {
-  //         show-end-title-buttons: true;
+          [start]
+          MenuButton {
+            menu-model: action-menu;
+            icon-name: "open-menu-symbolic";
+          }
 
-  //         [start]
-  //         MenuButton {
-  //           menu-model: action-menu;
-  //           icon-name: "open-menu-symbolic";
-  //         }
+          title-widget: Adw.ViewSwitcher view_switcher {
+            policy: wide;
+            stack: view_stack;
+          };
+        }
 
-  //         title-widget: Adw.ViewSwitcher view_switcher {
-  //           policy: wide;
-  //           stack: view_stack;
-  //         };
-  //       }
+        WindowHandle {
+          Adw.ViewStack view_stack {
+            Adw.ViewStackPage {
+              icon-name: "timer-sand-symbolic";
+              name: "timer";
+              title: _("_Stages");
+              use-underline: true;
+              child:
+              $FlowtimeTimerPage timer_page {
+              };
+            }
 
-  //       WindowHandle {
-  //         Adw.ViewStack view_stack {
-  //           Adw.ViewStackPage {
-  //             icon-name: "timer-sand-symbolic";
-  //             name: "timer";
-  //             title: _("_Stages");
-  //             use-underline: true;
-              // child:
-              // $FlowtimeTimerPage timer_page {
-              //   timer:  $FlowtimeServicesTimer timer {};
-              // };
-  //           }
-
-  //           Adw.ViewStackPage {
-  //             icon-name: "profit-symbolic";
-  //             name: "statistics";
-  //             title: _("S_tatistics");
-  //             use-underline: true;
+            Adw.ViewStackPage {
+              icon-name: "profit-symbolic";
+              name: "statistics";
+              title: _("S_tatistics");
+              use-underline: true;
               // child: $FlowtimeStatPage {
               //   notify::selected-period => $change_to_overview ();
               // };
-  //           }
-  //         }
-  //       }
+            }
+          }
+        }
 
-  //       [bottom]
-  //       Adw.ViewSwitcherBar switcher_bar {
-  //         stack: view_stack;
-  //       }
-  //     }
-  //   }
+        [bottom]
+        Adw.ViewSwitcherBar switcher_bar {
+          stack: view_stack;
+        }
+      }
+    }
 
-  //   Adw.NavigationPage {
-  //     title: _("Overview");
-  //     tag: "overview";
+    Adw.NavigationPage {
+      title: _("Overview");
+      tag: "overview";
 
-  //     Adw.ToolbarView {
-  //       [top]
-  //       Adw.HeaderBar header_bar {}
+      Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar header_bar {}
 
         // $FlowtimeStatInfo overview_info {
         //   time-period: today;
         // }
-  //     }
-  //   }
-  // }
+      }
+    }
+  }
 
 
   ShortcutController {

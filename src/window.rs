@@ -34,6 +34,9 @@ mod imp {
     #[template(resource = "/io/github/diegoivanme/flowtime/window.ui")]
     pub struct FlowtimeWindow {
         pub(super) timer: services::FlowtimeTimer,
+
+        #[template_child]
+        pub(super) timer_page: TemplateChild<crate::widgets::TimerPage>,
     }
 
     #[glib::object_subclass]
@@ -44,7 +47,8 @@ mod imp {
 
         fn new() -> Self {
             Self {
-                timer: services::FlowtimeTimer::new()
+                timer: services::FlowtimeTimer::new(),
+                timer_page: TemplateChild::default()
             }
         }
 
@@ -74,11 +78,10 @@ impl FlowtimeWindow {
         let win: FlowtimeWindow = glib::Object::builder()
             .property("application", application)
             .build();
-        win.imp().timer.connect_seconds_notify(|_| {
-            println!("Tick");
-        });
-        win.imp().timer.start ();
+        let imp = win.imp();
+        imp.timer_page.set_timer(&imp.timer);
         win
     }
 }
+
 

@@ -35,7 +35,8 @@ mod imp {
 
         pub(super) last_instant: Cell<Option<Instant>>,
 
-        pub(super) is_running: Cell<bool>,
+        #[property(get)]
+        pub(crate) running: Cell<bool>,
         pub(super) timeout_id: RefCell<Option<glib::SourceId>>
     }
 
@@ -73,7 +74,7 @@ impl FlowtimeTimer {
     }
 
     pub(crate) fn start(&self) {
-        self.imp().is_running.set(true);
+        self.imp().running.set(true);
         self.imp().last_instant.replace(Some(Instant::now()));
 
         let timeout_id = glib::timeout_add_local(
@@ -89,7 +90,7 @@ impl FlowtimeTimer {
     }
 
     pub(crate) fn stop(&self) {
-        self.imp().is_running.set(false);
+        self.imp().running.set(false);
         if let Some(id) = self.imp().timeout_id.take() {
             id.remove();
         }
@@ -99,7 +100,7 @@ impl FlowtimeTimer {
     fn timeout(&self) -> glib::ControlFlow {
         println!("timeout");
         let imp = self.imp();
-        if !imp.is_running.get() {
+        if !imp.running.get() {
             return glib::ControlFlow::Break;
         }
 
