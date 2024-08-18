@@ -37,6 +37,8 @@ mod imp {
 
         #[template_child]
         pub(super) timer_page: TemplateChild<crate::widgets::TimerPage>,
+
+        pub(super) alarm: services::Alarm,
     }
 
     #[glib::object_subclass]
@@ -46,9 +48,11 @@ mod imp {
         type ParentType = adw::ApplicationWindow;
 
         fn new() -> Self {
+            let timer = services::FlowtimeTimer::new();
             Self {
-                timer: services::FlowtimeTimer::new(),
-                timer_page: TemplateChild::default()
+                alarm: services::Alarm::new(&timer),
+                timer_page: TemplateChild::default(),
+                timer,
             }
         }
 
