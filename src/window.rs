@@ -84,6 +84,7 @@ impl FlowtimeWindow {
             .build();
         let imp = win.imp();
         imp.timer_page.set_timer(&imp.timer);
+        services::statistics::Statistics::new().load_days();
         win
     }
 }

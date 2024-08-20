@@ -1,4 +1,5 @@
 pub mod timer;
+pub mod statistics;
 mod alarm;
 
 pub use timer::FlowtimeTimer;
