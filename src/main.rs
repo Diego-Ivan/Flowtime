@@ -23,6 +23,7 @@ mod window;
 mod config;
 mod services;
 mod widgets;
+mod models;
 
 use self::application::FlowtimeApplication;
 use self::window::FlowtimeWindow;
