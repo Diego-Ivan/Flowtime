@@ -7,18 +7,22 @@
 use gtk::{
     prelude::*,
     glib::{self, subclass::prelude::*},
+    gio,
 };
-use std::path::PathBuf;
 use crate::models;
+
+struct State{}
 
 mod imp {
     use super::*;
-    use std::cell::{Cell, RefCell};
+    use std::cell::RefCell;
+    use once_cell::sync::OnceCell;
 
     #[derive(Debug, Default, glib::Properties)]
     #[properties(wrapper_type = super::Statistics)]
     pub struct Statistics {
         pub(super) all_days: RefCell<Vec<models::Day>>,
+        pub(super) today: OnceCell<models::Day>,
         #[property(get)]
         pub(crate) productive_day: RefCell<String>
     }
@@ -77,6 +81,19 @@ impl Statistics {
             .build()
     }
 
+    pub fn days_model(&self) -> gio::ListModel {
+        let store: gio::ListStore = self
+            .imp()
+            .all_days
+            .borrow()
+            .iter()
+            .map(|d| d.clone())
+            .collect();
+        store.into()
+    }
+
+    pub fn save(&self) {}
+
     pub fn load_days(&self) {
         use xml::reader::XmlEvent;
 
@@ -87,6 +104,8 @@ impl Statistics {
         let file = std::io::BufReader::new(file);
 
         let reader = xml::EventReader::new(file);
+
+        let today = glib::DateTime::now_utc().unwrap();
 
         let mut worktime = 0u32;
         let mut breaktime = 0u32;
@@ -108,7 +127,7 @@ impl Statistics {
                                 .find(|a| a.name.local_name == "date");
                             match day_date {
                                 Some(day_date) => {
-                                    date = glib::DateTime::from_iso8601(&day_date.value, None).ok()
+                                    date = glib::DateTime::from_iso8601(&day_date.value, None).ok();
                                 },
                                 None => {
                                     println!("Could not find attribute date");
@@ -150,16 +169,22 @@ impl Statistics {
                     match current_element {
                         StatisticsElement::Day => {
                             println!("A day has been parsed");
-                            match date.as_ref() {
-                                Some(date) => {
-                                    let day = models::Day::new(date, worktime, breaktime);
-                                    self.imp().all_days.borrow_mut().push(day);
-                                },
+                            let day_date = match date.as_ref() {
+                                Some(date) => date,
                                 None => {
                                     eprintln!("Expected date element to be Some at this point");
                                     continue;
                                 }
                             };
+
+                            let elapsed_since = today.difference(day_date);
+
+                            let day = models::Day::new(day_date, worktime, breaktime);
+                            if same_day(&day.date(), &today) {
+                                self.imp().today.set(day.clone());
+                            }
+                            // TODO: Handle Error
+                            self.imp().all_days.borrow_mut().push(day);
 
                             worktime = 0;
                             breaktime = 0;
@@ -177,6 +202,25 @@ impl Statistics {
             }
         }
 
-        println!("{list:?}", list = self.imp().all_days.borrow());
+        if self.imp().today.get().is_none() {
+            let today = models::Day::new(&today, 0, 0);
+            // TODO: handle error
+            self.imp().today.set (today.clone());
+            self.imp().all_days.borrow_mut().push(today);
+        }
+
+        for day in self.imp().all_days.borrow().iter() {
+            println!("Worktime: {worktime}, Breaktime: {breaktime}, Date {date}",
+                worktime = day.worktime(),
+                breaktime = day.breaktime(),
+                date = day.date().format("%x").unwrap(),
+            );
+        }
     }
+}
+
+fn same_day(one: &glib::DateTime, other: &glib::DateTime) -> bool {
+    one.day_of_year() == other.day_of_year()
+    && one.month() == other.month()
+    && one.year() == other.year()
 }
