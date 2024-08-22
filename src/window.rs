@@ -39,6 +39,7 @@ mod imp {
         pub(super) timer_page: TemplateChild<crate::widgets::TimerPage>,
 
         pub(super) alarm: services::Alarm,
+        pub(super) statistics: services::Statistics,
     }
 
     #[glib::object_subclass]
@@ -48,11 +49,13 @@ mod imp {
         type ParentType = adw::ApplicationWindow;
 
         fn new() -> Self {
-            let timer = services::FlowtimeTimer::new();
+            let statistics = services::Statistics::new();
+            let timer = services::FlowtimeTimer::new(&statistics);
             Self {
                 alarm: services::Alarm::new(&timer),
                 timer_page: TemplateChild::default(),
                 timer,
+                statistics
             }
         }
 
@@ -84,7 +87,6 @@ impl FlowtimeWindow {
             .build();
         let imp = win.imp();
         imp.timer_page.set_timer(&imp.timer);
-        services::statistics::Statistics::new().load_days();
         win
     }
 }

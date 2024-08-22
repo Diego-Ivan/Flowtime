@@ -11,6 +11,7 @@ use gtk::{
 };
 
 use std::time::{Duration, Instant};
+use crate::services;
 
 #[derive(Default, Debug, Clone, Copy, glib::Enum)]
 #[enum_type(name="FlowtimeTimerMode")]
@@ -39,7 +40,10 @@ mod imp {
 
         #[property(get)]
         pub(crate) running: Cell<bool>,
-        pub(super) timeout_id: RefCell<Option<glib::SourceId>>
+        pub(super) timeout_id: RefCell<Option<glib::SourceId>>,
+
+        #[property(get, set)]
+        pub(crate) statistics: OnceCell<services::Statistics>,
     }
 
     #[glib::object_subclass]
@@ -79,8 +83,9 @@ glib::wrapper!{
 }
 
 impl FlowtimeTimer {
-    pub(crate) fn new() -> Self {
+    pub(crate) fn new(statistics: &services::Statistics) -> Self {
         glib::Object::builder()
+            .property("statistics", statistics.clone())
             .build()
     }
 
