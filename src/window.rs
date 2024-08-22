@@ -50,6 +50,7 @@ mod imp {
 
         fn new() -> Self {
             let statistics = services::Statistics::new();
+            statistics.load_days();
             let timer = services::FlowtimeTimer::new(&statistics);
             Self {
                 alarm: services::Alarm::new(&timer),

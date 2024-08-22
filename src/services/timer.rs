@@ -119,6 +119,8 @@ impl FlowtimeTimer {
             self.stop ();
         }
 
+        self.statistics().add_today_time_for_mode(self.seconds(), self.timer_mode());
+
         match imp.timer_mode.get() {
             TimerMode::Work => {
                 // TODO: Reimplement this once the settings service has been ported
@@ -131,6 +133,8 @@ impl FlowtimeTimer {
                 imp.timer_mode.replace(TimerMode::Work);
             },
         };
+
+        self.statistics().save();
 
         self.notify_timer_mode();
     }

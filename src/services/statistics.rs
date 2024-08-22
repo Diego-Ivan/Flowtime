@@ -10,6 +10,7 @@ use gtk::{
     gio,
 };
 use crate::models;
+use crate::services::timer::TimerMode;
 
 struct State{}
 
@@ -79,6 +80,14 @@ impl Statistics {
     pub fn new() -> Self {
         glib::Object::builder()
             .build()
+    }
+
+    pub fn add_today_time_for_mode(&self, seconds: u64, mode: TimerMode) {
+        let today = self.imp().today.get().unwrap();
+        match mode {
+            TimerMode::Work => today.set_worktime(today.worktime() + seconds),
+            TimerMode::Break => today.set_breaktime(today.breaktime() + seconds),
+        };
     }
 
     pub fn days_model(&self) -> gio::ListModel {
@@ -153,8 +162,8 @@ impl Statistics {
 
         let today = glib::DateTime::now_utc().unwrap();
 
-        let mut worktime = 0u32;
-        let mut breaktime = 0u32;
+        let mut worktime = 0u64;
+        let mut breaktime = 0u64;
         let mut date: Option<glib::DateTime> = None;
 
         let mut element_stack = Vec::new();
@@ -251,7 +260,7 @@ impl Statistics {
 
         if self.imp().today.get().is_none() {
             let today = models::Day::new(&today, 0, 0);
-            self.imp().today.set (today.clone()).unwrap();
+            self.imp().today.set(today.clone()).unwrap();
             self.imp().all_days.borrow_mut().push(today);
         }
     }
