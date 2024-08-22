@@ -96,6 +96,7 @@ dependencies = [
 name = "flowtime"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "gettext-rs",
  "gtk4",
  "libadwaita",
