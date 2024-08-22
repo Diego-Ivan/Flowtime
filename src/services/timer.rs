@@ -15,7 +15,7 @@ use crate::services;
 
 #[derive(Default, Debug, Clone, Copy, glib::Enum)]
 #[enum_type(name="FlowtimeTimerMode")]
-pub enum FlowtimeTimerMode {
+pub enum TimerMode {
     #[default]
     Work,
     Break,
@@ -31,8 +31,8 @@ mod imp {
     #[derive(Debug, Default, glib::Properties)]
     #[properties(wrapper_type=super::FlowtimeTimer)]
     pub struct FlowtimeTimer {
-        #[property(get, builder(FlowtimeTimerMode::default()))]
-        pub(crate) timer_mode: Cell<FlowtimeTimerMode>,
+        #[property(get, builder(TimerMode::default()))]
+        pub(crate) timer_mode: Cell<TimerMode>,
         #[property(get, explicit_notify)]
         pub(crate) seconds: Cell<u64>,
 
@@ -120,15 +120,15 @@ impl FlowtimeTimer {
         }
 
         match imp.timer_mode.get() {
-            FlowtimeTimerMode::Work => {
+            TimerMode::Work => {
                 // TODO: Reimplement this once the settings service has been ported
                 imp.seconds.set(imp.seconds.get() / 5);
-                imp.timer_mode.replace(FlowtimeTimerMode::Break);
+                imp.timer_mode.replace(TimerMode::Break);
                 self.notify_seconds();
             },
-            FlowtimeTimerMode::Break => {
+            TimerMode::Break => {
                 imp.seconds.set(0);
-                imp.timer_mode.replace(FlowtimeTimerMode::Work);
+                imp.timer_mode.replace(TimerMode::Work);
             },
         };
 
@@ -150,8 +150,8 @@ impl FlowtimeTimer {
         let elapsed_seconds = imp.seconds.get();
 
         let new_value = match imp.timer_mode.get() {
-            FlowtimeTimerMode::Work => elapsed_seconds + diff_since,
-            FlowtimeTimerMode::Break => match elapsed_seconds.checked_sub(diff_since) {
+            TimerMode::Work => elapsed_seconds + diff_since,
+            TimerMode::Break => match elapsed_seconds.checked_sub(diff_since) {
                 Some(value) => value,
                 None => {
                     // TODO: This has to be changed once the settings are read

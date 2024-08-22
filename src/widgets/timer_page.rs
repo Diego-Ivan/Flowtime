@@ -48,14 +48,14 @@ mod imp {
         }
 
         fn update_stage_name(&self) {
-            use services::timer::FlowtimeTimerMode;
+            use services::timer::TimerMode;
             let timer = self.timer.get().expect("Expected TimerPage to have a timer");
 
             match timer.timer_mode() {
-                FlowtimeTimerMode::Work => self.stage_label.set_label(
+                TimerMode::Work => self.stage_label.set_label(
                     &gettextrs::gettext("Work Stage")
                 ),
-                FlowtimeTimerMode::Break => self.stage_label.set_label(
+                TimerMode::Break => self.stage_label.set_label(
                     &gettextrs::gettext("Break Stage")
                 ),
             }
