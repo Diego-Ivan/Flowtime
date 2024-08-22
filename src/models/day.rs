@@ -61,4 +61,86 @@ impl Day {
             .property("breaktime", breaktime)
             .build()
     }
+
+    pub(crate) fn write_to_xml<R>(&self, writer: &mut xml::EventWriter<R>) -> anyhow::Result<()>
+        where R: std::io::Write,
+    {
+        use xml::writer::XmlEvent;
+        use xml::name::Name as XmlName;
+        use xml::attribute::Attribute;
+        use std::borrow::Cow;
+
+        let worktime = self.worktime().to_string();
+        let breaktime = self.breaktime().to_string();
+        let date = self.date().format_iso8601().unwrap();
+        let attributes = [
+            Attribute {
+                name: XmlName {
+                    local_name: "date",
+                    namespace: None,
+                    prefix: None,
+                },
+                value: &date,
+            }
+        ];
+
+        let events = [
+            XmlEvent::StartElement {
+                name: XmlName {
+                    local_name: "day",
+                    namespace: None,
+                    prefix: None,
+                },
+                attributes: Cow::Borrowed(&attributes),
+                namespace: Cow::Owned(xml::namespace::Namespace::empty()),
+            },
+            XmlEvent::StartElement {
+                name: XmlName {
+                    local_name: "worktime",
+                    namespace: None,
+                    prefix: None,
+                },
+                attributes: Cow::Owned(Vec::new()),
+                namespace: Cow::Owned(xml::namespace::Namespace::empty()),
+            },
+            XmlEvent::Characters(&worktime),
+            XmlEvent::EndElement {
+                name: Some(XmlName {
+                    local_name: "worktime",
+                    namespace: None,
+                    prefix: None,
+                })
+            },
+            XmlEvent::StartElement {
+                name: XmlName {
+                    local_name: "breaktime",
+                    namespace: None,
+                    prefix: None,
+                },
+                attributes: Cow::Owned(Vec::new()),
+                namespace: Cow::Owned(xml::namespace::Namespace::empty()),
+            },
+            XmlEvent::Characters(&breaktime),
+            XmlEvent::EndElement {
+                name: Some(XmlName {
+                    local_name: "breaktime",
+                    namespace: None,
+                    prefix: None,
+                })
+            },
+            XmlEvent::EndElement {
+                name: Some(XmlName {
+                    local_name: "day",
+                    namespace: None,
+                    prefix: None,
+                })
+            },
+        ];
+
+        for event in events {
+            writer.write(event)?;
+        }
+
+        Ok(())
+    }
 }
