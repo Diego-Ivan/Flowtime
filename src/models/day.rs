@@ -13,9 +13,9 @@ mod imp {
         #[property(get, set)]
         pub(crate) date: OnceCell<glib::DateTime>,
         #[property(get, set)]
-        pub(crate) worktime: Cell<u32>,
+        pub(crate) worktime: Cell<u64>,
         #[property(get, set)]
-        pub(crate) breaktime: Cell<u32>,
+        pub(crate) breaktime: Cell<u64>,
         #[property(get = Self::get_day_week)]
         pub(crate) day_of_week: String,
     }
@@ -54,7 +54,7 @@ glib::wrapper! {
 }
 
 impl Day {
-    pub(crate) fn new(date: &glib::DateTime, worktime: u32, breaktime: u32) -> Self {
+    pub(crate) fn new(date: &glib::DateTime, worktime: u64, breaktime: u64) -> Self {
         glib::Object::builder()
             .property("date", date.clone())
             .property("worktime", worktime)
