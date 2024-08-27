@@ -1,0 +1,16 @@
+[package]
+name = "flowtime"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.86"
+gettext-rs = { version = "0.7", features = ["gettext-system"] }
+gtk = { version = "0.7", package = "gtk4" }
+once_cell = "1.19.0"
+xml-rs = "0.8.21"
+
+[dependencies.adw]
+package = "libadwaita"
+version = "0.5"
+features = ["v1_4"]

@@ -28,13 +28,13 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
   width-request: 360;
   hide-on-close: true;
   title: "";
-  close-request => $on_close_request();
+  // close-request => $on_close_request();
 
   Adw.Breakpoint {
     condition ("max-width: 400sp")
     setters {
-      switcher_bar.reveal: true;
-      headerbar.show-title: false;
+      // switcher_bar.reveal: true;
+      // headerbar.show-title: false;
     }
   }
 
@@ -68,7 +68,6 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
               use-underline: true;
               child:
               $FlowtimeTimerPage timer_page {
-                timer:  $FlowtimeServicesTimer timer {};
               };
             }
 
@@ -77,9 +76,9 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
               name: "statistics";
               title: _("S_tatistics");
               use-underline: true;
-              child: $FlowtimeStatPage {
-                notify::selected-period => $change_to_overview ();
-              };
+              // child: $FlowtimeStatPage {
+              //   notify::selected-period => $change_to_overview ();
+              // };
             }
           }
         }
@@ -99,9 +98,9 @@ template $FlowtimeWindow : Adw.ApplicationWindow {
         [top]
         Adw.HeaderBar header_bar {}
 
-        $FlowtimeStatInfo overview_info {
-          time-period: today;
-        }
+        // $FlowtimeStatInfo overview_info {
+        //   time-period: today;
+        // }
       }
     }
   }
