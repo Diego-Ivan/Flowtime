@@ -30,7 +30,7 @@
 
   <releases>
     <release version="6.1" date="2023-11-10">
-      <description translatable="no">
+      <description translate="no">
         <p>Flowtime v6.1 has arrived with a couple of minor fixes and improvements</p>
         <ul>
           <li>Updated French Translation</li>
