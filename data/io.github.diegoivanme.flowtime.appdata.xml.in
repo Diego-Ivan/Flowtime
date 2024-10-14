@@ -9,7 +9,10 @@
 
 	<description>
 	  <p>
-	    The Pomodoro technique is efficient for tasks you find boring, but having to take a break when you are 100% concentrated in something you like might be annoying. That's why the Flowtime technique exists: take appropiate breaks without loosing you **flow**.
+	    The Pomodoro technique is efficient for tasks you find boring, but having to take a break when you are 100% concentrated in something you like might be annoying. That's why the Flowtime technique exists: take appropriate breaks without losing your flow.
+	  </p>
+	  <p>
+        Instead of strict work and break times, you work as long as you wish and your break is a portion of how long you worked (by default, 20%). For example, if you work for an hour, your break is 12 minutes. This lets you concentrate on your work and take appropriate breaks when convenient without a rigid schedule.
 	  </p>
 	</description>
 

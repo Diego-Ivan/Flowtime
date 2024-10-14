@@ -31,7 +31,7 @@
 
 ## Why?
 
-The Pomodoro technique is efficient for tasks you find boring, but having to take a break when you are 100% concentrated in something you like might be annoying. That's why the Flowtime technique exists: take appropriate breaks without loosing your **flow**.
+The Pomodoro technique is efficient for tasks you find boring, but having to take a break when you are 100% concentrated in something you like might be annoying. That's why the Flowtime technique exists: take appropriate breaks without losing your **flow**.
 
 ## How does it work?
 
@@ -41,7 +41,7 @@ The time you worked is divided by 5, and that's the break time you'll take. E.g,
 
 ### Flathub
 
-The only official distribution format for Flowtime is the Flatpak package available on Flathub. Click on the banner on the top of this README.md to go to Flowtime's Flathub page. Any other unofficial distribution format that might be available is highly disencouraged.
+The only official distribution format for Flowtime is the Flatpak package available on Flathub. Click on the banner on the top of this README.md to go to Flowtime's Flathub page. Any other unofficial distribution format that might be available are highly discouraged.
 
 ### Native Packages / Ports
 
