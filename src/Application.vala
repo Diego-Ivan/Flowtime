@@ -145,7 +145,7 @@ namespace Flowtime {
                 website = "https://github.com/Diego-Ivan/Flowtime",
             };
 
-            about.add_credit_section (_("Sounds by: "), SOUND_ARTISTS);
+            about.add_credit_section (_("Sounds by"), SOUND_ARTISTS);
 
             about.present (this.active_window);
         }
