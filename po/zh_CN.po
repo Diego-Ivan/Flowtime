@@ -1,0 +1,262 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the flowtime package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: flowtime\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-06 16:17+0300\n"
+"PO-Revision-Date: 2025-03-26 22:05+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+#: data/io.github.diegoivanme.flowtime.desktop.in:3
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:7
+msgid "Flowtime"
+msgstr ""
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:8
+msgid "Spend your time wisely"
+msgstr "合理安排你的时间"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:11
+msgid ""
+"The Pomodoro technique is efficient for tasks you find boring, but having to "
+"take a break when you are 100% concentrated in something you like might be "
+"annoying. That's why the Flowtime technique exists: take appropiate breaks "
+"without loosing you **flow**."
+msgstr ""
+"番茄工作法对于你觉得枯燥的任务很有效，但在你全神贯注的做一件事时，休息可能是"
+"不合时宜的。这也是 Flowtime 工作法存在的原因：适时休息且不会中断你的**工作流"
+"**。"
+
+#: data/io.github.diegoivanme.flowtime.appdata.xml.in:60
+msgid "Diego Iván"
+msgstr ""
+
+#: src/Application.vala:73
+msgid "Flowtime is saving your statistics"
+msgstr "Flowtime 正在保存你的统计数据"
+
+#: src/Application.vala:144
+msgid "translator_credits"
+msgstr "Bu Kun"
+
+#: src/Application.vala:149
+msgid "Sounds by: "
+msgstr "音效："
+
+#: src/Models/StatObject.vala:24 src/Widgets/StatInfo.vala:56
+msgid "seconds"
+msgstr "秒"
+
+#: src/Models/StatObject.vala:29 src/Widgets/StatInfo.vala:61
+msgid "minutes"
+msgstr "分"
+
+#: src/Models/StatObject.vala:38 src/Widgets/StatInfo.vala:70
+msgid "hour"
+msgstr "小时"
+
+#: src/Models/StatObject.vala:41 src/Widgets/StatInfo.vala:73
+msgid "hours"
+msgstr "小时"
+
+#: src/Models/StatObject.vala:49 src/Widgets/StatInfo.vala:81
+msgid "day"
+msgstr "天"
+
+#: src/Models/StatObject.vala:52 src/Widgets/StatInfo.vala:84
+msgid "days"
+msgstr "天"
+
+#: src/Services/Alarm.vala:28 src/Services/BackgroundStatusReporter.vala:34
+msgid "Break is over!"
+msgstr "休息时间到！"
+
+#: src/Services/Alarm.vala:29
+msgid "Let's get back to work"
+msgstr "是时候回到工作上来了"
+
+#: src/Services/Statistics.vala:237
+msgid "Today"
+msgstr "今天"
+
+#: src/Services/Statistics.vala:239
+msgid "This Week"
+msgstr "本周"
+
+#: src/Services/Statistics.vala:241
+msgid "This Month"
+msgstr "本月"
+
+#: src/Services/Statistics.vala:243
+msgid "All Time"
+msgstr "所有时间"
+
+#: src/Services/BackgroundStatusReporter.vala:36
+#, c-format
+msgid "Break Stage: %s"
+msgstr "休息阶段：%s"
+
+#: src/Services/BackgroundStatusReporter.vala:40
+#, c-format
+msgid "Work Stage: %s"
+msgstr "工作阶段：%s"
+
+#: src/Services/Timer.vala:153 src/ui/statinfo.blp:52
+msgid "Work"
+msgstr "工作"
+
+#: src/Services/Timer.vala:155 src/ui/statinfo.blp:65
+msgid "Break"
+msgstr "休息"
+
+#. translators: This phrase is used in the context: You've worked HH:MM:SS...
+#: src/Widgets/StatInfo.vala:44
+#, c-format
+msgid "You've worked %s and have taken a break during %s."
+msgstr "你已经工作了 %s 且休息了 %s。"
+
+#: src/Widgets/StatsWindow.vala:43
+#, c-format
+msgid "%s is your most productive day of the week"
+msgstr "%s 是你一周里最有生产力的一天"
+
+#: src/Widgets/TimerPage.vala:43
+msgid "Work Stage"
+msgstr "工作阶段"
+
+#: src/Widgets/TimerPage.vala:46
+msgid "Break Stage"
+msgstr "休息阶段"
+
+#: src/Widgets/TimerPage.vala:52
+msgid "Pause Timer"
+msgstr "暂停计时器"
+
+#: src/Widgets/TimerPage.vala:56
+msgid "Start Timer"
+msgstr "开始计时器"
+
+#: src/Widgets/Window.vala:141
+msgid "There is a timer active"
+msgstr "有一个计时器正在运行"
+
+#: src/Widgets/Window.vala:141
+msgid "Do you want to quit?"
+msgstr "你想要退出吗？"
+
+#: src/Widgets/Window.vala:145
+msgid "Cancel"
+msgstr "取消"
+
+#: src/Widgets/Window.vala:146
+msgid "Hide window"
+msgstr "隐藏窗口"
+
+#: src/Widgets/Window.vala:147
+msgid "Quit"
+msgstr "退出"
+
+#: src/ui/preferenceswindow.blp:10 src/ui/window.blp:7
+msgid "_Preferences"
+msgstr "首选项 (_P)"
+
+#: src/ui/preferenceswindow.blp:13 src/ui/statwindow.blp:9
+msgid "Statistics"
+msgstr "统计数据"
+
+#: src/ui/preferenceswindow.blp:16
+msgid "Months Saved"
+msgstr "保存几个月的数据"
+
+#: src/ui/preferenceswindow.blp:17
+msgid "The amount of months that the work data will be saved"
+msgstr "指定要保存几个月的工作数据"
+
+#: src/ui/preferenceswindow.blp:29
+msgid "Timer"
+msgstr "计时器"
+
+#: src/ui/preferenceswindow.blp:32
+msgid "Break time percentage"
+msgstr "休息时间比例"
+
+#: src/ui/preferenceswindow.blp:33
+msgid "The percetage of work time that will be used as break time"
+msgstr "指定将多少比例的工作时长用作休息时长"
+
+#: src/ui/preferenceswindow.blp:45 src/ui/statwindow.blp:61
+#: src/ui/statwindow.blp:71
+msgid "Break Time"
+msgstr "休息时间"
+
+#: src/ui/preferenceswindow.blp:47
+msgid "Autostart"
+msgstr "自启动"
+
+#: src/ui/preferenceswindow.blp:48
+msgid "Automatically start the timer when the stage is changed"
+msgstr "进入另一阶段时，自动启动计时器"
+
+#: src/ui/preferenceswindow.blp:59
+msgid "Activate Screensaver on Break Time"
+msgstr "在休息时间激活锁屏"
+
+#: src/ui/preferenceswindow.blp:60
+msgid ""
+"Activate the screensaver when the break stage starts. Requires Autostart"
+msgstr "在休息阶段开始时激活锁屏。需要开启自启动选项"
+
+#: src/ui/preferenceswindow.blp:66
+msgid "Sounds"
+msgstr "音效"
+
+#: src/ui/preferenceswindow.blp:67
+msgid "Alarm sounds that mark break time"
+msgstr "开始休息时播放的音效"
+
+#: src/ui/statinfo.blp:10 src/ui/statwindow.blp:86
+msgid "Start working to see your progress"
+msgstr "开始工作以看见你的进度"
+
+#: src/ui/statpage.blp:15 src/ui/window.blp:94
+msgid "Overview"
+msgstr "概览"
+
+#: src/ui/statpage.blp:22
+msgid "See Details"
+msgstr "查看详情"
+
+#: src/ui/statwindow.blp:30
+msgid "Save as CSV"
+msgstr "以 CSV 格式保存"
+
+#: src/ui/statwindow.blp:41 src/ui/statwindow.blp:51
+msgid "Work Time"
+msgstr "工作时间"
+
+#: src/ui/window.blp:12
+msgid "_Distraction Free Mode"
+msgstr "免打扰模式 (_D)"
+
+#: src/ui/window.blp:18
+msgid "_About Flowtime"
+msgstr "关于 Flowtime (_A)"
+
+#: src/ui/window.blp:66
+msgid "_Stages"
+msgstr "阶段 (_S)"
+
+#: src/ui/window.blp:77
+msgid "S_tatistics"
+msgstr "统计数据 (_t)"
