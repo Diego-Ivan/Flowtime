@@ -50,6 +50,7 @@ There exist some third party, distribution specific, packages:
 | Distribution        | Package name    | Mantainer       |
 | ------------------- | --------------- | --------------- |
 | Alpine Linux        | `flowtime`      | [chereskata](https://gitlab.alpinelinux.org/chereskata) |
+| ALT Linux           | [`flowtime`](https://packages.altlinux.org/ru/sisyphus/srpms/flowtime/) | [oleg](https://packages.altlinux.org/ru/sisyphus/maintainers/oleg/) |
 | Arch Linux (AUR)    | `flowtime`      | igor-dyatlov    |
 | Arch Linux (AUR)    | `flowtime-git`  | igor-dyatlov    |
 
