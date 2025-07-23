@@ -125,8 +125,8 @@ public class Flowtime.Services.Timer : Object {
             case BREAK:
                 if (time_seconds >= seconds) {
                     seconds = 0;
-                    running = false;
                     done ();
+                    next_mode ();
                     return false;
                 }
                 else {
